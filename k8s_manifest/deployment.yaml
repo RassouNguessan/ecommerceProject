@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: boncoin-deployment
+  namespace: boncoin
+spec:
+  selector:
+    matchLabels:
+      app: boncoin
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: boncoin
+    spec:
+      containers:
+        - name: boncoin
+          image: gauss022/boncoin_frontend:076f7480681e8ffdc2f939c34b833590fac5602c
+          ports:
+            - containerPort: 4000
+      imagePullSecrets:
+        - name: dockerhub

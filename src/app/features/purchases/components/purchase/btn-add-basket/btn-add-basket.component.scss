@@ -1,0 +1,38 @@
+
+button {
+    border: none;
+    outline: 0;
+    display: inline-block;
+    padding: 8px;
+    color: white;
+    background-color: white;
+    text-align: center;
+    cursor: pointer;
+    border: 1px solid #00B3D7;
+    width: 100%;
+}
+button:hover {
+    background-color: #00B3D7;
+}
+.card-shopping {
+    transition: fill 0.3s ease;
+}
+
+.card-shopping{
+    fill:#00B3D7;
+}
+.card-button-text {
+    font-size: 80%;
+    color: #00B3D7;
+    transition: fill 0.3s ease;
+}
+
+button:hover .card-shopping{
+    fill: white;
+    font-size: 90%;
+}
+
+button:hover .card-button-text{
+    color: white;
+    font-size: 90%;
+}

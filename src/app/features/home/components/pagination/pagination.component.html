@@ -1,0 +1,29 @@
+<nav aria-label="Page navigation example">
+  <ul class="pagination justify-content-center">
+    <li class="page-item" [class.disabled]="currentPage === 1">
+      <a class="page-link" href="#" (click)="previousPage()" aria-label="Previous">
+        <svg id="Composant_131_3" data-name="Composant 131 – 3" xmlns="http://www.w3.org/2000/svg" width="45" height="18" viewBox="0 0 40 40">
+          <g id="" data-name="" fill="#fff" stroke="" stroke-width="1">
+            <rect width="40" height="40" stroke="none"/>
+            <rect x="0.5" y="0.5" width="39" height="39" fill="none"/>
+          </g>
+          <path id="Tracé_101103" data-name="Tracé 101103" d="M10.206,2.25V.72H-.054V2.25Z" transform="translate(15 19)" fill="#00b3d7"/>
+        </svg>
+      </a>
+    </li>
+    <li class="page-item" *ngFor="let page of pages">
+      <a class="page-link" href="#" (click)="goToPage(page)">{{ page }}</a>
+    </li>
+    <li class="page-item" [class.disabled]="currentPage === totalPages">
+      <a class="page-link" href="#" (click)="nextPage()" aria-label="Next">
+        <svg id="Composant_130_3" data-name="Composant 130 – 3" xmlns="http://www.w3.org/2000/svg" width="45" height="18" viewBox="0 0 40 40">
+          <g id="Rectangle_651" data-name="Rectangle 651" fill="#fff" stroke="#00b3d7" stroke-width="1">
+            <rect width="40" height="40" stroke="none"/>
+            <rect x="0.5" y="0.5" width="39" height="39" fill="none"/>
+          </g>
+          <text id="_" data-name="+" transform="translate(16 26)" fill="#00b3d7" font-size="18" font-family="ProximaNova-Bold, Proxima Nova" font-weight="700"><tspan x="0" y="0">+</tspan></text>
+        </svg>
+      </a>
+    </li>
+  </ul>
+</nav>

@@ -1,0 +1,118 @@
+.sec-msg-back {
+  background: #fcfff5 0% 0% no-repeat padding-box;
+  border: 1px solid #a8c599;
+  margin: 0px 37px;
+}
+
+.sec-msg-head {
+  font: normal normal normal 14px/25px Proxima Nova;
+  letter-spacing: 0px;
+  text-align: left;
+  color: #1e561f;
+  text-transform: uppercase;
+  opacity: 1;
+}
+
+.sec-msg-body {
+  font: normal normal normal 13px/18px Proxima Nova;
+  letter-spacing: 0px;
+  text-align: justify;
+  color: #1e561f;
+  opacity: 1;
+  margin: 0px 40px 0px 40px;
+}
+
+.btn-close {
+  width: 11px;
+  height: 11px;
+  font-size: 10px;
+  color: #0e566c;
+  opacity: 1;
+}
+
+.choice {
+  width: 100%;
+  font: normal normal normal 14px/25px Proxima Nova;
+}
+
+.company {
+  border: 1px solid #ffc436;
+  background: #ffffff 0% 0% no-repeat padding-box;
+  color: #ffc436;
+}
+
+.company:hover {
+  color: #ffc436;
+  background: #fff8e6 0% 0% no-repeat padding-box;
+  border: 1px solid #ffc436;
+  font: normal normal normal 16px/25px Proxima Nova;
+}
+
+.individual {
+  border: 1px solid #00b3d7;
+  background: #00b3d7 0% 0% no-repeat padding-box;
+  color: #ffffff;
+}
+
+.individual:hover {
+  background: #009dc1 0% 0% no-repeat padding-box;
+  font: normal normal normal 16px/25px Proxima Nova;
+}
+
+.profil {
+  text-align: left;
+  font: normal normal 300 16px/26px Proxima Nova;
+  letter-spacing: 0px;
+  color: #1f1f1f;
+  opacity: 1;
+}
+
+
+
+
+/* style img and  means of payment*/
+.position{
+  width: 850px;
+height: 710px;
+margin-right: 100px;
+padding-top: 20px;
+
+
+}
+
+.style {
+    position: absolute;
+    bottom: 20px;
+    right: 300px;
+    width: 120px;  
+    height: 80px; 
+  }
+  .orange_money{
+    position: absolute;
+    width: 120px;  
+    height: 80px; 
+    top: 780px;
+    left: 850px;
+  }
+  .mtn_money{
+    position: absolute;
+    width: 120px;  
+    height: 80px; 
+    top: 150px;
+  right: 550px;
+  }
+  .wave_money{
+  position: absolute;
+    width: 120px;  
+    height: 80px; 
+    top: 380px;
+  right: 190px;
+  }
+  .visa_money{
+    position: absolute;
+      width: 120px;  
+      height: 80px; 
+      top: 250px;
+    
+    left: 850px;
+    }

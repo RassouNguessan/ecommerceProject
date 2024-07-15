@@ -1,0 +1,29 @@
+<div class="mt-5 bg-white">
+    <div class="pt-5">
+        <app-sec-msg></app-sec-msg>
+        <form class="p-md-4 p-lg-5 p-4 justify-content-center" [formGroup]="loginForm" (ngSubmit)="loginSubmit()">
+            <div class="message pb-3">
+                <span>connectez vous à votre espace boncoin.</span>
+            </div>
+            <div class="row mb-2">
+                <label for="login" class="form-label">Login <span class="red"> *</span></label>
+                <div class="col-sm-12">
+                    <input type="text" class="form-input" id="login" placeholder="Saisissez votre login"
+                        formControlName="login">
+                </div>
+            </div>
+            <div class="row mb-2">
+                <label for="password" class="form-label">Mot de passe <span class="red"> *</span></label>
+                <div class="col-sm-12 d-flex align-items-center">
+                    <input type="password" class="form-input" id="password" placeholder="Saisissez votre mot de passe"
+                        formControlName="password">
+                </div>
+            </div>
+            <p><a class="link" href="#" routerLink="/password-reset">Mot de passe oublié</a></p>
+            <div class="d-flex mt-4">
+                <button type="button" class="btn-custom inscription" routerLink="/register">inscription</button>
+                <button type="submit" class="ms-2 btn-custom connexion" [disabled]="!loginForm.valid">connexion</button>
+            </div>
+        </form>
+    </div>
+</div>

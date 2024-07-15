@@ -1,0 +1,107 @@
+<button class="view-modal "
+ style="background-color: rgb(245, 242, 240);
+  border-radius: 50px;" 
+  
+ (click)="togglePopup()">
+ <span>distribution</span>
+</button>
+<div class="popup" [class.show]="showPopup">
+  <header>
+    <span class="pt-5 fw-bold px-5 ">Choisissez le canal de distribution</span>
+    <div class="close " (click)="togglePopup()"><i class="uil uil-times"></i> <span class="text-danger">x</span></div>
+  </header>
+  <div class="content pt-3">
+  <div class="rounded-social-buttons">
+    <a class="social-button whatsapp me-4" href="" target="_blank"><i class="fab fa-whatsapp"></i></a>
+    <a class="social-button facebook me-4" href="" target="_blank"><i class="fab fa-facebook-f"></i></a>
+    <a class="social-button telegram me-4" href="" target="_blank"><i class="fab fa-telegram"></i></a>
+    <a class="social-button linkedin me-4" href="" target="_blank"><i class="fab fa-linkedin"></i></a>
+ 
+</div>
+
+<div class="rounded-social-buttons mt-4">
+    <a class="social-button instagram me-4" href="https://www.instagram.com/" target="_blank"><i class="fab fa-instagram"></i></a>
+    <a class="social-button twitter me-4" href="" target="_blank"><i class="fab fa-twitter"></i></a>
+    <a class="social-button skype me-4" href="" target="_blank"><i class="fab fa-skype" ></i></a>
+    <a class="social-button tiktok me-4" href="" target="_blank"><i class="fab fa-tiktok"></i></a>
+  
+</div>
+  </div>
+</div> 
+
+  
+<div class="container"> 
+<div class="row">
+    <div class="col-12 col-ms-10 col-md-6">
+        <label class="px-2" for="champ1 ">Montant des bons d'achat <span class="text-danger">*</span> </label>
+        <input id="purchase_amount" class="rounded-input" type="text" placeholder=" Montant d'achat de bon">
+    </div>
+    <div class="col-12 col-ms-10 col-md-6">
+        <label class="px-2" for="champ1">Nombre de bons d'achat <span class="text-danger">*</span> </label>
+        <input id="champ1" class="rounded-input" type="text" placeholder=" Nombre de bons d'achat">
+    </div>
+
+</div>
+<ng-container *ngFor="let input of inputFields; let i = index">
+<ng-container *ngIf="i !== 0">
+<div class="incremented-fields">
+
+        <div class="field-group">
+<div class="row">
+    <div class="col-12 col-ms-10 col-md-6">
+        <div class="">
+            <label class="px-2">Montant des bons d'achat <span class="text-danger">*</span> </label>
+            <input class="rounded-input rounded-0" type="text" placeholder="Montant des bons d'achat">
+          </div>
+    </div>
+    <div class="col-12 col-ms-10 col-md-6">
+        <div>
+            <label class="px-2">Nombre de bons d'achat   <span class="text-danger">*</span> </label>
+            <input class="rounded-input rounded-0" type="text" placeholder="Nombre de bons d'achat">
+          </div>
+    </div>
+</div>
+</div>
+</div>
+</ng-container>
+</ng-container>
+<div class="button-container mt-2">
+    <button *ngIf="inputFields.length > 1" class="round-btn moins" (click)="removeFields()">-</button>
+    <button class="round-btn plus" (click)="addFields()">+</button>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

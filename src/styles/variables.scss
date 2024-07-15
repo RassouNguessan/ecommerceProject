@@ -1,0 +1,111 @@
+:root {
+  /* Colors: */
+  --unnamed-color-00b3d7: #00b3d7;
+  --unnamed-color-f86a5e: #f86a5e;
+  --unnamed-color-fcebea: #fcebea;
+  --unnamed-color-008e46: #008e46;
+  --unnamed-color-cfebf7: #cfebf7;
+  --c2: #ffc436;
+  --c2-botton: #009dc1;
+  --texte: #1f1f1f;
+  --unnamed-color-bababa: #bababa;
+
+  /* Font/text values */
+  --unnamed-font-family-proxima-nova: Proxima Nova;
+  --unnamed-font-style-normal: normal;
+  --unnamed-font-weight-300: 300px;
+  --unnamed-font-weight-600: 600px;
+  --unnamed-font-weight-normal: normal;
+  --unnamed-font-weight-bold: bold;
+  --unnamed-font-size-11: 11px;
+  --unnamed-font-size-13: 13px;
+  --unnamed-font-size-16: 16px;
+  --unnamed-font-size-18: 18px;
+  --unnamed-font-size-20: 20px;
+  --unnamed-font-size-30: 30px;
+  --unnamed-font-size-40: 40px;
+  --unnamed-character-spacing-0: 0px;
+  --unnamed-character-spacing-2: 2px;
+  --unnamed-line-spacing-16: 16px;
+  --unnamed-line-spacing-23: 23px;
+  --unnamed-line-spacing-26: 26px;
+  --unnamed-line-spacing-60: 60px;
+  --unnamed-text-transform-uppercase: uppercase;
+}
+
+/* Character Styles */
+.l2-proxima-nova-—-11pt {
+  font-family: var(--unnamed-font-family-proxima-nova);
+  font-style: var(--unnamed-font-style-normal);
+  font-weight: var(--unnamed-font-weight-300);
+  font-size: var(--unnamed-font-size-11);
+  line-height: var(--unnamed-line-spacing-16);
+  letter-spacing: var(--unnamed-character-spacing-0);
+  color: var(--unnamed-color-bababa);
+}
+.h3-proxima-nova-—-18pt {
+  font-family: var(--unnamed-font-family-proxima-nova);
+  font-style: var(--unnamed-font-style-normal);
+  font-weight: var(--unnamed-font-weight-600);
+  font-size: var(--unnamed-font-size-18);
+  line-height: var(--unnamed-line-spacing-23);
+  letter-spacing: var(--unnamed-character-spacing-0);
+  color: var(--texte);
+}
+.h2-proxima-nova-—-20pt {
+  font-family: var(--unnamed-font-family-proxima-nova);
+  font-style: var(--unnamed-font-style-normal);
+  font-weight: var(--unnamed-font-weight-600);
+  font-size: var(--unnamed-font-size-20);
+  line-height: var(--unnamed-line-spacing-60);
+  letter-spacing: var(--unnamed-character-spacing-0);
+  color: var(--texte);
+  text-transform: var(--unnamed-text-transform-uppercase);
+}
+.h1-proxima-nova-—-30pt {
+  font-family: var(--unnamed-font-family-proxima-nova);
+  font-style: var(--unnamed-font-style-normal);
+  font-weight: var(--unnamed-font-weight-600);
+  font-size: var(--unnamed-font-size-30);
+  line-height: var(--unnamed-line-spacing-60);
+  letter-spacing: var(--unnamed-character-spacing-0);
+  color: var(--texte);
+  text-transform: var(--unnamed-text-transform-uppercase);
+}
+.h0-proxima-nova-—-40pt {
+  font-family: var(--unnamed-font-family-proxima-nova);
+  font-style: var(--unnamed-font-style-normal);
+  font-weight: var(--unnamed-font-weight-bold);
+  font-size: var(--unnamed-font-size-40);
+  line-height: var(--unnamed-line-spacing-60);
+  letter-spacing: var(--unnamed-character-spacing-2);
+  color: var(--texte);
+  text-transform: var(--unnamed-text-transform-uppercase);
+}
+.l1-proxima-nova-—-14pt {
+  font-family: var(--unnamed-font-family-proxima-nova);
+  font-style: var(--unnamed-font-style-normal);
+  font-weight: var(--unnamed-font-weight-normal);
+  font-size: var(--unnamed-font-size-13);
+  line-height: var(--unnamed-line-spacing-16);
+  letter-spacing: var(--unnamed-character-spacing-0);
+  color: var(--unnamed-color-bababa);
+}
+.t2-proxima-nova-—-13pt {
+  font-family: var(--unnamed-font-family-proxima-nova);
+  font-style: var(--unnamed-font-style-normal);
+  font-weight: var(--unnamed-font-weight-normal);
+  font-size: var(--unnamed-font-size-13);
+  line-height: var(--unnamed-line-spacing-23);
+  letter-spacing: var(--unnamed-character-spacing-0);
+  color: var(--texte);
+}
+.t1-proxima-nova-—-16pt {
+  font-family: var(--unnamed-font-family-proxima-nova);
+  font-style: var(--unnamed-font-style-normal);
+  font-weight: var(--unnamed-font-weight-300);
+  font-size: var(--unnamed-font-size-16);
+  line-height: var(--unnamed-line-spacing-26);
+  letter-spacing: var(--unnamed-character-spacing-0);
+  color: var(--texte);
+}

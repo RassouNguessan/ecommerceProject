@@ -1,0 +1,103 @@
+<div class="container-fluid mt-5 overflow-hidden" style="max-width: 80%;">
+    <!-- Bouton de retour -->
+    <app-backbutton/>   
+    <div class="row mt-3">
+        <!-- Colonne pour l'image -->
+        <div class="col-12 col-md-6 d-none d-md-block">
+            <div class="card border-0">
+                <div class="card-body">
+                    <app-lottie-bag/>
+                </div>
+            </div>
+        </div>
+
+        <!-- Colonne pour le texte -->
+        <div class="col-12 col-md-6 mt-3 mt-md-0">
+            <div class="card border-0">
+                <div class="card-body">
+                    <h3 class="card-title fw-bold position-relative ms-3">ACHETEZ DES BONS D’ACHAT</h3>
+                    <div class="card mb-3 border-0">
+                        <div class="card-body">
+                            <div class="card-text">
+                                <p class="mb-0 details">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-info-circle-fill" viewBox="0 0 16 16">
+                                        <path d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16m.93-9.412-1 4.705c-.07.34.029.533.304.533.194 0 .487-.07.686-.246l-.088.416c-.287.346-.92.598-1.465.598-.703 0-1.002-.422-.808-1.319l.738-3.468c.064-.293.006-.399-.287-.47l-.451-.081.082-.381 2.29-.287zM8 5.5a1 1 0 1 1 0-2 1 1 0 0 1 0 2"/>
+                                    </svg>
+                                    DÉTAILS
+                                </p>
+                            </div>
+                            <div class="card-text">
+                                <p class="mb-0">
+                                    Lorem ipsum dolor sit amet, consetetur sadipscing elitr, 
+                                    sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, 
+                                    sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.
+                                    Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- à corrigé : les input pour renseigner les montants et achats des bon -->
+                        
+                    <div class="row mt-3">
+                        <div class="col-12 col-md-6">
+                            <div style="max-width: 100%;">
+                                <label>Montant des bons d’achat <span style="color:#FD5446;">*</span></label>
+                                <div class="input-group mt-2">
+                                    <input class="form-control" placeholder="Saisissez le nombre des bons d’achat">
+                                    <div class="input-group-append">
+                                        <select class="border-0.5  bg-transparent h-100" style="background: #FFFFFF 0% 0% no-repeat padding-box;
+                                        border: 1px solid #D5D3D3BC;
+                                        border-radius: 4px;
+                                        opacity: 1;">
+                                            <option>FCFA</option>
+                                            <option>ES</option>
+                                            <option>MR</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="col-12 col-md-6">
+                            <div style="max-width: 100%;">
+                                <label>Nombre des bons d’achat <span style="color:#FD5446;">*</span></label>
+                                <div class="input-group mt-2">
+                                    <input  class="form-control" placeholder="Saisissez le nombre des bons d’achat">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <label for="upload-image" class="mb-3 ms-2 mt-5">Ajouter votre logo</label>
+                    <div class="card text-center" style="width: 100%; height: auto; max-height: 300px;">
+                        <div class="card-body d-flex flex-column justify-content-center align-items-center">
+                            <label for="upload-image" class="mb-3">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="69.72" height="69.72" viewBox="0 0 69.72 69.72">
+                                    <path fill="#eae7e7" d="M42.41,29.96H34.94V22.49a2.49,2.49,0,0,0-4.98,0v7.47H22.49a2.49,2.49,0,0,0,0,4.98h7.47v7.47a2.49,2.49,0,1,0,4.98,0V34.94h7.47a2.49,2.49,0,1,0,0-4.98Z" transform="translate(24.82 24.82)"/>
+                                    <path fill="#eae7e7" d="M39.35,56.78H9.47a2.49,2.49,0,0,1-2.49-2.49V9.47A2.49,2.49,0,0,1,9.47,6.98H54.29a2.49,2.49,0,0,1,2.49,2.49V39.35a2.49,2.49,0,0,0,4.98,0V9.47A7.47,7.47,0,0,0,54.29,2H9.47A7.47,7.47,0,0,0,2,9.47V54.29a7.47,7.47,0,0,0,7.47,7.47H39.35a2.49,2.49,0,0,0,0-4.98Z" transform="translate(-2 -2)"/>
+                                    <circle fill="#eae7e7" cx="6.225" cy="6.225" r="6.225" transform="translate(16.185 9.96)"/>
+                                    <path fill="#eae7e7" d="M9.212,19.2,6,22.438V38.4H45.84V22.438L35.158,11.731a2.49,2.49,0,0,0-3.536,0L18.45,24.928l-5.7-5.727a2.49,2.49,0,0,0-3.536,0Z" transform="translate(3.96 11.401)"/>
+                                </svg>
+                                <h6 class="mt-3">Ajouter une image (Jpeg, Png, etc..)</h6>
+                            </label>
+                            <input type="file" class="img-upload" id="upload-image" style="display: none;" accept="image/*">
+                        </div>
+                    </div>
+                    
+                    <div class="row mt-3">
+                        <div class="col">
+                            <div class="d-flex">
+                                <button type="button" class="btn btn-outline-danger btn-square me-2" style="border-radius: 0%;">ANNULER</button>
+                                <button type="button" class="custom-btn btn btn-outline-danger btn-square me-2"> 
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="mr-2 card-shopping" width="20" height="19.436" viewBox="0 0 20 19.436">
+                                        <path id="grocery-store" d="M.845,1a.845.845,0,0,0,0,1.69h1.5a.586.586,0,0,1,.556.4l2.786,8.36a2.06,2.06,0,0,1,.045,1.15l-.229.919a2.184,2.184,0,0,0,2.1,2.69H17.746a.845.845,0,0,0,0-1.69H7.605a.457.457,0,0,1-.46-.589l.173-.691a.541.541,0,0,1,.525-.41H16.9a.845.845,0,0,0,.8-.578l2.253-6.76a.845.845,0,0,0-.8-1.112H5.539a.586.586,0,0,1-.556-.4l-.8-2.4A.845.845,0,0,0,3.38,1ZM6.76,17.056a1.69,1.69,0,1,0,1.69,1.69A1.69,1.69,0,0,0,6.76,17.056Zm10.141,0a1.69,1.69,0,1,0,1.69,1.69A1.69,1.69,0,0,0,16.9,17.056Z"/>
+                                        </svg>
+                                        AJOUTER AU PANIER
+                                </button>                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

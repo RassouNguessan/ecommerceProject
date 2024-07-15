@@ -1,0 +1,30 @@
+
+  
+  .btn-closes {
+    position: relative;
+    margin-left: 700px;
+    margin-bottom:0px;
+    top:-25px;
+    width: 11px;
+    height: 11px;
+    font-size: 10px;
+  
+    color: #0e566c;
+    opacity: 1;
+  }
+  
+  .input-group .custom-select {
+    width: 5rem; /* Adjust width to fit within the input */
+    border-top-left-radius: 0.25rem;
+    border-bottom-left-radius: 0.25rem;
+    border-right: 0;
+  }
+  .input-group .form-control {
+    padding-left: 6rem; /* Adjust padding to make space for the select */
+  }
+  .input-group-prepend {
+    position: absolute;
+    left: 0;
+    height: 100%;
+    z-index: 10;
+  }

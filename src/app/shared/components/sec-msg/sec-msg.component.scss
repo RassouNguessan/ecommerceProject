@@ -1,0 +1,31 @@
+.sec-msg-back {
+  background: #fcfff5 0% 0% no-repeat padding-box;
+  border: 1px solid #a8c599;
+  margin: 0px 37px;
+}
+
+.sec-msg-head {
+  font: normal normal normal 14px/25px Proxima Nova;
+  letter-spacing: 0px;
+  text-align: left;
+  color: #1e561f;
+  text-transform: uppercase;
+  opacity: 1;
+}
+
+.sec-msg-body {
+  font: normal normal normal 13px/18px Proxima Nova;
+  letter-spacing: 0px;
+  text-align: justify;
+  color: #1e561f;
+  opacity: 1;
+  margin: 0px 40px 0px 40px;
+}
+
+.btn-close {
+  width: 11px;
+  height: 11px;
+  font-size: 10px;
+  color: #0e566c;
+  opacity: 1;
+}

@@ -1,0 +1,262 @@
+
+/* style de reseau social */
+.view-modal, .popup {
+    position: absolute;
+    left: 50%;
+  }
+  
+  button {
+    outline: none;
+    cursor: pointer;
+    font-weight: 100;
+    border: 2px solid transparent;
+  }
+  
+  .view-modal {
+    top: 50%;
+    color: #9c9595;
+    font-size: 18px;
+    padding: 10px 25px;
+    background: #fff;
+    transform: translate(-50%, -50%);
+
+    &:hover {
+        background-color: rgb(241, 198, 8);
+        color: rgba(8, 180, 233, 0.295);
+
+      }
+  }
+  
+  .popup {
+    background: #fff;
+    padding: 25px;
+    border-radius: 0;
+  
+    max-width: 450px;
+    width: 100%;
+    opacity: 0;
+    pointer-events: none;
+    box-shadow: 0px 10px 15px rgba(1, 58, 243, 0.1);
+     transform: translate(-50%, -50%) scale(1.2);
+     transition: top 0s 0.2s ease-in-out,
+     transform 0.2s 0s ease-in-out;
+   
+  }
+  
+  .popup.show {
+    top: 50%;
+    opacity: 1;
+    pointer-events: auto;
+     transform: translate(-50%, -50%) scale(1);
+     transition: top 0s 0s ease-in-out,
+     opacity 0.2s 0s ease-in-out,
+    transform 2s 0s ease-in-out;
+   
+  }
+  
+  .popup :is(header, .icons) {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+
+
+  
+  header .close, .icons a {
+    display: flex;
+    align-items: center;
+    border-radius: 50%;
+    justify-content: center;
+    transition: all 0.3s ease-in-out;
+  }
+
+  
+  header .close {
+    margin-bottom: 50px;
+    color: #f0e9e9;
+    font-size: 17px;
+    background: #f5f5f8;
+    height: 33px;
+    width: 33px;
+    cursor: pointer;
+  }
+  
+  header .close:hover {
+    background: #dddbdb;
+  }
+  
+
+  
+.rounded-social-buttons {
+  text-align: center;
+}
+
+.rounded-social-buttons .social-button {
+  display: inline-block;
+  position: relative;
+  cursor: pointer;
+  width: 3.125rem;
+  height: 3.125rem;
+  border: 0.125rem solid transparent;
+  padding: 0;
+  text-decoration: none;
+  text-align: center;
+  color: #fefefe;
+  font-size: 1.5625rem;
+  font-weight: normal;
+  line-height: 2em;
+  border-radius: 1.6875rem;
+  transition: all 0.5s ease;
+  margin-right: 0.25rem;
+  margin-bottom: 0.25rem;
+}
+
+.rounded-social-buttons .social-button:hover, .rounded-social-buttons .social-button:focus {
+  -webkit-transform: rotate(360deg);
+      -ms-transform: rotate(360deg);
+          transform: rotate(360deg);
+}
+
+.rounded-social-buttons .fa-twitter, .fa-facebook-f, .fa-linkedin, .fa-tiktok, .fa-youtube, .fa-instagram {
+  font-size: 25px;
+}
+
+.rounded-social-buttons .social-button.whatsapp {
+  background: #36f705;
+}
+
+.rounded-social-buttons .social-button.whatsapp:hover, .rounded-social-buttons .social-button.whatsapp:focus {
+  color: #36f705;
+  background: #fefefe;
+  border-color: #36f705;
+}
+
+.rounded-social-buttons .social-button.facebook {
+  background: #3b5998;
+}
+
+.rounded-social-buttons .social-button.facebook:hover, .rounded-social-buttons .social-button.facebook:focus {
+  color: #3b5998;
+  background: #fefefe;
+  border-color: #3b5998;
+}
+
+
+.rounded-social-buttons .social-button.telegram {
+  background:  #0e90f3;
+}
+
+.rounded-social-buttons .social-button.telegram:hover, .rounded-social-buttons .social-button.telegram:focus {
+  color: #0e90f3;
+  background: #fefefe;
+  border-color: #0e90f3;
+}
+
+.rounded-social-buttons .social-button.linkedin {
+  background: #007bb5;
+}
+
+.rounded-social-buttons .social-button.linkedin:hover, .rounded-social-buttons .social-button.linkedin:focus {
+  color: #007bb5;
+  background: #fefefe;
+  border-color: #007bb5;
+}
+
+.rounded-social-buttons .social-button.instagram {
+  background: #bb0000;
+}
+
+.rounded-social-buttons .social-button.instagram:hover, .rounded-social-buttons .social-button.instagram:focus {
+  color: #bb0000;
+  background: #fefefe;
+  border-color: #bb0000;
+}
+
+
+.rounded-social-buttons .social-button.twitter {
+  background: #007bb5;
+}
+
+.rounded-social-buttons .social-button.twitter:hover, .rounded-social-buttons .social-button.twitter:focus {
+  color: #007bb5;
+  background: #fefefe;
+  border-color: #007bb5;
+}
+
+.rounded-social-buttons .social-button.skype {
+  background: #007bb5;
+}
+
+.rounded-social-buttons .social-button.skype:hover, .rounded-social-buttons .social-button.skype:focus {
+  color: #007bb5;
+  background: #fefefe;
+  border-color: #007bb5;
+}
+
+.rounded-social-buttons .social-button.tiktok {
+  background: #000000;
+}
+
+.rounded-social-buttons .social-button.tiktok:hover, .rounded-social-buttons .social-button.tiktok:focus {
+  color: #000000;
+  background: #fefefe;
+  border-color: #000000;
+}
+/* champ increment*/
+.rounded-input {
+  border-radius: 0;
+  height: 40px;
+  width: 100%;
+  margin: 5px;
+  border-left: 10px;
+  border-right: 10px;
+  border-top: 10px;
+  border-color: #a3a1a1;
+  background-color: #f1eeee;
+    &:focus {
+    border-color: rgb(152, 236, 247); /* Couleur de la bordure lorsque le champ est en focus */
+    outline: none; /* Supprime le contour par défaut */
+  }
+
+}
+
+ .incremented-fields {
+    opacity: 1; /* Initiallement caché */
+
+    transition: opacity 0.3s ease, transform 0.3s ease;
+  }
+
+
+// .incremented-fields label {
+//   display: block;
+//   margin-top: 10px;
+// }
+.button-container {
+  display: flex;
+  justify-content: flex-end;
+
+}
+
+.round-btn {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 40px;
+  margin-left: 10px;
+  cursor: pointer;
+
+  &.plus {
+    background-color: #0eb9fd;
+    color: white;
+  }
+
+  &.moins {
+    background-color: red;
+    color: white;
+  }
+}
+

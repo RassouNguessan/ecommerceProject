@@ -1,0 +1,46 @@
+.custom-btn {
+    border-radius: 0%;
+    border-color: #00b3d7;
+    color: #00b3d7;
+}
+
+.custom-btn:hover {
+    background-color: #00b3d7;
+    color: #fff;
+}
+input{
+
+background: #FFFFFF 0% 0% no-repeat padding-box;
+border: 1px solid #D5D3D3BC;
+border-radius: 4px;
+opacity: 1;
+font: var(--unnamed-font-style-normal) normal var(--unnamed-font-weight-normal) var(--unnamed-font-size-13)/var(--unnamed-line-spacing-16) var(--unnamed-font-family-proxima-nova);
+letter-spacing: var(--unnamed-character-spacing-0);
+color: var(--unnamed-color-bababa);
+text-align: left;
+font: normal normal normal 13px/16px Proxima Nova;
+letter-spacing: 0px;
+color: #BABABA;
+opacity: 1;
+}
+.code{
+    font: var(--unnamed-font-style-normal) normal var(--unnamed-font-weight-600) var(--unnamed-font-size-30)/var(--unnamed-line-spacing-60) var(--unnamed-font-family-proxima-nova);
+letter-spacing: var(--unnamed-character-spacing-0);
+color: var(--texte);
+text-align: left;
+font: normal normal 600 30px/60px Proxima Nova;
+letter-spacing: 0px;
+color: #1F1F1F;
+text-transform: uppercase;
+opacity: 1;
+}
+.code-secure{
+    font: var(--unnamed-font-style-normal) normal var(--unnamed-font-weight-300) var(--unnamed-font-size-16)/var(--unnamed-line-spacing-26) var(--unnamed-font-family-proxima-nova);
+letter-spacing: var(--unnamed-character-spacing-0);
+color: var(--texte);
+text-align: left;
+font: normal normal 300 16px/26px Proxima Nova;
+letter-spacing: 0px;
+color: #1F1F1F;
+opacity: 1;
+}
