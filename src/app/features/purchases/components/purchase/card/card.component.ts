@@ -1,15 +1,16 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { Router, RouterLink } from '@angular/router';
 import { CardService } from './card.service';
 import { Card } from './card';
 import { BtnAddBasketComponent } from "../btn-add-basket/btn-add-basket.component";
+import { CommonModule } from '@angular/common';
 
 @Component({
     selector: 'app-card',
     standalone: true,
     templateUrl: './card.component.html',
     styleUrl: './card.component.scss',
-    imports: [BtnAddBasketComponent, RouterLink]
+    imports: [BtnAddBasketComponent,CommonModule,RouterLink]
     
 })
 export class CardComponent implements OnInit {
@@ -19,6 +20,8 @@ export class CardComponent implements OnInit {
     private cardService: CardService
   ){}
 
+  @Input() promo: boolean = false;
+  
   ngOnInit(): void {
     this.cardList = this.cardService.getCardList();
   }
@@ -36,12 +39,4 @@ export class CardComponent implements OnInit {
     return new Array(length).fill(0).map((_, i) => i);
   }
   // Fonction pour gerer la couleur des étoiles au click
-  starColor(id:number | undefined){
-    if (id !== undefined && this.cardList) {
-      const card = this.cardList.find(card => card.id === id);
-      if (card) {
-        card.like = !card.like;
-      }
-    }
-  }
 }

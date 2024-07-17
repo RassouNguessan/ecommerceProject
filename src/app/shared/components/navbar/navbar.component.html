@@ -1,23 +1,21 @@
-<nav id="first-navbar" class="main">
-    <div class="promo text-center pt-4 pb-4">
+<nav id="first-navbar" class="main" >
+    <div class="promo pt-4 pb-4 text-center">
         <span class="mb-0">Nous sommes ravis de vous annoncer une offre exceptionnelle : bénéficiez de 50 % de réduction
-            sur une sélection de produits ! C'est le moment idéal pour vous faire plaisir ou préparer vos
-            cadeaux.</span>
+            sur une sélection de produits ! C'est le moment idéal pour vous faire plaisir ou préparer vos cadeaux.</span>
     </div>
 </nav>
-<div class="bd-content container-fluid">
+<div class="bd-content">
     <nav id="second-navbar" class="navbar p-md-2 navbar-expand-lg navbar-light" aria-label="navbar">
         <div class="text-center ms-lg-5">
-            <img src="./assets/images/Plandetravail1.png" alt="logo" routerLink="/" class="">
+            <img src="./assets/images/Plandetravail1.png" alt="logo" routerLink="/purchase" class="">
         </div>
 
-        <button class="navbar-toggler collapsed" type="button" data-bs-toggle="collapse"
-            data-bs-target="#navbarsExample05" aria-controls="navbarsExample05" aria-expanded="false"
-            aria-label="Toggle navigation">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample05"
+            aria-controls="navbarsExample05" aria-expanded="false" aria-label="Toggle navigation" *ngIf="!hideNavItems()">
             <span class="navbar-toggler-icon"></span>
-        </button>   
+        </button>
 
-        <div class="collapse navbar-collapse" id="navbarsExample05">
+        <div class="collapse navbar-collapse" id="navbarsExample05" *ngIf="!hideNavItems()">
             <form class="d-flex form-inline my-2 my-md-0">
                 <div class="input-group">
                     <input type="search" class="form-control" style="border: 1px solid #ededed" id="searchbar"
@@ -28,91 +26,38 @@
                 </div>
             </form>
 
-            <div class="px-md-5 col-5 col-lg-10">
-                <ul class="navbar-nav align-items-start justify-content-around">
-                    <!-- les autres menus -->
-                    <li class="nav-item active px-md-2">
-                        <a class="nav-link" aria-current="page" [routerLink]="'/myorder'"
-                            [routerLinkActiveOptions]='{exact: true}' routerLinkActive="active"><span
-                                class="sr-only">mes
+            <div class="px-5 col-12 col-lg-10">
+                <ul class="navbar-nav mr-auto d-flex align-items-center justify-content-around">
+                    <li class="nav-item active px-2">
+                        <a class="nav-link" ariaCurrentWhenActive="page" [routerLink]="'/myorder'" [routerLinkActiveOptions]='{exact: true}' routerLinkActive="active"><span class="sr-only">mes
                                 commandes</span></a>
                     </li>
-                    <li class="nav-item active px-md-2">
-                        <a class="nav-link" aria-current="page" [routerLink]="'/purchaseavailable'"
-                            routerLinkActive="active"><span class="sr-only">mes
+                    <li class="nav-item active px-2">
+                        <a class="nav-link" ariaCurrentWhenActive="page" [routerLink]="'/purchaseavailable'" routerLinkActive="active"><span
+                                class="sr-only">mes
                                 bons d'achat</span></a>
                     </li>
-                    <li class="nav-item active px-md-2">
-                        <a class="nav-link" aria-current="page" [routerLink]="'/promotion'"
-                            routerLinkActive="active"><span class="sr-only">promotions</span></a>
+                    <li class="nav-item active px-2">
+                        <a class="nav-link" ariaCurrentWhenActive="page" [routerLink]="'/promotion'" routerLinkActive="active"><span
+                                class="sr-only">promotions</span></a>
                     </li>
-                    <li class="nav-item active px-md-2">
-                        <a class="nav-link" aria-current="page" [routerLink]="'/greatedeal'"
-                            routerLinkActive="active"><span class="sr-only">vos
+                    <li class="nav-item active px-2">
+                        <a class="nav-link" ariaCurrentWhenActive="page" [routerLink]="'/greatedeal'" routerLinkActive="active"><span class="sr-only">vos
                                 favoris</span></a>
                     </li>
 
-                    <!-- Avatar de l'utilisateur avec son sous menu -->
-                    <li class="ms-md-5 nav-item dropdown px-md-2 success">
-                        <a class="nav-link dropdown-toggle" href="#" id="profileDropdown"
-                            data-bs-toggle="dropdown" aria-expanded="false">
-                            <img src="./assets/images/imgprofil.png" alt="Profile Image" width="34px" height="34px">
-                            DJON
-                            KOUASSI
-                        </a>
-                        <div class="dropdown-menu mt-2 w-48 rounded-md shadow-lg z-10">
-                            <div class="d-flex justify-content-around align-items-center mb-1">
-                                <div class="col-4 text-center">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-                                        class="bi bi-person-circle" viewBox="0 0 16 16">
-                                        <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0" />
-                                        <path fill-rule="evenodd"
-                                            d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8m8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1" />
-                                    </svg>
-                                </div>
-                                <div class="col-8 text-start">
-                                    <a href="" role="button" class="px-0 btn text-center fs-13">
-                                        Mon profil
-                                    </a>
-                                </div>
-                            </div>
-
-                            <div class="d-flex justify-content-around align-items-center mb-1">
-                                <div class="col-4 text-center">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-                                        class="bi bi-gear-fill" viewBox="0 0 16 16">
-                                        <path
-                                            d="M9.405 1.05c-.413-1.4-2.397-1.4-2.81 0l-.1.34a1.464 1.464 0 0 1-2.105.872l-.31-.17c-1.283-.698-2.686.705-1.987 1.987l.169.311c.446.82.023 1.841-.872 2.105l-.34.1c-1.4.413-1.4 2.397 0 2.81l.34.1a1.464 1.464 0 0 1 .872 2.105l-.17.31c-.698 1.283.705 2.686 1.987 1.987l.311-.169a1.464 1.464 0 0 1 2.105.872l.1.34c.413 1.4 2.397 1.4 2.81 0l.1-.34a1.464 1.464 0 0 1 2.105-.872l.31.17c1.283.698 2.686-.705 1.987-1.987l-.169-.311a1.464 1.464 0 0 1 .872-2.105l.34-.1c1.4-.413 1.4-2.397 0-2.81l-.34-.1a1.464 1.464 0 0 1-.872-2.105l.17-.31c.698-1.283-.705-2.686-1.987-1.987l-.311.169a1.464 1.464 0 0 1-2.105-.872zM8 10.93a2.929 2.929 0 1 1 0-5.86 2.929 2.929 0 0 1 0 5.858z" />
-                                    </svg>
-                                </div>
-                                <div class="col-8 text-start">
-                                    <a href="" role="button" class="px-0 btn text-center fs-13">
-                                        Paramètres
-                                    </a>
-                                </div>
-                            </div>
-
-                            <div class="d-flex justify-content-around align-items-center mb-1">
-                                <div class="col-4 text-center">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-                                        class="bi bi-box-arrow-right" viewBox="0 0 16 16">
-                                        <path fill-rule="evenodd"
-                                            d="M10 12.5a.5.5 0 0 1-.5.5h-8a.5.5 0 0 1-.5-.5v-9a.5.5 0 0 1 .5-.5h8a.5.5 0 0 1 .5.5v2a.5.5 0 0 0 1 0v-2A1.5 1.5 0 0 0 9.5 2h-8A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h8a1.5 1.5 0 0 0 1.5-1.5v-2a.5.5 0 0 0-1 0z" />
-                                        <path fill-rule="evenodd"
-                                            d="M15.854 8.354a.5.5 0 0 0 0-.708l-3-3a.5.5 0 0 0-.708.708L14.293 7.5H5.5a.5.5 0 0 0 0 1h8.793l-2.147 2.146a.5.5 0 0 0 .708.708z" />
-                                    </svg>
-                                </div>
-                                <div class="col-8 text-start">
-                                    <a href="" role="button" class="px-0 btn text-center fs-13">
-                                        Déconnexion
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
+                    <li class="ms-5 nav-item dropdown px-2 success">
+                        <div class="select-container">
+                            <img src="./assets/images/imgprofil.png" alt="Profile Image" class="select-image">
+                            <select class="form-select rounded-0" aria-label="Sélect ">
+                              <option disabled selected hidden>Romuald</option>
+                              <option value="1">Paramètre</option>
+                              <option value="2">profil</option>
+                            </select>
+                          </div>
                     </li>
 
-                    <!-- Icone de notification -->
-                    <li class="nav-item px-md-2 success">
+                    <li class="nav-item dropdown px-2 success">
                         <div class="d-flex">
                             <button type="button" class="btn position-relative">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="27.436"

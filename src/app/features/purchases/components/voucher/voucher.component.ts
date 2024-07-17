@@ -20,16 +20,9 @@ export class VoucherComponent {
       loop: true,
       autoplay: true
     }
-successListe: any;
 
   animationCreated(animationItem: AnimationItem): void {
     this.animationItem = animationItem;
   }
 
-
-  "scripts": [
-  "node_modules/jquery/dist/jquery.min.js",
-  "node_modules/@popperjs/core/dist/umd/popper.min.js",
-  "node_modules/bootstrap/dist/js/bootstrap.min.js"
-]
 }

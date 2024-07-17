@@ -1,17 +1,13 @@
 import { Routes } from "@angular/router";
-// import { CompanyComponent } from "./components/body/forms/register/company/company.component";
-// import { IndividualComponent } from "./components/body/forms/register/individual/individual.component";
-// import { RegisterComponent } from "./components/body/forms/register/register.component";
-// import { BodyComponent } from "./components/body/body.component";
+import { CompanyComponent } from "./components/body/forms/register/company/company.component";
+import { IndividualComponent } from "./components/body/forms/register/individual/individual.component";
+import { RegisterComponent } from "./components/body/forms/register/register.component";
+import { BodyComponent } from "./components/body/body.component";
 
 export const authRoutes: Routes = [
     {
         path: 'login',
         loadComponent: () => import('./components/body/body.component').then(m => m.BodyComponent),
-    },
-    {
-        path: 'password-reset',
-        loadComponent: () => import('./components/body/forms/password-reset/password-reset.component').then(m => m.PasswordResetComponent),
     },
     {
 

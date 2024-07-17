@@ -13,6 +13,7 @@ import { CommonModule, Location } from "@angular/common";
 import { RouterLink, Router } from "@angular/router";
 import { ImgBlockComponent } from "../../../../../../../shared/components/img-block/img-block.component";
 import { SecMsgComponent } from "../../../../../../../shared/components/sec-msg/sec-msg.component";
+import { DropdownModule } from "primeng/dropdown";
 
 interface Dropdown {
   name: string;
@@ -31,6 +32,7 @@ interface Dropdown {
     RouterLink,
     ImgBlockComponent,
     SecMsgComponent,
+    DropdownModule,
   ],
 })
 export class CompanyComponent implements OnInit {

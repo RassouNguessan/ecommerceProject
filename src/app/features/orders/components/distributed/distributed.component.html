@@ -1,78 +1,84 @@
-<!-- <div class="container-fluid mt-5 overflow-hidden" style="width: 80%;"> -->
-    <div class="container-fluid overflow-hidden">
-        <div class="mt-3 d-grid px-lg-5 px-2">
-            <!-- Bouton de retour -->
-            <app-backbutton />
-    
-            <div class="mt-3 d-flex justify-content-between">
-                <!-- Colonne pour l'image -->
-                <div class="d-none d-md-block col-lg-5 p-5 success">
-                    <div class="d-flex align-items-center p-2 justify-content-center">
-                        <app-lotties [anotherOptions]="sendOptions" [width]="width" [height]="height" />
+<div class="container-fluid mt-5 overflow-hidden" style="width: 80%;">
+    <!-- Bouton de retour -->
+    <app-backbutton/>
+    <div class="row mt-3">
+        <!-- Colonne pour l'image -->
+        <div class="col-12 col-md-6 d-none d-md-block">
+           <app-lottie-bag/>
+        </div>
+
+        <!-- Colonne pour le texte -->
+        <div class="col-12 col-md-5 mt-3 mt-md-0">
+            <div class="card  border-0">
+                <div class="card-body ">
+                    <h3 class="card-title fw-bold position-relative">DISTRIBUTION GROUPÉE</h3>
+                    <div class="card  mb-3" style="background: #FCFFF5 0% 0% no-repeat padding-box;width:100%;">
+                        <div class="card-body">
+                           <div class="row">
+                           <div class="col-10">
+                            <div class="card-text">
+                                <p class="mb-0">SÉCURITÉ !</p>
+                            </div>
+                           </div>
+                            <div class="col-2">
+                                <div class="btn-close bn" style="margin-left:80%;" aria-label="Close"></div>
+ 
+                            </div>
+                            </div>
+                            <div class="card-text">
+                                <p class="mb-0">Nous accordons une grande importance à la sécurité de vos données
+                                    personnelles. Toutes les informations que vous nous fournissez sont strictement
+                                    confidentielles et sécurisées.</p>
+                            </div>
+                        </div>
                     </div>
-                </div>
-    
-                <!-- Colonne pour le texte -->
-                <div class="col-12 col-lg-6 col-md-6 p-3">
-                    <div class="card border-0">
-                        <div>
-                            <!-- <div class="card-body"> -->
-                            <div class="mb-4 mt-2">
-                                <span class="message">Distribution groupée</span>
+
+                     <div class="row mt-3">
+                        <label for="securityCode" class="form-label fw-bold">Fichier des bénéficiaires<span
+                                style="color:#FD5446;">*</span></label>
+                        <div class="col-7">
+                            <div class="input-group border-2 bg-black">
+                                <input type="password" class="form-control " style="border-radius:0;" id="securityCode"
+                                    placeholder="Saisissez le code de sécurité temporaire">
+                                    <button class="btn btn-outline-secondary border-0.5 bg-white " style="border-radius:0;" type="button" id="button-addon2">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                            fill="currentColor" class="bi bi-file-earmark-plus" viewBox="0 0 16 16">
+                                            <path
+                                                d="M8 6.5a.5.5 0 0 1 .5.5v1.5H10a.5.5 0 0 1 0 1H8.5V11a.5.5 0 0 1-1 0V9.5H6a.5.5 0 0 1 0-1h1.5V7a.5.5 0 0 1 .5-.5" />
+                                            <path
+                                                d="M14 4.5V14a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V2a2 2 0 0 1 2-2h5.5zm-3 0A1.5 1.5 0 0 1 9.5 3V1H4a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V4.5z" />
+                                        </svg>
+                                    </button>
                             </div>
-                            <app-sec-msg></app-sec-msg>
-    
-                            <div class="row mt-4 mb-5">
-                                <label for="securityCode" class="form-label fw-bold">Fichier des bénéficiaires<span
-                                        style="color:#FD5446;">*</span></label>
-                                <div class="col">
-                                    <div class="input-group">
-                                        <input type="password" class="form-control form-input" id="securityCode"
-                                            placeholder="Joindre un fichier (Xls, etc...)">
-                                        <button class="btn btn-outline-secondary" style="border: 1px solid #d5d3d3bc;"
-                                            type="button" id="button-addon2">
-                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
-                                                fill="currentColor" class="bi bi-file-earmark-plus" viewBox="0 0 16 16">
-                                                <path
-                                                    d="M8 6.5a.5.5 0 0 1 .5.5v1.5H10a.5.5 0 0 1 0 1H8.5V11a.5.5 0 0 1-1 0V9.5H6a.5.5 0 0 1 0-1h1.5V7a.5.5 0 0 1 .5-.5" />
-                                                <path
-                                                    d="M14 4.5V14a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V2a2 2 0 0 1 2-2h5.5zm-3 0A1.5 1.5 0 0 1 9.5 3V1H4a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V4.5z" />
-                                            </svg>
-                                        </button>
-                                    </div>
-                                </div>
-                                <div class="col-auto mt-2 text-end">
-                                    <a href="#" download="Cornell-feuille-notes-vierge_leo-cegeptr.pdf"
-                                        class="link">Télécharger
-                                        le
-                                        template du fichier de bénéficiaires</a>
-                                    <!-- <ul class="list-unstyled mt-5">
-                                        <li> <a href="#" download="Cornell-feuille-notes-vierge_leo-cegeptr.pdf">Télécharger le
-                                                template du fichier de bénéficiaires</a>
-                                        </li>
-                                    </ul> -->
-                                </div>
+                        </div>
+                        <div class="col-5">
+                            <ul class="list-unstyled mt-3">
+                                <li> <a href="#" download="Cornell-feuille-notes-vierge_leo-cegeptr.pdf" class="custom">Télécharger le template du fichier de bénéficiaires</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="row mt-3">
+                        <div class="col">
+                            <div class="d-flex">
+                                <button type="button" class="btn btn-outline-danger btn-square me-2"
+                                    style="border-radius: 0%;">ANNULER</button>
+                                <button type="submit" class="btn btn-outline-primary btn-square custom-btn"
+                                    style="border-radius: 0%;" (click)="TonextBenefic()">SUIVANT</button>
                             </div>
-    
-                            <div class="row flex-row-reverse align-items-center p-md-1 justify-content-between mt-3">
-                                <div class="col mt-4 mb-3 text-end">
-                                    <a href="#" download="Cornell-feuille-notes-vierge_leo-cegeptr.pdf"
-                                        class="link">Distribution individuelle</a>
-                                </div>
-                                <div class="col">
-                                    <div class="d-flex">
-                                        <!-- <button type="button" class="btn btn-outline-danger btn-square me-2"
-                                            style="border-radius: 0%;">ANNULER</button> -->
-                                        <button type="button" class="btn-custom cancel">ANNULER</button>
-                                        <!-- <button type="submit" class="btn btn-outline-primary btn-square"
-                                            style="border-radius: 0%;">SUIVANT</button> -->
-                                        <button type="submit" class="ms-2 btn-custom next">SUIVANT</button>
-                                    </div>
-                                </div>
-                            </div>
+                        </div>
+                        <div class="col-auto">
+                            <ul class="list-unstyled mt-3 MS-5">
+                                <li><a [routerLink]="'/distributedindividual'" class="disabled custom">Distribution individuelle</a></li>
+                            </ul>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+</div>
+
+
+

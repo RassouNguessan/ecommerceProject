@@ -1,0 +1,47 @@
+.btn-cancel {
+  border: 1px solid #fd5446;
+  background: #ffffff 0% 0% no-repeat padding-box;
+  font: normal normal normal 14px/25px Proxima Nova;
+  color: #fd5446;
+}
+
+.btn-cancel:hover {
+  text-align: center;
+  font: normal normal normal 16px/25px Proxima Nova;
+  letter-spacing: 0px;
+  color: #fd5446;
+  text-transform: uppercase;
+  background: #fff8e6 0% 0% no-repeat padding-box;
+  border: 1px solid #fd5446;
+  opacity: 1;
+}
+
+.btn-validate {
+  margin-left: 20px;
+  border: 1px solid #00b3d7;
+  background: #00b3d7 0% 0% no-repeat padding-box;
+  color: #ffffff;
+}
+
+.btn-validate:hover {
+  text-align: center;
+  font: normal normal normal 16px/25px Proxima Nova;
+  letter-spacing: 0px;
+  text-transform: uppercase;
+  background: #009dc1 0% 0% no-repeat padding-box;
+  opacity: 1;
+}
+
+.message {
+  position: relative;
+  margin-bottom: 25px;
+  //   margin-left: 58px;
+  width: 408;
+  height: 37px;
+  text-align: left;
+  font: normal normal 600 28px/40px Proxima Nova;
+  letter-spacing: 0px;
+  color: #1f1f1f;
+  text-transform: uppercase;
+  opacity: 1;
+}

@@ -6,8 +6,9 @@ export const CARDS: Card[] = [
         id: 1,
         price: 10000,
         nb_available: 5,
-        star: 2,
+        star: 5,
         like:true,
+        promo :true,
         picture: "/assets/images/15 000@2x.png",
         created: new Date()
     },
@@ -17,6 +18,7 @@ export const CARDS: Card[] = [
         nb_available: 100,
         star: 2,
         like:true,
+        promo :false,
         picture: "/assets/images/15 000@2x.png",
         created: new Date()
     },
@@ -26,6 +28,7 @@ export const CARDS: Card[] = [
         nb_available: 50,
         star: 2,
         like:true,
+        promo :false,
         picture: "/assets/images/20 000@2x.png",
         created: new Date()
     },
@@ -35,6 +38,7 @@ export const CARDS: Card[] = [
         nb_available: 5,
         star: 2,
         like:false,
+        promo :true,
         picture: "/assets/images/25 000@2x.png",
         created: new Date()
     },
@@ -42,8 +46,9 @@ export const CARDS: Card[] = [
         id: 5,
         price: 30000,
         nb_available: 5,
-        star: 2,
+        star: 1,
         like:false,
+        promo :true,
         picture: "/assets/images/30 000@2x.png",
         created: new Date()
     },

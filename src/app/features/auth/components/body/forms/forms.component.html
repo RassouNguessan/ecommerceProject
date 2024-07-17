@@ -19,7 +19,7 @@
                         formControlName="password">
                 </div>
             </div>
-            <p><a class="link" href="#" routerLink="/password-reset">Mot de passe oublié</a></p>
+            <p><a class="link" href="#" (click)="forgotPassword()">Mot de passe oublié</a></p>
             <div class="d-flex mt-4">
                 <button type="button" class="btn-custom inscription" routerLink="/register">inscription</button>
                 <button type="submit" class="ms-2 btn-custom connexion" [disabled]="!loginForm.valid">connexion</button>

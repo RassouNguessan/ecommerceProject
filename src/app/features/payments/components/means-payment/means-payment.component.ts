@@ -2,11 +2,10 @@ import { Component, ElementRef, ViewChild } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { NgClass } from '@angular/common';
 import { CommonModule } from '@angular/common';
-import { SecuritizationpayComponent } from '../features/payments/components/securitizationpay/securitizationpay.component';
-import { BackbuttonComponent } from '../backbutton/backbutton.component';
-import { DetailpaymentComponent } from '../features/payments/components/detailpayment/detailpayment.component';
-import { CardVisaMastercardPaymentComponent } from '../features/payments/components/card-visa-mastercard-payment/card-visa-mastercard-payment.component';
-
+import { DetailpaymentComponent } from '../detailpayment/detailpayment.component';
+import { BackbuttonComponent } from '../../../../shared/components/backbutton/backbutton.component';
+import { SecuritizationpayComponent } from '../securitizationpay/securitizationpay.component';
+import CardVisaMastercardPaymentComponent from '../card-visa-mastercard-payment/card-visa-mastercard-payment.component';
 
 
 
@@ -18,17 +17,21 @@ interface GridItem {
   firstField?: string; // Ajoutez cette ligne si vous avez besoin de cette propriété
   secondField?: string; // Ajoutez cette ligne si vous avez besoin de cette propriété
   thirdField?: string; // Ajoutez cette ligne si vous avez besoin de cette propriété
+
+  
 }
 
 @Component({
   selector: 'app-means-payment',
   standalone: true,
   imports: [FormsModule,
-    CommonModule,
-    DetailpaymentComponent,
-    BackbuttonComponent,
-    SecuritizationpayComponent,
-    CardVisaMastercardPaymentComponent
+            CommonModule,
+            DetailpaymentComponent,
+            BackbuttonComponent,
+            SecuritizationpayComponent,
+            CardVisaMastercardPaymentComponent
+
+ 
 
   ]
   ,

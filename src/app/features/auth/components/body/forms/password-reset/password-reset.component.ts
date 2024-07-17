@@ -1,9 +1,9 @@
 import { Component, OnInit } from "@angular/core";
+import { SecMsgComponent } from "../../../sec-msg/sec-msg.component";
 import { CommonModule } from "@angular/common";
 import { RouterLink } from "@angular/router";
 import { FormControl, FormGroup, ReactiveFormsModule, Validators } from "@angular/forms";
-import { SecMsgComponent } from "../../../../../../shared/components/sec-msg/sec-msg.component";
-import { ImgBlockComponent } from "../../../../../../shared/components/img-block/img-block.component";
+import { ImgBlockComponent } from "../../../img-block/img-block.component";
 
 
 @Component({
@@ -16,7 +16,7 @@ import { ImgBlockComponent } from "../../../../../../shared/components/img-block
         CommonModule,
         RouterLink,
         ReactiveFormsModule,
-        ImgBlockComponent,
+        ImgBlockComponent
     ]
 })
 export class PasswordResetComponent implements OnInit{

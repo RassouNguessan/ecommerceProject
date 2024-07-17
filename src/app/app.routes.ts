@@ -30,11 +30,23 @@ export const routes: Routes = [
     path: '',
     loadChildren: () => import('./features/favorites/favorites.routes').then(m => m.favoritesRoutes)
   },
+  
+  {
+    path: 'loading',
+
+    loadComponent: () => import('./shared/components/loading-charge/loading-charge.component').then(m => m.LoadingChargeComponent)
+  },
+
+  {
+    path: 'loading-charge',
+    loadComponent: () => import('./shared/components/loading-charge/loading-charge.component').then(m => m.LoadingChargeComponent)
+  },
   {
     path: '**',
     title: 'Page Not Found',
     loadComponent: () => import('./shared/components/page-not-found/page-not-found.component').then(m => m.PageNotFoundComponent)
-  }
+  },
+  
 
 
 ]

@@ -31,7 +31,12 @@ export class NavbarComponent {
       // Ajoutez ici des actions supplémentaires si nécessaire
     }
 
-
+    //masquer certains elements de la barre de vavigation 
+    hideNavItems(): boolean {
+      //les routes concernées
+      const hiddenRoutes = ['/login','/register/individual', '/register/company', '/register'];
+      return hiddenRoutes.includes(this.router.url);
+    }
 
 
    

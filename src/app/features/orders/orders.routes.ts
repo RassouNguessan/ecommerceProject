@@ -25,17 +25,27 @@ export const ordersRoutes: Routes = [
         path: 'myorder',
         loadComponent: () => import("./components/myorder/myorder.component").then(m => m.MyorderComponent)
     },
- 
+
     {
         path: 'channeldistrubution',
         loadComponent: () => import("../orders/components/channeldistribution/channeldistribution.component").then(m => m.ChanneldistributionComponent)
     },
     {
         path: 'success',
+        title: 'Success',
         loadComponent: () => import("../../shared/components/success/success.component").then(m => m.SuccessComponent)
     },
     {
         path: 'ordersucess',
         loadComponent: () => import("./components/order-success/order-success.component").then(m => m.OrderSuccessComponent)
-    }
+    },
+    {
+        path: 'distribution-channel',
+        loadComponent: () => import("./components/distribution-channel/distribution-channel.component").then(m => m.DistributionChannelComponent)
+    },
+    {
+        path: 'beneficiary-list',
+        title: 'Liste des bénéficiaires',
+        loadComponent: () => import("../orders/components/beneficiary-list/beneficiary-list.component").then(m => m.BeneficiaryListComponent)
+    },
 ];

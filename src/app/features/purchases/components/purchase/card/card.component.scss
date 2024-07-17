@@ -79,6 +79,11 @@
 .container-card:hover .svg-icon{
     opacity: 1;
 }
+
+.fixed-svg{
+    z-index:10;
+    pointer-events:none;
+}
 @media (max-width: 768px) {
     .card-title {
         font-family: 'Proxima Nova Extra Condensed', sans-serif;

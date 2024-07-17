@@ -26,8 +26,6 @@ export class SuccessComponent implements OnInit{
   dataToRetrieve: any;
 
   ngOnInit() {
-    const data: any = this.location.getState();
-    this.dataToRetrieve = data['type'];
-    console.log("data", this.dataToRetrieve);
+   
   }
 }

@@ -3,10 +3,11 @@ import {AnimationOptions, LottieComponent } from 'ngx-lottie';
 import { AnimationItem } from 'lottie-web';
 
 
+
 @Component({
   selector: 'app-loading-charge',
   standalone: true,
-  imports: [LottieComponent],
+  imports: [LottieComponent,],
   templateUrl: './loading-charge.component.html',
   styleUrl: './loading-charge.component.scss'
 })
