@@ -42,6 +42,10 @@ export const routes: Routes = [
     loadComponent: () => import('./shared/components/loading-charge/loading-charge.component').then(m => m.LoadingChargeComponent)
   },
   {
+    path: 'quantity',
+    loadComponent: () => import('./shared/components/quantity-button/quantity-button.component').then(m => m.QuantityButtonComponent)
+  },
+  {
     path: '**',
     title: 'Page Not Found',
     loadComponent: () => import('./shared/components/page-not-found/page-not-found.component').then(m => m.PageNotFoundComponent)

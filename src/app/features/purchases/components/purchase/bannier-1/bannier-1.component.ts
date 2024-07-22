@@ -13,11 +13,18 @@ import { CommonModule } from '@angular/common';
     imports: [Bannier4Component, ImgBlockComponent,CommonModule]
 })
 export class Bannier1Component {
+
+  constructor(private router: Router) {}
+  PurchaseOrder() {
+    this.router.navigate(['/distributed'])
+  }
+
   isVisible: boolean = false;
 
   onIs() {
     this.isVisible = !this.isVisible;
   }
+}
 
 
 
@@ -27,9 +34,3 @@ export class Bannier1Component {
 
 
 
-  constructor(private router:Router){}
-  PurchaseOrder() {
-    this.router.navigate(['/distributed'])
-  }
-
-}

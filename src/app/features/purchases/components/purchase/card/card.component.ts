@@ -39,4 +39,12 @@ export class CardComponent implements OnInit {
     return new Array(length).fill(0).map((_, i) => i);
   }
   // Fonction pour gerer la couleur des étoiles au click
+
+  //fonction pour afficher les details d'une carte cliquée
+
+
+  navigateToDetail(cardId: number |undefined) {
+    this.router.navigate(['/detail', cardId]);
+  }
+  
 }

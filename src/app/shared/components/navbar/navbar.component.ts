@@ -1,44 +1,58 @@
 import { CommonModule } from '@angular/common';
-import { Component,ViewChild ,ElementRef} from '@angular/core';
-import { RouterOutlet, RouterLink, RouterLinkActive, Router, } from '@angular/router';
+import { Component, HostListener, OnInit } from '@angular/core';
+import { RouterOutlet, RouterLink, RouterLinkActive, Router } from '@angular/router';
+import { ChangeDetectorRef } from '@angular/core';
 
 @Component({
   selector: 'app-navbar',
   standalone: true,
-  imports: [RouterOutlet,RouterLink,RouterLinkActive,CommonModule],
+  imports: [RouterOutlet, RouterLink, RouterLinkActive, CommonModule],
   templateUrl: './navbar.component.html',
-  styleUrl: './navbar.component.scss'
+  styleUrls: ['./navbar.component.scss']
 })
-export class NavbarComponent {
+export class NavbarComponent implements OnInit {
 
-  constructor(private router:Router){
+  constructor(private router: Router, private cdr: ChangeDetectorRef) {}
 
+  user = {
+    name: 'User Name',
+    photoUrl: './assets/images/imgprofil.png'
+  };
+
+  selectedOption: string | null = null;
+  dropdownOpen = false;
+
+  options = [
+    { label: 'Paramètre', value: '/purchase', icon: 'assets/images/Groupe 14974.png' },
+    { label: 'Profil', value: '/profile', icon: 'assets/icons/profil.png' }
+  ];
+
+  ngOnInit(): void {}
+
+  // Masquer certains éléments de la barre de navigation 
+  hideNavItems(): boolean {
+    // Les routes concernées
+    const hiddenRoutes = ['/login', '/register/individual', '/register/company', '/register'];
+    return hiddenRoutes.includes(this.router.url);
   }
-  greatDeal() {
-    this.router.navigate(['/greatedeal'])
+
+  toggleDropdown(): void {
+    this.dropdownOpen = !this.dropdownOpen;
   }
-  purchaseAvailable() {
-    this.router.navigate(['/purchaseavailable'])
-    }
-      
-    zoomIn() {
-      console.log('Mouse over - Zoom In');
-      // Ajoutez ici des actions supplémentaires si nécessaire
-    }
-  
-    zoomOut() {
-      console.log('Mouse leave - Zoom Out');
-      // Ajoutez ici des actions supplémentaires si nécessaire
-    }
 
-    //masquer certains elements de la barre de vavigation 
-    hideNavItems(): boolean {
-      //les routes concernées
-      const hiddenRoutes = ['/login','/register/individual', '/register/company', '/register'];
-      return hiddenRoutes.includes(this.router.url);
+  selectOption(option: { label: string, value: string, icon: string }): void {
+    this.selectedOption = this.user.name; // Garder le nom de l'utilisateur affiché
+    this.router.navigate([option.value]).then(() => {
+      this.dropdownOpen = false; // Replier le dropdown après la navigation
+    });
+  }
+
+  // Masquer le menu déroulant si on clique en dehors
+  @HostListener('document:click', ['$event'])
+  clickOutside(event: MouseEvent): void {
+    const target = event.target as HTMLElement;
+    if (!target.closest('.custom-select')) {
+      this.dropdownOpen = false;
     }
-
-
-   
-    
+  }
 }

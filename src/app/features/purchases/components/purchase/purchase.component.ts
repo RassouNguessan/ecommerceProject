@@ -9,13 +9,19 @@ import { PurchaseMostComponent } from "./purchase-most/purchase-most.component";
 import { Bannier4Component } from "./bannier-4/bannier-4.component";
 import { PurchaseRecentViewComponent } from "./purchase-recent-view/purchase-recent-view.component";
 import { FooterComponent } from "../../../../shared/components/footer/footer.component";
+import { CommonModule } from '@angular/common';
 @Component({
     selector: 'app-purchase',
     standalone: true,
     templateUrl: './purchase.component.html',
     styleUrl: './purchase.component.scss',
-    imports: [Bannier1Component, PurchasePromoComponent, CardComponent, Bannier2Component, PurchaseAvailableComponent, Bannier3Component, PurchaseMostComponent, Bannier4Component, PurchaseRecentViewComponent, FooterComponent]
+    imports: [Bannier1Component, PurchasePromoComponent, CardComponent, Bannier2Component, PurchaseAvailableComponent, Bannier3Component, PurchaseMostComponent, Bannier4Component, PurchaseRecentViewComponent, FooterComponent,CommonModule]
 })
 export class PurchaseComponent {
 
+    isVisible: boolean = false;
+
+    onIs() {
+      this.isVisible = !this.isVisible;
+    }
 }

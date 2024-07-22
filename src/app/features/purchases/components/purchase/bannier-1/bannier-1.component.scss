@@ -98,18 +98,56 @@ img {
     height: 15px;
     border-radius: 50%;
     margin-bottom:15%;
-    border: 1px solid #fff;
+    border: 1px solid #FFC436;
     display: inline-flex;
     align-items: center;
+
    
 }
 
-// effet de la fleche
-.btn-fleche{
-    margin-bottom:17%;
-
+.slider,.fleche:hover {background:#FFC436;}
+.img1:checked ~ .m1 {
+    margin-left: 0;
+}
+.img2:checked ~ .m2 {
+    margin-left: -100%;
+}
+.img3:checked ~ .m3 {
+    margin-left: -200%;
+}
+.img4:checked ~ .m4 {
+    margin-left: -300%;
 }
 
+
+.slider {
+    position: relative;
+    overflow: hidden;
+    height: 15px;
+    width: 15px;
+    border-radius: 100%;
+    border: solid #FFC436 0.5px;
+    cursor: pointer;
+    transition: all 0.15s ease;
+}
+
+.slider:hover {
+    background: #FFC436;
+}
+
+.slider:checked + .slider {
+    background: #FFC436;
+}
+
+
+// effet de la fleche
+.btn-fleche{
+margin-top:-12.5%;
+margin-left:0.62%;
+}
+.btn-fleche :hover{
+color:#FFC436;
+}
 /* l'effet qui doit changer la couleur du background dans les boutons du slider */
 
 

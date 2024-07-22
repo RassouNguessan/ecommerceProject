@@ -6,9 +6,9 @@ pipeline {
     environment {
       NODE_ENV = 'development'
       DOCKER_IMAGE = 'gauss022/boncoin_frontend'
-      MANIFEST_REPO = "https://gitlab.st2i.net/dev/boncoin/frontend-frontoffice.git"
-      MANIFEST_REPO_2 = "gitlab.st2i.net/dev/boncoin/frontend-frontoffice.git"
-      GIT_BRANCH = "main"
+      MANIFEST_REPO = "https://gitlab.st2i.net/dev/st2i/apps/boncoin/frontend.git"
+      MANIFEST_REPO_2 = "gitlab.st2i.net/dev/st2i/apps/boncoin/frontend.git"
+      GIT_BRANCH = "devel"
       K8S_MANIFEST_PATH = "k8s_manifest/deployment.yaml"
     }
 
@@ -21,7 +21,7 @@ pipeline {
       }
         stage('Install Dependencies') {
           when {
-            expression { BRANCH_NAME == 'main' }
+            expression { BRANCH_NAME == 'devel' }
           }
 
           steps {
@@ -37,7 +37,7 @@ pipeline {
 
         // stage('Run Tests') {
         //  when {
-        //    expression { BRANCH_NAME == 'main' }
+        //    expression { BRANCH_NAME == 'devel' }
         //  }
 
       
@@ -48,7 +48,7 @@ pipeline {
 
         stage('Build') {
           when {
-            expression { BRANCH_NAME == 'main' }
+            expression { BRANCH_NAME == 'devel' }
           }
 
           steps {
@@ -58,7 +58,7 @@ pipeline {
 
         stage('Archive Artifacts') {
           when {
-            expression { BRANCH_NAME == 'main' }
+            expression { BRANCH_NAME == 'devel' }
           }
 
           steps {
@@ -68,7 +68,7 @@ pipeline {
 
         stage('Build Docker Image') {
           when {
-            expression { BRANCH_NAME == 'main' }
+            expression { BRANCH_NAME == 'devel' }
           }
 
           steps {
@@ -80,7 +80,7 @@ pipeline {
 
         stage('Push Docker Image') {
           when {
-            expression { BRANCH_NAME == 'main' }
+            expression { BRANCH_NAME == 'devel' }
           }
         
           steps {
@@ -93,7 +93,7 @@ pipeline {
         }
             stage('Checkout Manifest Repository') {
               when {
-                expression { BRANCH_NAME == 'main' }
+                expression { BRANCH_NAME == 'devel' }
               }
 
               steps {
@@ -103,7 +103,7 @@ pipeline {
 
             stage('Update K8s Manifests') {
               when {
-                expression { BRANCH_NAME == 'main' }
+                expression { BRANCH_NAME == 'devel' }
               }
 
               steps {
