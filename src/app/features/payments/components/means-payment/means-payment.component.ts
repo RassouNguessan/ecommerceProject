@@ -6,6 +6,7 @@ import { DetailpaymentComponent } from '../detailpayment/detailpayment.component
 import { BackbuttonComponent } from '../../../../shared/components/backbutton/backbutton.component';
 import { SecuritizationpayComponent } from '../securitizationpay/securitizationpay.component';
 import CardVisaMastercardPaymentComponent from '../card-visa-mastercard-payment/card-visa-mastercard-payment.component';
+import { RouterLink } from '@angular/router';
 
 
 
@@ -29,7 +30,8 @@ interface GridItem {
             DetailpaymentComponent,
             BackbuttonComponent,
             SecuritizationpayComponent,
-            CardVisaMastercardPaymentComponent
+            CardVisaMastercardPaymentComponent,
+            RouterLink
 
  
 

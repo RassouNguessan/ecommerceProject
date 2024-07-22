@@ -2,7 +2,7 @@
     <app-backbutton/> 
    <app-securitizationpay class="mt-5 ms-md-5"/>
     <div class="row mt-3">
-        <div class="col-12 col-md-6 bg-light ms-md-4">
+        <div class="col-12 col-md-6 bg-light ms-md-3">
             <app-detailpayment/>
         </div>
          <div class="col-12 col-md-5 ms-md-4 mt-3 mt-md-0">
@@ -33,8 +33,8 @@
                             <label for="securityCode" class="form-label fw-bold">Code <span style="color:#FD5446;">*</span> </label>
                             <input type="password" class="form-control w-50 rounded-0 code-input" id="securityCode" placeholder="Saisissez le code de sécurité temporaire">
                         </div>
-                        <button type="button" class="btn btn-outline-danger btn-square" style="border-radius: 0%;">RETOUR</button>
-                        <button type="submit" class="btn btn ms-4 btn-square custom-btn" style="border-radius: 0%;">CONFIRMER</button>
+                        <button type="button" class="btn btn-outline-danger btn-square" style="border-radius: 0%;"[routerLink]="'/moyen-payment'">RETOUR</button>
+                        <button type="submit" class="btn btn ms-4 btn-square custom-btn" style="border-radius: 0%;"[routerLink]="'/ordersucess'">CONFIRMER</button>
                     </form>
                 </div>
             </div>

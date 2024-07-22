@@ -18,7 +18,7 @@ import { FooterComponent } from "../../../../shared/components/footer/footer.com
 
 export class MyorderComponent {
 
-  basketData = ['Data 1', 'Data 2', 'Data 3',]; // Ajoutez autant de données que nécessaire
+  basketData = ['Data 1', 'Data 2', 'Data 3','']; // Ajoutez autant de données que nécessaire
 
 
 }

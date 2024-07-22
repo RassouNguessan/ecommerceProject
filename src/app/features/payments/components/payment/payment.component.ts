@@ -4,6 +4,7 @@ import { DetailpaymentComponent } from '../detailpayment/detailpayment.component
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { BackbuttonComponent } from '../../../../shared/components/backbutton/backbutton.component';
+import { RouterLink } from '@angular/router';
 
 
 interface GridItem {
@@ -22,7 +23,8 @@ interface GridItem {
     BackbuttonComponent,
     DetailpaymentComponent,
     CommonModule,
-    FormsModule
+    FormsModule,
+    RouterLink
   ],
   templateUrl: './payment.component.html',
   template: '<app-securitizationpay/>,<app-backbutton/>,<app-detailpayment/>',
