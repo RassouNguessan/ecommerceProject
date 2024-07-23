@@ -1,0 +1,64 @@
+<div class="container-fluid mt-5 overflow-hidden" style="width: 80%">
+  <app-backbutton />
+  <app-securitizationpay class="mt-5 ms-md-5" />
+  <div class="row mt-3">
+    <div class="col-12 col-md-6 bg-light ms-md-4">
+      <app-detailpayment />
+    </div>
+    <div class="col-12 col-md-5 ms-md-4 mt-3 mt-md-0">
+      <div class="card border-0 w-100">
+        <div class="card-body">
+          <span class="card-title fw-bold code">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="20.311"
+              height="20.818"
+              viewBox="0 0 35.311 39.818"
+            >
+              <path
+                id="lock-2"
+                d="M55.665,5.886c-.46,7.239-.722,14.509,1.409,20.551C59.193,32.446,63.745,37.308,73,39.818c9.257-2.51,13.809-7.372,15.929-13.381C91.062,20.4,90.8,13.125,90.339,5.886L73,0Zm9.36,18.472V16.566a2.342,2.342,0,0,1,2.468-2.181h.273V12.321c0-2.556,2.345-4.629,5.237-4.629s5.237,2.072,5.237,4.629v2.064h.273a2.342,2.342,0,0,1,2.468,2.181v7.791a2.342,2.342,0,0,1-2.468,2.181H67.493A2.342,2.342,0,0,1,65.025,24.357Zm2.337-7.791a.128.128,0,0,1,.131-.116H78.512a.128.128,0,0,1,.131.116v7.791a.128.128,0,0,1-.131.116H67.493a.128.128,0,0,1-.131-.116V16.566ZM70.1,14.385V12.321a2.922,2.922,0,0,1,5.8,0v2.064Z"
+                transform="translate(-55.346 0)"
+                fill-rule="evenodd"
+              />
+            </svg>
+            CODE DE SÉCURITÉ TEMPORAIRE
+          </span>
+          <p class="" style="font-size: small">
+            Pour des raisons de sécurité, nous vous demandons d’utiliser un code
+            de sécurité temporaire du compte 0700000001. Veuillez saisir ce code
+            ci-dessous pour poursuivre votre opération.
+          </p>
+          <form>
+            <div class="mb-3">
+              <label for="securityCode" class="form-label fw-bold">
+                Code
+                <span style="color: #fd5446">*</span>
+              </label>
+              <input
+                type="password"
+                class="form-control w-50 rounded-0 code-input"
+                id="securityCode"
+                placeholder="Saisissez le code de sécurité temporaire"
+              />
+            </div>
+            <button
+              type="button"
+              class="btn btn-outline-danger btn-square"
+              style="border-radius: 0%"
+            >
+              RETOUR
+            </button>
+            <button
+              type="submit"
+              class="btn btn ms-4 btn-square custom-btn"
+              style="border-radius: 0%"
+            >
+              CONFIRMER
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

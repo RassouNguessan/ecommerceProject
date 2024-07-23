@@ -1,0 +1,152 @@
+.select-container {
+  display: flex;
+  align-items: center;
+  padding-left: 15px;
+  position: relative;
+}
+
+.select-image {
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  margin-right: 10px;
+}
+
+.username {
+  font-weight: 500;
+  font-size: 13px;
+  color: #333;
+}
+
+.custom-select {
+  position: relative;
+  cursor: pointer;
+  color: #333;
+  font-size: 16px;
+  padding: 0;
+  margin-left: 10px;
+  display: flex;
+  align-items: center;
+
+  ul {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: max-content;
+    background: white;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    border: 1px solid #ededed;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    z-index: 1;
+
+    &.show {
+      display: block;
+    }
+
+    li {
+      padding: 8px;
+      display: flex;
+      align-items: center;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      white-space: nowrap;
+
+      &:hover {
+        background-color: #effaff;
+      }
+
+      .option-icon {
+        width: 16px;
+        height: 16px;
+        margin-right: 8px;
+        vertical-align: middle;
+      }
+    }
+  }
+}
+
+.navbar-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.nav-item {
+  margin: 0;
+
+  .sr-only {
+    font-size: 13px !important;
+  }
+
+  & .nav-link {
+    color: #333;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    border-radius: 10px;
+
+    &:hover {
+      background-color: #effaff;
+      color: #333;
+      transform: scale(1.1);
+    }
+  }
+
+  &.active .nav-link {
+    color: #00b3d7;
+  }
+
+  &.dropdown .btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    svg {
+      fill: #3c3c3e;
+    }
+
+    .position-absolute {
+      top: -5px;
+      right: -5px;
+    }
+  }
+}
+
+.promo {
+  background-color: #ffc436;
+  border-bottom: 1px solid #ededed;
+  font-size: 10px;
+
+  span {
+    color: #333;
+    font-size: 16px;
+  }
+}
+
+/* Styles pour les spans d'alerte */
+.position-absolute {
+  top: 55%; /* Ajustez cette valeur pour descendre le span */
+  left: 100%; /* Ajustez cette valeur pour déplacer horizontalement le span */
+  transform: translate(-50%, -50%);
+  background-color: red; /* Couleur de fond de l'alerte */
+  color: white; /* Couleur du texte de l'alerte */
+  border-radius: 50%; /* Pour arrondir les coins */
+  padding: 0.2em 0.4em; /* Espace autour du texte */
+  font-size: 0.75rem; /* Taille du texte */
+  font-weight: bold; /* Gras */
+  border: 1px solid #fff; /* Bordure */
+}
+
+/* Positionnement spécifique pour le panier */
+.nav-item.cart .position-absolute {
+  top: 15px; /* Ajustez cette valeur pour descendre le span */
+  right: 10px; /* Ajustez cette valeur pour déplacer horizontalement le span */
+}
+
+/* Positionnement spécifique pour la cloche */
+.nav-item.bell .position-absolute {
+  top: 10px; /* Ajustez cette valeur pour descendre le span */
+  right: 15px; /* Ajustez cette valeur pour déplacer horizontalement le span */
+}

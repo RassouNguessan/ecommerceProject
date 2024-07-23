@@ -1,0 +1,163 @@
+@if (flashMessage()) {
+  <nav id="first-navbar" class="main">
+    <div class="promo p-2 text-center">
+      Nous sommes ravis de vous annoncer une offre exceptionnelle : bénéficiez
+      de 50 % de réduction sur une sélection de produits ! C'est le moment idéal
+      pour vous faire plaisir ou préparer vos cadeaux.
+    </div>
+  </nav>
+}
+
+<nav
+  id="second-navbar"
+  class="navbar p-md-2 navbar-expand-lg navbar-light"
+  aria-label="navbar"
+>
+  <div class="ms-lg-5">
+    <img
+      src="/assets/images/Plandetravail1.png"
+      alt="logo"
+      routerLink="/purchase"
+    />
+  </div>
+
+  <button
+    class="navbar-toggler"
+    type="button"
+    data-bs-toggle="collapse"
+    data-bs-target="#navbarSupportedContent"
+    aria-controls="navbarSupportedContent"
+    aria-expanded="false"
+    aria-label="Toggle navigation"
+  >
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <form class="d-flex form-inline my-2 my-md-0">
+      <div class="input-group">
+        <input
+          type="search"
+          class="form-control"
+          style="border: 1px solid #ededed"
+          id="searchbar"
+          placeholder="Recherche"
+        />
+        <button
+          class="btn btn-outline-secondary"
+          style="border: 1px solid #00b3d7; background-color: #00b3d7"
+          type="button"
+          id="button-addon2"
+        >
+          <i class="bi bi-search" style="color: white"></i>
+        </button>
+      </div>
+    </form>
+
+    <div class="px-5 col-12 col-lg-10 ms-auto">
+      <ul class="navbar-nav mr-auto d-flex justify-content-around">
+        <li class="nav-item" [routerLinkActive]="['active']">
+          <a class="nav-link" [routerLink]="['/myorder']">
+            <span class="sr-only">Mes commandes</span>
+          </a>
+        </li>
+        <li class="nav-item" [routerLinkActive]="['active']">
+          <a class="nav-link" [routerLink]="['/purchaseavailable']">
+            <span class="sr-only">Mes bons d'achat</span>
+          </a>
+        </li>
+        <li class="nav-item" [routerLinkActive]="['active']">
+          <a class="nav-link" [routerLink]="['/promotion']">
+            <span class="sr-only">Promotions</span>
+          </a>
+        </li>
+        <li class="nav-item" [routerLinkActive]="['active']">
+          <a class="nav-link" [routerLink]="['/greatedeal']">
+            <span class="sr-only">Vos favoris</span>
+          </a>
+        </li>
+
+        <li class="ms-5 nav-item dropdown px-2">
+          <div class="select-container">
+            <img
+              [src]="user.photoUrl"
+              alt="Profile Image"
+              class="select-image"
+            />
+            <div class="custom-select" (click)="toggleDropdown()">
+              <span class="username">
+                {{ dropdownOpen ? user.name : user.name }}
+              </span>
+              <ul [class.show]="dropdownOpen">
+                <li
+                  *ngFor="let option of options"
+                  (click)="selectOption(option)"
+                >
+                  <img
+                    [src]="option.icon"
+                    alt="{{ option.label }} Icon"
+                    class="option-icon"
+                  />
+                  {{ option.label }}
+                </li>
+              </ul>
+            </div>
+          </div>
+        </li>
+
+        <li class="nav-item dropdown px-2">
+          <div class="d-flex">
+            <button type="button" class="btn position-relative">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="20"
+                height="27.436"
+                viewBox="0 0 20 19.436"
+              >
+                <path
+                  id="grocery-store"
+                  d="M.845,1a.845.845,0,0,0,0,1.69h1.5a.586.586,0,0,1,.556.4l2.786,8.36a2.06,2.06,0,0,1,.045,1.15l-.229.919a2.184,2.184,0,0,0,2.1,2.69H17.746a.845.845,0,0,0,0-1.69H7.605a.457.457,0,0,1-.46-.589l.173-.691a.541.541,0,0,1,.525-.41H16.9a.845.845,0,0,0,.8-.578l2.253-6.76a.845.845,0,0,0-.8-1.112H5.539a.586.586,0,0,1-.556-.4l-.8-2.4A.845.845,0,0,0,3.38,1ZM6.76,17.056a1.69,1.69,0,1,0,1.69,1.69A1.69,1.69,0,0,0,6.76,17.056Zm10.141,0a1.69,1.69,0,1,0,1.69,1.69A1.69,1.69,0,0,0,16.9,17.056Z"
+                  transform="translate(0 -1)"
+                />
+              </svg>
+              <span
+                class="position-absolute top-55 start-100 translate-middle p-2 bg-danger border border-light rounded-circle"
+              >
+                <span class="visually-hidden">New alerts</span>
+              </span>
+            </button>
+
+            <button type="button" class="btn position-relative">
+              <svg
+                id="Groupe_16293"
+                data-name="Groupe 16293"
+                xmlns="http://www.w3.org/2000/svg"
+                width="16.001"
+                height="20"
+                viewBox="0 0 16.001 20"
+              >
+                <path
+                  id="Tracé_12057"
+                  data-name="Tracé 12057"
+                  d="M58.5,14.908a6.166,6.166,0,0,1-1.9-4.517V7.933a6.013,6.013,0,0,0-4.8-6.1V.881a.8.8,0,1,0-1.6,0v.952a6.013,6.013,0,0,0-4.8,6.1V10.39a6.171,6.171,0,0,1-1.911,4.524A1.609,1.609,0,0,0,43,16.086a1.478,1.478,0,0,0,1.4,1.543H57.6A1.478,1.478,0,0,0,59,16.086,1.614,1.614,0,0,0,58.5,14.908Z"
+                  transform="translate(-43 0)"
+                />
+                <path
+                  id="Tracé_12058"
+                  data-name="Tracé 12058"
+                  d="M180.131,449.779A2.227,2.227,0,0,0,182.309,448h-4.356A2.227,2.227,0,0,0,180.131,449.779Z"
+                  transform="translate(-172.131 -429.779)"
+                />
+              </svg>
+              <span
+                class="position-absolute top-55 start-100 translate-middle p-2 bg-danger border border-light rounded-circle"
+              >
+                <span class="visually-hidden">New alerts</span>
+              </span>
+            </button>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>

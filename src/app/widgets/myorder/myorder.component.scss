@@ -1,0 +1,21 @@
+.animated {
+  -webkit-animation: 4s linear 0s infinite alternate move_eye;
+  animation: 4s linear 0s infinite alternate move_eye;
+
+  @-webkit-keyframes move_eye {
+    from {
+      margin-right: 0%;
+    }
+    to {
+      margin-right: 10%;
+    }
+  }
+  @keyframes move_eye {
+    from {
+      margin-right: 0%;
+    }
+    to {
+      margin-right: 10%;
+    }
+  }
+}

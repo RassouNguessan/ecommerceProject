@@ -1,0 +1,82 @@
+import { Routes } from "@angular/router";
+
+export const ordersRoutes: Routes = [
+  {
+    path: "order",
+    loadComponent: () =>
+      import("../widgets/order/order.component").then((m) => m.OrderComponent),
+  },
+  {
+    path: "distributed",
+    loadComponent: () =>
+      import("../widgets/distributed/distributed.component").then(
+        (m) => m.DistributedComponent
+      ),
+  },
+  {
+    path: "distributedindividual",
+    loadComponent: () =>
+      import(
+        "../widgets/distributeinduvidual/distributeinduvidual.component"
+      ).then((m) => m.DistributeinduvidualComponent),
+  },
+  {
+    path: "buy",
+    loadComponent: () =>
+      import("../widgets/buyvouchers/buyvouchers.component").then(
+        (m) => m.BuyvouchersComponent
+      ),
+  },
+  {
+    path: "detailorder",
+    loadComponent: () =>
+      import("../widgets/detailorder/detailorder.component").then(
+        (m) => m.DetailorderComponent
+      ),
+  },
+  {
+    path: "myorder",
+    loadComponent: () =>
+      import("../widgets/myorder/myorder.component").then(
+        (m) => m.MyorderComponent
+      ),
+  },
+
+  {
+    path: "channeldistrubution",
+    loadComponent: () =>
+      import(
+        "../widgets/channeldistribution/channeldistribution.component"
+      ).then((m) => m.ChanneldistributionComponent),
+  },
+  {
+    path: "success",
+    title: "Success",
+    loadComponent: () =>
+      import("../widgets/success/success.component").then(
+        (m) => m.SuccessComponent
+      ),
+  },
+  {
+    path: "ordersucess",
+    loadComponent: () =>
+      import("../widgets/order-success/order-success.component").then(
+        (m) => m.OrderSuccessComponent
+      ),
+  },
+  {
+    path: "distribution-channel",
+    loadComponent: () =>
+      import(
+        "../widgets/distribution-channel/distribution-channel.component"
+      ).then((m) => m.DistributionChannelComponent),
+  },
+  {
+    path: "beneficiary-list",
+    title: "Liste des bénéficiaires",
+    loadComponent: () =>
+      import("../widgets/beneficiary-list/beneficiary-list.component").then(
+        (m) => m.BeneficiaryListComponent
+      ),
+  },
+];

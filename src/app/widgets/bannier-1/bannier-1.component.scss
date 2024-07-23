@@ -1,0 +1,164 @@
+/* application des effets sur le texte pour donner le rendu attendu */
+
+// effet sur le h5 qui represente le Titre
+.bon h5 {
+  /*
+    font: var(--unnamed-font-style-normal) normal var(--unnamed-font-weight-bold) var(--unnamed-font-size-40) / 50px var(--unnamed-font-family-proxima-nova);
+    letter-spacing: var(--unnamed-character-spacing-2);
+     */
+  color: #00b3d7;
+  text-align: left;
+  font: normal normal bold 40px/50px Proxima Nova;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  opacity: 1;
+}
+
+//
+
+// effet sur le paragraphe qui donne la description
+p {
+  /*
+    font: var(--unnamed-font-style-normal) normal var(--unnamed-font-weight-300) var(--unnamed-font-size-16) / var(--unnamed-line-spacing-26) var(--unnamed-font-family-proxima-nova);
+    letter-spacing: var(--unnamed-character-spacing-0);
+    color: var(--texte);
+     */
+  text-align: left;
+  font: normal normal 300 16px/26px Proxima Nova;
+  letter-spacing: 0;
+  color: #1f1f1f;
+  opacity: 1;
+}
+
+//  effet sur le bous ton achat du bons
+
+.btn-bon {
+  /*
+    font: var(--unnamed-font-style-normal) normal var(--unnamed-font-weight-normal) 14px/25px var(--unnamed-font-family-proxima-nova);
+    letter-spacing: var(--unnamed-character-spacing-0);
+     */
+  text-align: center;
+  font: normal normal normal 14px/25px Proxima Nova;
+  letter-spacing: 0px;
+  color: #ffffff;
+  border-radius: 0%;
+  text-transform: uppercase;
+  opacity: 1;
+}
+
+//  modification de l'image
+
+.img-1 img,
+img {
+  width: 900px;
+  height: 650px;
+  max-width: 100vh;
+  /* Ensure it doesn't exceed the container width */
+}
+
+/* l'application des effet sur le slide pour que les images soient animés*/
+@keyframes slideInFromRight {
+  0% {
+    opacity: 0;
+    transform: translateX(-20%);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInFromVertical {
+  0% {
+    opacity: 0;
+    transform: translateY(20%);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.slide-in {
+  animation: slideInFromRight 0.9s ease-in-out;
+}
+
+.slide-vertical {
+  animation: slideInFromVertical 0.9s ease-in-out;
+}
+
+/* les effet sur les boutons pour que les boutons puissent changer les images peuvent être modiifier*/
+
+.btn-slide {
+  animation: buttonSlide 0.9s ease-in-out forwards;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  border: 1px solid #ffc436;
+  display: inline-flex;
+  align-items: center;
+}
+
+.slider,
+.fleche:hover {
+  background: #ffc436;
+}
+
+.img1:checked ~ .m1 {
+  margin-left: 0;
+}
+
+.img2:checked ~ .m2 {
+  margin-left: -100%;
+}
+
+.img3:checked ~ .m3 {
+  margin-left: -200%;
+}
+
+.img4:checked ~ .m4 {
+  margin-left: -300%;
+}
+
+.slider {
+  position: relative;
+  overflow: hidden;
+  height: 15px;
+  width: 15px;
+  border-radius: 100%;
+  border: solid #ffc436 0.5px;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.slider:hover {
+  background: #ffc436;
+}
+
+.slider:checked + .slider {
+  background: #ffc436;
+}
+
+// effet de la fleche
+.btn-fleche {
+  //margin-top: -12.5%;
+  //margin-left: 0.62%;
+}
+
+.btn-fleche :hover {
+  color: #ffc436;
+}
+
+/* l'effet qui doit changer la couleur du background dans les boutons du slider */
+
+.btn-slide.active::after {
+  background-color: #ffc436;
+  /* Change color when active */
+}
+
+.banner-1 {
+  overflow: hidden;
+  background: #cfebf7;
+}

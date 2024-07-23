@@ -1,0 +1,110 @@
+@media (max-width: 768px) {
+  .container-fluid {
+    width: 100%;
+  }
+
+  .card {
+    width: 100%;
+  }
+
+  .input-group {
+    width: 100%;
+  }
+
+  .file-input-card {
+    width: 100%;
+    height: auto;
+  }
+
+  .btn-square {
+    width: 100%;
+  }
+}
+
+.card-shopping {
+  transition: fill 0.3s ease;
+}
+
+.card-shopping {
+  fill: #00b3d7;
+}
+
+.custom-btn {
+  border-radius: 0%;
+  border-color: #00b3d7;
+  color: #00b3d7;
+}
+
+.custom-btn:hover {
+  background-color: #00b3d7;
+  color: #fff;
+}
+
+input {
+  font: var(--unnamed-font-style-normal) normal
+    var(--unnamed-font-weight-normal) var(--unnamed-font-size-13) /
+    var(--unnamed-line-spacing-16) var(--unnamed-font-family-proxima-nova);
+  letter-spacing: var(--unnamed-character-spacing-0);
+  color: var(--unnamed-color-bababa);
+  text-align: left;
+  font: normal normal normal 13px/16px Proxima Nova;
+  letter-spacing: 0px;
+  color: #bababa;
+  opacity: 1;
+}
+
+.img-upload {
+  top: 534px;
+  left: 969px;
+  width: 812px;
+  height: 262px;
+  background: #ffffff 0% 0% no-repeat padding-box;
+  border: 1px dashed #d5d3d3bc;
+  border-radius: 4px;
+  opacity: 1;
+}
+
+.details {
+  height: 16px;
+  font: var(--unnamed-font-style-normal) normal
+    var(--unnamed-font-weight-normal) 14px/25px
+    var(--unnamed-font-family-proxima-nova);
+  letter-spacing: var(--unnamed-character-spacing-0);
+  color: var(--texte);
+  text-align: left;
+  font: normal normal normal 14px/25px Proxima Nova;
+  letter-spacing: 0px;
+  color: #1f1f1f;
+  text-transform: uppercase;
+  opacity: 1;
+}
+
+p {
+  top: 309px;
+  left: 968px;
+  width: 813px;
+  height: 79px;
+  font: var(--unnamed-font-style-normal) normal var(--unnamed-font-weight-300)
+    var(--unnamed-font-size-16) / var(--unnamed-line-spacing-26)
+    var(--unnamed-font-family-proxima-nova);
+  letter-spacing: var(--unnamed-character-spacing-0);
+  color: var(--texte);
+  text-align: left;
+  font: normal normal 300 16px/26px Proxima Nova;
+  letter-spacing: 0px;
+  color: #1f1f1f;
+  opacity: 1;
+}
+
+h3 {
+  font: var(--unnamed-font-style-normal) normal var(--unnamed-font-weight-600)
+    var(--unnamed-font-size-30) / 40px var(--unnamed-font-family-proxima-nova);
+  letter-spacing: var(--unnamed-character-spacing-0);
+  color: var(--texte);
+  text-align: left;
+  font: normal normal 600 30px/40px Proxima Nova;
+  letter-spacing: 0px;
+  color: #1f1f1f;
+  text-transform: uppercase;
+  opacity: 1;
+}

@@ -1,0 +1,61 @@
+<div class="container-fluid">
+  <div class="d-flex justify-content-center align-items-center over-hidden">
+    <div class="card border-0" style="width: 50rem; margin-top: 250px">
+      <div class="card-body text-center">
+        <div class="card border-0 justify-content-center">
+          <div class="card-body">
+            <div class="col-12 col-md-6 d-none d-md-block">
+              <div
+                class="card bg-light border-0 justify-content-center align-items-center"
+                style="width: 170%; left: 50px; margin-top: -135px"
+              >
+                <div class="card-body">
+                  <div class="card-text">
+                    <ng-lottie
+                      [options]="options"
+                      width="500px"
+                      height="250px"
+                      (animationCreated)="animationCreated($event)"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <h6
+          class="card-text mb-2 mt-3 text text-success"
+          style="
+            font: normal normal 600 20px/60px &quot;Proxima Nova&quot;;
+            letter-spacing: 0px;
+            text-transform: uppercase;
+            opacity: 1;
+          "
+        >
+          SUCCÈS
+        </h6>
+
+        <p class="card-text m-0">
+          <small>
+            Nous sommes heureux de vous informer que votre distribution des bons
+            d’achat a été effectuée avec succès.
+            <br />
+            Vous pouvez consulter les détails de cette distribution en cliquant
+            sur le boutant
+            <span class="text-dark" style="color: #1f1f1f; font-weight: bold">
+              ‘’ VOIR LES DÉTAILS ‘’
+            </span>
+          </small>
+        </p>
+
+        <a
+          href="#"
+          class="btn btn-outline-primary custom-btn"
+          style="border-radius: 0; margin-top: 50px"
+        >
+          VOIR LES DÉTAILS
+        </a>
+      </div>
+    </div>
+  </div>
+</div>

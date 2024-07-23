@@ -1,0 +1,28 @@
+<div id="securityMessage" class="d-grid sec-msg-back">
+  <div class="d-flex justify-content-between align-items-center">
+    <div class="d-flex align-items-center mx-2 mt-2">
+      <div class="">
+        <app-lotties
+          [anotherOptions]="sendOptions"
+          [width]="width"
+          [height]="height"
+        />
+      </div>
+      <div class="sec-msg-head">
+        <span>sécurité!</span>
+      </div>
+    </div>
+    <div class="mx-3 d-flex">
+      <button type="button" class="btn-close" (click)="closeSecurityMessage()">
+        ---
+      </button>
+    </div>
+  </div>
+  <div class="my-2 sec-msg-body">
+    <span>
+      Nous accordons une grande importance à la sécurité de vos données
+      personnelles. Toutes les informations que vous nous fournissez sont
+      strictement confidentielles.
+    </span>
+  </div>
+</div>
