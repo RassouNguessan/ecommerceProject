@@ -1,0 +1,12 @@
+<section class="banner-1" #banner>
+  <div class="row justify-content-center align-items-center m-4">
+    <div class="col-12" #top>
+      <div class="row flex-wrap-reverse">
+        <ng-content select="[left]"></ng-content>
+        <ng-content select="[right]"></ng-content>
+      </div>
+    </div>
+
+    <ng-content select="[downArrow]"></ng-content>
+  </div>
+</section>

@@ -8,7 +8,6 @@ import {
 } from "@angular/forms";
 import { RouterLink } from "@angular/router";
 import { InputGroupModule } from "primeng/inputgroup";
-import { RegisterComponent } from "../form-register/register.component";
 import { SecMsgComponent } from "../sec-msg/sec-msg.component";
 
 @Component({
@@ -21,7 +20,6 @@ import { SecMsgComponent } from "../sec-msg/sec-msg.component";
     CommonModule,
     InputGroupModule,
     RouterLink,
-    RegisterComponent,
     SecMsgComponent,
   ],
 })

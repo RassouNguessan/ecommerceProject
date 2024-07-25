@@ -3,7 +3,8 @@ import { FooterComponent } from "../footer/footer.component";
 import { PurchasePromoComponent } from "../purchase-promo/purchase-promo.component";
 import { CardComponent } from "../card/card.component";
 import { PurchaseRecentViewComponent } from "../purchase-recent-view/purchase-recent-view.component";
-import { Bannier3Component } from "../bannier-3/bannier-3.component";
+import { Banner3Component } from "../banner-3/banner-3.component";
+
 
 @Component({
   selector: "app-promos",
@@ -15,7 +16,7 @@ import { Bannier3Component } from "../bannier-3/bannier-3.component";
     PurchasePromoComponent,
     CardComponent,
     PurchaseRecentViewComponent,
-    Bannier3Component,
+    Banner3Component,
   ],
 })
 export class PromosComponent {}

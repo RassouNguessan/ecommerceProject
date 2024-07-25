@@ -1,12 +1,12 @@
 import { Component } from "@angular/core";
 import { CommonModule } from "@angular/common";
-import { BackbuttonComponent } from "../backbutton/backbutton.component";
+import { BackButtonComponent } from "../back-button/back-button.component";
 import { StoreconcernsComponent } from "../storeconcerns/storeconcerns.component";
 
 @Component({
   selector: "app-order",
   standalone: true,
-  imports: [BackbuttonComponent, StoreconcernsComponent, CommonModule],
+  imports: [BackButtonComponent, StoreconcernsComponent, CommonModule],
   templateUrl: "./order.component.html",
   styleUrl: "./order.component.scss",
 })

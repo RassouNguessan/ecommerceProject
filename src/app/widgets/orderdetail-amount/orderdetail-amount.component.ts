@@ -2,12 +2,12 @@ import { Component } from "@angular/core";
 import { AnimationOptions, LottieComponent } from "ngx-lottie";
 import { AnimationItem } from "lottie-web";
 import { CommonModule } from "@angular/common";
-import { BackbuttonComponent } from "../backbutton/backbutton.component";
+import { BackButtonComponent } from "../back-button/back-button.component";
 
 @Component({
   selector: "app-orderdetail-amount",
   standalone: true,
-  imports: [BackbuttonComponent, LottieComponent, CommonModule],
+  imports: [BackButtonComponent, LottieComponent, CommonModule],
   templateUrl: "./orderdetail-amount.component.html",
   styleUrl: "./orderdetail-amount.component.scss",
 })

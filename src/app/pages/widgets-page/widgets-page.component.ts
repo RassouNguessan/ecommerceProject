@@ -1,13 +1,8 @@
 import { Component } from "@angular/core";
 import { CardModule } from "primeng/card";
 import { DividerModule } from "primeng/divider";
-import { AchatsComponent } from "../../widgets/achats/achats.component";
-import { AddCartButtonComponent } from "../../widgets/add-cart-button/add-cart-button.component";
-import { BackbuttonComponent } from "../../widgets/backbutton/backbutton.component";
-import { Bannier1Component } from "../../widgets/bannier-1/bannier-1.component";
-import { Bannier2Component } from "../../widgets/bannier-2/bannier-2.component";
-import { Bannier3Component } from "../../widgets/bannier-3/bannier-3.component";
-import { Bannier4Component } from "../../widgets/bannier-4/bannier-4.component";
+import { PurchasesComponent } from "../../widgets/purchases/purchases.component";
+import { AddToCartComponent } from "../../widgets/add-to-cart/add-to-cart.component";
 import { BasketComponent } from "../../widgets/basketcomponent/basketcomponent.component";
 import { BeneficiaryListComponent } from "../../widgets/beneficiary-list/beneficiary-list.component";
 import { BodyComponent } from "../../widgets/body/body.component";
@@ -30,7 +25,7 @@ import { DistributionChannelComponent } from "../../widgets/distribution-channel
 import { EntrepriseComponent } from "../../widgets/entreprise/entreprise.component";
 import { FavoriteButtonComponent } from "../../widgets/favorite-button/favorite-button.component";
 import { FooterComponent } from "../../widgets/footer/footer.component";
-import { RegisterComponent } from "../../widgets/form-register/register.component";
+// import { RegisterComponent } from "../../widgets/form-register/register.component";
 import { FormsComponent } from "../../widgets/forms/forms.component";
 import { GreatdealComponent } from "../../widgets/greatdeal/greatdeal.component";
 import { HeaderComponent } from "../../widgets/header/header.component";
@@ -73,6 +68,11 @@ import { StoreconcernsComponent } from "../../widgets/storeconcerns/storeconcern
 import { SuccessComponent } from "../../widgets/success/success.component";
 import { TotalPriceCardComponent } from "../../widgets/total-price-card/total-price-card.component";
 import { VoucherComponent } from "../../widgets/voucher/voucher.component";
+import { Banner1Component } from "../../widgets/banner-1/banner-1.component";
+import { Banner2Component } from "../../widgets/banner-2/banner-2.component";
+import { Banner3Component } from "../../widgets/banner-3/banner-3.component";
+import { Banner4Component } from "../../widgets/banner-4/banner-4.component";
+import { BackButtonComponent } from "../../widgets/back-button/back-button.component";
 
 @Component({
   selector: "app-widgets-page",
@@ -80,13 +80,13 @@ import { VoucherComponent } from "../../widgets/voucher/voucher.component";
   imports: [
     CardModule,
     DividerModule,
-    AchatsComponent,
-    AddCartButtonComponent,
-    BackbuttonComponent,
-    Bannier1Component,
-    Bannier2Component,
-    Bannier3Component,
-    Bannier4Component,
+    PurchasesComponent,
+    AddToCartComponent,
+    BackButtonComponent,
+    Banner1Component,
+    Banner2Component,
+    Banner3Component,
+    Banner4Component,
     BasketComponent,
     BeneficiaryListComponent,
     BodyComponent,
@@ -109,7 +109,6 @@ import { VoucherComponent } from "../../widgets/voucher/voucher.component";
     EntrepriseComponent,
     FavoriteButtonComponent,
     FooterComponent,
-    RegisterComponent,
     FormsComponent,
     GreatdealComponent,
     HeaderComponent,
@@ -137,6 +136,7 @@ import { VoucherComponent } from "../../widgets/voucher/voucher.component";
     PasswordResetComponent,
     PaymentComponent,
     PromosComponent,
+    PurchasesComponent,
     PurchaseComponent,
     PurchaseAvailableComponent,
     PurchaseAvailable2Component,
@@ -144,7 +144,6 @@ import { VoucherComponent } from "../../widgets/voucher/voucher.component";
     PurchasePromoComponent,
     PurchaseRecentViewComponent,
     QuantityButtonComponent,
-    RegisterComponent,
     RegisterIndexComponent,
     SecMsgComponent,
     SecuritizationpayComponent,

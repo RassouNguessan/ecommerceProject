@@ -30,9 +30,9 @@ export class NavbarComponent {
     {
       label: "Paramètre",
       value: "/purchase",
-      icon: "assets/images/Groupe 14974.png",
+      icon: "/assets/images/Groupe 14974.png",
     },
-    { label: "Profil", value: "/profile", icon: "assets/icons/profil.png" },
+    { label: "Profil", value: "/profile", icon: "/assets/icons/profil.png" },
   ];
 
   constructor(

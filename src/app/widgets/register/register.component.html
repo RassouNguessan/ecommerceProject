@@ -1,4 +1,4 @@
-<form>
+<!-- <form>
   <div class="message">
     <span>vous souhaitez vous inscrire en tant que :</span>
   </div>
@@ -13,4 +13,26 @@
       entreprise
     </button>
   </div>
-</form>
+</form> -->
+
+<div class="container mt-5 bg-white">
+  <div class="pt-5">
+    <app-sec-msg></app-sec-msg>
+    <form class="p-lg-5 p-md-4 p-3 d-flex flex-column justify-content-center">
+      <div class="message pb-3">
+        <span>vous souhaitez vous inscrire en tant que :</span>
+      </div>
+      <div class="profil text-center mb-4">Sélectionnez votre profil :</div>
+      <div class="d-grid gap-2 py-5">
+        <button type="button" class="individual" (click)="redirectIndividual()" #individual>
+          <i class="bi bi-people-fill mx-2"></i>
+          particulier
+        </button>
+        <button type="button" class="company mt-2" (click)="redirectCompanyl()" #company>
+          <i class="bi bi-building-fill mx-2"></i>
+          entreprise
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

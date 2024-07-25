@@ -2,7 +2,7 @@ import { Component, Input, ViewChild, ElementRef } from "@angular/core";
 import { Router } from "@angular/router";
 import { CommonModule } from "@angular/common";
 import { DistributionChannelComponent } from "../distribution-channel/distribution-channel.component";
-import { BackbuttonComponent } from "../backbutton/backbutton.component";
+import { BackButtonComponent } from "../back-button/back-button.component";
 import { SecMsgComponent } from "../sec-msg/sec-msg.component";
 import { LoadingChargeComponent } from "../loading-charge/loading-charge.component";
 import { LottiesComponent } from "../lotties/lotties.component";
@@ -11,7 +11,7 @@ import { LottiesComponent } from "../lotties/lotties.component";
   selector: "app-distributeinduvidual",
   standalone: true,
   imports: [
-    BackbuttonComponent,
+    BackButtonComponent,
     SecMsgComponent,
     CommonModule,
     LoadingChargeComponent,

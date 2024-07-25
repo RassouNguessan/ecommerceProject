@@ -16,7 +16,7 @@ export class SecMsgComponent {
 
   constructor() {
     this.sendOptions = {
-      path: "/assets/animations/lotties/security shield.json",
+      path: "/assets/animations/shield.json",
     };
     this.width = "35px";
     this.height = "35px";

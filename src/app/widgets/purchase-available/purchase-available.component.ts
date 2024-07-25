@@ -2,9 +2,9 @@ import { Router } from "@angular/router";
 import { Component } from "@angular/core";
 import { CardComponent } from "../card/card.component";
 import { PurchaseRecentViewComponent } from "../purchase-recent-view/purchase-recent-view.component";
-import { Bannier3Component } from "../bannier-3/bannier-3.component";
-import { BackbuttonComponent } from "../backbutton/backbutton.component";
+import { BackButtonComponent } from "../back-button/back-button.component";
 import { FooterComponent } from "../footer/footer.component";
+import { Banner3Component } from "../banner-3/banner-3.component";
 
 @Component({
   selector: "app-purchase-available",
@@ -12,11 +12,11 @@ import { FooterComponent } from "../footer/footer.component";
   templateUrl: "./purchase-available.component.html",
   styleUrl: "./purchase-available.component.scss",
   imports: [
-    BackbuttonComponent,
+    BackButtonComponent,
     PurchaseRecentViewComponent,
     CardComponent,
     FooterComponent,
-    Bannier3Component,
+    Banner3Component,
   ],
 })
 export class PurchaseAvailableComponent {

@@ -1,12 +1,12 @@
 import { Component } from "@angular/core";
 import { AnimationOptions, LottieComponent } from "ngx-lottie";
 import { AnimationItem } from "lottie-web";
-import { BackbuttonComponent } from "../backbutton/backbutton.component";
+import { BackButtonComponent } from "../back-button/back-button.component";
 
 @Component({
   selector: "app-voucher",
   standalone: true,
-  imports: [LottieComponent, BackbuttonComponent],
+  imports: [LottieComponent, BackButtonComponent],
   templateUrl: "./voucher.component.html",
   styleUrl: "./voucher.component.scss",
 })

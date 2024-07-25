@@ -1,15 +1,15 @@
 import { Component } from "@angular/core";
-import { Bannier1Component } from "../bannier-1/bannier-1.component";
 import { PurchasePromoComponent } from "../purchase-promo/purchase-promo.component";
 import { CardComponent } from "../card/card.component";
-import { Bannier2Component } from "../bannier-2/bannier-2.component";
 import { PurchaseAvailable2Component } from "../purchase-available-2/purchase-available.component";
-import { Bannier3Component } from "../bannier-3/bannier-3.component";
 import { PurchaseMostComponent } from "../purchase-most/purchase-most.component";
-import { Bannier4Component } from "../bannier-4/bannier-4.component";
 import { PurchaseRecentViewComponent } from "../purchase-recent-view/purchase-recent-view.component";
 import { CommonModule } from "@angular/common";
 import { FooterComponent } from "../footer/footer.component";
+import { Banner1Component } from "../banner-1/banner-1.component";
+import { Banner2Component } from "../banner-2/banner-2.component";
+import { Banner3Component } from "../banner-3/banner-3.component";
+import { Banner4Component } from "../banner-4/banner-4.component";
 
 @Component({
   selector: "app-purchase",
@@ -17,14 +17,14 @@ import { FooterComponent } from "../footer/footer.component";
   templateUrl: "./purchase.component.html",
   styleUrl: "./purchase.component.scss",
   imports: [
-    Bannier1Component,
+    Banner1Component,
     PurchasePromoComponent,
     CardComponent,
-    Bannier2Component,
+    Banner2Component,
     PurchaseAvailable2Component,
-    Bannier3Component,
+    Banner3Component,
     PurchaseMostComponent,
-    Bannier4Component,
+    Banner4Component,
     PurchaseRecentViewComponent,
     FooterComponent,
     CommonModule,

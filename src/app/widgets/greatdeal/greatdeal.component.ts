@@ -1,7 +1,7 @@
 import { Component } from "@angular/core";
 import { HeartComponent } from "../heart/heart.component";
 import { FavoriteButtonComponent } from "../favorite-button/favorite-button.component";
-import { BackbuttonComponent } from "../backbutton/backbutton.component";
+import { BackButtonComponent } from "../back-button/back-button.component";
 import { StoreconcernsComponent } from "../storeconcerns/storeconcerns.component";
 import { PaginationComponent } from "../pagination/pagination.component";
 
@@ -9,7 +9,7 @@ import { PaginationComponent } from "../pagination/pagination.component";
   selector: "app-greatdeal",
   standalone: true,
   imports: [
-    BackbuttonComponent,
+    BackButtonComponent,
     StoreconcernsComponent,
     PaginationComponent,
     HeartComponent,

@@ -4,7 +4,7 @@ export const authRoutes: Routes = [
   {
     path: "login",
     loadComponent: () =>
-      import("../widgets/body/body.component").then((m) => m.BodyComponent),
+      import("../pages/login-page/login-page.component").then((m) => m.LoginPageComponent),
   },
   {
     path: "register",
@@ -13,22 +13,22 @@ export const authRoutes: Routes = [
       {
         path: "",
         loadComponent: () =>
-          import("../widgets/register/register.component").then(
-            (m) => m.RegisterIndexComponent
+          import("../pages/register-page/register-page.component").then(
+            (m) => m.RegisterPageComponent
           ),
       },
       {
         path: "individual",
         loadComponent: () =>
-          import("../widgets/individual/individual.component").then(
-            (m) => m.IndividualComponent
+          import("../pages/register-individual-page/register-individual-page.component").then(
+            (m) => m.RegisterIndividualPageComponent
           ),
       },
       {
         path: "company",
         loadComponent: () =>
-          import("../widgets/company/company.component").then(
-            (m) => m.CompanyComponent
+          import("../pages/register-enterprise-page/register-enterprise-page.component").then(
+            (m) => m.RegisterEnterprisePageComponent
           ),
       },
     ],

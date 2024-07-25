@@ -11,7 +11,7 @@ import { AnimationItem } from "lottie-web";
 })
 export class LottieFilesComponent {
   options: AnimationOptions = {
-    path: "/assets/animations/lotties/security shield.json",
+    path: "/assets/animations/lotties/shield.json",
     loop: true,
     autoplay: true,
   };

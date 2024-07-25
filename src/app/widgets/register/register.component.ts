@@ -1,24 +1,32 @@
-import { Component, Output, EventEmitter, Input } from "@angular/core";
+import { Component, ElementRef, ViewChild } from "@angular/core";
 import { CommonModule } from "@angular/common";
+import { SecMsgComponent } from "../sec-msg/sec-msg.component";
+import { Router } from "@angular/router";
 
 @Component({
-  selector: "app-register-index",
+  selector: "app-register",
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, SecMsgComponent],
   templateUrl: "./register.component.html",
   styleUrl: "./register.component.scss",
 })
 export class RegisterIndexComponent {
-  @Input() displayIndividual = true;
-  @Input() displayCompany = true;
-  @Output() individualEvent = new EventEmitter<boolean>();
-  @Output() companyEvent = new EventEmitter<boolean>();
+  @ViewChild("individual") individual!: ElementRef;
+  @ViewChild("company") company!: ElementRef;
+  individualText: string | undefined;
+  companyText: string | undefined;
+
+  constructor(private route: Router) {}
 
   redirectIndividual() {
-    this.individualEvent.emit(this.displayIndividual);
+    this.route.navigateByUrl("register/individual", {
+      state: { type: this.individual.nativeElement.textContent },
+    });
   }
 
   redirectCompanyl() {
-    this.companyEvent.emit(this.displayCompany);
+    this.route.navigateByUrl("/register/company", {
+      state: { type: this.company.nativeElement.textContent },
+    });
   }
 }

@@ -25,8 +25,8 @@ export const purchasesRoutes: Routes = [
   {
     path: "bannier",
     loadComponent: () =>
-      import("../widgets/bannier-1/bannier-1.component").then(
-        (m) => m.Bannier1Component
+      import("../widgets/banner-1/banner-1.component").then(
+        (m) => m.Banner1Component
       ),
   },
   {

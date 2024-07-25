@@ -4,34 +4,34 @@ export const ordersRoutes: Routes = [
   {
     path: "order",
     loadComponent: () =>
-      import("../widgets/order/order.component").then((m) => m.OrderComponent),
+      import("../pages/order-detail-page/order-detail-page.component").then((m) => m.OrderDetailPageComponent),
   },
   {
-    path: "distributed",
+    path: "grouped-distribution",
     loadComponent: () =>
-      import("../widgets/distributed/distributed.component").then(
-        (m) => m.DistributedComponent
+      import("../pages/grouped-distribution-page/grouped-distribution-page.component").then(
+        (m) => m.GroupedDistributionPageComponent
       ),
   },
   {
-    path: "distributedindividual",
+    path: "distribution",
     loadComponent: () =>
       import(
-        "../widgets/distributeinduvidual/distributeinduvidual.component"
-      ).then((m) => m.DistributeinduvidualComponent),
+        "../pages/distribution-page/distribution-page.component"
+      ).then((m) => m.DistributionPageComponent),
   },
   {
     path: "buy",
     loadComponent: () =>
-      import("../widgets/buyvouchers/buyvouchers.component").then(
-        (m) => m.BuyvouchersComponent
+      import("../pages/add-to-cart-page/add-to-cart-page.component").then(
+        (m) => m.AddToCartPageComponent
       ),
   },
   {
-    path: "detailorder",
+    path: "order-detail",
     loadComponent: () =>
-      import("../widgets/detailorder/detailorder.component").then(
-        (m) => m.DetailorderComponent
+      import("../pages/my-orders-details-page/my-orders-details-page.component").then(
+        (m) => m.MyOrdersDetailsPageComponent
       ),
   },
   {
@@ -40,6 +40,27 @@ export const ordersRoutes: Routes = [
       import("../widgets/myorder/myorder.component").then(
         (m) => m.MyorderComponent
       ),
+  },
+
+  {
+    path: "my-orders",
+    title: "Mes commandes",
+    children: [
+      {
+        path: "",
+        loadComponent: () =>
+          import("../pages/my-orders-page/my-orders-page.component").then(
+            (m) => m.MyOrdersPageComponent
+          ),
+      },
+      {
+        path: "details",
+        loadComponent: () =>
+          import("../pages/my-orders-details-page/my-orders-details-page.component").then(
+            (m) => m.MyOrdersDetailsPageComponent
+          ),
+      },
+    ],
   },
 
   {

@@ -1,12 +1,12 @@
 import { Component } from "@angular/core";
 import { CommonModule } from "@angular/common";
 import { FavoriteButtonComponent } from "../favorite-button/favorite-button.component";
-import { BackbuttonComponent } from "../backbutton/backbutton.component";
+import { BackButtonComponent } from "../back-button/back-button.component";
 
 @Component({
   selector: "app-detailbasket",
   standalone: true,
-  imports: [FavoriteButtonComponent, BackbuttonComponent, CommonModule],
+  imports: [FavoriteButtonComponent, BackButtonComponent, CommonModule],
   templateUrl: "./detailbasket.component.html",
   styleUrl: "./detailbasket.component.scss",
 })

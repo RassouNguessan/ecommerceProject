@@ -3,7 +3,7 @@ import { SecuritizationpayComponent } from "../securitizationpay/securitizationp
 import { DetailpaymentComponent } from "../detailpayment/detailpayment.component";
 import { CommonModule } from "@angular/common";
 import { FormsModule } from "@angular/forms";
-import { BackbuttonComponent } from "../backbutton/backbutton.component";
+import { BackButtonComponent } from "../back-button/back-button.component";
 
 /*
 interface GridItem {
@@ -21,7 +21,7 @@ interface GridItem {
   standalone: true,
   imports: [
     SecuritizationpayComponent,
-    BackbuttonComponent,
+    BackButtonComponent,
     DetailpaymentComponent,
     CommonModule,
     FormsModule,

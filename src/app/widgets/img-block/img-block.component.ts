@@ -12,6 +12,6 @@ export class ImgBlockComponent {
   imageURI?: string;
 
   constructor() {
-    this.imageURI = "/assets/images/Groupe 16336@2x.png";
+    this.imageURI = "/assets/images/Groupe 16336.png";
   }
 }

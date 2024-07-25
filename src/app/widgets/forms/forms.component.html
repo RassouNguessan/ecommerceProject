@@ -1,62 +1,40 @@
-<div class="mt-5 bg-white">
+<div class="container mt-5 bg-white">
   <div class="pt-5">
     <app-sec-msg></app-sec-msg>
-    <form
-      class="p-md-4 p-lg-5 p-4 justify-content-center"
-      [formGroup]="loginForm"
-      (ngSubmit)="loginSubmit()"
-    >
+    <form class="m-lg-5 m-md-5 m-3 justify-content-center" [formGroup]="loginForm" (ngSubmit)="loginSubmit()">
       <div class="message pb-3">
         <span>connectez vous à votre espace boncoin.</span>
       </div>
-      <div class="row mb-2">
+      <div class="mb-3">
         <label for="login" class="form-label">
           Login
           <span class="red">*</span>
         </label>
         <div class="col-sm-12">
-          <input
-            type="text"
-            class="form-input"
-            id="login"
-            placeholder="Saisissez votre login"
-            formControlName="login"
-          />
+          <input type="text" class="form-input" id="login" placeholder="Saisissez votre login"
+            formControlName="login" />
         </div>
       </div>
-      <div class="row mb-2">
+      <div class="mb-3">
         <label for="password" class="form-label">
           Mot de passe
           <span class="red">*</span>
         </label>
         <div class="col-sm-12 d-flex align-items-center">
-          <input
-            type="password"
-            class="form-input"
-            id="password"
-            placeholder="Saisissez votre mot de passe"
-            formControlName="password"
-          />
+          <input type="password" class="form-input" id="password" placeholder="Saisissez votre mot de passe"
+            formControlName="password" />
         </div>
       </div>
-      <p>
+      <p class="mb-0">
         <a class="link" href="#" (click)="forgotPassword()">
           Mot de passe oublié
         </a>
       </p>
-      <div class="d-flex mt-4">
-        <button
-          type="button"
-          class="btn-custom inscription"
-          routerLink="/register"
-        >
+      <div class="d-flex gap-2 py-5">
+        <button type="button" class="btn-custom inscription" routerLink="/register">
           inscription
         </button>
-        <button
-          type="submit"
-          class="ms-2 btn-custom connexion"
-          [disabled]="!loginForm.valid"
-        >
+        <button type="submit" class="btn-custom connexion" [disabled]="!loginForm.valid">
           connexion
         </button>
       </div>

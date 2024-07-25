@@ -4,7 +4,7 @@ import { CommonModule } from "@angular/common";
 import { DetailpaymentComponent } from "../detailpayment/detailpayment.component";
 import { SecuritizationpayComponent } from "../securitizationpay/securitizationpay.component";
 import CardVisaMastercardPaymentComponent from "../card-visa-mastercard-payment/card-visa-mastercard-payment.component";
-import { BackbuttonComponent } from "../backbutton/backbutton.component";
+import { BackButtonComponent } from "../back-button/back-button.component";
 
 interface GridItem {
   title: string;
@@ -22,7 +22,7 @@ interface GridItem {
     FormsModule,
     CommonModule,
     DetailpaymentComponent,
-    BackbuttonComponent,
+    BackButtonComponent,
     SecuritizationpayComponent,
     CardVisaMastercardPaymentComponent,
   ],
