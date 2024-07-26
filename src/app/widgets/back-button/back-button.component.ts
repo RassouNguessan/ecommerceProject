@@ -2,7 +2,7 @@ import { Component } from "@angular/core";
 import { Location } from "@angular/common";
 
 @Component({
-  selector: "back-button",
+  selector: "app-back-button",
   standalone: true,
   imports: [],
   templateUrl: "./back-button.component.html",

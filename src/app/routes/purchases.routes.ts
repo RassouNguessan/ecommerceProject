@@ -2,38 +2,27 @@ import { Routes } from "@angular/router";
 
 export const purchasesRoutes: Routes = [
   {
-    path: "purchase",
+    path: "dashboard",
+    title: "Acceuil",
     loadComponent: () =>
-      import("../widgets/purchase/purchase.component").then(
-        (m) => m.PurchaseComponent
+      import("../pages/dashboard-page/dashboard-page.component").then(
+        (m) => m.DashboardPageComponent
       ),
   },
   {
     path: "purchaseavailable",
+    title: "Détail de l'achat",
     loadComponent: () =>
       import("../widgets/purchase-available/purchase-available.component").then(
         (m) => m.PurchaseAvailableComponent
       ),
   },
   {
-    path: "detail/:id",
+    path: "voucher/:id",
+    title: "Détail du voucher",
     loadComponent: () =>
-      import("../widgets/card-detail/card-detail.component").then(
-        (m) => m.CardDetailComponent
-      ),
-  },
-  {
-    path: "bannier",
-    loadComponent: () =>
-      import("../widgets/banner-1/banner-1.component").then(
-        (m) => m.Banner1Component
-      ),
-  },
-  {
-    path: "purchasePromo",
-    loadComponent: () =>
-      import("../widgets/purchase-promo/purchase-promo.component").then(
-        (m) => m.PurchasePromoComponent
+      import("../pages/voucher-page/voucher-page.component").then(
+        (m) => m.VoucherPageComponent
       ),
   },
 ];

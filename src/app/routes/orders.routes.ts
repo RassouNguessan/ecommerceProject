@@ -4,21 +4,25 @@ export const ordersRoutes: Routes = [
   {
     path: "order",
     loadComponent: () =>
-      import("../pages/order-detail-page/order-detail-page.component").then((m) => m.OrderDetailPageComponent),
-  },
-  {
-    path: "grouped-distribution",
-    loadComponent: () =>
-      import("../pages/grouped-distribution-page/grouped-distribution-page.component").then(
-        (m) => m.GroupedDistributionPageComponent
+      import("../pages/order-detail-page/order-detail-page.component").then(
+        (m) => m.OrderDetailPageComponent
       ),
   },
   {
-    path: "distribution",
+    path: "grouped-distribution",
+    title: "Distribution groupée de bons d'achats",
     loadComponent: () =>
       import(
-        "../pages/distribution-page/distribution-page.component"
-      ).then((m) => m.DistributionPageComponent),
+        "../pages/grouped-distribution-page/grouped-distribution-page.component"
+      ).then((m) => m.GroupedDistributionPageComponent),
+  },
+  {
+    path: "distribution",
+    title: "Distribution de bons d'achats",
+    loadComponent: () =>
+      import("../pages/distribution-page/distribution-page.component").then(
+        (m) => m.DistributionPageComponent
+      ),
   },
   {
     path: "buy",
@@ -30,9 +34,9 @@ export const ordersRoutes: Routes = [
   {
     path: "order-detail",
     loadComponent: () =>
-      import("../pages/my-orders-details-page/my-orders-details-page.component").then(
-        (m) => m.MyOrdersDetailsPageComponent
-      ),
+      import(
+        "../pages/my-orders-details-page/my-orders-details-page.component"
+      ).then((m) => m.MyOrdersDetailsPageComponent),
   },
   {
     path: "myorder",
@@ -48,6 +52,7 @@ export const ordersRoutes: Routes = [
     children: [
       {
         path: "",
+        title: "Mes Commandes",
         loadComponent: () =>
           import("../pages/my-orders-page/my-orders-page.component").then(
             (m) => m.MyOrdersPageComponent
@@ -55,16 +60,18 @@ export const ordersRoutes: Routes = [
       },
       {
         path: "details",
+        title: "détail de ma commande",
         loadComponent: () =>
-          import("../pages/my-orders-details-page/my-orders-details-page.component").then(
-            (m) => m.MyOrdersDetailsPageComponent
-          ),
+          import(
+            "../pages/my-orders-details-page/my-orders-details-page.component"
+          ).then((m) => m.MyOrdersDetailsPageComponent),
       },
     ],
   },
 
   {
     path: "channeldistrubution",
+    title: "Mes Commandes",
     loadComponent: () =>
       import(
         "../widgets/channeldistribution/channeldistribution.component"
@@ -94,10 +101,10 @@ export const ordersRoutes: Routes = [
   },
   {
     path: "beneficiary-list",
-    title: "Liste des bénéficiaires",
+    title: "Résumé de la liste des bénéficiaires",
     loadComponent: () =>
-      import("../widgets/beneficiary-list/beneficiary-list.component").then(
-        (m) => m.BeneficiaryListComponent
+      import("../pages/distribution-summary-page/distribution-summary-page.component").then(
+        (m) => m.DistributionSummaryPageComponent
       ),
   },
 ];

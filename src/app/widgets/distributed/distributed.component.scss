@@ -14,26 +14,26 @@
   font-size: 12px;
 }
 
-input {
+input{
   width: 397px;
   height: 44px;
-  font: var(--unnamed-font-style-normal) normal
-    var(--unnamed-font-weight-normal) var(--unnamed-font-size-13) /
-    var(--unnamed-line-spacing-16) var(--unnamed-font-family-proxima-nova);
-  letter-spacing: var(--unnamed-character-spacing-0);
-  color: var(--unnamed-color-bababa);
-  text-align: left;
-  font: normal normal normal 13px/16px Proxima Nova;
-  letter-spacing: 0px;
-  color: #bababa;
-  opacity: 1;
+font: var(--unnamed-font-style-normal) normal
+var(--unnamed-font-weight-normal) var(--unnamed-font-size-13)
+/var(--unnamed-line-spacing-16) var(--unnamed-font-family-proxima-nova);
+letter-spacing: var(--unnamed-character-spacing-0);
+color: var(--unnamed-color-bababa);
+text-align: left;
+font: normal normal normal 13px/16px Proxima Nova;
+letter-spacing: 0px;
+color: #BABABA;
+opacity: 1;
+
 }
 
-h3 {
-  font: var(--unnamed-font-style-normal) normal var(--unnamed-font-weight-600)
-    var(--unnamed-font-size-30) / 40px var(--unnamed-font-family-proxima-nova);
-  letter-spacing: var(--unnamed-character-spacing-0);
-  color: var(--texte);
-  text-align: left;
-  font: normal normal 600 30px/40px Proxima Nova;
+h3{
+font: var(--unnamed-font-style-normal) normal var(--unnamed-font-weight-600) var(--unnamed-font-size-30)/40px var(--unnamed-font-family-proxima-nova);
+letter-spacing: var(--unnamed-character-spacing-0);
+color: var(--texte);
+text-align: left;
+font: normal normal 600 30px/40px Proxima Nova;
 }

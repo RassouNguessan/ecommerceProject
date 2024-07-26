@@ -1,22 +1,23 @@
-import { ComponentFixture, TestBed } from "@angular/core/testing";
+import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { CartsuccessComponent } from "./cartsuccess.component";
+import { CartsuccessComponent } from './cartsuccess.component';
 
-describe("CartsuccessComponent", () => {
+describe('CartsuccessComponent', () => {
   let component: CartsuccessComponent;
   let fixture: ComponentFixture<CartsuccessComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [CartsuccessComponent],
-    }).compileComponents();
+      imports: [CartsuccessComponent]
+    })
+    .compileComponents();
 
     fixture = TestBed.createComponent(CartsuccessComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
 
-  it("should create", () => {
+  it('should create', () => {
     expect(component).toBeTruthy();
   });
 });

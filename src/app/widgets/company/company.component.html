@@ -4,7 +4,7 @@
     @if (nextStep === StateEnum.One) {
     <form class="p-md-5 p-5 justify-content-between" [formGroup]="stepOneForm" (ngSubmit)="companyFormSubmit()">
       <div class="message fs-27 pb-3">
-        <span>inscription - {{ registrationType }}</span>
+        <span>inscription - enterprise</span>
       </div>
 
       <div class="row mb-2">
@@ -73,7 +73,7 @@
           <span class="red">*</span>
         </label>
         <div class="d-flex align-items-center">
-          <select id="country" class="form-input col-sm-12" formControlName="country">
+          <select id="country" class="form-select col-sm-12" formControlName="country">
             <option [value]="">Sélectionner votre pays</option>
             @for (country of countries; track country) {
             <option [value]="country.code">
@@ -81,6 +81,12 @@
             </option>
             }
           </select>
+          <!-- <select class="form-select" aria-label="Default select example">
+            <option selected>Open this select menu</option>
+            <option value="1">One</option>
+            <option value="2">Two</option>
+            <option value="3">Three</option>
+          </select> -->
         </div>
       </div>
 
@@ -96,7 +102,7 @@
     } @else if (nextStep === StateEnum.Two) {
     <form class="p-md-5 p-5 justify-content-between" [formGroup]="stepTwoForm" (ngSubmit)="companyFormSubmit()">
       <div class="message fs-27 pb-3">
-        <span>inscription - {{ registrationType }}</span>
+        <span>inscription - enterprise</span>
       </div>
       <div class="d-flex fs-18 fw-bold mt-2">
         <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
@@ -140,13 +146,17 @@
       <div class="message fs-27 pb-3">
         <span>inscription - entreprise</span>
       </div>
+      <div style="color: red">
+        {{ stepThreeForm.status }}
+      </div>
+
       <div class="row mb-2">
         <label for="enterprisetype" class="form-label">
           Type d'entreprise
           <span class="red">*</span>
         </label>
         <div class="d-flex align-items-center">
-          <select id="enterprisetype" class="form-input col-sm-12" formControlName="enterpriseType">
+          <select id="enterprisetype" class="form-select col-sm-12" formControlName="enterpriseType">
             <option [value]="">Type d'entreprise</option>
             @for (enterprise of enterprises; track enterprise) {
             <option [value]="enterprise.code">
@@ -162,7 +172,7 @@
           <span class="red">*</span>
         </label>
         <div class="col-sm-12 d-flex align-items-center">
-          <select id="categpro" class="form-input col-sm-12" formControlName="categPro">
+          <select id="categpro" class="form-select col-sm-12" formControlName="categPro">
             <option [value]="">Catégorie professionnelle</option>
             @for (category of categories; track category) {
             <option [value]="category.code">
@@ -178,7 +188,7 @@
           <span class="red">*</span>
         </label>
         <div class="col-sm-12 d-flex align-items-center">
-          <select id="subcategory" class="form-input col-sm-12" formControlName="subCategory">
+          <select id="subcategory" class="form-select col-sm-12" formControlName="subCategory">
             <option [value]="">Sous-Catégorie</option>
             @for (category of categories; track category) {
             <option [value]="category.code">
@@ -212,7 +222,7 @@
     } @else {
     <form class="p-md-5 p-5 justify-content-between" [formGroup]="stepFourForm" (ngSubmit)="companyFormSubmit()">
       <div class="message fs-27 pb-3">
-        <span>inscription - {{ registrationType }}</span>
+        <span>inscription - enterprise</span>
       </div>
       <div class="row mb-2 mt-2">
         <label for="password" class="form-label">

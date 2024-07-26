@@ -1,10 +1,10 @@
 import { Router } from "@angular/router";
 import { Component } from "@angular/core";
 import { CardComponent } from "../card/card.component";
-import { PurchaseRecentViewComponent } from "../purchase-recent-view/purchase-recent-view.component";
-import { BackButtonComponent } from "../back-button/back-button.component";
-import { FooterComponent } from "../footer/footer.component";
-import { Banner3Component } from "../banner-3/banner-3.component";
+import { PurchaseRecentViewComponent } from "../../widgets/purchase-recent-view/purchase-recent-view.component";
+import { FooterComponent } from "../../widgets/footer/footer.component";
+import { BackButtonComponent } from "../../widgets/back-button/back-button.component";
+import { Banner3Component } from "../../widgets/banner-3/banner-3.component";
 
 @Component({
   selector: "app-purchase-available",

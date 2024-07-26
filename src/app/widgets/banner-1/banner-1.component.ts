@@ -11,7 +11,7 @@ import { CommonModule } from "@angular/common";
 import { ImgBlockComponent } from "../img-block/img-block.component";
 
 @Component({
-  selector: "banner-1",
+  selector: "app-banner-1",
   standalone: true,
   templateUrl: "./banner-1.component.html",
   styleUrl: "./banner-1.component.scss",

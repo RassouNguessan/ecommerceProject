@@ -1,6 +1,7 @@
-import { CommonModule } from "@angular/common";
-import { Component } from "@angular/core";
-import { FormsModule } from "@angular/forms";
+import { CommonModule } from '@angular/common';
+import { Component,Input,Output,EventEmitter, OnInit } from '@angular/core';
+import { FormsModule } from '@angular/forms';
+
 
 interface GridItem {
   title: string;
@@ -8,32 +9,39 @@ interface GridItem {
   cvv: string;
   expiration: string;
   imageUrl: string;
+
 }
 
 @Component({
-  selector: "app-card-visa-mastercard-payment",
+  selector: 'app-card-visa-mastercard-payment',
   standalone: true,
-  imports: [FormsModule, CommonModule],
-  templateUrl: "./card-visa-mastercard-payment.component.html",
-  styleUrl: "./card-visa-mastercard-payment.component.scss",
+  imports: [FormsModule,
+            CommonModule,
+  ],
+  templateUrl: './card-visa-mastercard-payment.component.html',
+  styleUrl: './card-visa-mastercard-payment.component.scss'
 })
-export class CardVisaMastercardPaymentComponent {
-  selectedGrid: number | null = null;
+export class CardVisaMastercardPaymentComponent{
 
+  selectedGrid: number | null = null;
+  detailsOpened: boolean = false;
+  isAnimating: boolean = false;
+  phoneNumber: string = '';
+  cvvNumber: string = '';
+  expiryDate: string = '';
+  expirationDate: string = '';
+
+
+  customMastercardImageUrl: string = './assets/images/orange_money.png';
   grids: GridItem[] = [
-    {
-      title: "Visa / Mastercard",
-      cvv: "",
-      expiration: "",
-      number: "",
-      imageUrl: "/assets/images/visa_money.png",
-    },
+ 
+    { title: 'Visa / Mastercard', cvv: '',expiration:'', number: '', imageUrl: './assets/images/visa_money.png' }
   ];
 
   stopPropagation(event: MouseEvent): void {
     event.stopPropagation();
   }
-
+  
   toggleGrid(index: number): void {
     if (this.selectedGrid === index) {
       this.selectedGrid = null;
@@ -41,5 +49,12 @@ export class CardVisaMastercardPaymentComponent {
       this.selectedGrid = index;
     }
   }
+  
+
+
+
+
+
+
 }
-export default CardVisaMastercardPaymentComponent;
+export default CardVisaMastercardPaymentComponent

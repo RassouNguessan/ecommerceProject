@@ -2,17 +2,21 @@ import { Routes } from "@angular/router";
 
 export const paymentsRoutes: Routes = [
   {
-    path: "payment",
+    path: "payment-otp",
     loadComponent: () =>
-      import("../widgets/payment/payment.component").then(
-        (m) => m.PaymentComponent
+      import("../pages/payment-otp-page/payment-otp-page.component").then(
+        (m) => m.PaymentOtpPageComponent
       ),
+    // loadComponent: () =>
+    //   import("../widgets/payment/payment.component").then(
+    //     (m) => m.PaymentComponent
+    //   ),
   },
   {
-    path: "moyen-payment",
+    path: "payment",
     loadComponent: () =>
-      import("../widgets/means-payment/means-payment.component").then(
-        (m) => m.MeansPaymentComponent
+      import("../pages/payment-method-page/payment-method-page.component").then(
+        (m) => m.PaymentMethodPageComponent
       ),
   },
 ];

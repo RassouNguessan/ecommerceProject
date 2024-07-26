@@ -10,12 +10,12 @@ import { AnimationItem } from "lottie-web";
   styleUrl: "./lottie-validate.component.scss",
 })
 export class LottieValidateComponent {
-  @Input() anotherOptions: Record<string, unknown> = {};
+  @Input() imagePath: Record<string, unknown> = {};
   options: AnimationOptions;
   private animationItem: AnimationItem | undefined;
 
   constructor() {
-    this.options = this.anotherOptions;
+    this.options = this.imagePath;
   }
 
   animationCreated(animationItem: AnimationItem): void {

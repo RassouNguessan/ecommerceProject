@@ -37,11 +37,11 @@ import { IndividualComponent } from "../../widgets/individual/individual.compone
 import { LoadingChargeComponent } from "../../widgets/loading-charge/loading-charge.component";
 import { LoginComponent } from "../../widgets/login/login.component";
 import { LottieBagComponent } from "../../widgets/lottie-bag/lottie-bag.component";
-import { LottieFilesComponent } from "../../widgets/lottie-files/lottie-files.component";
+// import { LottieFilesComponent } from "../../widgets/lottie-files/lottie-files.component";
 import { LottieSuccesComponent } from "../../widgets/lottie-succes/lottie-succes.component";
 import { LottieValidateComponent } from "../../widgets/lottie-validate/lottie-validate.component";
 import { LottiesComponent } from "../../widgets/lotties/lotties.component";
-import { LottiesucessComponent } from "../../widgets/lottiesucess/lottiesucess.component";
+// import { LottiesucessComponent } from "../../widgets/lottiesucess/lottiesucess.component";
 import { MeansPaymentComponent } from "../../widgets/means-payment/means-payment.component";
 import { MyorderComponent } from "../../widgets/myorder/myorder.component";
 import { NavbarComponent } from "../../widgets/navbar/navbar.component";
@@ -57,7 +57,7 @@ import { PurchaseComponent } from "../../widgets/purchase/purchase.component";
 import { PurchaseAvailableComponent } from "../../widgets/purchase-available/purchase-available.component";
 import { PurchaseAvailable2Component } from "../../widgets/purchase-available-2/purchase-available.component";
 import { PurchaseMostComponent } from "../../widgets/purchase-most/purchase-most.component";
-import { PurchasePromoComponent } from "../../widgets/purchase-promo/purchase-promo.component";
+// import { PurchasePromoComponent } from "../../widgets/purchase-promo/purchase-promo.component";
 import { PurchaseRecentViewComponent } from "../../widgets/purchase-recent-view/purchase-recent-view.component";
 import { QuantityButtonComponent } from "../../widgets/quantity-button/quantity-button.component";
 import { RegisterIndexComponent } from "../../widgets/register/register.component";
@@ -73,6 +73,7 @@ import { Banner2Component } from "../../widgets/banner-2/banner-2.component";
 import { Banner3Component } from "../../widgets/banner-3/banner-3.component";
 import { Banner4Component } from "../../widgets/banner-4/banner-4.component";
 import { BackButtonComponent } from "../../widgets/back-button/back-button.component";
+import { PurchaseMessageComponent } from "../../widgets/purchase-message/purchase-message.component";
 
 @Component({
   selector: "app-widgets-page",
@@ -120,11 +121,11 @@ import { BackButtonComponent } from "../../widgets/back-button/back-button.compo
     LoadingChargeComponent,
     LoginComponent,
     LottieBagComponent,
-    LottieFilesComponent,
+    // LottieFilesComponent,
     LottieSuccesComponent,
     LottieValidateComponent,
     LottiesComponent,
-    LottiesucessComponent,
+    // LottiesucessComponent,
     MeansPaymentComponent,
     MyorderComponent,
     NavbarComponent,
@@ -141,7 +142,7 @@ import { BackButtonComponent } from "../../widgets/back-button/back-button.compo
     PurchaseAvailableComponent,
     PurchaseAvailable2Component,
     PurchaseMostComponent,
-    PurchasePromoComponent,
+    // PurchasePromoComponent,
     PurchaseRecentViewComponent,
     QuantityButtonComponent,
     RegisterIndexComponent,
@@ -152,7 +153,8 @@ import { BackButtonComponent } from "../../widgets/back-button/back-button.compo
     SuccessComponent,
     TotalPriceCardComponent,
     VoucherComponent,
-  ],
+    PurchaseMessageComponent
+],
   templateUrl: "./widgets-page.component.html",
   styleUrl: "./widgets-page.component.scss",
 })

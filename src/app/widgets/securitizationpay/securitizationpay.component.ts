@@ -1,5 +1,5 @@
 import { Component, Input } from "@angular/core";
-import { LottiesComponent } from "../lotties/lotties.component";
+import { LottiesComponent } from "../../widgets/lotties/lotties.component";
 
 @Component({
   selector: "app-securitizationpay",
@@ -9,13 +9,13 @@ import { LottiesComponent } from "../lotties/lotties.component";
   styleUrl: "./securitizationpay.component.scss",
 })
 export class SecuritizationpayComponent {
-  @Input() sendOptions: Record<string, unknown> = {};
+   @Input() imagePath: Record<string, unknown> = {};
   width: string;
   height: string;
 
   constructor() {
-    this.sendOptions = {
-      path: "/assets/animations/lotties/security shield.json",
+    this.imagePath = {
+      path: "/assets/animations/shield.json",
     };
     this.width = "125px";
     this.height = "125px";

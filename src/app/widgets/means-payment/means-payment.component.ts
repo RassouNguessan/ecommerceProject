@@ -1,10 +1,12 @@
 import { Component } from "@angular/core";
 import { FormsModule } from "@angular/forms";
+// import { NgClass } from "@angular/common";
 import { CommonModule } from "@angular/common";
 import { DetailpaymentComponent } from "../detailpayment/detailpayment.component";
+import { BackButtonComponent } from "../../widgets/back-button/back-button.component";
 import { SecuritizationpayComponent } from "../securitizationpay/securitizationpay.component";
 import CardVisaMastercardPaymentComponent from "../card-visa-mastercard-payment/card-visa-mastercard-payment.component";
-import { BackButtonComponent } from "../back-button/back-button.component";
+import { RouterLink } from "@angular/router";
 
 interface GridItem {
   title: string;
@@ -25,42 +27,48 @@ interface GridItem {
     BackButtonComponent,
     SecuritizationpayComponent,
     CardVisaMastercardPaymentComponent,
+    RouterLink,
   ],
   templateUrl: "./means-payment.component.html",
   styleUrl: "./means-payment.component.scss",
 })
 export class MeansPaymentComponent {
-  detailsOpened = false;
-  isAnimating = false;
+  detailsOpened: boolean;
+  isAnimating: boolean;
+  phoneNumber: string;
+  cvvNumber: string;
+  expiryDate: string;
+  expirationDate: string;
+  selectedGrid: number | null;
 
   grids: GridItem[] = [
     {
       title: "Orange Money",
       number: "",
-      imageUrl: "/assets/images/orange_money.png",
+      imageUrl: "./assets/images/orange_money.png",
     },
     {
       title: "MTN Money",
       number: "",
-      imageUrl: "/assets/images/mtn_money.png",
+      imageUrl: "./assets/images/mtn_money.png",
     },
-    {
-      title: "Airtel Money",
-      number: "",
-      imageUrl: "/assets/images/wave.png",
-    },
-    {
-      title: "Moov money",
-      number: "",
-      imageUrl: "/assets/images/moov.png",
-    },
+    { title: "Airtel Money", number: "", imageUrl: "./assets/images/wave.png" },
+    { title: "Moov money", number: "", imageUrl: "./assets/images/moov.png" },
   ];
-  selectedGrid: number | null = null;
+
+  constructor() {
+    this.detailsOpened = false;
+    this.isAnimating = false;
+    this.phoneNumber = "";
+    this.cvvNumber = "";
+    this.expiryDate = "";
+    this.expirationDate = "";
+    this.selectedGrid = null;
+  }
 
   stopPropagation(event: MouseEvent): void {
     event.stopPropagation();
   }
-
   toggleGrid(index: number) {
     if (this.selectedGrid === index) {
       this.selectedGrid = null; // Fermer le grid si c'est déjà sélectionné

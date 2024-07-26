@@ -1,12 +1,12 @@
 import { Component } from "@angular/core";
 import { CommonModule } from "@angular/common";
-import { StoreconcernsComponent } from "../storeconcerns/storeconcerns.component";
 import { BackButtonComponent } from "../back-button/back-button.component";
+import { StoreconcernsComponent } from "../storeconcerns/storeconcerns.component";
 import { HorizontalCardComponent } from "../horizontal-card/horizontal-card.component";
+import { Banner4Component } from "../banner-4/banner-4.component";
 import { PurchaseRecentViewComponent } from "../purchase-recent-view/purchase-recent-view.component";
 import { CardComponent } from "../card/card.component";
 import { FooterComponent } from "../footer/footer.component";
-import { Banner4Component } from "../banner-4/banner-4.component";
 
 @Component({
   selector: "app-detailorder",

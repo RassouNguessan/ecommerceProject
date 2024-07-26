@@ -1,0 +1,21 @@
+<div class="container-fluid overflow-hidden">
+    <div class="mt-3 d-grid px-lg-5 px-2">
+        <!-- bouton retour -->
+        <app-back-button />
+
+        <div class="mt-3" [ngClass]="frameClass">
+            <!-- Centré -->
+            <ng-content select="[line-1]"></ng-content>
+
+            <ng-content select="[line-2]"></ng-content>
+
+            <ng-content select="[line-3]"></ng-content>
+
+            <!-- Colonne pour l'image -->
+            <ng-content select="[left]"></ng-content>
+
+            <!-- Colonne pour le texte -->
+            <ng-content select="[right]"></ng-content>
+        </div>
+    </div>
+</div>

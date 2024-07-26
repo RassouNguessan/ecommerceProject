@@ -12,13 +12,13 @@ import { LottiesComponent } from "../lotties/lotties.component";
   imports: [HeaderComponent, RouterLink, LottiesComponent],
 })
 export class SuccessComponent {
-  @Input() sendOptions: Record<string, unknown> = {};
+  @Input() imagePath: Record<string, unknown> = {};
   width: string;
   height: string;
   dataToRetrieve: Record<string, unknown> = {};
 
   constructor(private location: Location) {
-    this.sendOptions = {
+    this.imagePath = {
       path: "/assets/animations/lotties/success.json",
     };
     this.width = "235px";

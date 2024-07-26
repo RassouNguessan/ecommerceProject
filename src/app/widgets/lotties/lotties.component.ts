@@ -10,7 +10,7 @@ import { AnimationItem } from "lottie-web";
   styleUrl: "./lotties.component.scss",
 })
 export class LottiesComponent {
-  @Input() anotherOptions: Record<string, unknown> = {};
+  @Input() imagePath: Record<string, unknown> = {};
   @Input() width = "";
   @Input() height = "";
 

@@ -20,7 +20,7 @@ export class NavbarComponent {
 
   user = {
     name: "User Name",
-    photoUrl: "/assets/images/imgprofil.png",
+    photoUrl: "/assets/images/profil_icon.png",
   };
 
   selectedOption: string | null = null;

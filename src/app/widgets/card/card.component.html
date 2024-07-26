@@ -2,142 +2,82 @@
   <div class="card-section-container">
     <div class="row justify-content-center">
       @for (card of cardList; track $index) {
-        <div
-          class="col-12 col-sm-6 col-md-4 col-lg-3"
-          (click)="navigateToDetail(card.id)"
-        >
-          <div class="card mt-0" style="height: 90%">
-            <div class="container-card">
-              <div class="row">
-                <div
-                  class="position-absolute overflow fixed-svg"
-                  style="margin-left: 82%; top: 8px"
-                >
-                  <svg
-                    id="Composant_126_2"
-                    data-name="Composant 126 – 2"
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="44"
-                    height="44"
-                    viewBox="0 0 44 44"
-                  >
-                    @if (card.promo) {
-                      <rect
-                        id="Rectangle_161056"
-                        data-name="Rectangle 161056"
-                        width="44"
-                        height="44"
-                        fill="#fd5446"
-                      />
-                      <text
-                        id="_-_50_"
-                        data-name="- 50%"
-                        transform="translate(5 27)"
-                        fill="#fff"
-                        font-size="14"
-                        font-family="ProximaNova-Regular, Proxima Nova"
-                      >
-                        <tspan x="0" y="0">- 50%</tspan>
-                      </text>
-                    }
-                  </svg>
-                </div>
-                <img
-                  [src]="card.picture"
-                  class="card-img-top"
-                  [routerLink]="'/detail'"
-                  alt=""
-                />
+      <div class="col-12 col-sm-6 col-md-4 col-lg-3" (click)="navigateToDetail(card.id)">
+        <div class="card mt-0" style="height: 90%">
+          <div class="container-card">
+            <div class="row">
+              <div class="position-absolute overflow fixed-svg" style="margin-left: 82%; top: 8px">
+                <svg id="Composant_126_2" data-name="Composant 126 – 2" xmlns="http://www.w3.org/2000/svg" width="44"
+                  height="44" viewBox="0 0 44 44">
+                  @if (card.promo) {
+                  <rect id="Rectangle_161056" data-name="Rectangle 161056" width="44" height="44" fill="#fd5446" />
+                  <text id="_-_50_" data-name="- 50%" transform="translate(5 27)" fill="#fff" font-size="14"
+                    font-family="ProximaNova-Regular, Proxima Nova">
+                    <tspan x="0" y="0">- 50%</tspan>
+                  </text>
+                  }
+                </svg>
               </div>
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                class="svg-icon"
-                style="
+              <img [src]="card.picture" class="card-img-top" [routerLink]="'/detail'" alt="" />
+            </div>
+            <svg xmlns="http://www.w3.org/2000/svg" class="svg-icon" style="
                   width: 4em;
                   height: 4em;
                   vertical-align: middle;
                   fill: currentColor;
                   overflow: hidden;
-                "
-                viewBox="0 0 1024 1024"
-                version="1.1"
-              >
-                <path
-                  d="M512 0C230.4 0 0 230.4 0 512s230.4 512 512 512 512-230.4 512-512S793.6 0 512 0z m0 964.266667C264.533333 964.266667 59.733333 759.466667 59.733333 512S264.533333 59.733333 512 59.733333 964.266667 264.533333 964.266667 512 759.466667 964.266667 512 964.266667z"
-                  fill="#ffffff"
-                />
-                <path
-                  d="M499.2 268.8c-17.066667-17.066667-42.666667-17.066667-59.733333 0s-17.066667 42.666667 0 59.733333l183.466666 183.466667-183.466666 183.466667c-17.066667 17.066667-17.066667 42.666667 0 59.733333 8.533333 8.533333 21.333333 12.8 29.866666 12.8s21.333333-4.266667 29.866667-12.8l213.333333-213.333333c17.066667-17.066667 17.066667-42.666667 0-59.733334l-213.333333-213.333333z"
-                  fill="#ffffff"
-                />
-              </svg>
-            </div>
-            <div class="mt-2">
-              <div class="d-flex justify-content-between mx-3">
-                <div class="col fs-16 fw-bolder">
-                  Bon d'achat de {{ card.price }}F
-                </div>
-                <div (click)="toggleColor(card.id)" class="col-2 text-center">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="17"
-                    height="14.923"
-                    viewBox="0 0 17 14.923"
-                  >
-                    <g
-                      id="silhouette-de-forme-simple-de-coeur"
-                      transform="translate(0.5 0.5)"
-                    >
-                      <path
-                        id="Tracé_98641"
-                        data-name="Tracé 98641"
-                        d="M11.576,29.761A4.424,4.424,0,0,1,16,34.185c0,4.038-8,9.4-8,9.4s-8-5.17-8-9.4a4.086,4.086,0,0,1,4.424-4.424A4.415,4.415,0,0,1,8,31.588,4.416,4.416,0,0,1,11.576,29.761Z"
-                        transform="translate(0 -29.761)"
-                        [attr.fill]="card.like ? 'red' : 'white'"
-                        [attr.stroke]="card.like ? 'white' : 'red'"
-                        stroke-width="1"
-                      />
-                    </g>
-                  </svg>
-                </div>
-              </div>
-              <p class="card-text text-nb-card ms-3 mb-0">
-                Nombre disponible: {{ card.nb_available }}
-              </p>
-              <div class="d-flex justify-content-around mt-2">
-                <p class="card-text text-price-card mt-0">
-                  {{ card.price }}FCFA
-                </p>
-                <div class="star-rating">
-                  <!-- Boucle sur 5 étoiles -->
-
-                  @if (card.star) {
-                    <ng-container
-                      *ngFor="let i of [0, 1, 2, 3, 4]; let index = index"
-                    >
-                      <!-- Détermine la couleur de l'étoile en fonction de l'index -->
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="16"
-                        height="16"
-                        viewBox="0 0 24 24"
-                        [attr.fill]="index < card.star ? '#ffe622' : 'white'"
-                        [attr.stroke]="index < card.star ? '#ffe622' : 'gray'"
-                        stroke-width="1"
-                        class="star-icon"
-                      >
-                        <path
-                          d="M12 .587l3.668 7.431L24 9.754l-6 5.851 1.416 8.273L12 18.902l-7.416 4.976L6 15.605.001 9.754l8.332-1.736L12 .587z"
-                        />
-                      </svg>
-                    </ng-container>
-                  }
-                </div>
-              </div>
-            </div>
-            <app-btn-add-basket [routerLink]="'/detail'" />
+                " viewBox="0 0 1024 1024" version="1.1">
+              <path
+                d="M512 0C230.4 0 0 230.4 0 512s230.4 512 512 512 512-230.4 512-512S793.6 0 512 0z m0 964.266667C264.533333 964.266667 59.733333 759.466667 59.733333 512S264.533333 59.733333 512 59.733333 964.266667 264.533333 964.266667 512 759.466667 964.266667 512 964.266667z"
+                fill="#ffffff" />
+              <path
+                d="M499.2 268.8c-17.066667-17.066667-42.666667-17.066667-59.733333 0s-17.066667 42.666667 0 59.733333l183.466666 183.466667-183.466666 183.466667c-17.066667 17.066667-17.066667 42.666667 0 59.733333 8.533333 8.533333 21.333333 12.8 29.866666 12.8s21.333333-4.266667 29.866667-12.8l213.333333-213.333333c17.066667-17.066667 17.066667-42.666667 0-59.733334l-213.333333-213.333333z"
+                fill="#ffffff" />
+            </svg>
           </div>
+          <div class="mt-2">
+            <div class="d-flex justify-content-between mx-3">
+              <div class="col fs-16 fw-bolder">
+                Bon d'achat de {{ card.price }}F
+              </div>
+              <div (click)="toggleColor(card.id)" class="col-2 text-center">
+                <svg xmlns="http://www.w3.org/2000/svg" width="17" height="14.923" viewBox="0 0 17 14.923">
+                  <g id="silhouette-de-forme-simple-de-coeur" transform="translate(0.5 0.5)">
+                    <path id="Tracé_98641" data-name="Tracé 98641"
+                      d="M11.576,29.761A4.424,4.424,0,0,1,16,34.185c0,4.038-8,9.4-8,9.4s-8-5.17-8-9.4a4.086,4.086,0,0,1,4.424-4.424A4.415,4.415,0,0,1,8,31.588,4.416,4.416,0,0,1,11.576,29.761Z"
+                      transform="translate(0 -29.761)" [attr.fill]="card.like ? 'red' : 'white'"
+                      [attr.stroke]="card.like ? 'white' : 'red'" stroke-width="1" />
+                  </g>
+                </svg>
+              </div>
+            </div>
+            <p class="card-text text-nb-card ms-3 mb-0">
+              Nombre disponible: {{ card.nb_available }}
+            </p>
+            <div class="d-flex justify-content-around mt-2">
+              <p class="card-text text-price-card mt-0">
+                {{ card.price }}FCFA
+              </p>
+              <div class="star-rating">
+                <!-- Boucle sur 5 étoiles -->
+
+                @if (card.star) {
+                <ng-container *ngFor="let i of [0, 1, 2, 3, 4]; let index = index">
+                  <!-- Détermine la couleur de l'étoile en fonction de l'index -->
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"
+                    [attr.fill]="index < card.star ? '#ffe622' : 'white'"
+                    [attr.stroke]="index < card.star ? '#ffe622' : 'gray'" stroke-width="1" class="star-icon">
+                    <path
+                      d="M12 .587l3.668 7.431L24 9.754l-6 5.851 1.416 8.273L12 18.902l-7.416 4.976L6 15.605.001 9.754l8.332-1.736L12 .587z" />
+                  </svg>
+                </ng-container>
+                }
+              </div>
+            </div>
+          </div>
+          <app-btn-add-basket [routerLink]="'/detail'" />
         </div>
+      </div>
       }
     </div>
   </div>

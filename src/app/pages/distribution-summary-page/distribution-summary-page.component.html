@@ -1,2 +1,51 @@
-<app-navbar/>
-<app-beneficiary-list/>
+<app-navbar />
+<app-frame [frameClass]="'mt-3 d-md-flex d-grid justify-content-around'">
+    @for(items of summaryList; track items){
+    <div class="row justify-content-between" line-1>
+        <div class="" style="max-width: 250px; border: 1px solid #00B3D7">
+            <div class="">
+                <div class="col">
+                    <img [src]="items.icon" class="img-fluid" alt="...">
+                </div>
+                <div class="col">
+                    <div class="">
+                        <p class="">{{items.title}}</p>
+                        <p class="" *ngIf="items.people_number">{{items.people_number}}
+                            prs</p>
+                        <p class="" *ngIf="items.number">{{items.number}} bons</p>
+                        <p class="" *ngIf="items.amount">{{items.amount | formatNumber}}
+                            fcfa</p>
+                        <p class="" *ngIf="items.category">{{items.category}} catégories</p>
+                        <p class="" *ngIf="items.canal">{{items.canal}} canaux</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    }
+
+    <!-- @for(items of summaryList; track items){
+    <div class="row justify-content-between" line-2>
+        <div class="card" style="max-width: 450px; border: 1px solid #00B3D7">
+            <div class="d-flex">
+                <div class="col-md-2 align-content-center">
+                    <img [src]="items.icon" class="img-fluid rounded-start" alt="...">
+                </div>
+                <div class="col-md-10 align-content-center ms-2">
+                    <div class="card-body p-0 d-grid">
+                        <p class="card-title mb-0 fs-16 mb-0 mt-2">{{items.title}}</p>
+                        <p class="fs-20 upper mb-0" *ngIf="items.people_number">{{items.people_number}}
+                            prs</p>
+                        <p class="fs-20 upper mb-0" *ngIf="items.number">{{items.number}} bons</p>
+                        <p class="fs-20 upper mb-0" *ngIf="items.amount">{{items.amount | formatNumber}}
+                            fcfa</p>
+                        <p class="fs-20 upper mb-0" *ngIf="items.category">{{items.category}} catégories</p>
+                        <p class="fs-20 upper mb-0" *ngIf="items.canal">{{items.canal}} canaux</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    } -->
+
+</app-frame>

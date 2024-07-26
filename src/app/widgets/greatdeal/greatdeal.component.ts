@@ -1,9 +1,10 @@
 import { Component } from "@angular/core";
-import { HeartComponent } from "../heart/heart.component";
-import { FavoriteButtonComponent } from "../favorite-button/favorite-button.component";
-import { BackButtonComponent } from "../back-button/back-button.component";
-import { StoreconcernsComponent } from "../storeconcerns/storeconcerns.component";
-import { PaginationComponent } from "../pagination/pagination.component";
+import { BackButtonComponent } from "../../widgets/back-button/back-button.component";
+import { StoreconcernsComponent } from "../../widgets/storeconcerns/storeconcerns.component";
+import { FavorisComponent } from "../../widgets/favoris/favoris.component";
+import { PaginationComponent } from "../../widgets/pagination/pagination.component";
+import { HeartComponent } from "../../widgets/heart/heart.component";
+import { FavoriteButtonComponent } from "../../widgets/favorite-button/favorite-button.component";
 
 @Component({
   selector: "app-greatdeal",
@@ -11,6 +12,7 @@ import { PaginationComponent } from "../pagination/pagination.component";
   imports: [
     BackButtonComponent,
     StoreconcernsComponent,
+    FavorisComponent,
     PaginationComponent,
     HeartComponent,
     FavoriteButtonComponent,

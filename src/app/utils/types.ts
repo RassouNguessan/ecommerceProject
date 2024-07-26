@@ -98,3 +98,14 @@ export class Card {
   picture: string | undefined;
   created: Date | undefined;
 }
+
+export interface summaryList {
+  id: number;
+  title: string;
+  icon: string;
+  people_number?: number;
+  number?: number;
+  amount?: number;
+  category?: number;
+  canal?: number;
+}

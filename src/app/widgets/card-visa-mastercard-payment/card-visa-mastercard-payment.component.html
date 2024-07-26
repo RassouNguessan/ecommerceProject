@@ -1,9 +1,11 @@
-<!-- grid of visa/mastercard-->
-<!--
+
+
+   <!-- grid of visa/mastercard-->
+<!--                
    <div class="grid-item" (click)="toggleDetails($event)">
     <button class="round-button" [class.checked]="detailsOpened" (click)="toggleDetails($event)"></button>
-    <img src="/assets/images/visa_money.png" alt="Image de moyen de paiement">
-    <img src="/assets/images/moyen_payment.png" alt="Image de moyen de paiement">
+    <img src="./assets/images/visa_money.png" alt="Image de moyen de paiement">
+    <img src="./assets/images/moyen_payment.png" alt="Image de moyen de paiement">
     <span class="px-3">mastercard/VISA</span>
     <i class="bi" [ngClass]="{'bi-chevron-right': !detailsOpened, 'bi-chevron-down': detailsOpened}"></i>
     </div>
@@ -27,78 +29,71 @@
           </div>
     </div>
    </div>   -->
+  
 
-<div
-  *ngFor="let grid of grids; let i = index"
-  class="grid-item"
-  (click)="toggleGrid(i)"
->
-  <div class="content-header">
-    <div
-      class="checkbox"
-      [ngClass]="{ active: selectedGrid === i }"
-      (click)="$event.stopPropagation(); toggleGrid(i)"
-    ></div>
-    <img
-      class="img-fluid"
-      [src]="grid.imageUrl"
-      alt=""
-      [ngClass]="{
-        'moov-money-image': grid.title.trim() === 'Moov money',
-      }"
-    />
-    <span>{{ grid.title }}</span>
-    <i
-      class="icon-blue"
-      [ngClass]="{
-        'bi-chevron-right': selectedGrid !== i,
-        'bi-chevron-down': selectedGrid === i,
-      }"
-    ></i>
-  </div>
-  <div
-    class="grid-content"
-    [ngClass]="{ open: selectedGrid === i, closed: selectedGrid !== i }"
-  >
-    <div class="input-container" (click)="$event.stopPropagation()">
-      <div class="input-row">
-        <div class="input-field">
-          <label for="phone-{{ i }}">
-            Numéro de la carte
-            <span class="text-danger">*</span>
-          </label>
-          <input
-            id="phone-{{ i }}"
-            type="tel"
-            [(ngModel)]="grid.number"
-            placeholder="Entrez le numéro"
-          />
+
+
+ 
+
+  <div *ngFor="let grid of grids; let i = index" class="grid-item" (click)="toggleGrid(i)">
+    <div class="content-header">
+      <div class="checkbox" [ngClass]="{'active': selectedGrid === i}" (click)="$event.stopPropagation(); toggleGrid(i)"></div>
+      <img class="img-fluid" [src]="grid.imageUrl" alt="" [ngClass]="{'moov-money-image': grid.title.trim() === 'Moov money'}">
+      <span>{{ grid.title }}</span>
+      <i class="icon-blue" [ngClass]="{'bi-chevron-right': selectedGrid !== i, 'bi-chevron-down': selectedGrid === i}"></i>
+    </div>
+    <div class="grid-content " [ngClass]="{'open': selectedGrid === i, 'closed': selectedGrid !== i}">
+      <div class="input-container " (click)="$event.stopPropagation()">
+        <div class="input-row">
+          <div class="input-field">
+            <label for="phone-{{i}}">Numéro de la carte <span class="text-danger">*</span></label>
+            <input id="phone-{{i}}" type="tel" [(ngModel)]="grid.number" placeholder="Entrez le numéro">
+          </div>
+          <div class="input-field">
+            <label for="cvv-{{i}}">Numéro CVV <span class="text-danger">*</span></label>
+            <input id="cvv-{{i}}" type="text" [(ngModel)]="grid.cvv" placeholder="Entrez le CVV">
+          </div>
         </div>
         <div class="input-field">
-          <label for="cvv-{{ i }}">
-            Numéro CVV
-            <span class="text-danger">*</span>
-          </label>
-          <input
-            id="cvv-{{ i }}"
-            type="text"
-            [(ngModel)]="grid.cvv"
-            placeholder="Entrez le CVV"
-          />
+          <label for="expiry-{{i}}">Date d'expiration <span class="text-danger">*</span> </label>
+          <input id="expiry-{{i}}" type="text" [(ngModel)]="grid.expiration" placeholder="MM/AA">
         </div>
-      </div>
-      <div class="input-field">
-        <label for="expiry-{{ i }}">
-          Date d'expiration
-          <span class="text-danger">*</span>
-        </label>
-        <input
-          id="expiry-{{ i }}"
-          type="text"
-          [(ngModel)]="grid.expiration"
-          placeholder="MM/AA"
-        />
       </div>
     </div>
   </div>
-</div>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 

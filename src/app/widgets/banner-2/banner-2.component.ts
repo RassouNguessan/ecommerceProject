@@ -1,7 +1,7 @@
 import { Component } from "@angular/core";
 
 @Component({
-  selector: "banner-2",
+  selector: "app-banner-2",
   standalone: true,
   imports: [],
   templateUrl: "./banner-2.component.html",

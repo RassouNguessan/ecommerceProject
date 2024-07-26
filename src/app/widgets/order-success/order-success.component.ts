@@ -1,11 +1,12 @@
-import { Component } from "@angular/core";
-import { LottiesucessComponent } from "../lottiesucess/lottiesucess.component";
+import { Component } from '@angular/core';
 
 @Component({
-  selector: "app-order-success",
+  selector: 'app-order-success',
   standalone: true,
-  imports: [LottiesucessComponent],
-  templateUrl: "./order-success.component.html",
-  styleUrl: "./order-success.component.scss",
+  imports: [],
+  templateUrl: './order-success.component.html',
+  styleUrl: './order-success.component.scss'
 })
-export class OrderSuccessComponent {}
+export class OrderSuccessComponent {
+
+}

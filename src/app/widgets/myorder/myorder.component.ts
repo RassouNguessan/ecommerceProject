@@ -1,11 +1,11 @@
 import { Component } from "@angular/core";
+import { BackButtonComponent } from "../../widgets/back-button/back-button.component";
+import { BasketComponent } from "../../widgets/basketcomponent/basketcomponent.component";
 import { CommonModule } from "@angular/common";
-import { BackButtonComponent } from "../back-button/back-button.component";
-import { BasketComponent } from "../basketcomponent/basketcomponent.component";
-import { PurchaseRecentViewComponent } from "../purchase-recent-view/purchase-recent-view.component";
-import { CardComponent } from "../card/card.component";
-import { FooterComponent } from "../footer/footer.component";
-import { Banner4Component } from "../banner-4/banner-4.component";
+import { Banner4Component } from "../../widgets/banner-4/banner-4.component";
+import { PurchaseRecentViewComponent } from "../../widgets/purchase-recent-view/purchase-recent-view.component";
+import { CardComponent } from "../../widgets/card/card.component";
+import { FooterComponent } from "../../widgets/footer/footer.component";
 
 @Component({
   selector: "app-favorites",

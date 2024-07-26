@@ -10,12 +10,12 @@ import { LottiesComponent } from "../lotties/lotties.component";
   styleUrl: "./sec-msg.component.scss",
 })
 export class SecMsgComponent {
-  @Input() sendOptions: Record<string, unknown> = {};
+  @Input() imagePath: Record<string, unknown> = {};
   width: string;
   height: string;
 
   constructor() {
-    this.sendOptions = {
+    this.imagePath = {
       path: "/assets/animations/shield.json",
     };
     this.width = "35px";

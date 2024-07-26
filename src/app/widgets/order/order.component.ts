@@ -1,7 +1,7 @@
 import { Component } from "@angular/core";
 import { CommonModule } from "@angular/common";
-import { BackButtonComponent } from "../back-button/back-button.component";
-import { StoreconcernsComponent } from "../storeconcerns/storeconcerns.component";
+import { BackButtonComponent } from "../../widgets/back-button/back-button.component";
+import { StoreconcernsComponent } from "../../widgets/storeconcerns/storeconcerns.component";
 
 @Component({
   selector: "app-order",

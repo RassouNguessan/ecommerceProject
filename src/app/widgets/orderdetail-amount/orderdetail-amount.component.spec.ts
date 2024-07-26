@@ -1,22 +1,23 @@
-import { ComponentFixture, TestBed } from "@angular/core/testing";
+import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { OrderdetailAmountComponent } from "./orderdetail-amount.component";
+import { OrderdetailAmountComponent } from './orderdetail-amount.component';
 
-describe("OrderdetailAmountComponent", () => {
+describe('OrderdetailAmountComponent', () => {
   let component: OrderdetailAmountComponent;
   let fixture: ComponentFixture<OrderdetailAmountComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [OrderdetailAmountComponent],
-    }).compileComponents();
+      imports: [OrderdetailAmountComponent]
+    })
+    .compileComponents();
 
     fixture = TestBed.createComponent(OrderdetailAmountComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
 
-  it("should create", () => {
+  it('should create', () => {
     expect(component).toBeTruthy();
   });
 });

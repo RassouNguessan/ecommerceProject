@@ -44,6 +44,11 @@ export class CompanyComponent implements OnInit {
   subCategories: Dropdown[] = [];
 
   registrationType?: string;
+
+  isSuccess?: boolean;
+  showPassword = false;
+  registrationFullInfos: Record<string, unknown>[] = [];
+
   stepOneForm = new FormGroup({
     firstName: new FormControl("", Validators.required),
     lastName: new FormControl("", Validators.required),
@@ -60,9 +65,11 @@ export class CompanyComponent implements OnInit {
     ]),
     country: new FormControl<Dropdown | null>(null, Validators.required),
   });
+
   stepTwoForm = new FormGroup({
     otpCode: new FormControl("", Validators.required),
   });
+
   stepThreeForm = new FormGroup(
     {
       enterpriseType: new FormControl<Dropdown | null>(
@@ -76,13 +83,12 @@ export class CompanyComponent implements OnInit {
     },
     { validators: this.customPasswordMatching.bind(this) }
   );
+
   stepFourForm = new FormGroup({
     password: new FormControl("", Validators.required),
     cfrmPassword: new FormControl("", Validators.required),
   });
-  isSuccess?: boolean;
-  showPassword = false;
-  registrationFullInfos: Record<string, unknown>[] = [];
+  
 
   constructor(
     private router: Router,

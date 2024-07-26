@@ -1,41 +1,44 @@
-.carte {
-  top: 225px;
-  left: 864px;
-  width: 917px;
-  height: 768px;
-  background: #fafbfc 0% 0% no-repeat padding-box;
-  opacity: 1;
+.carte{
+    top: 225px;
+left: 864px;
+width: 917px;
+height: 768px;
+background: #FAFBFC 0% 0% no-repeat padding-box;
+opacity: 1;
 }
 
 .scrollable-content {
-  overflow-y: auto; /* Ajouter une barre de défilement verticale si nécessaire */
-  padding: 20px; /* Espacement intérieur pour le contenu */
-  box-sizing: border-box; /* Inclure le padding et la bordure dans la hauteur totale */
+    overflow-y: auto; /* Ajouter une barre de défilement verticale si nécessaire */
+    padding: 20px; /* Espacement intérieur pour le contenu */
+    box-sizing: border-box; /* Inclure le padding et la bordure dans la hauteur totale */
 }
+
 
 .custom-btn {
-  border-radius: 0%;
-  border-color: #00b3d7;
-  color: #00b3d7;
+    border-radius: 0%;
+    border-color: #00b3d7;
+    color: #00b3d7;
 }
 
-.bons {
-  color: #00b3d7;
+.bons{
+    color: #00b3d7;
 }
 .custom-btn:hover {
-  background-color: #00b3d7;
-  color: #fff;
+    background-color: #00b3d7;
+    color: #fff;
 }
 
-h3 h1 {
-  font: normal normal 600 30px/40px Proxima Nova;
-  letter-spacing: 0px;
-  color: #1f1f1f;
-  text-transform: uppercase;
-  opacity: 1;
+
+
+h3 h1{
+font: normal normal 600 30px/40px Proxima Nova;
+letter-spacing: 0px;
+color: #1F1F1F;
+text-transform: uppercase;
+opacity: 1;
 }
 
-tr {
-  letter-spacing: var(--unnamed-character-spacing-0);
-  font: normal normal normal 14px/25px Proxima Nova;
+tr{
+    letter-spacing: var(--unnamed-character-spacing-0);
+    font: normal normal normal 14px/25px Proxima Nova;
 }
