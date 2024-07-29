@@ -12,7 +12,7 @@
           <span class="red">*</span>
         </label>
         <div class="col-sm-12 d-flex align-items-center">
-          <input type="text" class="form-input" name="surname" placeholder="Saisissez votre nom"
+          <input type="text" [(ngModel)]="deptObjParticular.firstName" class="form-input" name="surname" placeholder="Saisissez votre nom"
             formControlName="firstName" />
         </div>
       </div>
@@ -22,7 +22,7 @@
           <span class="red">*</span>
         </label>
         <div class="col-sm-12 d-flex align-items-center">
-          <input type="text" class="form-input" id="surname" placeholder="Saisissez votre prénoms"
+          <input type="text" [(ngModel)]="deptObjParticular.lastName" class="form-input" id="surname" placeholder="Saisissez votre prénoms"
             formControlName="lastName" />
         </div>
       </div>
@@ -32,7 +32,7 @@
           <span class="red">*</span>
         </label>
         <div class="col-sm-12">
-          <input type="text" class="form-input" id="dob" placeholder="Saisissez votre date de naissance"
+          <input type="text" [(ngModel)]="deptObjParticular.birth_day" class="form-input" id="dob" placeholder="Saisissez votre date de naissance"
             formControlName="dob" />
         </div>
       </div>
@@ -42,7 +42,7 @@
           <span class="red">*</span>
         </label>
         <div class="col-sm-12 d-flex align-items-center">
-          <input type="text" class="form-input" id="email" placeholder="Saisissez votre adresse mail"
+          <input type="text" [(ngModel)]="deptObjParticular.email" class="form-input" id="email" placeholder="Saisissez votre adresse mail"
             formControlName="email" />
         </div>
       </div>
@@ -52,7 +52,7 @@
           <span class="red">*</span>
         </label>
         <div class="col-sm-12 d-flex align-items-center">
-          <input type="text" class="form-input" id="number" placeholder="+225 00 00 00 00 00"
+          <input type="text" [(ngModel)]="deptObjParticular.phone" class="form-input" id="number" placeholder="+225 00 00 00 00 00"
             formControlName="phoneNumber" />
         </div>
       </div>
@@ -125,7 +125,15 @@
       </div>
       <div class="row mb-2">
         <label for="cfrm-password" class="form-label">
-          Mot de passe
+          Mot de passe  if (this.nextStep == Registrationstate.One) {
+            this.nextStep = Registrationstate.Two; //Passage à la page Suivante
+          } else if (this.nextStep == Registrationstate.Two) {
+            this.nextStep = Registrationstate.Three; //Up
+          } else if ((this.nextStep = Registrationstate.Three)) {
+            return;
+          } else {
+            throw new Error('The number of items cannot be negative!');
+          }
           <span class="red">*</span>
         </label>
         <div class="col-sm-12">
@@ -142,7 +150,7 @@
         <button type="button" class="btn-custom cancel" (click)="back()">
           annuler
         </button>
-        <button type="submit" class="ms-2 btn-custom next" (click)="next()" [disabled]="!stepThreeForm.valid">
+        <button type="submit" class="ms-2 btn-custom next" (click)="createParticular()" [disabled]="!stepThreeForm.valid">
           suivant
         </button>
       </div>

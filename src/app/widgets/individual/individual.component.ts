@@ -1,4 +1,4 @@
-import { Component, OnInit } from "@angular/core";
+import { Component, inject, OnInit } from "@angular/core";
 import {
   FormBuilder,
   FormControl,
@@ -12,6 +12,7 @@ import { SuccessComponent } from "../success/success.component";
 import { ImgBlockComponent } from "../img-block/img-block.component";
 import { SecMsgComponent } from "../sec-msg/sec-msg.component";
 import { Registrationstate } from "../../utils/types";
+import { HttpClient } from "@angular/common/http";
 
 @Component({
   selector: "app-individual",
@@ -30,6 +31,29 @@ import { Registrationstate } from "../../utils/types";
 export class IndividualComponent implements OnInit {
   public StateEnum = Registrationstate;
   public nextStep = Registrationstate.One;
+
+   // les objets pour les api post  
+   deptObjParticular:any ={
+    "first_name": "",
+    "last_name": "",
+    "birth_day": "",
+    "phone": "",
+    "email": "",
+    "password": ""
+  }
+
+  deptObjProfessionnal:any ={
+    "first_name": "",
+    "last_name": "",
+    "email": "",
+    "number_fix": "",
+    "password": "",
+    "company": "",
+    "country": "",
+    "professional_category": "",
+    "sub_category": "",
+    "website": ""
+  }
 
   registrationType: unknown;
   stepTwoForm = new FormGroup({
@@ -112,4 +136,26 @@ export class IndividualComponent implements OnInit {
       return;
     }
   }
+
+
+   // Integration de l'api
+  http = inject(HttpClient)
+
+   createParticular(){
+       
+       this.http.post("http://localhost:8001/api/v1/register/particular",this.deptObjParticular).subscribe((res:any)=>{
+         if(res.result){
+           alert("departement créé avec succes")
+         }
+         else {
+           console.log(res.result);
+           
+         }
+       })
+   }
+   createProfessional(){
+ 
+   }
+
+
 }
