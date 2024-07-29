@@ -1,0 +1,9 @@
+<svg id="Composant_138_2" data-name="Composant 138 – 2" xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40">
+  <g id="Groupe_141425" data-name="Groupe 141425">
+    <g id="Rectangle_651" data-name="Rectangle 651" fill="#fff" stroke="#fd5446" stroke-width="1">
+      <rect width="40" height="40" stroke="none"/>
+      <rect x="0.5" y="0.5" width="39" height="39" fill="none"/>
+    </g>
+    <path id="delete" d="M56.143.6a.591.591,0,0,1,.59-.59h5.9a.591.591,0,0,1,.59.591V2.056H56.143Zm9.7,19.842a.9.9,0,0,1-.908.845H54.362a.913.913,0,0,1-.908-.848L52.549,7.2H66.81l-.966,13.24ZM68.2,6H51.171V4.627a1.373,1.373,0,0,1,1.372-1.372H66.824A1.374,1.374,0,0,1,68.2,4.627V6ZM56.942,18.128a.6.6,0,1,0,1.2,0v-8.4a.6.6,0,1,0-1.2,0v8.405Zm4.276,0a.6.6,0,0,0,1.2,0v-8.4a.6.6,0,1,0-1.2,0Z" transform="translate(-40.17 8.994)" fill="#fd5446" fill-rule="evenodd"/>
+  </g>
+</svg>

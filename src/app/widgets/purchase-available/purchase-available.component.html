@@ -2,68 +2,49 @@
     <div class="mt-3 d-grid px-lg-5 px-2 mb-5">
         <app-back-button />
 
-        <div class="mt-3 d-flex justify-content-between">
-            <div class="d-none d-md-block col-lg-5">
-                <button class="d-flex border-0 bg-white col-12" aria-activedescendant="active">
-                    <div class="card mb-3 col-11">
-                        <div class="row align-items-center">
-                            <div class="col-3">
-                                <img src="./assets/images/10000.png" width="131" height="123" class="img rounded-start"
-                                    alt="...">
-                            </div>
-                            <div class="col-6 text-start">
-                                <p class="fs-18">{{ giftNumber }} x Bon d’achat disponibles</p>
-                                <div>
-                                    <p class="fs-13 mb-0"><small class="text-muted">Date d'achat : 20 - 05 -
-                                            2024</small></p>
-                                    <p class="fs-13 mb-0"><small class="text-muted">Heure d'achat : 00:00</small></p>
-                                </div>
-                            </div>
+        <div class="mt-3 d-lg-flex d-grid justify-content-between">
+            <div class="d-md-block col-lg-5">
+                @for(product of voucherDetail; track product) {
+                <div class="card flex-md-row flex-column justify-content-center mb-3" style="max-width: 600px"
+                    [ngClass]="{'active-button': firstProduct === product}" (click)="updateInfo(product)">
+                    <img [src]=" product.image_uri" class="object-fit-contain" alt="..." style="height: 170px;">
+                    <div class="card-body">
+                        <p class="card-title fs-18">{{product.qty}} x Bon d’achat disponibles</p>
+                        <div class="pt-3">
+                            <p class="fs-13 mb-0"><small class="text-muted">Date d'achat :
+                                    {{product.date}}</small></p>
+                            <p class="fs-13 mb-0"><small class="text-muted">Heure d'achat :
+                                    {{product.hour}}</small></p>
                         </div>
                     </div>
-
-                    <div class="col-1 align-items-center card mb-3 border-0 mt-2">
-                        <i class="bi bi-caret-right" style="font-size: 4.5rem"></i>
+                    <div class="d-flex align-items-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="25.806" height="40" viewBox="0 0 25.806 40">
+                            <path id="Polygone_1" data-name="Polygone 1" d="M20,0,40,25.806H0Z"
+                                transform="translate(25.806) rotate(90)"
+                                [attr.fill]="firstProduct === product ? '#00B3D7':'#FFFFFF'" />
+                        </svg>
                     </div>
-                </button>
+                </div>
+                }
 
-                <button class="d-flex border-0 bg-white col-12">
-                    <div class="card mb-3 col-11">
-                        <div class="row align-items-center">
-                            <div class="col-3">
-                                <img src="./assets/images/Groupe3059.png" width="131" height="123"
-                                    class="img rounded-start" alt="...">
-                            </div>
-                            <div class="col-6 text-start">
-                                <p class="fs-18">{{ giftNumber }} x Bon d’achat disponibles</p>
-                                <div>
-                                    <p class="fs-13 mb-0"><small class="text-muted">Date d'achat : 20 - 05 -
-                                            2024</small></p>
-                                    <p class="fs-13 mb-0"><small class="text-muted">Heure d'achat : 00:00</small></p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-1 align-items-center card mb-3 border-0 mt-2">
-                        <i class="bi bi-caret-right" style="font-size: 4.5rem"></i>
-                    </div>
-                </button>
             </div>
-            <div class="col-12 col-lg-6 col-md-6">
+
+            <div class="col-12 col-lg-6 col-md-12">
                 <div class="card-body">
                     <div class="col-auto">
-                        <h5><span class="fs-13 badge text-bg-success square-badge"
-                                style="border-radius: 0%;">Disponible</span></h5>
+                        <h5><span class="fs-13 badge text-bg-success square-badge" style="border-radius: 0%;">{{
+                                firstProduct.state }}</span></h5>
                     </div>
 
                     <span class="card-title message fs-30">
-                        {{ giftNumber }} bons d'achat d'un montant de <br />{{ giftValue }} F disponibles
+                        {{ firstProduct.qty }} bons d'achat d'un montant de <br />{{ firstProduct.price | formatNumber
+                        }} F
+                        disponibles
                     </span>
-                    <p class="fs-14-upper mt-3 mb-2">date d'achat : 20 - 05 - 2024</p>
-                    <p class="fs-14-upper mb-2">heure d'achat : 00:00</p>
+                    <p class="fs-14 upper mt-3 mb-2">date d'achat : {{firstProduct.date}}</p>
+                    <p class="fs-14 upper mb-2">heure d'achat : {{firstProduct.hour}}</p>
 
-                    <p class="fs-14-upper mt-4 mb-1">valeur des bons disponibles</p>
+                    <p class="fs-14 upper mt-4 mb-1">valeur des bons disponibles</p>
                     <span class="d-flex align-items-center message fs-30 mt-1 mb-2" style="color: #FFC436;">
                         <svg id="XMLID_90_" xmlns="http://www.w3.org/2000/svg" width="30" height="27"
                             viewBox="0 0 18.809 17.017">
@@ -84,7 +65,7 @@
                                 transform="translate(-126.905 -113.693)" fill="#ffc436" />
                         </svg>
 
-                        <span class="mx-2">{{ giftNumber * giftValue }} </span> FCFA
+                        <span class="mx-2">{{ firstProduct.qty * firstProduct.price | formatNumber }} </span> FCFA
                     </span>
 
                     <div class="fs-16 mt-3">
@@ -158,7 +139,4 @@
             </div>
         </div>
     </div>
-    <app-banner-3 />
-    <app-purchase-recent-view />
-    <app-card />
-    <app-footer />
+</div>

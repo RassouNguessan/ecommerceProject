@@ -2,10 +2,10 @@ import { Routes } from "@angular/router";
 
 export const favoritesRoutes: Routes = [
   {
-    path: "greatedeal",
+    path: "favorites",
     loadComponent: () =>
-      import("../widgets/greatdeal/greatdeal.component").then(
-        (m) => m.GreatdealComponent
+      import("../pages/my-favorite-page/my-favorite-page.component").then(
+        (m) => m.MyFavoritePageComponent
       ),
   },
 ];

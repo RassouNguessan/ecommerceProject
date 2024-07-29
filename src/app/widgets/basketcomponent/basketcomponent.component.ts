@@ -1,32 +1,35 @@
-import { CommonModule } from '@angular/common';
-import { Component, Input } from '@angular/core';
-import { Router, RouterLink } from '@angular/router';
+import { CommonModule } from "@angular/common";
+import { Component, Input, OnInit } from "@angular/core";
+import { Router, RouterLink } from "@angular/router";
+import { ORDERS } from "../../utils/mock-card-list";
+import { NumberWithSpacesPipe } from "../../pipes/number-with-spaces.pipe";
+import { purchasedVoucher } from "../../utils/types";
+import { PurchasesService } from "../../services/purchases.service";
 
 @Component({
-  selector: 'app-basketcomponent',
+  selector: "app-basketcomponent",
   standalone: true,
-  imports: [RouterLink, CommonModule],
-  templateUrl: './basketcomponent.component.html',
-  styleUrls: ['./basketcomponent.component.scss'],
+  imports: [RouterLink, CommonModule, NumberWithSpacesPipe],
+  templateUrl: "./basketcomponent.component.html",
+  styleUrls: ["./basketcomponent.component.scss"],
 })
-export class BasketComponent {
+export class BasketComponent implements OnInit {
   @Input() data: string;
-  carts = [
-    { 
-      id: 1,
-      references: ' CO-GS-00001',
-      heure: '13:22',
-      date: '01-01-2024',
-      total: 5005000 
-    }
-  ];
+  orderedVoucher: purchasedVoucher[];
 
-  constructor(private router: Router) {
-    this.data = '';
+  constructor(
+    private router: Router,
+    private purchased: PurchasesService
+  ) {
+    this.data = "";
+    this.orderedVoucher = [];
+  }
+
+  ngOnInit(): void {
+    this.orderedVoucher = this.purchased.getPurchasedCardList();
   }
 
   OrderDetails() {
-    this.router.navigate(['/order']);
+    this.router.navigate(["/order"]);
   }
-
-};
+}

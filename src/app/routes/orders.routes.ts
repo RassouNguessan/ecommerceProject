@@ -47,7 +47,7 @@ export const ordersRoutes: Routes = [
   },
 
   {
-    path: "my-orders",
+    path: "orders",
     title: "Mes commandes",
     children: [
       {

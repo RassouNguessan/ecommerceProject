@@ -6,11 +6,12 @@ import { PurchaseMessageComponent } from "../../widgets/purchase-message/purchas
 import { CardComponent } from "../../widgets/card/card.component";
 import { FooterComponent } from "../../widgets/footer/footer.component";
 import { MyorderComponent } from "../../widgets/myorder/myorder.component";
+import { BackButtonComponent } from "../../widgets/back-button/back-button.component";
 
 @Component({
   selector: 'app-my-orders-page',
   standalone: true,
-  imports: [NavbarComponent, BasketComponent, Banner4Component, PurchaseMessageComponent, CardComponent, FooterComponent, MyorderComponent],
+  imports: [NavbarComponent, BasketComponent, Banner4Component, PurchaseMessageComponent, CardComponent, FooterComponent, MyorderComponent, BackButtonComponent],
   templateUrl: './my-orders-page.component.html',
   styleUrl: './my-orders-page.component.scss'
 })

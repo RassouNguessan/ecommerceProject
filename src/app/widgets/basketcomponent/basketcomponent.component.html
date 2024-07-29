@@ -1,4 +1,4 @@
-<div class="card mb-3 border-1" style="border-radius:0;">
+<!-- <div class="card mb-3 border-1" style="border-radius:0;">
     <div class="row g-0">
         <div class="col-11 col-md-3 d-flex bg-light justify-content-center align-items-center  ms-2 mt-2 mb-2" style="max-height: 198px;">
             <svg xmlns="http://www.w3.org/2000/svg" width="67" height="62.411" viewBox="0 0 67 62.411">
@@ -51,4 +51,48 @@
             </div>
         </div>
     </div>
+</div> -->
+
+@for(voucher of orderedVoucher; track voucher){
+<div class="card flex-md-row flex-column justify-content-center mb-3 mw-100">
+    <div class="success-condensed col-lg-3 col-md-4 col-12 d-flex align-items-center justify-content-center"
+        style="border: 10px solid white">
+        <img src="/assets/images/checkout.svg" class="p-5 p-md-0" alt="...">
+    </div>
+    <div class="card-body col-md-8 pb-0">
+
+        <div class="d-lg-flex justify-content-between d-grid">
+            <div class="">
+                @for(item of voucher['infos']; track item){
+                <p class="card-title fs-18">{{item.number}} Bon d’achat de {{item.amount | formatNumber}} FCFA</p>
+                }
+            </div>
+            <div class="">
+                <span class="fs-13 badge text-bg-success square-badge" style="border-radius: 0%;">Favoris</span>
+            </div>
+            
+        </div>
+
+        <div>
+            <p class="fs-13 mb-0">
+                <small class="text-muted">
+                    Réference : {{voucher.reference}}
+                </small>
+            </p>
+            <p class="fs-13 mb-0">
+                <small class="text-muted">
+                    Date d'ajout : {{voucher.date}}
+                </small>
+            </p>
+            <div class="d-lg-flex d-grid justify-content-between">
+                <p class="fs-18 d-flex align-items-center mt-3" style="color: #FFC436;">
+                    <img src="/assets/images/money.svg" alt="...">
+                    <span class="mx-2 fs-18">{{ voucher.amount_total | formatNumber}} FCFA</span>
+                </p>
+
+                <button type="button" class="btn-custom next mb-3 mb-lg-0" [routerLink]="'/detailorder'">Détails</button>
+            </div>
+        </div>
+    </div>
 </div>
+}

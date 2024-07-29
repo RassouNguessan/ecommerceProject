@@ -260,6 +260,15 @@ body {
   border-bottom: 25px solid transparent;
 }
 
+// .triangle-md-bottom {
+//   width: 0;
+//   height: 0;
+//   border-right: 25px solid transparent;
+//   border-left: 25px solid transparent;
+//   border-top: 25px solid #eeeeee;
+//   border-bottom: 25px solid eeeeee;
+// }
+
 .active-button {
   border-color: #00b3d7 !important;
 }
@@ -267,6 +276,21 @@ body {
 .active-button .triangle-right {
   border-left-color: #00b3d7 !important;
 }
+
+// @media (min-width: 576px) {
+//   .triangle-md-bottom {
+//     width: 0;
+//     height: 0;
+//     border-right: 25px solid transparent;
+//     border-left: 25px solid transparent;
+//     border-top: 25px solid #eeeeee;
+//     border-bottom: 25px solid eeeeee;
+//   }
+
+//   .active-button .triangle-md-bottom {
+//     border-left-color: #00b3d7 !important;
+//   }
+// }
 
 .active-button .toggle-button {
   border: 1.5px solid #00b3d7 !important;

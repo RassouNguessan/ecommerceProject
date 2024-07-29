@@ -8,7 +8,7 @@ import { CardComponent } from "../../widgets/card/card.component";
 import { FooterComponent } from "../../widgets/footer/footer.component";
 
 @Component({
-  selector: "app-favorites",
+  selector: "app-my-orders",
   standalone: true,
   templateUrl: "./myorder.component.html",
   styleUrl: "./myorder.component.scss",
@@ -22,6 +22,6 @@ import { FooterComponent } from "../../widgets/footer/footer.component";
     FooterComponent,
   ],
 })
-export class MyorderComponent {
+export class  MyorderComponent {
   basketData = ["Data 1", "Data 2", "Data 3", ""]; // Ajoutez autant de données que nécessaire
 }

@@ -17,45 +17,37 @@
 //     } | boolean;
 // }
 
-/*
-export interface Individual {
-  id?: number;
-  nom: string;
-  prenom: string;
-  dob: Date;
+export interface User {
+  firstName: string;
+  lastName: string;
+  dateOfBirth?: Date;
   email: string;
-  phone: number;
+  phoneNumber: number;
+  landLineNumber?: number;
+  denomination?: string;
+  country?: string;
   code: number;
-  pwd: string;
-  cfrpwd: string;
+  type?: [];
+  category?: [];
+  subCategory?: [];
+  urlLink?: string;
+  password: string;
+  confirmationPassword: string;
+  isAdmin?: boolean;
 }
 
-export interface Enterprise {
-  id?: number;
-  nom: string;
-  prenom: string;
-  denomination: string;
-  landlinenumber: number;
-  phonenumber: number;
+export interface passwordReset {
   email: string;
-  country: string;
-  code: number;
-  type: [];
-  category: [];
-  subcategory: [];
-  link: string;
-  pwd: string;
-  cfrpwd: string;
+  otpCode: number;
+  resetDate: Date;
 }
-
-export interface Products {}
 
 export class CardDetail {
   id: number | undefined;
   priceCard: number | undefined;
   nb_available: number | undefined;
   star: number | undefined;
-  like: boolean | undefined;
+  favorite: boolean | undefined;
   promo: boolean | undefined;
   picture: string | undefined;
   available: boolean | undefined;
@@ -63,7 +55,6 @@ export class CardDetail {
   detailCard: string | undefined;
   relevantStore: string | undefined;
 }
- */
 
 export interface CardInfo {
   id: number;
@@ -82,21 +73,21 @@ export enum Registrationstate {
   Last,
 }
 
-export class Card {
-  id: number | undefined;
+export interface Card {
+  id: number;
   // Données de card details
-  available: string | undefined;
-  cardTitle: string | undefined;
-  detailCard: string | undefined;
-  relevantStore: string | undefined;
+  available: string;
+  cardTitle: string;
+  detailCard: string;
+  relevantStore: string;
   //=========================
-  price: number | undefined;
-  nb_available: number | undefined;
-  star: number | undefined;
-  like: boolean | undefined;
-  promo: boolean | undefined;
-  picture: string | undefined;
-  created: Date | undefined;
+  price: number;
+  nb_available: number;
+  star: number;
+  favorite: boolean;
+  promo: boolean;
+  picture: string;
+  created: Date;
 }
 
 export interface summaryList {
@@ -108,4 +99,48 @@ export interface summaryList {
   amount?: number;
   category?: number;
   canal?: number;
+}
+
+// export interface summaryList {
+//   id: number;
+//   title: string;
+//   icon: string;
+//   people_number?: number;
+//   number?: number;
+//   amount?: number;
+//   category?: number;
+//   canal?: number;
+// }
+
+export interface voucherDetail {
+  id: number;
+  image_uri: string;
+  qty: number;
+  price: number; //le prix peut être soumis à des réductions
+  date?: string;
+  hour?: string;
+  amount?: number; //montant du coupon
+  currency?: string;
+  state: string;
+  rating?: number;
+  clickable?: boolean;
+  star: number;
+  favorite?: boolean;
+  created?: Date;
+  promo?: boolean;
+  reference?: string;
+}
+
+export interface purchasedVoucher {
+  id: number;
+  reference: string;
+  hour: string;
+  date: string;
+  amount_total: number;
+  infos: detail[];
+}
+
+export interface detail {
+  number: number;
+  amount: number;
 }

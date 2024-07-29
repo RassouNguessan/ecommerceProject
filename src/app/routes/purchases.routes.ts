@@ -10,11 +10,11 @@ export const purchasesRoutes: Routes = [
       ),
   },
   {
-    path: "purchaseavailable",
-    title: "Détail de l'achat",
+    path: "vouchers",
+    title: "Mes bons d'achats",
     loadComponent: () =>
-      import("../widgets/purchase-available/purchase-available.component").then(
-        (m) => m.PurchaseAvailableComponent
+      import("../pages/my-vouchers-page/my-vouchers-page.component").then(
+        (m) => m.MyVouchersPageComponent
       ),
   },
   {

@@ -32,24 +32,24 @@
 
     <div class="px-5 col-12 col-lg-10 ms-auto">
       <ul class="navbar-nav mr-auto d-flex justify-content-around">
-        <li class="nav-item" [routerLinkActive]="['active']">
-          <a class="nav-link" [routerLink]="['/myorder']">
-            <span class="sr-only">Mes commandes</span>
+        <li class="nav-item" [routerLinkActive]="'active'">
+          <a class="nav-link" [routerLink]="'/orders'">
+            <span>Mes commandes</span>
           </a>
         </li>
-        <li class="nav-item" [routerLinkActive]="['active']">
-          <a class="nav-link" [routerLink]="['/purchaseavailable']">
-            <span class="sr-only">Mes bons d'achat</span>
+        <li class="nav-item" [routerLinkActive]="'active'">
+          <a class="nav-link" [routerLink]="'/vouchers'">
+            <span>Mes bons d'achat</span>
           </a>
         </li>
-        <li class="nav-item" [routerLinkActive]="['active']">
-          <a class="nav-link" [routerLink]="['/promotion']">
-            <span class="sr-only">Promotions</span>
+        <li class="nav-item" [routerLinkActive]="'active'">
+          <a class="nav-link" [routerLink]="'/promotion'">
+            <span>Promotions</span>
           </a>
         </li>
-        <li class="nav-item" [routerLinkActive]="['active']">
-          <a class="nav-link" [routerLink]="['/greatedeal']">
-            <span class="sr-only">Vos favoris</span>
+        <li class="nav-item" [routerLinkActive]="'active'">
+          <a class="nav-link" [routerLink]="'/favorites'">
+            <span>Vos favoris</span>
           </a>
         </li>
 
