@@ -14,5 +14,11 @@ import { BackButtonComponent } from "../../widgets/back-button/back-button.compo
   styleUrl: './promotions-page.component.scss'
 })
 export class PromotionsPageComponent {
+  promotion: boolean;
+  promotionRate: number;
 
+  constructor() {
+    this.promotion = true;
+    this.promotionRate = 50;
+  }
 }

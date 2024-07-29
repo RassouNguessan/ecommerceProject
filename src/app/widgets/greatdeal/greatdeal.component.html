@@ -8,26 +8,29 @@
                 <div class="card flex-md-row flex-column justify-content-center mb-3 mw-100"
                     [ngClass]="{'active-button': firstProduct === product}" (click)="updateInfo(product)">
                     <img [src]=" product.image_uri" class="object-fit-contain" alt="..." style="height: 231px;">
-                    <div class="card-body">
-                        <p class="card-title fs-18">Bon d’achat de {{product.price | formatNumber }} FCFA</p>
+                    <div class="card-body pb-0">
+                        <div class="card-title d-flex justify-content-between fs-18">
+                            <p class="mb-0">Bon d’achat de {{product.price | formatNumber }} FCFA</p>
+                            <app-heart [isFavorite]="true"/>
+                        </div>
                         <div>
                             <p class="fs-13 mb-0">
                                 <small class="text-muted">
                                     Date d'achat : {{product.date}}
                                 </small>
                             </p>
-                            <p class="fs-13 mb-0">
+                            <p class="fs-13 mb-2">
                                 <small class="text-muted">
                                     Nombre de bon disponible : {{product.qty}}
                                 </small>
                             </p>
 
-                            <p class="fs-18 d-flex align-items-center" style="color: #FFC436;">
+                            <p class="fs-18 d-flex align-items-center mb-2" style="color: #FFC436;">
                                 <img src="/assets/images/money.svg" class="bg-light" alt="...">
                                 <span class="mx-2 fs-18">{{ product.price | formatNumber }} FCFA</span>
                             </p>
 
-                            <p class="fs-18 d-flex align-items-center" style="color: #FFC436;">
+                            <p class="fs-18 d-flex align-items-center mb-2" style="color: #FFC436;">
                                 <app-star-rating [starNumber]="product.star" />
                             </p>
 
@@ -274,7 +277,7 @@
 
                     <!-- <app-btn-add-basket right/> -->
                     <app-total-price-card [price]="firstProduct.price">
-                        <app-btn-add-basket [componentClass]="''" right/>
+                        <app-btn-add-basket [componentClass]="''" right />
                     </app-total-price-card>
 
                 </div>

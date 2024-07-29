@@ -9,11 +9,11 @@
               <div class="position-absolute overflow fixed-svg m-2">
                 <svg id="Composant_126_2" data-name="Composant 126 – 2" xmlns="http://www.w3.org/2000/svg" width="44"
                   height="44" viewBox="0 0 44 44">
-                  @if (card.promo) {
+                  @if (promo) {
                   <rect id="Rectangle_161056" data-name="Rectangle 161056" width="44" height="44" fill="#fd5446" />
-                  <text id="_-_50_" data-name="- 50%" transform="translate(5 27)" fill="#fff" font-size="14"
+                  <text id="promoRate" data-name="promoRate" transform="translate(5 27)" fill="#fff" font-size="14"
                     font-family="ProximaNova-Regular, Proxima Nova">
-                    <tspan x="0" y="0">- 50%</tspan>
+                    <tspan x="0" y="0">- {{promoRate}}%</tspan>
                   </text>
                   }
                 </svg>
@@ -37,7 +37,7 @@
           </div>
           <div class="mt-2">
             <div class="d-flex gap-3 align-content-center mx-3">
-              <div class="col fs-16 fw-bolder">
+              <div class="col fs-16">
                 <span>Bon d'achat de {{ card.price | formatNumber }} F</span>
               </div>
               <div (click)="toggleColor(card.id)" class="col-2 align-content-center ps-4">
@@ -52,7 +52,7 @@
               </div>
             </div>
             <p class="card-text text-nb-card ms-3 mb-0">
-              Nombre disponible: {{ card.nb_available }}
+              Nombre disponible: {{ card.nbAvailable }}
             </p>
             <div class="d-flex justify-content-between align-content-center mx-3 mt-3">
               <span class="card-text text-price-card mt-0">

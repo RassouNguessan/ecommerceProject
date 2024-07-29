@@ -31,13 +31,13 @@ export const ordersRoutes: Routes = [
         (m) => m.AddToCartPageComponent
       ),
   },
-  {
-    path: "order-detail",
-    loadComponent: () =>
-      import(
-        "../pages/my-orders-details-page/my-orders-details-page.component"
-      ).then((m) => m.MyOrdersDetailsPageComponent),
-  },
+  // {
+  //   path: "order-detail",
+  //   loadComponent: () =>
+  //     import(
+  //       "../pages/my-orders-details-page/my-orders-details-page.component"
+  //     ).then((m) => m.MyOrdersDetailsPageComponent),
+  // },
   {
     path: "myorder",
     loadComponent: () =>
@@ -87,6 +87,7 @@ export const ordersRoutes: Routes = [
   },
   {
     path: "ordersucess",
+    title: "Achats effectuées avec succès",
     loadComponent: () =>
       import("../widgets/order-success/order-success.component").then(
         (m) => m.OrderSuccessComponent
@@ -94,6 +95,7 @@ export const ordersRoutes: Routes = [
   },
   {
     path: "distribution-channel",
+    title: "Modal de choix du canal de distribution",
     loadComponent: () =>
       import(
         "../widgets/distribution-channel/distribution-channel.component"

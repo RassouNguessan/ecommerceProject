@@ -45,7 +45,7 @@ export interface passwordReset {
 export class CardDetail {
   id: number | undefined;
   priceCard: number | undefined;
-  nb_available: number | undefined;
+  nbAvailable: number | undefined;
   star: number | undefined;
   favorite: boolean | undefined;
   promo: boolean | undefined;
@@ -82,7 +82,7 @@ export interface Card {
   relevantStore: string;
   //=========================
   price: number;
-  nb_available: number;
+  nbAvailable: number;
   star: number;
   favorite: boolean;
   promo: boolean;
@@ -141,6 +141,9 @@ export interface purchasedVoucher {
 }
 
 export interface detail {
-  number: number;
+  number?: number;
+  date?: string;
+  voucherNumber?: number;
   amount: number;
+  imageURI?: string;
 }

@@ -16,6 +16,8 @@ import { StarRatingComponent } from "../star-rating/star-rating.component";
 })
 export class CardComponent implements OnInit {
   @Input() promo: boolean;
+  @Input() promoRate: number;
+  cards: Card[];
 
   cardList: Card[] | undefined;
 
@@ -24,10 +26,21 @@ export class CardComponent implements OnInit {
     private cardService: CardService
   ) {
     this.promo = false;
+    this.promoRate = 0;
+    this.cards = [];
   }
 
   ngOnInit(): void {
-    this.cardList = this.cardService.getCardList();
+    console.log('promo', this.promo)
+    this.checkPromotion(this.promo);
+  }
+
+  checkPromotion(promo: boolean) {
+    if(promo){
+      this.cardList = this.cardService.getPromoCardList();
+    } else {
+      this.cardList = this.cardService.getCardList();
+    }
   }
 
   // Fonction pour alterner la couleur du favorite

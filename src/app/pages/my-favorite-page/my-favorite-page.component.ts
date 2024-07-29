@@ -17,7 +17,7 @@ import { BackButtonComponent } from "../../widgets/back-button/back-button.compo
     PurchaseMessageComponent,
     CardComponent,
     FooterComponent,
-    BackButtonComponent
+    BackButtonComponent,
 ],
   templateUrl: "./my-favorite-page.component.html",
   styleUrl: "./my-favorite-page.component.scss",

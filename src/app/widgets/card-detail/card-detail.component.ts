@@ -14,6 +14,9 @@ import { QuantityButtonComponent } from "../quantity-button/quantity-button.comp
 import { Card } from "../../utils/types";
 import { CARDS } from "../../utils/mock-card-list";
 import { Banner3Component } from "../banner-3/banner-3.component";
+import { StarRatingComponent } from "../star-rating/star-rating.component";
+import { NumberWithSpacesPipe } from "../../pipes/number-with-spaces.pipe";
+import { HeartComponent } from "../heart/heart.component";
 
 @Component({
   selector: "app-card-detail",
@@ -30,24 +33,30 @@ import { Banner3Component } from "../banner-3/banner-3.component";
     BtnAddBasketComponent,
     TotalPriceCardComponent,
     RouterLink,
-  ],
+    StarRatingComponent,
+    NumberWithSpacesPipe,
+    HeartComponent
+],
   templateUrl: "./card-detail.component.html",
   styleUrl: "./card-detail.component.scss",
 })
-export class CardDetailComponent implements OnInit {
-  cardList: Card | undefined;
-  carddetail: Card | undefined = CARDS[0];
+export class CardDetailComponent {
+  cardList: Card[] = CARDS;
+  cardDetail: Card | undefined;
 
   constructor(
     private route: ActivatedRoute,
     private router: Router,
     private serviceCard: CardService
-  ) {}
+  ) {
+    this.cardDetail = CARDS[0];
+  }
 
   ngOnInit(): void {
-    const cardId: string | null = this.route.snapshot.paramMap.get("id");
+    const cardId: string[]  = this.route.snapshot.paramMap.getAll("id");
+    console.log(this.serviceCard.getCardById(parseInt(cardId[0])));
     if (cardId) {
-      this.carddetail = this.serviceCard.getCardById(+cardId);
+      this.cardDetail = this.serviceCard.getCardById(parseInt(cardId[0]));
     }
   }
 

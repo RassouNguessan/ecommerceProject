@@ -3,7 +3,7 @@ import { voucherDetail } from "./types";
 export const BUYED: voucherDetail[] = [
   {
     id: 1,
-    image_uri: "./assets/images/10000.png",
+    image_uri: "./assets/images/10000@2x.png",
     qty: 100,
     price: 25000,
     date: "20-04-2024",
@@ -14,7 +14,7 @@ export const BUYED: voucherDetail[] = [
   },
   {
     id: 2,
-    image_uri: "./assets/images/25000.png",
+    image_uri: "./assets/images/25000@2x.png",
     qty: 50,
     price: 10000,
     date: "20-04-2024",
@@ -28,7 +28,7 @@ export const BUYED: voucherDetail[] = [
 export const FAVORITES: voucherDetail[] = [
   {
     id: 1,
-    image_uri: "./assets/images/10000.png",
+    image_uri: "./assets/images/10000@2x.png",
     qty: 200,
     price: 10000,
     date: "20-04-2024",
@@ -42,7 +42,7 @@ export const FAVORITES: voucherDetail[] = [
   },
   {
     id: 2,
-    image_uri: "./assets/images/30000.png",
+    image_uri: "./assets/images/30000@2x.png",
     qty: 50,
     price: 30000,
     date: "20-04-2024",

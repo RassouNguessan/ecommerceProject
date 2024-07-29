@@ -90,7 +90,7 @@
                     <span class="mx-2 fs-18">{{ voucher.amount_total | formatNumber}} FCFA</span>
                 </p>
 
-                <button type="button" class="btn-custom next mb-3 mb-lg-0" [routerLink]="'/detailorder'">Détails</button>
+                <button type="button" class="btn-custom next mb-3 mb-lg-0" (click)="viewDetails(voucher)">Détails</button>
             </div>
         </div>
     </div>
