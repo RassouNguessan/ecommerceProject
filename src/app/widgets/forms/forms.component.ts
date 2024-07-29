@@ -6,9 +6,11 @@ import {
   ReactiveFormsModule,
   Validators,
 } from "@angular/forms";
-import { RouterLink } from "@angular/router";
+import { Router, RouterLink } from "@angular/router";
 import { InputGroupModule } from "primeng/inputgroup";
 import { SecMsgComponent } from "../sec-msg/sec-msg.component";
+import { AuthService } from "../../services/auth.service";
+import { AuthCredentials, AuthResponse } from "../../utils/types";
 
 @Component({
   selector: "app-forms",
@@ -26,20 +28,55 @@ import { SecMsgComponent } from "../sec-msg/sec-msg.component";
 export class FormsComponent {
   @Input() individual = "particulier";
   @Input() company = "entreprise";
+
+  errorMessage: string | null = null;
+  isLoading: boolean = false;
+  showPassword: boolean = false;
+
+
   margin = true;
-  loginForm = new FormGroup({
-    login: new FormControl("", [Validators.required]),
-    password: new FormControl("", [Validators.required]),
-  });
   registering = false;
   forgotPass = false;
+
+  loginForm = new FormGroup({
+    username: new FormControl('', { validators: [Validators.required, Validators.email], nonNullable: true }),
+    password: new FormControl('', { validators: [Validators.required, Validators.minLength(4)], nonNullable: true }),
+  });
+
+
+  constructor(private authService: AuthService, private router: Router) { }
 
   registerButton() {
     this.registering = !this.registering;
   }
 
   loginSubmit() {
-    alert(this.loginForm?.value.login + " " + this.loginForm?.value.password);
+    this.loginForm.markAllAsTouched();
+    if (this.loginForm.valid) {
+      this.isLoading = true;
+      const credentials: AuthCredentials = this.loginForm.getRawValue();
+      this.authService.login(credentials).subscribe({
+        next: (response: AuthResponse) => {
+          this.authService.setToken(response);
+          this.isLoading = false;
+          this.router.navigateByUrl('/dashboard');
+        },
+        error: (error) => {
+          this.isLoading = false;
+          this.errorMessage = error.error.message
+        }
+      });
+
+    }
+  }
+
+  hasError(controlName: string, errorName: string): boolean | null {
+    const control = this.loginForm.get(controlName);
+    return control && (control.dirty || control.touched) && control.hasError(errorName);
+  }
+
+  togglePasswordVisibility(): void {
+    this.showPassword = !this.showPassword;
   }
 
   forgotPassword() {

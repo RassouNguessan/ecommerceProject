@@ -109,3 +109,15 @@ export interface summaryList {
   category?: number;
   canal?: number;
 }
+
+
+export interface AuthResponse {
+  access_token: string;
+  refresh_token: string;
+  token_type: string;
+}
+
+export interface AuthCredentials {
+  username: string;
+  password: string;
+}
