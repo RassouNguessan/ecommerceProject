@@ -79,8 +79,4 @@ export class FormsComponent {
     this.showPassword = !this.showPassword;
   }
 
-  forgotPassword() {
-    this.forgotPass = !this.forgotPass;
-    alert("Mot de passe oublié");
-  }
 }
