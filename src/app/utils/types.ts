@@ -101,6 +101,44 @@ export interface summaryList {
   canal?: number;
 }
 
+
+export interface AuthResponse {
+  access_token: string;
+  refresh_token: string;
+  token_type: string;
+}
+
+export interface AuthCredentials {
+  username: string;
+  password: string;
+}
+
+export interface ReserCredentials {
+  email: string;
+  new_password: string;
+}
+
+export interface VerifyOTPPayload {
+  email: string;
+  otp_code: string;
+}
+
+export interface User {
+  id: string;
+  first_name: string;
+  last_name: string;
+  email: string;
+  phone: string;
+  type: string;
+  is_active: boolean;
+  number_fix: string | null;
+  company: string | null;
+  country: string | null;
+  professional_category: string | null;
+  sub_category: string | null;
+  website: string | null;
+}
+
 // export interface summaryList {
 //   id: number;
 //   title: string;

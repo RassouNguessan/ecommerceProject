@@ -1,7 +1,7 @@
 import { Routes } from "@angular/router";
 
 export const routes: Routes = [
-  // { path: "", redirectTo: "/widgets", pathMatch: "full" },
+  { path: "", redirectTo: "/login", pathMatch: "full" },
   {
     path: "",
     loadComponent: () =>

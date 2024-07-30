@@ -2,6 +2,11 @@
   <div class="pt-5">
     <app-sec-msg></app-sec-msg>
     <form class="m-lg-5 m-md-5 m-3 justify-content-center" [formGroup]="loginForm" (ngSubmit)="loginSubmit()">
+      @if(errorMessage){
+      <div class="alert alert-danger text-center">
+        {{ errorMessage }}
+      </div>
+      }
       <div class="message pb-3">
         <span>connectez vous à votre espace boncoin.</span>
       </div>
@@ -10,23 +15,46 @@
           Login
           <span class="red">*</span>
         </label>
-        <div class="col-sm-12">
-          <input type="text" class="form-input" id="login" placeholder="Saisissez votre login"
-            formControlName="login" />
+        <div class="col-sm-12 ">
+          <input type="email" class="input-form" id="username" placeholder="Saisissez votre login"
+            formControlName="username"
+            [class.input-error]="hasError('username', 'required') || hasError('username', 'email')" />
+
+          @if(hasError('username', 'required')){
+          <div class="text-danger d-flex">login est requis</div>
+          }
+          @if (hasError('username', 'email')) {
+          <div class="text-danger d-flex">login doit être un email valide</div>
+          }
+
         </div>
       </div>
-      <div class="mb-3">
-        <label for="password" class="form-label">
-          Mot de passe
-          <span class="red">*</span>
-        </label>
-        <div class="col-sm-12 d-flex align-items-center">
-          <input type="password" class="form-input" id="password" placeholder="Saisissez votre mot de passe"
-            formControlName="password" />
+     
+        <div class="col-sm-12 position-relative">
+          <label for="password" class="form-label">
+            Mot de passe
+            <span class="red">*</span>
+          </label>
+          <input [type]="showPassword ? 'text' : 'password'" class="input-form" id="password" placeholder="Saisissez votre mot de passe"
+            formControlName="password"
+            [class.input-error]="hasError('password', 'required') || hasError('password', 'email')" />
+
+          <span class="password-toggle"
+            (click)="togglePasswordVisibility()">
+            <i class="bi" [ngClass]="showPassword ? 'bi-eye-slash' : 'bi-eye'"></i>
+          </span>
+
+          @if(hasError('password', 'required')){
+          <div class="text-danger d-flex">Mot de passe est requis</div>
+          }
+          @if (hasError('password', 'minlength')) {
+          <div class="text-danger d-flex">Le mot de passe doit contenir au moins 4 caractères</div>
+          }
+
         </div>
-      </div>
+ 
       <p class="mb-0">
-        <a class="link" href="#" (click)="forgotPassword()">
+        <a class="link" [routerLink]="['/forgot-password']" >
           Mot de passe oublié
         </a>
       </p>
@@ -34,8 +62,13 @@
         <button type="button" class="btn-custom inscription" routerLink="/register">
           inscription
         </button>
-        <button type="submit" class="btn-custom connexion" [disabled]="!loginForm.valid">
-          connexion
+        <button type="submit" class="btn-custom connexion" [disabled]="isLoading">
+          @if(isLoading){
+          <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+          }
+          @if(!isLoading){
+          Connexion
+          }
         </button>
       </div>
     </form>
