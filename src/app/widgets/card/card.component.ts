@@ -31,7 +31,6 @@ export class CardComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    console.log('promo', this.promo)
     this.checkPromotion(this.promo);
   }
 

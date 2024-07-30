@@ -35,14 +35,16 @@ import { HeartComponent } from "../heart/heart.component";
     RouterLink,
     StarRatingComponent,
     NumberWithSpacesPipe,
-    HeartComponent
-],
+    HeartComponent,
+  ],
   templateUrl: "./card-detail.component.html",
   styleUrl: "./card-detail.component.scss",
 })
-export class CardDetailComponent {
+export class CardDetailComponent implements OnInit {
   cardList: Card[] = CARDS;
   cardDetail: Card | undefined;
+  orderQty: number;
+  amountTotal: number | undefined;
 
   constructor(
     private route: ActivatedRoute,
@@ -50,17 +52,37 @@ export class CardDetailComponent {
     private serviceCard: CardService
   ) {
     this.cardDetail = CARDS[0];
+    this.orderQty = 1;
+    this.amountTotal = 0;
   }
 
   ngOnInit(): void {
-    const cardId: string[]  = this.route.snapshot.paramMap.getAll("id");
-    console.log(this.serviceCard.getCardById(parseInt(cardId[0])));
+    const cardId: string[] = this.route.snapshot.paramMap.getAll("id");
     if (cardId) {
       this.cardDetail = this.serviceCard.getCardById(parseInt(cardId[0]));
+      this.amountTotal = this.cardDetail?.price;
     }
   }
 
   navigateToDetail(cardId: number) {
     this.router.navigate(["/detail", cardId]);
+  }
+
+  computeAmountTotal(qty: number) {
+    if (this.cardDetail?.price !== undefined) {
+      this.amountTotal = qty * this.cardDetail.price;
+    }
+  }
+
+  increment(): void {
+    this.orderQty++;
+    this.computeAmountTotal(this.orderQty);
+  }
+
+  decrement(): void {
+    if (this.orderQty > 1) {
+      this.orderQty--;
+      this.computeAmountTotal(this.orderQty);
+    }
   }
 }

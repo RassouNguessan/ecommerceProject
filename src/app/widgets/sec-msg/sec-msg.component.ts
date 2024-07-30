@@ -24,7 +24,6 @@ export class SecMsgComponent {
 
   closeSecurityMessage() {
     const securityMessage = document.getElementById("securityMessage");
-    console.log(securityMessage);
     if (securityMessage) {
       // if (securityMessage.parentElement) {
       //   securityMessage.parentElement.classList.remove('pt-5');

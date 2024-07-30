@@ -25,6 +25,5 @@ export class TotalPriceCardComponent implements OnInit {
 
   totalCost(val: number){
     this.result = val;
-    console.log("it's works", this.result);
   }
 }

@@ -17,30 +17,24 @@
 //     } | boolean;
 // }
 
-export interface User {
-  firstName: string;
-  lastName: string;
-  dateOfBirth?: Date;
-  email: string;
-  phoneNumber: number;
-  landLineNumber?: number;
-  denomination?: string;
-  country?: string;
-  code: number;
-  type?: [];
-  category?: [];
-  subCategory?: [];
-  urlLink?: string;
-  password: string;
-  confirmationPassword: string;
-  isAdmin?: boolean;
-}
-
-export interface passwordReset {
-  email: string;
-  otpCode: number;
-  resetDate: Date;
-}
+// export interface User {
+//   firstName: string;
+//   lastName: string;
+//   dateOfBirth?: Date;
+//   email: string;
+//   phoneNumber: number;
+//   landLineNumber?: number;
+//   denomination?: string;
+//   country?: string;
+//   code: number;
+//   type?: [];
+//   category?: [];
+//   subCategory?: [];
+//   urlLink?: string;
+//   password: string;
+//   confirmationPassword: string;
+//   isAdmin?: boolean;
+// }
 
 export class CardDetail {
   id: number | undefined;
@@ -54,23 +48,6 @@ export class CardDetail {
   cardTitle: string | undefined;
   detailCard: string | undefined;
   relevantStore: string | undefined;
-}
-
-export interface CardInfo {
-  id: number;
-  cardImage: string;
-  nbBonCommande: number;
-  montantBon: number;
-  dateAndTime: string;
-  available: string | number;
-  montant?: number;
-}
-
-export enum Registrationstate {
-  One,
-  Two,
-  Three,
-  Last,
 }
 
 export interface Card {
@@ -101,44 +78,7 @@ export interface summaryList {
   canal?: number;
 }
 
-
-export interface AuthResponse {
-  access_token: string;
-  refresh_token: string;
-  token_type: string;
 }
-
-export interface AuthCredentials {
-  username: string;
-  password: string;
-}
-
-export interface ReserCredentials {
-  email: string;
-  new_password: string;
-}
-
-export interface VerifyOTPPayload {
-  email: string;
-  otp_code: string;
-}
-
-export interface User {
-  id: string;
-  first_name: string;
-  last_name: string;
-  email: string;
-  phone: string;
-  type: string;
-  is_active: boolean;
-  number_fix: string | null;
-  company: string | null;
-  country: string | null;
-  professional_category: string | null;
-  sub_category: string | null;
-  website: string | null;
-}
-
 // export interface summaryList {
 //   id: number;
 //   title: string;
@@ -184,4 +124,74 @@ export interface detail {
   voucherNumber?: number;
   amount: number;
   imageURI?: string;
+}
+export interface CardInfo {
+  id: number;
+  cardImage: string;
+  nbBonCommande: number;
+  montantBon: number;
+  dateAndTime: string;
+  available: string | number;
+  montant?: number;
+}
+
+export enum Registrationstate {
+  One,
+  Two,
+  Three,
+  Last,
+}
+
+// export class Card {
+//   id: number | undefined;
+//   // Données de card details
+//   available: string | undefined;
+//   cardTitle: string | undefined;
+//   detailCard: string | undefined;
+//   relevantStore: string | undefined;
+//   //=========================
+//   price: number | undefined;
+//   nb_available: number | undefined;
+//   star: number | undefined;
+//   like: boolean | undefined;
+//   promo: boolean | undefined;
+//   picture: string | undefined;
+//   created: Date | undefined;
+// }
+
+export interface AuthResponse {
+  access_token: string;
+  refresh_token: string;
+  token_type: string;
+}
+
+export interface AuthCredentials {
+  username: string;
+  password: string;
+}
+
+export interface ReserCredentials {
+  email: string;
+  new_password: string;
+}
+
+export interface VerifyOTPPayload {
+  email: string;
+  otp_code: string;
+}
+
+export interface User {
+  id: string;
+  first_name: string;
+  last_name: string;
+  email: string;
+  phone: string;
+  type: string;
+  is_active: boolean;
+  number_fix: string | null;
+  company: string | null;
+  country: string | null;
+  professional_category: string | null;
+  sub_category: string | null;
+  website: string | null;
 }

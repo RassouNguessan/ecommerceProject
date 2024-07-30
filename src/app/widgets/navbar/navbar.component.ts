@@ -20,11 +20,10 @@ export class NavbarComponent {
   flashMessage = signal(true);
   @Input() user: User | null = null;
 
- 
-//  user = {
-//   name: "User Name",
-//   photoUrl: "/assets/images/profil_icon.png",
-// };
+  //  user = {
+  //   name: "User Name",
+  //   photoUrl: "/assets/images/profil_icon.png",
+  // };
   selectedOption: string | null | undefined = null;
   dropdownOpen = false;
 
@@ -40,9 +39,7 @@ export class NavbarComponent {
   constructor(
     private router: Router,
     private cdr: ChangeDetectorRef
-  ) {
-   
-  }
+  ) {}
 
   // Masquer certains éléments de la barre de navigation
   hideNavItems(): boolean {

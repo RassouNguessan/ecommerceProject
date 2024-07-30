@@ -16,12 +16,12 @@ import { RouterLink } from "@angular/router";
     CommonModule,
     NumberWithSpacesPipe,
     QuantityButtonComponent,
-    RouterLink
-],
+    RouterLink,
+  ],
   templateUrl: "./detailbasket.component.html",
   styleUrl: "./detailbasket.component.scss",
 })
-export class  DetailbasketComponent {
+export class DetailbasketComponent {
   fees: number;
   amountTotal: number;
   quantity: number;
@@ -36,7 +36,7 @@ export class  DetailbasketComponent {
       imageURI: "/assets/images/10000@2x.png",
     },
     {
-      id:2,
+      id: 2,
       number: 100,
       date: "20-05-2024",
       voucherNumber: 100,
@@ -45,39 +45,34 @@ export class  DetailbasketComponent {
     },
   ];
 
-  constructor(){
+  constructor() {
     this.fees = 0;
     this.amountTotal = 0;
     this.quantity = 0;
     this.computeAmountTotal();
   }
 
-  computeAmountTotal(){
-    this.infos.forEach(element => {
-      this.amountTotal += element.number * element.amount;
-    });
-    this.fees = this.amountTotal / 1000;
-    console.log();
-  }
-
-  updateQty(val: number, id: number){
-    this.infos.forEach(element => {
-      if(element.id === id){
-        element.number = val;
-      }
-    });
+  computeAmountTotal() {
+    this.amountTotal = this.infos.reduce(
+      (sum, card) => sum + (card.number * card.amount),
+      0
+    );
+    this.fees = this.amountTotal / 1000
   }
 
   increment(id: number): void {
-    this.quantity++;
-    this.updateQty(this.quantity, id);
+    const activeCard = this.infos.find((card) => card.id == id);
+    if (activeCard) {
+      activeCard["number"] += 1;
+      this.computeAmountTotal();
+    }
   }
 
   decrement(id: number): void {
-    if (this.quantity > 1) {
-      this.quantity--;
-      this.updateQty(this.quantity, id);
-
+    const activeCard = this.infos.find((card) => card.id == id);
+    if (activeCard && activeCard.number > 1) {
+      activeCard["number"] -= 1;
+      this.computeAmountTotal();
     }
   }
 }
