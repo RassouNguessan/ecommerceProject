@@ -18,7 +18,7 @@ import { HttpClient } from "@angular/common/http";
   selector: "app-individual",
   standalone: true,
   templateUrl: "./individual.component.html",
-  styleUrl: "./individual.component.scss",
+  styleUrls: ["./individual.component.scss"],
   imports: [
     SuccessComponent,
     CommonModule,
@@ -29,11 +29,13 @@ import { HttpClient } from "@angular/common/http";
   ],
 })
 export class IndividualComponent implements OnInit {
+
   public StateEnum = Registrationstate;
   public nextStep = Registrationstate.One;
 
-   // les objets pour les api post  
-   deptObjParticular:any ={
+  createUsers: any[] = [];
+
+  deptObjParticular: any = {
     "first_name": "",
     "last_name": "",
     "birth_day": "",
@@ -41,24 +43,7 @@ export class IndividualComponent implements OnInit {
     "email": "",
     "password": ""
   }
-
-  deptObjProfessionnal:any ={
-    "first_name": "",
-    "last_name": "",
-    "email": "",
-    "number_fix": "",
-    "password": "",
-    "company": "",
-    "country": "",
-    "professional_category": "",
-    "sub_category": "",
-    "website": ""
-  }
-
   registrationType: unknown;
-  stepTwoForm = new FormGroup({
-    otpCode: new FormControl("", Validators.required),
-  });
 
   stepOneForm = new FormGroup({
     firstName: new FormControl("", Validators.required),
@@ -70,15 +55,19 @@ export class IndividualComponent implements OnInit {
     ]),
     phoneNumber: new FormControl("", [
       Validators.required,
-      Validators.maxLength(10),
-      Validators.pattern(/^0\d{9}$/),
+      Validators.maxLength(14), // La longueur maximale pourrait être ajustée en fonction des besoins
+      Validators.minLength(10), // La longueur maximale pourrait être ajustée en fonction des besoins
+      Validators.pattern(/^\+\d{1,3}\d{8,14}$/),
     ]),
+    
+    
   });
 
-  stepThreeForm = new FormGroup({
-    password: new FormControl("", Validators.required),
-    cfrmPassword: new FormControl("", Validators.required),
+  stepTwoForm = new FormGroup({
+    otpCode: new FormControl("", Validators.required),
   });
+
+  stepThreeForm: FormGroup;
 
   isSuccess = true;
   registrationFullInfos: unknown[] = [];
@@ -87,20 +76,30 @@ export class IndividualComponent implements OnInit {
     private router: Router,
     private location: Location,
     private fb: FormBuilder
-  ) {}
+  ) {
+    this.stepThreeForm = this.fb.group({
+      password: ['', [Validators.required]],
+      cfrmPassword: ['', [Validators.required]]
+    }, { validators: this.passwordMatchValidator });
+  }
 
   ngOnInit(): void {
     this.isSuccess = false;
     const data = this.location.getState() as Record<string, unknown>;
-    console.log(data?.["type"]);
     this.registrationType = data?.["type"];
+  }
+
+  passwordMatchValidator(form: FormGroup) {
+    const password = form.get('password');
+    const cfrmPassword = form.get('cfrmPassword');
+    return password && cfrmPassword && password.value === cfrmPassword.value ? null : { mismatch: true };
   }
 
   individualFormSubmit() {
     if (
-      this.stepOneForm?.valid &&
-      this.stepTwoForm?.valid &&
-      this.stepThreeForm?.valid
+      this.stepOneForm.valid &&
+      this.stepTwoForm.valid &&
+      this.stepThreeForm.valid
     ) {
       this.registrationFullInfos.push(
         this.stepOneForm.value,
@@ -112,15 +111,14 @@ export class IndividualComponent implements OnInit {
         state: { type: this.registrationType },
       });
     }
-    console.log(this.registrationFullInfos);
   }
 
   next() {
-    if (this.nextStep == Registrationstate.One) {
-      this.nextStep = Registrationstate.Two; //Passage à la page Suivante
-    } else if (this.nextStep == Registrationstate.Two) {
-      this.nextStep = Registrationstate.Three; //Up
-    } else if ((this.nextStep = Registrationstate.Three)) {
+    if (this.nextStep === Registrationstate.One) {
+      this.nextStep = Registrationstate.Two;
+    } else if (this.nextStep === Registrationstate.Two) {
+      this.nextStep = Registrationstate.Three;
+    } else if (this.nextStep === Registrationstate.Three) {
       return;
     } else {
       throw new Error("The number of items cannot be negative!");
@@ -128,34 +126,43 @@ export class IndividualComponent implements OnInit {
   }
 
   back() {
-    if (this.nextStep == Registrationstate.Two) {
+    if (this.nextStep === Registrationstate.Two) {
       this.nextStep = Registrationstate.One;
-    } else if (this.nextStep == Registrationstate.Three) {
+    } else if (this.nextStep === Registrationstate.Three) {
       this.nextStep = Registrationstate.Two;
     } else {
       return;
     }
   }
 
+  http = inject(HttpClient);
 
-   // Integration de l'api
-  http = inject(HttpClient)
-
-   createParticular(){
-       
-       this.http.post("http://localhost:8001/api/v1/register/particular",this.deptObjParticular).subscribe((res:any)=>{
-         if(res.result){
-           alert("departement créé avec succes")
-         }
-         else {
-           console.log(res.result);
-           
-         }
-       })
-   }
-   createProfessional(){
- 
-   }
-
+  createParticular() {
+    if (this.nextStep === Registrationstate.One) {
+      if (this.stepOneForm.valid) {
+        this.nextStep = Registrationstate.Two;
+      }
+    } else if (this.nextStep === Registrationstate.Two) {
+      if (this.stepTwoForm.valid) {
+        this.nextStep = Registrationstate.Three;
+      }
+    } else if (this.nextStep === Registrationstate.Three) {
+      if (this.stepThreeForm.valid) {
+        this.http.post('https://users-service-enu3.onrender.com/api/v1/register/particular', this.deptObjParticular)
+          .subscribe({
+            next: (res: any) => {
+              console.log('User created successfully', res);
+              // Handle success response
+            },
+            error: (err: any) => {
+              console.error('Error creating user', err);
+              // Handle error response
+            }
+          });
+      }
+    } else {
+      throw new Error("Invalid registration step!");
+    }
+  }
 
 }

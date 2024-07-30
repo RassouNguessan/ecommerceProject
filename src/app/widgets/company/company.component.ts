@@ -14,6 +14,7 @@ import { SuccessComponent } from "../success/success.component";
 import { ImgBlockComponent } from "../img-block/img-block.component";
 import { SecMsgComponent } from "../sec-msg/sec-msg.component";
 import { Registrationstate } from "../../utils/types";
+import { HttpClient } from "@angular/common/http";
 
 interface Dropdown {
   name: string;
@@ -38,7 +39,7 @@ interface Dropdown {
 export class CompanyComponent implements OnInit {
   public StateEnum = Registrationstate;
   public nextStep = Registrationstate.One;
-  countries: Dropdown[] = [];
+  countries: any[] = [];
   enterprises: Dropdown[] = [];
   categories: Dropdown[] = [];
   subCategories: Dropdown[] = [];
@@ -92,7 +93,8 @@ export class CompanyComponent implements OnInit {
 
   constructor(
     private router: Router,
-    private location: Location
+    private location: Location,
+    private http:HttpClient
   ) {}
 
   togglePasswordVisibility(): void {
@@ -104,12 +106,13 @@ export class CompanyComponent implements OnInit {
     const data = this.location.getState() as Record<string, string>;
     this.registrationType = data?.["type"];
 
-    this.countries = [
-      { name: "Côte d'Ivoire", code: "CI" },
-      { name: "Bénin", code: "BN" },
-      { name: "Mali", code: "ML" },
-      { name: "Burkina Faso", code: "BF" },
-    ];
+    this.getCountries()
+    // this.countries = [
+    //   { name: "Côte d'Ivoire", code: "CI" },
+    //   { name: "Bénin", code: "BN" },
+    //   { name: "Mali", code: "ML" },
+    //   { name: "Burkina Faso", code: "BF" },
+    // ];
 
     this.enterprises = [
       { name: "S.A.R.L", code: "SARL" },
@@ -135,6 +138,19 @@ export class CompanyComponent implements OnInit {
       { name: "Autres", code: "AU" },
     ];
   }
+  getCountries() {
+    this.http.get("https://users-service-enu3.onrender.com/api/v1/countries").subscribe({
+      next: (res: any) => {
+        this.countries = res;
+        console.log(this.countries, "================listes des pays");
+      },
+      error: (err: any) => {
+        console.error("Error fetching countries:", err);
+        alert("Une erreur est survenue lors de la récupération de la liste des pays. Veuillez réessayer plus tard.");
+      }
+    });
+  }
+  
 
   public customPasswordMatching(
     control: AbstractControl
