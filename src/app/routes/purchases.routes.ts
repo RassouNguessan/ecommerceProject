@@ -25,4 +25,11 @@ export const purchasesRoutes: Routes = [
         (m) => m.VoucherPageComponent
       ),
   },
+  {
+    path: "purchase/detail",
+    loadComponent: () =>
+      import("../pages/order-detail-page/order-detail-page.component").then(
+        (m) => m.OrderDetailPageComponent
+      ),
+  },
 ];
