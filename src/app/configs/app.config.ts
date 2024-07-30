@@ -18,6 +18,10 @@ export const appConfig: ApplicationConfig = {
     provideZoneChangeDetection({ eventCoalescing: true }),
     provideRouter(routes),
     provideClientHydration(),
+    provideHttpClient(
+      
+      withFetch()
+    ),
     provideCacheableAnimationLoader(),
     provideHttpClient(
       withFetch()
