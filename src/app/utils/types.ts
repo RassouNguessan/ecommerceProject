@@ -101,49 +101,19 @@ export interface summaryList {
   canal?: number;
 }
 
-// export interface summaryList {
-//   id: number;
-//   title: string;
-//   icon: string;
-//   people_number?: number;
-//   number?: number;
-//   amount?: number;
-//   category?: number;
-//   canal?: number;
-// }
 
-export interface voucherDetail {
-  id: number;
-  image_uri: string;
-  qty: number;
-  price: number; //le prix peut être soumis à des réductions
-  date?: string;
-  hour?: string;
-  amount?: number; //montant du coupon
-  currency?: string;
-  state: string;
-  rating?: number;
-  clickable?: boolean;
-  star: number;
-  favorite?: boolean;
-  created?: Date;
-  promo?: boolean;
-  reference?: string;
+export interface AuthResponse {
+  access_token: string;
+  refresh_token: string;
+  token_type: string;
 }
 
-export interface purchasedVoucher {
-  id: number;
-  reference: string;
-  hour: string;
-  date: string;
-  amount_total: number;
-  infos: detail[];
+export interface AuthCredentials {
+  username: string;
+  password: string;
 }
 
-export interface detail {
-  number?: number;
-  date?: string;
-  voucherNumber?: number;
-  amount: number;
-  imageURI?: string;
+export interface ReserCredentials {
+  email: string;
+  new_password: string;
 }

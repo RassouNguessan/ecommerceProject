@@ -31,6 +31,20 @@ export const authRoutes: Routes = [
             (m) => m.RegisterEnterprisePageComponent
           ),
       },
+
     ],
+
+  },
+  {
+    path: 'forgot-password',
+    loadComponent: () => import('../pages/forgot-password-page/forgot-password-page.component').then(m => m.ForgotPasswordPageComponent)
+  },
+  {
+    path: 'verify-otp',
+    loadComponent: () => import('../pages/verify-otp-page/verify-otp-page.component').then(m => m.VerifyOtpPageComponent)
+  },
+  {
+    path: 'reset-password',
+    loadComponent: () => import('../pages/reset-password-page/reset-password-page.component').then(m => m.ResetPasswordPageComponent)
   },
 ];

@@ -11,12 +11,17 @@ import {
   provideLottieOptions,
 } from "ngx-lottie";
 import player from "lottie-web";
+import { provideHttpClient, withFetch } from "@angular/common/http";
 
 export const appConfig: ApplicationConfig = {
   providers: [
     provideZoneChangeDetection({ eventCoalescing: true }),
     provideRouter(routes),
     provideClientHydration(),
+    provideHttpClient(
+      
+      withFetch()
+    ),
     provideCacheableAnimationLoader(),
     provideLottieOptions({ player: () => player }),
   ],

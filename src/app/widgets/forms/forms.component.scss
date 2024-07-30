@@ -1,8 +1,26 @@
 .input-form {
   width: 397px;
-  height: 66px;
+  height: 44px;
+  background: #FFFFFF 0% 0% no-repeat padding-box;
+  border: 1px solid #535353;
+  border-radius: 4px;
   opacity: 1;
-  font-family: Proxima Nova;
+  font: normal normal normal 16px/26px Proxima Nova;
+  letter-spacing: 0px;
+  color: #1F1F1F;
+  padding-left: 20px;
+}
+
+.input-error {
+  @extend .input-form;
+  border: 1px solid red;
+}
+.input-group {
+  position: relative;
+}
+
+#eyeIcon {
+  cursor: pointer;
 }
 
 .forgot-link:hover {
@@ -34,4 +52,23 @@
 
 .connexion:hover {
   background: #009dc1 0% 0% no-repeat padding-box;
+}
+
+.spinner-border {
+  width: 1rem;
+  height: 1rem;
+  border-width: 0.2em;
+}
+
+
+
+.password-toggle {
+  position: absolute;
+  right: 70px;
+  top: 75%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  font-size: 1.5em;
+ 
+
 }

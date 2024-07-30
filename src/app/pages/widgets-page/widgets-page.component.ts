@@ -50,7 +50,6 @@ import { OrderSuccessComponent } from "../../widgets/order-success/order-success
 import { OrderdetailAmountComponent } from "../../widgets/orderdetail-amount/orderdetail-amount.component";
 import { PageNotFoundComponent } from "../../widgets/page-not-found/page-not-found.component";
 import { PaginationComponent } from "../../widgets/pagination/pagination.component";
-import { PasswordResetComponent } from "../../widgets/password-reset/password-reset.component";
 import { PaymentComponent } from "../../widgets/payment/payment.component";
 import { PromosComponent } from "../../widgets/promotions/promos.component";
 import { PurchaseComponent } from "../../widgets/purchase/purchase.component";
@@ -134,7 +133,6 @@ import { PurchaseMessageComponent } from "../../widgets/purchase-message/purchas
     OrderdetailAmountComponent,
     PageNotFoundComponent,
     PaginationComponent,
-    PasswordResetComponent,
     PaymentComponent,
     PromosComponent,
     PurchasesComponent,
