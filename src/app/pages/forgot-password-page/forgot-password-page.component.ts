@@ -2,7 +2,6 @@ import { Component } from '@angular/core';
 import { AuthService } from '../../services/auth.service';
 import { FormGroup, FormControl, Validators, ReactiveFormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
-import e from 'express';
 
 @Component({
   selector: 'app-forgot-password-page',
@@ -13,7 +12,7 @@ import e from 'express';
 })
 export class ForgotPasswordPageComponent {
   errorMessage: string | null = null;
-  isLoading: boolean = false;
+  isLoading = false;
 
   forgotPasswordForm = new FormGroup({
     email: new FormControl('', { validators: [Validators.required, Validators.email], nonNullable: true }),
@@ -22,6 +21,7 @@ export class ForgotPasswordPageComponent {
   constructor(private authService: AuthService, private router: Router) { }
 
   sendOTP() {
+    this.forgotPasswordForm.markAllAsTouched();
     if (this.forgotPasswordForm.valid) {
       this.isLoading = true;
       const email = this.forgotPasswordForm.getRawValue().email;

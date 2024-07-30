@@ -22,16 +22,16 @@ export class AuthService {
 
     return this.http.post<AuthResponse>(`${this.apiUrl}/login`, body.toString(), { headers });
   }
-  sendOTP(payload: { email: string }): Observable<any> {
-    return this.http.post<any>(`${this.apiUrl}/password-reset-request`, payload);
+  sendOTP(payload: { email: string }): Observable<string> {
+    return this.http.post<string>(`${this.apiUrl}/password-reset-request`, payload);
   }
 
   verifyOTP(email: string, otp: string): Observable<string> {
     return this.http.post<string>(`${this.apiUrl}/verify-otp`, { email, otp });
   }
 
-  resetPassword(email: string, password: string): Observable<ReserCredentials> {
-    return this.http.post<ReserCredentials>(`${this.apiUrl}/password-reset`, { email, password });
+  resetPassword(payload: ReserCredentials): Observable<string> {
+    return this.http.post<string>(`${this.apiUrl}/password-reset`, payload);
   }
 
   setToken(data: AuthResponse): void {

@@ -30,8 +30,8 @@ export class FormsComponent {
   @Input() company = "entreprise";
 
   errorMessage: string | null = null;
-  isLoading: boolean = false;
-  showPassword: boolean = false;
+  isLoading = false;
+  showPassword = false;
 
 
   margin = true;

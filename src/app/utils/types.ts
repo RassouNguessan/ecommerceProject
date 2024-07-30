@@ -125,5 +125,4 @@ export interface AuthCredentials {
 export interface ReserCredentials {
   email: string;
   new_password: string;
-  otp: string;
 }

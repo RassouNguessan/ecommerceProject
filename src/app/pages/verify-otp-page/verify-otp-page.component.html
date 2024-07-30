@@ -41,8 +41,13 @@
                         <button type="button" class="btn-custom cancel" (click)="back()">
                             annuler
                         </button>
-                        <button type="submit" class="ms-2 btn-custom next" [disabled]="!verifyOtpForm.valid">
+                        <button type="submit" class="ms-2 btn-custom next" [disabled]="isLoading">
+                            @if(isLoading){
+                            <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+                            }
+                            @if(!isLoading){
                             suivant
+                            }
                         </button>
                     </div>
                 </form>

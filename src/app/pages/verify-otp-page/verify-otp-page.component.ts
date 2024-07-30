@@ -18,6 +18,7 @@ import { Location } from '@angular/common';
 export class VerifyOtpPageComponent implements OnInit {
   email: string | null = null;
   errorMessage: string | null = null;
+  isLoading = false;
 
 
   verifyOtpForm = new FormGroup({
@@ -35,14 +36,17 @@ export class VerifyOtpPageComponent implements OnInit {
     });
   }
   verifyOTP() {
+    this.verifyOtpForm.markAllAsTouched();
     if (this.verifyOtpForm.valid && this.email) {
-
+      this.isLoading = true;
       this.authService.verifyOTP(this.email, this.verifyOtpForm.getRawValue().otpCode).subscribe({
         next: () => {
+          this.isLoading = false;
           this.router.navigate(['/reset-password', this.email]);
         },
         error: (error) => {
           this.errorMessage = error.error.message;
+          this.isLoading = false;
         }
       }
       );
