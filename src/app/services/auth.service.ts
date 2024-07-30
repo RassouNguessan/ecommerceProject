@@ -1,12 +1,13 @@
 import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { AuthCredentials, AuthResponse, ReserCredentials } from '../utils/types';
+import { AuthCredentials, AuthResponse, ReserCredentials, VerifyOTPPayload } from '../utils/types';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
+
   private apiUrl = 'https://users-service-enu3.onrender.com/api/v1';
 
   constructor(private http: HttpClient) { }
@@ -22,12 +23,18 @@ export class AuthService {
 
     return this.http.post<AuthResponse>(`${this.apiUrl}/login`, body.toString(), { headers });
   }
+
+  refreshToken(): Observable<AuthResponse> {
+    const refresh = this.getRefreshToken();
+    return this.http.post<AuthResponse>(`${this.apiUrl}/refresh`, { refresh });
+  }
+
   sendOTP(payload: { email: string }): Observable<string> {
     return this.http.post<string>(`${this.apiUrl}/password-reset-request`, payload);
   }
 
-  verifyOTP(email: string, otp: string): Observable<string> {
-    return this.http.post<string>(`${this.apiUrl}/verify-otp`, { email, otp });
+  verifyOTP(payload: VerifyOTPPayload): Observable<string> {
+    return this.http.post<string>(`${this.apiUrl}/verify-otp`, payload);
   }
 
   resetPassword(payload: ReserCredentials): Observable<string> {
@@ -39,7 +46,26 @@ export class AuthService {
   }
 
   getToken(): string | null {
-    return localStorage.getItem('authToken');
+    const data = localStorage.getItem('authToken');
+    if (data) {
+      const dataDecoded: AuthResponse = JSON.parse(data);
+      return dataDecoded.access_token;
+    }
+    return null;
+
+  }
+
+  getRefreshToken(): string | null {
+    const data = localStorage.getItem('authToken');
+    if (data) {
+      const dataDecoded: AuthResponse = JSON.parse(data);
+      return dataDecoded.refresh_token;
+    }
+    return null;
+  }
+
+  isAuthenticated(): boolean {
+    return this.getToken() !== null;
   }
 
   clearToken(): void {

@@ -28,7 +28,7 @@ export class ForgotPasswordPageComponent {
       this.authService.sendOTP(this.forgotPasswordForm.getRawValue()).subscribe({
         next: () => {
           this.isLoading = false;
-          this.router.navigate(['/reset-password'], { state: { email } });
+          this.router.navigate(['/verify-otp'], { state: { email } });
         },
         error: (error) => {
           this.isLoading = false;

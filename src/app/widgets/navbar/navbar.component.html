@@ -55,10 +55,10 @@
 
         <li class="ms-5 nav-item dropdown px-2">
           <div class="select-container">
-            <img [src]="user.photoUrl" alt="Profile Image" class="select-image" />
+            <img src="/assets/images/profil_icon.png" alt="Profile Image" class="select-image" />
             <div class="custom-select" (click)="toggleDropdown()">
               <span class="username">
-                {{ dropdownOpen ? user.name : user.name }}
+                {{ dropdownOpen ? user?.first_name : user?.first_name }}
               </span>
               <ul [class.show]="dropdownOpen">
                 <li *ngFor="let option of options" (click)="selectOption(option)">
