@@ -55,16 +55,9 @@ export class CompanyComponent implements OnInit {
     lastName: new FormControl("", Validators.required),
     sociale: new FormControl("", Validators.required),
     fixedNumber: new FormControl("", Validators.required),
-    enterpriseEmail: new FormControl("", [
-      Validators.required,
-      Validators.pattern(/^[\w.%+-]+@[\w.-]+\.[a-zA-Z]{2,}$/),
-    ]),
-    phoneNumber: new FormControl("", [
-      Validators.required,
-      Validators.maxLength(10),
-      Validators.pattern(/^0\d{9}$/),
-    ]),
-    country: new FormControl<Dropdown | null>(null, Validators.required),
+    enterpriseEmail: new FormControl("", [Validators.required, Validators.pattern(/^[\w.%+-]+@[\w.-]+\.[a-zA-Z]{2,}$/)]),
+    phoneNumber: new FormControl("", [Validators.required, Validators.maxLength(14), Validators.minLength(10), Validators.pattern(/^\+\d{1,3}\d{8,14}$/),]),
+    country: new FormControl("", Validators.required),
   });
 
   stepTwoForm = new FormGroup({
@@ -107,12 +100,6 @@ export class CompanyComponent implements OnInit {
     this.registrationType = data?.["type"];
 
     this.getCountries()
-    // this.countries = [
-    //   { name: "Côte d'Ivoire", code: "CI" },
-    //   { name: "Bénin", code: "BN" },
-    //   { name: "Mali", code: "ML" },
-    //   { name: "Burkina Faso", code: "BF" },
-    // ];
 
     this.enterprises = [
       { name: "S.A.R.L", code: "SARL" },
@@ -138,6 +125,8 @@ export class CompanyComponent implements OnInit {
       { name: "Autres", code: "AU" },
     ];
   }
+
+
   getCountries() {
     this.http.get("https://users-service-enu3.onrender.com/api/v1/countries").subscribe({
       next: (res: any) => {
@@ -211,7 +200,4 @@ export class CompanyComponent implements OnInit {
     }
   }
 
-  // new FormGroup({
-  //       otpCode: new FormControl("", Validators.required),
-  //     });
 }

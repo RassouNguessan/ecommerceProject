@@ -26,6 +26,7 @@ export class AuthService {
     return this.http.post<string>(`${this.apiUrl}/password-reset-request`, payload);
   }
 
+
   verifyOTP(email: string, otp: string): Observable<string> {
     return this.http.post<string>(`${this.apiUrl}/verify-otp`, { email, otp });
   }
