@@ -78,7 +78,7 @@ export interface summaryList {
   canal?: number;
 }
 
-}
+
 // export interface summaryList {
 //   id: number;
 //   title: string;
