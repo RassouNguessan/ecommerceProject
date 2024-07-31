@@ -29,32 +29,32 @@
 
         </div>
       </div>
-     
-        <div class="col-sm-12 position-relative">
-          <label for="password" class="form-label">
-            Mot de passe
-            <span class="red">*</span>
-          </label>
-          <input [type]="showPassword ? 'text' : 'password'" class="input-form" id="password" placeholder="Saisissez votre mot de passe"
-            formControlName="password"
+
+      <div class="input-group">
+        <label for="password" class="form-label">
+          Mot de passe
+          <span class="red">*</span>
+        </label>
+        <div class="input-group-prepend">
+          <input [type]="showPassword ? 'text' : 'password'" class="input-form" id="password"
+            placeholder="Saisissez votre mot de passe" formControlName="password"
             [class.input-error]="hasError('password', 'required') || hasError('password', 'email')" />
 
-          <span class="password-toggle"
-            (click)="togglePasswordVisibility()">
+          <div class="input-group-addon" (click)="togglePasswordVisibility()">
             <i class="bi" [ngClass]="showPassword ? 'bi-eye-slash' : 'bi-eye'"></i>
-          </span>
-
-          @if(hasError('password', 'required')){
-          <div class="text-danger d-flex">Mot de passe est requis</div>
-          }
-          @if (hasError('password', 'minlength')) {
-          <div class="text-danger d-flex">Le mot de passe doit contenir au moins 4 caractères</div>
-          }
-
+          </div>
         </div>
- 
+        @if(hasError('password', 'required')){
+        <div class="text-danger d-flex">Mot de passe est requis</div>
+        }
+        @if (hasError('password', 'minlength')) {
+        <div class="text-danger d-flex">Le mot de passe doit contenir au moins 4 caractères</div>
+        }
+
+      </div>
+
       <p class="mb-0">
-        <a class="link" [routerLink]="['/forgot-password']" >
+        <a class="link" [routerLink]="['/forgot-password']">
           Mot de passe oublié
         </a>
       </p>

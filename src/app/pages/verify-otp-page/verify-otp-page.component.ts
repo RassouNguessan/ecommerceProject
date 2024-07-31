@@ -65,6 +65,7 @@ export class VerifyOtpPageComponent implements OnInit {
     }
   }
 
+  
 
   back() {
     this.location.back();
