@@ -6,15 +6,17 @@ import { Router } from '@angular/router';
 import { AuthService } from '../../services/auth.service';
 import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { ReserCredentials } from '../../utils/types';
+import { SecMsgComponent } from "../../widgets/sec-msg/sec-msg.component";
 
 @Component({
   selector: 'app-reset-password-page',
   standalone: true,
-  imports: [NavbarComponent, BackgroundComponent, ImgBlockComponent, ReactiveFormsModule],
+  imports: [NavbarComponent, BackgroundComponent, ImgBlockComponent, ReactiveFormsModule, SecMsgComponent],
   templateUrl: './reset-password-page.component.html',
   styleUrl: './reset-password-page.component.scss'
 })
 export class ResetPasswordPageComponent implements OnInit {
+
   email: string | null = null;
   errorMessage: string | null = null;
   isLoading = false;
@@ -56,5 +58,9 @@ export class ResetPasswordPageComponent implements OnInit {
       );
 
     }
+  }
+
+  back() {
+    this.router.navigate(['/login']);
   }
 }
