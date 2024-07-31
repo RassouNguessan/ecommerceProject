@@ -1,11 +1,12 @@
-<div class="col-12 col-md-3 mt-1">
-  <div class="d-flex justify-content-center">
-    <div class="quantity-controls">
-      <button (click)="decrement()" style="color: #00b3d7">-</button>
-      <span class="quantity-display">{{ quantity }}</span>
-      <button (click)="increment()" style="color: #00b3d7" class="me-5">
-        +
-      </button>
-    </div>
+<div class="col-2 d-inline-flex align-items-center justify-content-between mt-1">
+  <!-- +/- -->
+  <div class="quantity-controls">
+    <button (click)="decrement()">
+      <img src="/assets/images/minus.svg" alt="...">
+    </button>
+    <span class="quantity-display" style="border: 1px solid #8D8A8A">{{ quantity }}</span>
+    <button (click)="increment()">
+      <img src="/assets/images/malus.svg" alt="...">
+    </button>
   </div>
 </div>

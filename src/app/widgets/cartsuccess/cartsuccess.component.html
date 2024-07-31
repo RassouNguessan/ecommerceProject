@@ -1,26 +1,25 @@
-<div class="d-flex justify-content-center align-items-center" >
-    <div class="d-flex card text-center mb-3 border-0" style="width: 50rem;margin-top:125px;">
-        <div class="card-body ">      
-            <div class="col-12 col-md-6 d-none d-md-block">
-                <div class="card bg-light border-0 justify-content-center align-items-center mb-5" style="width:100%;left: 190px;">
+<div class="d-flex justify-content-center align-items-center">
+    <div class="d-flex card text-center mb-3 border-0 mt-5">
+        <div class="card-body ">
+            <div class="col-12 col-md-6 d-none d-md-block d-flex">
+                <div class="card bg-light border-0 justify-content-center align-items-center mb-5"
+                    style="width:100%;left: 190px;">
                     <div class="card-body ">
-                        <div class="card-text">
-                                    <ng-lottie 
-                                    [options]="options" 
-                                    width="500px" 
-                                    height="250px" 
-                                    (animationCreated)="animationCreated($event)" />
-                        </div> 
+                        <div class="card-text my-5">
+                            <ng-lottie [options]="options" width="500px" height="250px"
+                                (animationCreated)="animationCreated($event)" />
+                        </div>
                     </div>
                 </div>
-        </div>
-               
-            
-        <h5 class="card-title text-success fw-bold mb-3" >SUCCÈS</h5>
-        <p class="card-text mb-4">Bons d’achat ajouter à votre panier ! 200 bons d’achat de 10 000 FCFA ont été ajouté à votre panier pour un montant de 2 000 000 FCFA Cliquez sur « Continuer mes achats » pour ajouter d’autres bons d’achat ou sur « Voir mon panier » pour accéder à votre panier.</p>
-        <div class="m-3">
-        <a href="#" class="btn btn-outline-primary custom-btn ">Go somewhere</a>
-        <a href="#" class="btn btn-outline-primary  custom-btn ms-3 ">Go somewhere</a>
+            </div>
+
+            <h5 class="card-title text-success fw-bold mb-3 fs-20 upper">succès</h5>
+            <p class="card-text mb-0 fs-16">Bons d’achat ajouter à votre panier ! </p>
+            <p class="card-text mb-0 fs-16">200 bons d’achat de 10 000 FCFA ont été ajouté à votre panier pour un montant de 2 000 000 FCFA</p> 
+            <p class="card-text mb-0 fs-16">Cliquez sur « Continuer mes achats » pour ajouter d’autres bons d’achat ou sur « Voir mon panier » pour accéder à votre panier.</p>
+            <div class="m-3 fs-14 d-flex justify-content-center">
+                <button href="#" class="btn-custom next w-25" [routerLink]="'/cart'">voir mon panier</button>
+                <button href="#" class="btn-custom next ms-3 w-25" [routerLink]="'/dashboard'">continuer mes achats</button>
+            </div>
         </div>
     </div>
-</div>

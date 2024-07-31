@@ -2,11 +2,26 @@ import { Routes } from "@angular/router";
 
 export const ordersRoutes: Routes = [
   {
-    path: "order",
-    loadComponent: () =>
-      import("../pages/order-detail-page/order-detail-page.component").then(
-        (m) => m.OrderDetailPageComponent
-      ),
+    path: "orders",
+    title: "Mes commandes",
+    children: [
+      {
+        path: "",
+        title: "Mes Commandes",
+        loadComponent: () =>
+          import("../pages/my-orders-page/my-orders-page.component").then(
+            (m) => m.MyOrdersPageComponent
+          ),
+      },
+      {
+        path: "details",
+        title: "détail de ma commande",
+        loadComponent: () =>
+          import(
+            "../pages/my-orders-details-page/my-orders-details-page.component"
+          ).then((m) => m.MyOrdersDetailsPageComponent),
+      },
+    ],
   },
   {
     path: "grouped-distribution",
@@ -31,43 +46,22 @@ export const ordersRoutes: Routes = [
         (m) => m.AddToCartPageComponent
       ),
   },
-  {
-    path: "order-detail",
-    loadComponent: () =>
-      import(
-        "../pages/my-orders-details-page/my-orders-details-page.component"
-      ).then((m) => m.MyOrdersDetailsPageComponent),
-  },
-  {
-    path: "myorder",
-    loadComponent: () =>
-      import("../widgets/myorder/myorder.component").then(
-        (m) => m.MyorderComponent
-      ),
-  },
+  // {
+  //   path: "order-detail",
+  //   loadComponent: () =>
+  //     import(
+  //       "../pages/my-orders-details-page/my-orders-details-page.component"
+  //     ).then((m) => m.MyOrdersDetailsPageComponent),
+  // },
+  // {
+  //   path: "myorder",
+  //   loadComponent: () =>
+  //     import("../widgets/myorder/myorder.component").then(
+  //       (m) => m.MyorderComponent
+  //     ),
+  // },
 
-  {
-    path: "my-orders",
-    title: "Mes commandes",
-    children: [
-      {
-        path: "",
-        title: "Mes Commandes",
-        loadComponent: () =>
-          import("../pages/my-orders-page/my-orders-page.component").then(
-            (m) => m.MyOrdersPageComponent
-          ),
-      },
-      {
-        path: "details",
-        title: "détail de ma commande",
-        loadComponent: () =>
-          import(
-            "../pages/my-orders-details-page/my-orders-details-page.component"
-          ).then((m) => m.MyOrdersDetailsPageComponent),
-      },
-    ],
-  },
+  
 
   {
     path: "channeldistrubution",
@@ -77,23 +71,17 @@ export const ordersRoutes: Routes = [
         "../widgets/channeldistribution/channeldistribution.component"
       ).then((m) => m.ChanneldistributionComponent),
   },
-  {
-    path: "success",
-    title: "Success",
-    loadComponent: () =>
-      import("../widgets/success/success.component").then(
-        (m) => m.SuccessComponent
-      ),
-  },
-  {
-    path: "ordersucess",
-    loadComponent: () =>
-      import("../widgets/order-success/order-success.component").then(
-        (m) => m.OrderSuccessComponent
-      ),
-  },
+  // {
+  //   path: "ordersucess",
+  //   title: "Achats effectuées avec succès",
+  //   loadComponent: () =>
+  //     import("../widgets/order-success/order-success.component").then(
+  //       (m) => m.OrderSuccessComponent
+  //     ),
+  // },
   {
     path: "distribution-channel",
+    title: "Modal de choix du canal de distribution",
     loadComponent: () =>
       import(
         "../widgets/distribution-channel/distribution-channel.component"

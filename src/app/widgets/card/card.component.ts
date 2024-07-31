@@ -4,34 +4,50 @@ import { CardService } from "../../services/card.service";
 import { BtnAddBasketComponent } from "../btn-add-basket/btn-add-basket.component";
 import { CommonModule } from "@angular/common";
 import { Card } from "../../utils/types";
+import { NumberWithSpacesPipe } from "../../pipes/number-with-spaces.pipe";
+import { StarRatingComponent } from "../star-rating/star-rating.component";
 
 @Component({
   selector: "app-card",
   standalone: true,
   templateUrl: "./card.component.html",
   styleUrl: "./card.component.scss",
-  imports: [BtnAddBasketComponent, CommonModule, RouterLink],
+  imports: [BtnAddBasketComponent, CommonModule, RouterLink, NumberWithSpacesPipe, StarRatingComponent],
 })
 export class CardComponent implements OnInit {
-  @Input() promo = false;
+  @Input() promo: boolean;
+  @Input() promoRate: number;
+  cards: Card[];
 
   cardList: Card[] | undefined;
 
   constructor(
     private router: Router,
     private cardService: CardService
-  ) {}
-
-  ngOnInit(): void {
-    this.cardList = this.cardService.getCardList();
+  ) {
+    this.promo = false;
+    this.promoRate = 0;
+    this.cards = [];
   }
 
-  // Fonction pour alterner la couleur du like
+  ngOnInit(): void {
+    this.checkPromotion(this.promo);
+  }
+
+  checkPromotion(promo: boolean) {
+    if(promo){
+      this.cardList = this.cardService.getPromoCardList();
+    } else {
+      this.cardList = this.cardService.getCardList();
+    }
+  }
+
+  // Fonction pour alterner la couleur du favorite
   toggleColor(id: number | undefined) {
     if (id !== undefined && this.cardList) {
       const card = this.cardList.find((card) => card.id === id);
       if (card) {
-        card.like = !card.like;
+        card.favorite = !card.favorite;
       }
     }
   }
@@ -45,6 +61,6 @@ export class CardComponent implements OnInit {
   //fonction pour afficher les details d'une carte cliquée
 
   navigateToDetail(cardId: number | undefined) {
-    this.router.navigate(["/detail", cardId]);
+    this.router.navigate(["/voucher/", cardId]);
   }
 }

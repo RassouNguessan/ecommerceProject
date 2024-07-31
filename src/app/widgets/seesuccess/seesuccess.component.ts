@@ -11,7 +11,7 @@ import { AnimationItem } from "lottie-web";
 })
 export class SeesuccessComponent {
   options: AnimationOptions = {
-    path: "/assets/animations/lotties/36107.json",
+    path: "/assets/animations/36107.json",
     loop: true,
     autoplay: true,
   };

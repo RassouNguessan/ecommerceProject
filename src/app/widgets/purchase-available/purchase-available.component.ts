@@ -5,6 +5,10 @@ import { PurchaseRecentViewComponent } from "../../widgets/purchase-recent-view/
 import { FooterComponent } from "../../widgets/footer/footer.component";
 import { BackButtonComponent } from "../../widgets/back-button/back-button.component";
 import { Banner3Component } from "../../widgets/banner-3/banner-3.component";
+import { NumberWithSpacesPipe } from "../../pipes/number-with-spaces.pipe";
+import { voucherDetail } from "../../utils/types";
+import { BUYED } from "../../utils/mock-products-list";
+import { CommonModule } from "@angular/common";
 
 @Component({
   selector: "app-purchase-available",
@@ -17,18 +21,23 @@ import { Banner3Component } from "../../widgets/banner-3/banner-3.component";
     CardComponent,
     FooterComponent,
     Banner3Component,
-  ],
+    NumberWithSpacesPipe,
+    CommonModule
+],
 })
 export class PurchaseAvailableComponent {
-  giftNumber: number;
-  giftValue: number;
+  voucherDetail: voucherDetail[] = BUYED;
+  firstProduct: voucherDetail;
 
   constructor(private router: Router) {
-    this.giftNumber = 100;
-    this.giftValue = 25000;
+    this.firstProduct = this.voucherDetail[0];
   }
 
   groupDistribued() {
     this.router.navigate(["/distributed"]);
+  }
+
+  updateInfo(product: voucherDetail) {
+    this.firstProduct = product;
   }
 }

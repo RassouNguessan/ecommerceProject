@@ -1,7 +1,13 @@
-<app-navbar/>
-<app-purchase-message [promo]="'promo'"/>
-<app-card/>
-<app-banner-3/>
-<app-purchase-message [promo]="'recent'"/>
-<app-card/>
-<app-footer/>
+<app-navbar />
+
+<div class="container-fluid overflow-hidden">
+    <div class="mt-3 d-grid px-lg-5 px-2 mb-5">
+        <app-back-button />
+    </div>
+</div>
+<app-purchase-message [promo]="'promo'" />
+<app-card [promo]="promotion" [promoRate]="promotionRate"/>
+<app-banner-3 />
+<app-purchase-message [promo]="'recent'" />
+<app-card />
+<app-footer />

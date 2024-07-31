@@ -1,27 +1,35 @@
-import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
-import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
-import { AuthCredentials, AuthResponse, ReserCredentials, VerifyOTPPayload } from '../utils/types';
+import { HttpClient, HttpHeaders, HttpParams } from "@angular/common/http";
+import { Injectable } from "@angular/core";
+import { Observable } from "rxjs";
+import {
+  AuthCredentials,
+  AuthResponse,
+  ReserCredentials,
+  VerifyOTPPayload,
+} from "../utils/types";
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: "root",
 })
 export class AuthService {
+  private apiUrl = "https://users-service-enu3.onrender.com/api/v1";
 
-  private apiUrl = 'https://users-service-enu3.onrender.com/api/v1';
-
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) {}
 
   login(credentials: AuthCredentials): Observable<AuthResponse> {
     const headers = new HttpHeaders({
-      'Content-Type': 'application/x-www-form-urlencoded',
-      'accept': 'application/json'
+      "Content-Type": "application/x-www-form-urlencoded",
+      accept: "application/json",
     });
     const body = new HttpParams()
-      .set('username', credentials.username)
-      .set('password', credentials.password);
+      .set("username", credentials.username)
+      .set("password", credentials.password);
 
-    return this.http.post<AuthResponse>(`${this.apiUrl}/login`, body.toString(), { headers });
+    return this.http.post<AuthResponse>(
+      `${this.apiUrl}/login`,
+      body.toString(),
+      { headers }
+    );
   }
 
   refreshToken(): Observable<AuthResponse> {
@@ -30,7 +38,10 @@ export class AuthService {
   }
 
   sendOTP(payload: { email: string }): Observable<string> {
-    return this.http.post<string>(`${this.apiUrl}/password-reset-request`, payload);
+    return this.http.post<string>(
+      `${this.apiUrl}/password-reset-request`,
+      payload
+    );
   }
 
   verifyOTP(payload: VerifyOTPPayload): Observable<string> {
@@ -42,21 +53,20 @@ export class AuthService {
   }
 
   setToken(data: AuthResponse): void {
-    localStorage.setItem('authToken', JSON.stringify(data));
+    localStorage.setItem("authToken", JSON.stringify(data));
   }
 
   getToken(): string | null {
-    const data = localStorage.getItem('authToken');
+    const data = localStorage.getItem("authToken");
     if (data) {
       const dataDecoded: AuthResponse = JSON.parse(data);
       return dataDecoded.access_token;
     }
     return null;
-
   }
 
   getRefreshToken(): string | null {
-    const data = localStorage.getItem('authToken');
+    const data = localStorage.getItem("authToken");
     if (data) {
       const dataDecoded: AuthResponse = JSON.parse(data);
       return dataDecoded.refresh_token;
@@ -69,6 +79,6 @@ export class AuthService {
   }
 
   clearToken(): void {
-    localStorage.removeItem('authToken');
+    localStorage.removeItem("authToken");
   }
 }

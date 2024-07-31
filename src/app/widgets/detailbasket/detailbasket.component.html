@@ -1,8 +1,8 @@
-<div class="container-fluid mt-5" style="width: 80%;">
+<!-- <div class="container-fluid mt-5" style="width: 80%;">
     <div class="row">
-        <app-back-button/>
+        <ng-content select="[back]"></ng-content>
     </div>
-    <div class="card mt-3 border-0" >
+    <div class="card mt-3 border-0">
         <div class="card-body border-0">
             <div class="row">
                 <div class="col-12 col-md-5 ms-5">
@@ -108,7 +108,7 @@
                                                     d="M135.862,122.367a5.354,5.354,0,0,0-.9,2.969,5.4,5.4,0,0,0,.055.766,5.333,5.333,0,0,0,.56,1.727,5.407,5.407,0,0,0,1.139,1.475,5.374,5.374,0,1,0-.857-6.937Z"
                                                     transform="translate(-126.905 -113.693)" fill="#ffc436" />
                                             </svg>
-                                          {{detail.pay2}} FCFA
+                                            {{detail.pay2}} FCFA
                                         </p>
                                     </div>
                                     <button type="button" class="btn mt-3 btn border-0 btn-square no-hover">
@@ -191,7 +191,7 @@
                         <div class="row ">
                             <div class="col">
                                 <div class="col-auto" style="color:#00B3D7;">
-                                    <button type="button" class="btn btn-sm btn-outline-primary custom-btn" style="border-radius:0%;" >
+                                    <button type="button" class="btn-custom next" style="border-radius:0%;">
                                         ACHETER
                                     </button>
                                 </div>
@@ -201,3 +201,107 @@
 
                 </div>
             </div>
+        </div>
+    </div>
+</div> -->
+
+<div class="container-fluid overflow-hidden mb-5">
+    <div class="mt-3 d-grid px-lg-5 px-2 mb-5">
+        <ng-content select="[back]"></ng-content>
+
+        <div class="mt-3 d-lg-flex d-grid justify-content-between">
+            <div class="d-md-block col-lg-4">
+                @for(detail of infos; track detail){
+                <div class="card flex-md-row flex-column justify-content-center mb-3 mw-100">
+                    <div class="col-lg-3 col-md-4 col-12 d-flex align-items-center justify-content-center">
+                        <img [src]=" detail.imageURI" class="h-100 w-100" alt="...">
+                    </div>
+
+                    <div class="card-body pb-0">
+                        <div class="card-title d-flex justify-content-between fs-18">
+                            <p class="mb-0 fs-18">
+                                {{detail.number}} Bon d’achat de {{detail.amount | formatNumber }}
+                                FCFA
+                            </p>
+                        </div>
+                        <div>
+                            <p class="fs-13 mb-0">
+                                <small class="text-muted">
+                                    Date d'ajout : {{detail.date}}
+                                </small>
+                            </p>
+                            <p class="fs-13 mb-2">
+                                <small class="text-muted">
+                                    Nombre de bon disponible : {{detail.voucherNumber}}
+                                </small>
+                            </p>
+
+                            <p class="fs-18 d-flex align-items-center mb-2" style="color: #FFC436;">
+                                <img src="/assets/images/money.svg" class="bg-light" alt="...">
+                                <span class="mx-2 fs-18">{{ detail.number * detail.amount | formatNumber }} FCFA</span>
+                            </p>
+
+                            <div class="fs-18 d-flex justify-content-between align-items-center my-3"
+                                style="color: #FFC436;">
+                                <img src="/assets/images/trash.svg" alt="...">
+                                <div class="d-flex">
+                                    <div class="d-flex justify-content-end">
+                                        <button (click)="decrement(detail.id)">
+                                            <img src="/assets/images/minus.svg" alt="...">
+                                        </button>
+                                        <input class="form-input w-25 h-100 px-0 text-center rounded-0 fs-16"
+                                            style="border: 1px solid #8D8A8A" [value]="detail.number" disabled>
+                                        <button (click)="increment(detail.id)">
+                                            <img src="/assets/images/malus.svg" alt="...">
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="d-flex align-items-center">
+                    </div>
+                </div>
+                }
+            </div>
+
+            <div class="col-12 col-lg-7 col-md-12 success">
+                <div class="card-body m-5" style="max-width: fit-content;">
+                    <span class="card-title message fs-30 upper">détails du panier</span>
+
+                    <div class="table-responsive my-5">
+                        <table class="fs-14 upper" cellspacing="10" cellpadding="10">
+                            <tbody>
+                                @for(item of infos; track item){
+                                <tr>
+                                    <td class="p-0">{{item.number}} bon d'achat de {{item.amount}}
+                                        fcfa: </td>
+                                    <td class="d-lg-block d-none">..................................</td>
+                                    <td>{{ item.number * item.amount | formatNumber}} fcfa</td>
+                                </tr>
+                                }
+                                <tr>
+                                    <td class="p-0">frais: </td>
+                                    <td class="d-lg-block d-none">..................................</td>
+                                    <td>{{ fees | formatNumber }} fcfa</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <span class="d-flex text-center message fs-30 my-5" style="color: #FFC436;">
+                        <img src="/assets/images/money.svg" alt="..." width="30px" height="27px">
+
+                        <span class="mx-2">{{ amountTotal + fees | formatNumber }} FCFA</span>
+                    </span>
+
+                    <button class="btn-custom next fs-14 upper" [routerLink]="'/payment'">
+                        acheter
+                    </button>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
