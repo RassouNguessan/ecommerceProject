@@ -7,7 +7,7 @@ import { RegisterParticular, RegisterProfessionnal,RegisterParticularResponse,Re
   providedIn: 'root'
 })
 export class RegisterService {
-  private apiUrl = 'http://127.0.0.1:8001/api/v1/register/professionnal';
+  private apiUrl = 'https://users-service-enu3.onrender.com/api/v1';
 
   constructor(private http: HttpClient) { }
 
