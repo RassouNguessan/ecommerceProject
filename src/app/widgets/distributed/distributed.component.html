@@ -5,7 +5,7 @@
         <div class="mt-3 d-lg-flex d-grid justify-content-between">
             <!-- Colonne pour l'image -->
             <div class="success-condensed col-lg-5 col-md-12 col-10 mb-5">
-                <div class="d-flex justify-content-center align-items-center w-100 h-100 ">
+                <div class="d-flex justify-content-center align-items-center w-100" style="height: 665px;">
                     <app-lotties [imagePath]="imagePath" [width]="width" [height]="height" />
                 </div>
             </div>
@@ -13,9 +13,12 @@
             <!-- Colonne pour le texte -->
             <div class="col-10 col-lg-6 col-md-12">
                 <div class="card-body">
-                    <span class="card-title message fs-30">Distribution groupée</span>
-                    <app-sec-msg></app-sec-msg>
-                    <!-- <div class="mt-3 mb-3 col-md-12 col-11"> -->
+                    <span class="card-title message fs-30 mb-3">Distribution groupée</span>
+                    
+                    <div class="mt-3">
+                        <app-sec-msg></app-sec-msg>
+                    </div>
+
                     <div class="d-grid w-100 mt-4">
                         <label for="securityCode" class="form-label fw-bold">Fichier des bénéficiaires<span
                                 style="color:#FD5446;">*</span></label>

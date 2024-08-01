@@ -5,16 +5,8 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { RouterLink } from '@angular/router';
 import { BackButtonComponent } from '../back-button/back-button.component';
+import { GridItem } from '../../utils/types';
 
-
-interface GridItem {
-  title: string;
-  number: string;
-  imageUrl: string;
-  firstField?: string; // Ajoutez cette ligne si vous avez besoin de cette propriété
-  secondField?: string; // Ajoutez cette ligne si vous avez besoin de cette propriété
-  thirdField?: string; // Ajoutez cette ligne si vous avez besoin de cette propriété
-}
 
 @Component({
   selector: 'app-payment',
