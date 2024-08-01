@@ -202,4 +202,62 @@ export interface GridItem {
   firstField?: string; // Ajoutez cette ligne si vous avez besoin de cette propriété
   secondField?: string; // Ajoutez cette ligne si vous avez besoin de cette propriété
   thirdField?: string; // Ajoutez cette ligne si vous avez besoin de cette propriété
+
+export interface sendOTP{
+  email:string
+}
+
+
+export interface RegisterParticular {
+  first_name: string;
+  last_name:  string;
+  birth_day:  Date;
+  phone:      string;
+  email:      string;
+  password:   string;
+}
+
+export interface RegisterParticularResponse {
+  id:                    string;
+  first_name:            string;
+  last_name:             string;
+  email:                 string;
+  phone:                 string;
+  type:                  string;
+  is_active:             boolean;
+  number_fix:            string;
+  company:               string;
+  country:               string;
+  professional_category: string;
+  sub_category:          string;
+  website:               string;
+}
+export interface RegisterProfessionnal {
+  first_name:            string;
+  last_name:             string;
+  email:                 string;
+  number_fix:            string;
+  password:              string;
+  company:               string;
+  country:               string;
+  professional_category: string;
+  sub_category:          string;
+  website:               string;
+}
+
+export interface RegisterProfessionnalResponse {
+  id:                    string;
+  first_name:            string;
+  last_name:             string;
+  email:                 string;
+  phone:                 string;
+  type:                  string;
+  is_active:             boolean;
+  number_fix:            string;
+  company:               string;
+  country:               string;
+  professional_category: string;
+  sub_category:          string;
+  website:               string;
+
 }

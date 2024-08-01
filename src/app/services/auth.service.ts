@@ -44,6 +44,7 @@ export class AuthService {
     );
   }
 
+
   verifyOTP(payload: VerifyOTPPayload): Observable<string> {
     return this.http.post<string>(`${this.apiUrl}/verify-otp`, payload);
   }

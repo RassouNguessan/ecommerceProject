@@ -1,113 +1,131 @@
-import { Component, OnInit } from "@angular/core";
-import {
-  FormBuilder,
-  FormControl,
-  FormGroup,
-  ReactiveFormsModule,
-  Validators,
-} from "@angular/forms";
+import { Component, inject, OnInit } from "@angular/core";
+import { FormBuilder, FormControl, FormGroup, ReactiveFormsModule, Validators } from "@angular/forms";
 import { CommonModule, Location } from "@angular/common";
-import { RouterLink, Router } from "@angular/router";
-import { SuccessComponent } from "../success/success.component";
-import { ImgBlockComponent } from "../img-block/img-block.component";
+import { Router } from "@angular/router";
+import { RegisterParticular, RegisterParticularResponse, Registrationstate } from "../../utils/types";
+import { HttpClient } from "@angular/common/http";
+import { RegisterService } from "../../services/register.service";
 import { SecMsgComponent } from "../sec-msg/sec-msg.component";
-import { Registrationstate } from "../../utils/types";
 
 @Component({
   selector: "app-individual",
   standalone: true,
   templateUrl: "./individual.component.html",
-  styleUrl: "./individual.component.scss",
-  imports: [
-    SuccessComponent,
-    CommonModule,
-    ReactiveFormsModule,
-    RouterLink,
-    ImgBlockComponent,
-    SecMsgComponent,
-  ],
+  styleUrls: ["./individual.component.scss"],
+  imports: [CommonModule, ReactiveFormsModule, SecMsgComponent],
 })
 export class IndividualComponent implements OnInit {
   public StateEnum = Registrationstate;
   public nextStep = Registrationstate.One;
+  errorMessage: string | null = null;
+  otpErrorMessage: string | null = null;
+  emailAlreadyExists: boolean = false;
 
-  registrationType: unknown;
+  stepOneForm = new FormGroup({
+    first_name: new FormControl("", Validators.required),
+    last_name: new FormControl("", Validators.required),
+    birth_day: new FormControl("", Validators.required),
+    email: new FormControl("", [Validators.required, Validators.email]),
+    phone: new FormControl("", [
+      Validators.required,
+      Validators.maxLength(14),
+      Validators.minLength(10),
+      Validators.pattern(/^\+\d{1,3}\d{8,14}$/),
+    ]),
+  });
+
   stepTwoForm = new FormGroup({
     otpCode: new FormControl("", Validators.required),
   });
 
-  stepOneForm = new FormGroup({
-    firstName: new FormControl("", Validators.required),
-    lastName: new FormControl("", Validators.required),
-    dob: new FormControl("", Validators.required),
-    email: new FormControl("", [
-      Validators.required,
-      Validators.pattern(/^[\w.%+-]+@[\w.-]+\.[a-zA-Z]{2,}$/),
-    ]),
-    phoneNumber: new FormControl("", [
-      Validators.required,
-      Validators.maxLength(10),
-      Validators.pattern(/^0\d{9}$/),
-    ]),
-  });
+  stepThreeForm: FormGroup;
 
-  stepThreeForm = new FormGroup({
-    password: new FormControl("", Validators.required),
-    cfrmPassword: new FormControl("", Validators.required),
-  });
-
-  isSuccess = true;
-  registrationFullInfos: unknown[] = [];
+  consolidatedData: any = {};
 
   constructor(
     private router: Router,
-    private location: Location,
-    private fb: FormBuilder
-  ) {}
-
-  ngOnInit(): void {
-    this.isSuccess = false;
-    const data = this.location.getState() as Record<string, unknown>;
-    this.registrationType = data?.["type"];
+    private fb: FormBuilder,
+    private registerService: RegisterService
+  ) {
+    this.stepThreeForm = this.fb.group({
+      password: ['', [Validators.required]],
+      cfrmPassword: ['', [Validators.required]],
+    }, { validators: this.passwordMatchValidator });
   }
 
-  individualFormSubmit() {
-    if (
-      this.stepOneForm?.valid &&
-      this.stepTwoForm?.valid &&
-      this.stepThreeForm?.valid
-    ) {
-      this.registrationFullInfos.push(
-        this.stepOneForm.value,
-        this.stepTwoForm.value,
-        this.stepThreeForm.value
-      );
+  ngOnInit(): void {}
 
-      this.router.navigateByUrl("/success", {
-        state: { type: this.registrationType },
+  passwordMatchValidator(form: FormGroup) {
+    const password = form.get('password');
+    const cfrmPassword = form.get('cfrmPassword');
+    return password && cfrmPassword && password.value === cfrmPassword.value ? null : { mismatch: true };
+  }
+
+  onStepOneSubmit() {
+    if (this.stepOneForm.valid) {
+      this.consolidatedData = { ...this.consolidatedData, ...this.stepOneForm.value };
+      this.registerService.sendOTPRegister(this.consolidatedData.email).subscribe({
+        next: () => {
+          this.nextStep = Registrationstate.Two;
+          this.emailAlreadyExists = false;
+          this.errorMessage = null;
+        },
+        error: (error) => {
+          if (error.status === 409) { // Email already exists
+            this.emailAlreadyExists = true;
+            this.errorMessage = 'Cet email est déjà enregistré.';
+          } else {
+            this.errorMessage = error.error?.detail || 'Une erreur est survenue.';
+          }
+        }
       });
     }
   }
 
-  next() {
-    if (this.nextStep == Registrationstate.One) {
-      this.nextStep = Registrationstate.Two; //Passage à la page Suivante
-    } else if (this.nextStep == Registrationstate.Two) {
-      this.nextStep = Registrationstate.Three; //Up
-    } else if ((this.nextStep = Registrationstate.Three)) {
-      return;
+  onStepTwoSubmit() {
+    const otpCode = this.stepTwoForm.value.otpCode;
+  
+    if (otpCode) {
+      if (this.stepTwoForm.valid) {
+        const otpData = { email: this.consolidatedData.email!, otp_code: otpCode };
+        
+        this.registerService.verifyOTP(otpData.email, otpData.otp_code).subscribe({
+          next: () => {
+            this.nextStep = Registrationstate.Three;
+            this.otpErrorMessage = null;
+          },
+          error: (error) => {
+            this.otpErrorMessage = 'Code OTP invalide. Veuillez vérifier le code et réessayer.';
+            // Optionnel : vider le champ OTP en cas d'erreur
+            this.stepTwoForm.controls['otpCode'].setValue('');
+          }
+        });
+      }
     } else {
-      throw new Error("The number of items cannot be negative!");
+      // Si le champ OTP est vide, effacer le message d'erreur
+      this.otpErrorMessage = null;
+    }
+  }
+  
+  onStepThreeSubmit() {
+    if (this.stepThreeForm.valid) {
+      this.consolidatedData = { ...this.consolidatedData, ...this.stepThreeForm.value };
+      this.registerService.registerParticulier(this.consolidatedData).subscribe({
+        next: () => {
+          this.router.navigateByUrl("/success");
+        },
+        error: (error) => {
+          this.errorMessage = error.error.message;
+        }
+      });
     }
   }
 
   back() {
-    if (this.nextStep == Registrationstate.Two) {
+    if (this.nextStep === Registrationstate.Two) {
       this.nextStep = Registrationstate.One;
-    } else if (this.nextStep == Registrationstate.Three) {
+    } else if (this.nextStep === Registrationstate.Three) {
       this.nextStep = Registrationstate.Two;
-    } else {
-      return;
     }
   }
 }

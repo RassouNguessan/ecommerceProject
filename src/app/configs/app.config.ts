@@ -24,6 +24,9 @@ export const appConfig: ApplicationConfig = {
       withInterceptors([authInterceptor])
     ),
     provideCacheableAnimationLoader(),
+    provideHttpClient(
+      withFetch()
+   ),
     provideLottieOptions({ player: () => player }),
   ],
 };
