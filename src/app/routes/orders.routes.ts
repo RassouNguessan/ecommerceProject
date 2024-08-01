@@ -79,14 +79,23 @@ export const ordersRoutes: Routes = [
   //       (m) => m.OrderSuccessComponent
   //     ),
   // },
+  // {
+  //   path: "distribution-channel",
+  //   title: "Modal de choix du canal de distribution",
+  //   loadComponent: () =>
+  //     import(
+  //       "../widgets/distribution-channel/distribution-channel.component"
+  //     ).then((m) => m.DistributionChannelComponent),
+  // },
   {
-    path: "distribution-channel",
-    title: "Modal de choix du canal de distribution",
+    path: "order-detail-amount",
+    title: "",
     loadComponent: () =>
-      import(
-        "../widgets/distribution-channel/distribution-channel.component"
-      ).then((m) => m.DistributionChannelComponent),
+      import("../widgets/orderdetail-amount/orderdetail-amount.component").then(
+        (m) => m.OrderdetailAmountComponent
+      ),
   },
+  
   {
     path: "beneficiary-list",
     title: "Résumé de la liste des bénéficiaires",

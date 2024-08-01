@@ -1,60 +1,87 @@
-import { CommonModule } from '@angular/common';
-import { Component,Input,Output,EventEmitter, OnInit } from '@angular/core';
-import { FormsModule } from '@angular/forms';
-
-
-interface GridItem {
-  title: string;
-  number: string;
-  cvv: string;
-  expiration: string;
-  imageUrl: string;
-
-}
+import { CommonModule } from "@angular/common";
+import { Component } from "@angular/core";
+import { FormsModule } from "@angular/forms";
+import { RouterLink } from "@angular/router";
+import { GridItem } from "../../utils/types";
 
 @Component({
-  selector: 'app-card-visa-mastercard-payment',
+  selector: "app-card-visa-mastercard-payment",
   standalone: true,
-  imports: [FormsModule,
-            CommonModule,
-  ],
-  templateUrl: './card-visa-mastercard-payment.component.html',
-  styleUrl: './card-visa-mastercard-payment.component.scss'
+  imports: [FormsModule, CommonModule, RouterLink],
+  templateUrl: "./card-visa-mastercard-payment.component.html",
+  styleUrl: "./card-visa-mastercard-payment.component.scss",
 })
-export class CardVisaMastercardPaymentComponent{
+export class CardVisaMastercardPaymentComponent {
+  detailsOpened: boolean;
+  isAnimating: boolean;
+  phoneNumber: string;
+  cvvNumber: string;
+  expiryDate: string;
+  expirationDate: string;
+  selectedGrid: number | null;
 
-  selectedGrid: number | null = null;
-  detailsOpened: boolean = false;
-  isAnimating: boolean = false;
-  phoneNumber: string = '';
-  cvvNumber: string = '';
-  expiryDate: string = '';
-  expirationDate: string = '';
-
-
-  customMastercardImageUrl: string = './assets/images/orange_money.png';
   grids: GridItem[] = [
- 
-    { title: 'Visa / Mastercard', cvv: '',expiration:'', number: '', imageUrl: './assets/images/visa_money.png' }
+    {
+      title: "Orange Money",
+      number: "",
+      imageUrl: "./assets/images/orange_money.png",
+    },
+    {
+      title: "MTN Money",
+      number: "",
+      imageUrl: "./assets/images/mtn_money.png",
+    },
+    { title: "Airtel Money", number: "", imageUrl: "./assets/images/wave.png" },
+    {
+      title: "Moov money",
+      number: "",
+      imageUrl: "./assets/images/moov_money.png",
+    },
   ];
+
+  constructor() {
+    this.detailsOpened = false;
+    this.isAnimating = false;
+    this.phoneNumber = "";
+    this.cvvNumber = "";
+    this.expiryDate = "";
+    this.expirationDate = "";
+    this.selectedGrid = null;
+  }
 
   stopPropagation(event: MouseEvent): void {
     event.stopPropagation();
   }
-  
-  toggleGrid(index: number): void {
+
+  toggleGrid(index: number) {
     if (this.selectedGrid === index) {
-      this.selectedGrid = null;
+      this.selectedGrid = null; // Fermer le grid si c'est déjà sélectionné
     } else {
-      this.selectedGrid = index;
+      this.selectedGrid = index; // Ouvrir le nouveau grid
     }
   }
-  
 
+  toggleCheckbox(index: number, event: Event) {
+    event.stopPropagation(); // Empêcher la propagation du clic à l'élément parent
+    if (this.selectedGrid === index) {
+      this.selectedGrid = null; // Décocher si c'est déjà sélectionné
+    } else {
+      this.selectedGrid = index; // Activer la case à cocher
+    }
+  }
 
+  toggleDetails(event: Event) {
+    event.stopPropagation();
 
-
-
-
+    if (this.detailsOpened) {
+      this.isAnimating = true;
+      setTimeout(() => {
+        this.detailsOpened = false;
+        this.isAnimating = false;
+      }, 500);
+    } else {
+      this.detailsOpened = true;
+    }
+  }
 }
-export default CardVisaMastercardPaymentComponent
+export default CardVisaMastercardPaymentComponent;

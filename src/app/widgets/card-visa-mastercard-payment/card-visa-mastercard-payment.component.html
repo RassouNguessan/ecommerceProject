@@ -1,99 +1,39 @@
-
-
-   <!-- grid of visa/mastercard-->
-<!--                
-   <div class="grid-item" (click)="toggleDetails($event)">
-    <button class="round-button" [class.checked]="detailsOpened" (click)="toggleDetails($event)"></button>
-    <img src="./assets/images/visa_money.png" alt="Image de moyen de paiement">
-    <img src="./assets/images/moyen_payment.png" alt="Image de moyen de paiement">
-    <span class="px-3">mastercard/VISA</span>
-    <i class="bi" [ngClass]="{'bi-chevron-right': !detailsOpened, 'bi-chevron-down': detailsOpened}"></i>
+<div class="card border-0 ">
+  <div class="card-body mb-5">
+    <span class="card-title d-flex gap-2 fs-30 upper">
+      <img src="/assets/images/validate.svg" alt="">
+      sélectionnez votre moyen de paiement
+    </span>
+    <div class="row pt-2">
+      <p class="fs-16"> Pour effectuer votre paiement en toute sécurité de manière simple et rapide sélectionnez
+        votre moyen de paiement.</p>
     </div>
-  <div *ngIf="detailsOpened || isAnimating" class="details grid-items" [ngClass]="{'animate-slide-in': detailsOpened, 'animate-slide-out': !detailsOpened}">
-    <div class="border-1  rounded-0 mb-5">
-        <div class="form-row d-flex px-5">
-            <div class="col-12 col-md-5 mb-3 me-5">
-              <label for="phoneNumber">Numéro de téléphone <span class="text-danger">*</span></label>
-              <input type="text" class="form-control rounded-0 me-3" id="phoneNumber" placeholder="Entrez votre numéro de téléphone" [(ngModel)]="phoneNumber">
-            </div>
-            <div class="col-12 col-md-5 mb-3 ">
-              <label for="cvvNumber">Numéro de CVV <span class="text-danger">*</span></label>
-              <input type="text" class="form-control rounded-0" id="cvvNumber" placeholder="Entrez votre numéro de CVV" [(ngModel)]="cvvNumber">
-            </div>
+    <div class="pt-2">
+      @for(grid of grids; track $index){
+      <div class="grid-item" (click)="toggleGrid($index)">
+        <div class="content-header">
+          <div class="checkbox" [ngClass]="{'active': selectedGrid === $index}"
+            (click)="toggleCheckbox($index, $event)">
           </div>
-          <div class="form-group px-5 pb-3">
-            <div class="col-12 col-md-5 mb-12 ">
-                <label for="expirationDate">Date d'expiration <span class="text-danger">*</span></label>
-                <input type="text" class="form-control rounded-0" id="expirationDate" placeholder="MM/YY" [(ngModel)]="expirationDate">
-              </div>
-          </div>
-    </div>
-   </div>   -->
-  
-
-
-
- 
-
-  <div *ngFor="let grid of grids; let i = index" class="grid-item" (click)="toggleGrid(i)">
-    <div class="content-header">
-      <div class="checkbox" [ngClass]="{'active': selectedGrid === i}" (click)="$event.stopPropagation(); toggleGrid(i)"></div>
-      <img class="img-fluid" [src]="grid.imageUrl" alt="" [ngClass]="{'moov-money-image': grid.title.trim() === 'Moov money'}">
-      <span>{{ grid.title }}</span>
-      <i class="icon-blue" [ngClass]="{'bi-chevron-right': selectedGrid !== i, 'bi-chevron-down': selectedGrid === i}"></i>
-    </div>
-    <div class="grid-content " [ngClass]="{'open': selectedGrid === i, 'closed': selectedGrid !== i}">
-      <div class="input-container " (click)="$event.stopPropagation()">
-        <div class="input-row">
-          <div class="input-field">
-            <label for="phone-{{i}}">Numéro de la carte <span class="text-danger">*</span></label>
-            <input id="phone-{{i}}" type="tel" [(ngModel)]="grid.number" placeholder="Entrez le numéro">
-          </div>
-          <div class="input-field">
-            <label for="cvv-{{i}}">Numéro CVV <span class="text-danger">*</span></label>
-            <input id="cvv-{{i}}" type="text" [(ngModel)]="grid.cvv" placeholder="Entrez le CVV">
-          </div>
+          <img class="img-fluid" [src]="grid.imageUrl" alt=""
+            [ngClass]="{'moov-money-image': grid.title.trim() === 'Moov money'}">
+          <span class="px-2">{{ grid.title }}</span>
+          <i class=""
+            [ngClass]="{'bi-chevron-right': selectedGrid !== $index, 'bi-chevron-down': selectedGrid === $index}"></i>
         </div>
-        <div class="input-field">
-          <label for="expiry-{{i}}">Date d'expiration <span class="text-danger">*</span> </label>
-          <input id="expiry-{{i}}" type="text" [(ngModel)]="grid.expiration" placeholder="MM/AA">
+        <div class="grid-content" [ngClass]="{'open': selectedGrid === $index, 'closed': selectedGrid !== $index}">
+          <div class="input-container">
+            <label for="phone-{{$index}}"> Numéro de téléphone <span class="text-danger"> * </span></label>
+            <input id="phone-{{$index}}" type="tel" [(ngModel)]="grid.number" placeholder="Entrez le numéro"
+              (click)="$event.stopPropagation()">
+          </div>
         </div>
       </div>
+      }
     </div>
+    <form class="pt-3 d-flex gap-2">
+      <button type="button" class="btn-custom cancel" [routerLink]="'/cart'">retour</button>
+      <button type="submit" class="btn-custom next ms-2" [routerLink]="'/payment-otp'">suivant</button>
+    </form>
   </div>
-  
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
- 
+</div>

@@ -246,14 +246,14 @@
                                 <img src="/assets/images/trash.svg" alt="...">
                                 <div class="d-flex">
                                     <div class="d-flex justify-content-end">
-                                        <button (click)="decrement(detail.id)">
+                                        <div (click)="decrement(detail.id)">
                                             <img src="/assets/images/minus.svg" alt="...">
-                                        </button>
+                                        </div>
                                         <input class="form-input w-25 h-100 px-0 text-center rounded-0 fs-16"
                                             style="border: 1px solid #8D8A8A" [value]="detail.number" disabled>
-                                        <button (click)="increment(detail.id)">
+                                        <div (click)="increment(detail.id)">
                                             <img src="/assets/images/malus.svg" alt="...">
-                                        </button>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
