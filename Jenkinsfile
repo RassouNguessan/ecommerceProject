@@ -52,7 +52,7 @@ pipeline {
           }
 
           steps {
-            sh 'npm install @angular/cli'
+            sh 'npm install -g @angular/cli'
             sh 'npm run build'
           }
         }
