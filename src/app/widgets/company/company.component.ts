@@ -1,6 +1,7 @@
 import { Component, OnInit } from "@angular/core";
 import {
   AbstractControl,
+  FormBuilder,
   FormControl,
   FormGroup,
   ReactiveFormsModule,
@@ -15,6 +16,7 @@ import { ImgBlockComponent } from "../img-block/img-block.component";
 import { SecMsgComponent } from "../sec-msg/sec-msg.component";
 import { Registrationstate } from "../../utils/types";
 import { HttpClient } from "@angular/common/http";
+import { RegisterService } from "../../services/register.service";
 
 interface Dropdown {
   name: string;
@@ -46,17 +48,21 @@ export class CompanyComponent implements OnInit {
 
   registrationType?: string;
 
+  consolidatedData: any = {};
+  errorMessage: string | null = null;
+  otpErrorMessage: string | null = null;
+  emailAlreadyExists: boolean = false;
+
   isSuccess?: boolean;
-  showPassword = false;
   registrationFullInfos: Record<string, unknown>[] = [];
 
   stepOneForm = new FormGroup({
-    firstName: new FormControl("", Validators.required),
-    lastName: new FormControl("", Validators.required),
-    sociale: new FormControl("", Validators.required),
-    fixedNumber: new FormControl("", Validators.required),
-    enterpriseEmail: new FormControl("", [Validators.required, Validators.pattern(/^[\w.%+-]+@[\w.-]+\.[a-zA-Z]{2,}$/)]),
-    phoneNumber: new FormControl("", [Validators.required, Validators.maxLength(14), Validators.minLength(10), Validators.pattern(/^\+\d{1,3}\d{8,14}$/),]),
+    first_name: new FormControl("", Validators.required),
+    last_name: new FormControl("", Validators.required),
+    company: new FormControl("", Validators.required),
+    number_fix: new FormControl("", Validators.required),
+    email: new FormControl("", [Validators.required, Validators.pattern(/^[\w.%+-]+@[\w.-]+\.[a-zA-Z]{2,}$/)]),
+    phone: new FormControl("", [Validators.required, Validators.maxLength(14), Validators.minLength(10), Validators.pattern(/^\+\d{1,3}\d{8,14}$/),]),
     country: new FormControl("", Validators.required),
   });
 
@@ -64,19 +70,12 @@ export class CompanyComponent implements OnInit {
     otpCode: new FormControl("", Validators.required),
   });
 
-  stepThreeForm = new FormGroup(
-    {
-      enterpriseType: new FormControl<Dropdown | null>(
-        null,
-        Validators.required
-      ),
-      cfrmPassword: new FormControl<Dropdown | null>(null, Validators.required),
-      categPro: new FormControl<Dropdown | null>(null, Validators.required),
-      subCategory: new FormControl<Dropdown | null>(null, Validators.required),
-      websiteUrl: new FormControl("", Validators.required),
-    },
-    { validators: this.customPasswordMatching.bind(this) }
-  );
+  stepThreeForm = new FormGroup({
+    company_type: new FormControl("", Validators.required),
+    professional_category: new FormControl("", Validators.required),
+    sub_category: new FormControl("", Validators.required),
+    website: new FormControl("", Validators.required),
+  });
 
   stepFourForm = new FormGroup({
     password: new FormControl("", Validators.required),
@@ -86,18 +85,17 @@ export class CompanyComponent implements OnInit {
 
   constructor(
     private router: Router,
-    private location: Location,
-    private http:HttpClient
-  ) {}
-
-  togglePasswordVisibility(): void {
-    this.showPassword = !this.showPassword;
+    private fb: FormBuilder,
+    private registerService: RegisterService
+  ) {
+    this.stepFourForm = this.fb.group({
+      password: ['', [Validators.required]],
+      cfrmPassword: ['', [Validators.required]],
+    }, { validators: this.passwordMatchValidator });
   }
 
   ngOnInit(): void {
     this.isSuccess = false;
-    const data = this.location.getState() as Record<string, string>;
-    this.registrationType = data?.["type"];
 
     this.getCountries()
 
@@ -126,65 +124,96 @@ export class CompanyComponent implements OnInit {
     ];
   }
 
+  passwordMatchValidator(form: FormGroup) {
+    const password = form.get('password');
+    const cfrmPassword = form.get('cfrmPassword');
+    return password && cfrmPassword && password.value === cfrmPassword.value ? null : { mismatch: true };
+  }
+
 
   getCountries() {
-    this.http.get("https://users-service-enu3.onrender.com/api/v1/countries").subscribe({
+    this.registerService.getCountrylist().subscribe({
       next: (res: any) => {
         this.countries = res;
         console.log(this.countries, "================listes des pays");
       },
       error: (err: any) => {
         console.error("Error fetching countries:", err);
-        alert("Une erreur est survenue lors de la récupération de la liste des pays. Veuillez réessayer plus tard.");
       }
     });
   }
   
-
-  public customPasswordMatching(
-    control: AbstractControl
-  ): ValidationErrors | null {
-    const password = control.get("password")?.value;
-    const cfrmPassword = control.get("cfrmPassword")?.value;
-
-    return password === cfrmPassword ? null : { passwordMismatchError: true };
-  }
-
-  companyFormSubmit() {
-    if (
-      this.stepOneForm?.valid &&
-      this.stepTwoForm?.valid &&
-      this.stepThreeForm?.valid &&
-      this.stepFourForm?.valid
-    ) {
-      this.registrationFullInfos.push(
-        this.stepOneForm.value,
-        this.stepTwoForm.value,
-        this.stepThreeForm.value,
-        this.stepFourForm.value
-      );
-
-      this.router.navigateByUrl("/success", {
-        state: {
-          type: this.registrationType,
-          suscriberEmail: this.stepOneForm?.value.enterpriseEmail,
+  stepOneFormSubmit(){
+    if (this.stepOneForm.valid) {
+      this.consolidatedData = { ...this.consolidatedData, ...this.stepOneForm.value };
+      this.registerService.sendOTPRegister(this.consolidatedData.email).subscribe({
+        next: () => {
+          this.nextStep = Registrationstate.Two;
+          this.emailAlreadyExists = false;
+          this.errorMessage = null;
         },
+        error: (error) => {
+          if (error.status === 409) { // Email already exists
+            this.emailAlreadyExists = true;
+            this.errorMessage = 'Cet email est déjà enregistré.';
+          } else {
+            this.errorMessage = error.error?.detail || 'Une erreur est survenue.';
+          }
+        }
       });
     }
-    console.log(this.registrationFullInfos);
   }
 
-  next() {
-    if (this.nextStep == Registrationstate.One) {
-      this.nextStep = Registrationstate.Two; //Passage à la page Suivante
-    } else if (this.nextStep == Registrationstate.Two) {
-      this.nextStep = Registrationstate.Three;
-    } else if ((this.nextStep = Registrationstate.Three)) {
-      this.nextStep = Registrationstate.Last;
-    } else if ((this.nextStep = Registrationstate.Last)) {
-      return;
+  stepTwoFormSubmit(){
+    const otpCode = this.stepTwoForm.value.otpCode;
+    if (otpCode) {
+      if (this.stepTwoForm.valid) {
+        this.consolidatedData = { ...this.consolidatedData, ...this.stepOneForm.value, ...this.stepTwoForm.value };
+        const otpData = { email: this.consolidatedData.email!, otp_code: otpCode };
+        
+        this.registerService.verifyOTP(otpData.email, otpData.otp_code).subscribe({
+          next: () => {
+            this.nextStep = Registrationstate.Three;
+            this.otpErrorMessage = null;
+          },
+          error: (error) => {
+            this.otpErrorMessage = 'Code OTP invalide. Veuillez vérifier le code et réessayer.';
+            // Optionnel : vider le champ OTP en cas d'erreur
+            this.stepTwoForm.controls['otpCode'].setValue('');
+          }
+        });
+      }
     } else {
-      throw new Error("The number of items cannot be negative!");
+      // Si le champ OTP est vide, effacer le message d'erreur
+      this.otpErrorMessage = null;
+    }
+  }
+  stepThreeFormSubmit() {
+    if (this.stepThreeForm.valid) {
+      this.consolidatedData = {
+        ...this.consolidatedData,
+        ...this.stepOneForm.value,
+        ...this.stepTwoForm.value,
+        ...this.stepThreeForm.value,
+      };
+      console.log(this.consolidatedData, "===============données final consolidé");
+      this.nextStep = Registrationstate.Last;
+    }
+  }
+
+  stepFourFormSubmit(){
+    if (this.stepThreeForm.valid) {
+      this.consolidatedData = { ...this.consolidatedData, ...this.stepOneForm.value,...this.stepTwoForm.value, ...this.stepThreeForm.value, ...this.stepFourForm.value};
+      console.log(this.consolidatedData,"=============consolidatedData");
+      
+      this.registerService.registerProfessionnal(this.consolidatedData).subscribe({
+        next: () => {
+          this.router.navigateByUrl("/success");
+        },
+        error: (error) => {
+          this.errorMessage = error.error.message;
+        }
+      });
     }
   }
 

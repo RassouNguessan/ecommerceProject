@@ -7,23 +7,26 @@ import { RegisterParticular, RegisterProfessionnal,RegisterParticularResponse,Re
   providedIn: 'root'
 })
 export class RegisterService {
-  private apiUrl = 'https://users-service-enu3.onrender.com/api/v1';
+  private apiUrl = 'http://127.0.0.1:8001/api/v1/register/professionnal';
 
   constructor(private http: HttpClient) { }
 
   sendOTPRegister(email: string): Observable<string> {
-    return this.http.post<string>(`${this.apiUrl}/send-otp?email=${encodeURIComponent(email)}`, null);
+      return this.http.post<string>(`${this.apiUrl}/send-otp?email=${encodeURIComponent(email)}`, null);
   }
   verifyOTP(email: string, otp: string): Observable<string> {
-    return this.http.post<string>(`${this.apiUrl}/verify-register-otp`, { email, otp_code: otp });
+      return this.http.post<string>(`${this.apiUrl}/verify-register-otp`, { email, otp_code: otp });
   }
   registerParticulier(registerParticular: RegisterParticular): Observable<RegisterParticularResponse> {
-        return this.http.post<RegisterParticularResponse>(`${this.apiUrl}/register/particular`,registerParticular);
+      return this.http.post<RegisterParticularResponse>(`${this.apiUrl}/register/particular`,registerParticular);
   }
 
   registerProfessionnal(registerProfessionnal: RegisterProfessionnal): Observable<RegisterProfessionnalResponse> {
-    return this.http.post<RegisterProfessionnalResponse>(`${this.apiUrl}/register/professional`,registerProfessionnal);    
+      return this.http.post<RegisterProfessionnalResponse>(`${this.apiUrl}/register/professional`,registerProfessionnal);    
   }
 
+  getCountrylist():Observable<string>{
+      return this.http.get<string>(`${this.apiUrl}/countries`);    
+  }
 
 }
