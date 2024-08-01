@@ -202,6 +202,7 @@ export interface GridItem {
   firstField?: string; // Ajoutez cette ligne si vous avez besoin de cette propriété
   secondField?: string; // Ajoutez cette ligne si vous avez besoin de cette propriété
   thirdField?: string; // Ajoutez cette ligne si vous avez besoin de cette propriété
+}
 
 export interface sendOTP{
   email:string
