@@ -78,6 +78,7 @@ export interface summaryList {
   canal?: number;
 }
 
+}
 // export interface summaryList {
 //   id: number;
 //   title: string;
@@ -124,7 +125,6 @@ export interface detail {
   amount: number;
   imageURI?: string;
 }
-
 export interface CardInfo {
   id: number;
   cardImage: string;
@@ -194,13 +194,4 @@ export interface User {
   professional_category: string | null;
   sub_category: string | null;
   website: string | null;
-}
-
-export interface GridItem {
-  title: string;
-  number: string;
-  imageUrl: string;
-  firstField?: string; // Ajoutez cette ligne si vous avez besoin de cette propriété
-  secondField?: string; // Ajoutez cette ligne si vous avez besoin de cette propriété
-  thirdField?: string; // Ajoutez cette ligne si vous avez besoin de cette propriété
 }

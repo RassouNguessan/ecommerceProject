@@ -36,7 +36,7 @@ export class ForgotPasswordPageComponent {
         },
         error: (error) => {
           this.isLoading = false;
-          this.errorMessage = error.error.message;
+          this.errorMessage = error.error.detail;
         }
       });
     }
