@@ -61,10 +61,12 @@
                 {{ dropdownOpen ? user?.first_name : user?.first_name }}
               </span>
               <ul [class.show]="dropdownOpen">
-                <li *ngFor="let option of options" (click)="selectOption(option)">
+                @for(option of options; track option){
+                <li (click)="selectOption(option)">
                   <img [src]="option.icon" alt="{{ option.label }} Icon" class="option-icon" />
                   {{ option.label }}
                 </li>
+                }
               </ul>
             </div>
           </div>

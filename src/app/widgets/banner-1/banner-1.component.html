@@ -208,12 +208,15 @@
             <div class="position-absolute">
               <img src="/assets/images/payment_method_icon_grouped.png" alt="" style="width: 100%; height: auto" />
             </div>
-            <div *ngIf="isVisible" class="img-1" [class.slide-in]="isVisible">
+            @if(isVisible){
+            <div class="img-1" [class.slide-in]="isVisible">
               <img src="/assets/images/Groupe 16335@2x.png" alt="img1" style="width: 100%; height: auto" />
             </div>
-            <div *ngIf="!isVisible" class="img-2" [class.slide-vertical]="!isVisible">
+            } @else {
+            <div class="img-2" [class.slide-vertical]="!isVisible">
               <img src="/assets/images/Groupe 16336@2x.png" alt="img2" style="width: 100%; height: auto" />
             </div>
+            }
           </div>
         </div>
       </div>
