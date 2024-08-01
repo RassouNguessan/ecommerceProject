@@ -3,7 +3,7 @@ import { Component, Input, OnInit } from "@angular/core";
 import { Router, RouterLink } from "@angular/router";
 // import { ORDERS } from "../../utils/mock-card-list";
 import { NumberWithSpacesPipe } from "../../pipes/number-with-spaces.pipe";
-import { detail, purchasedVoucher } from "../../utils/types";
+import { purchasedVoucher } from "../../utils/types";
 import { PurchasesService } from "../../services/purchases.service";
 
 @Component({

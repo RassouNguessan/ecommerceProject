@@ -1,7 +1,6 @@
 import { Component } from "@angular/core";
 import { NavbarComponent } from "../../widgets/navbar/navbar.component";
 import { FrameComponent } from "../../widgets/frame/frame.component";
-import { summaryList } from "../../utils/types";
 import { CommonModule } from "@angular/common";
 import { NumberWithSpacesPipe } from "../../pipes/number-with-spaces.pipe";
 import { BeneficiaryListComponent } from "../../widgets/beneficiary-list/beneficiary-list.component";

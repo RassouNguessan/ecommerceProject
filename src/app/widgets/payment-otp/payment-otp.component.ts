@@ -23,13 +23,13 @@ export class PaymentOtpComponent {
     private router: Router
   ) {
     this.paymentOtpForm = this.fb.group({
-      // paymentOtpCode: [
-      //   "",
-      //   {
-      //     validators: [Validators.required],
-      //     nonNullable: true,
-      //   },
-      // ],
+      paymentOtpCode: [
+        "",
+        {
+          validators: [Validators.required],
+          nonNullable: true,
+        },
+      ],
     });
   }
 
