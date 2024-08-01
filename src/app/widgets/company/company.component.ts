@@ -166,7 +166,6 @@ export class CompanyComponent implements OnInit {
         },
       });
     }
-    console.log(this.registrationFullInfos);
   }
 
   next() {

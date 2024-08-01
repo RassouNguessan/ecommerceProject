@@ -68,7 +68,6 @@ export class IndividualComponent implements OnInit {
   ngOnInit(): void {
     this.isSuccess = false;
     const data = this.location.getState() as Record<string, unknown>;
-    console.log(data?.["type"]);
     this.registrationType = data?.["type"];
   }
 
@@ -88,7 +87,6 @@ export class IndividualComponent implements OnInit {
         state: { type: this.registrationType },
       });
     }
-    console.log(this.registrationFullInfos);
   }
 
   next() {
