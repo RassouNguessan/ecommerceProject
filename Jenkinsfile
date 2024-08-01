@@ -21,7 +21,7 @@ pipeline {
       }
         stage('Install Dependencies') {
           when {
-            expression { BRANCH_NAME == 'main' }
+            expression { BRANCH_NAME == 'new' }
           }
 
           steps {
@@ -37,7 +37,7 @@ pipeline {
 
         // stage('Run Tests') {
         //  when {
-        //    expression { BRANCH_NAME == 'main' }
+        //    expression { BRANCH_NAME == 'new' }
         //  }
 
       
@@ -48,7 +48,7 @@ pipeline {
 
         stage('Build') {
           when {
-            expression { BRANCH_NAME == 'main' }
+            expression { BRANCH_NAME == 'new' }
           }
 
           steps {
@@ -59,7 +59,7 @@ pipeline {
 
         stage('Archive Artifacts') {
           when {
-            expression { BRANCH_NAME == 'main' }
+            expression { BRANCH_NAME == 'new' }
           }
 
           steps {
@@ -69,7 +69,7 @@ pipeline {
 
         stage('Build Docker Image') {
           when {
-            expression { BRANCH_NAME == 'main' }
+            expression { BRANCH_NAME == 'new' }
           }
 
           steps {
@@ -81,7 +81,7 @@ pipeline {
 
         stage('Push Docker Image') {
           when {
-            expression { BRANCH_NAME == 'main' }
+            expression { BRANCH_NAME == 'new' }
           }
         
           steps {
@@ -94,7 +94,7 @@ pipeline {
         }
             stage('Checkout Manifest Repository') {
               when {
-                expression { BRANCH_NAME == 'main' }
+                expression { BRANCH_NAME == 'new' }
               }
 
               steps {
@@ -104,7 +104,7 @@ pipeline {
 
             stage('Update K8s Manifests') {
               when {
-                expression { BRANCH_NAME == 'main' }
+                expression { BRANCH_NAME == 'new' }
               }
 
               steps {
