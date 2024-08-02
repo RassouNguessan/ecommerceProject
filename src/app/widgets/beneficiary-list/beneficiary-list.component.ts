@@ -8,7 +8,12 @@ import { NumberWithSpacesPipe } from "../../pipes/number-with-spaces.pipe";
 @Component({
   selector: "app-beneficiary-list",
   standalone: true,
-  imports: [LottiesComponent, BackButtonComponent, CommonModule, NumberWithSpacesPipe],
+  imports: [
+    LottiesComponent,
+    BackButtonComponent,
+    CommonModule,
+    NumberWithSpacesPipe,
+  ],
   templateUrl: "./beneficiary-list.component.html",
   styleUrl: "./beneficiary-list.component.scss",
 })
@@ -52,11 +57,38 @@ export class BeneficiaryListComponent {
     },
   ];
 
-  // options: AnimationOptions = {
-  //   path: "/assets/lotties/ANIME -AAABBBB-2 (1).json",
-  //   loop: true,
-  //   autoplay: true,
-  // };
+  vouchers = [
+    {
+      amount: 10000,
+      available: 100,
+      purchased: 90,
+    },
+    {
+      amount: 15000,
+      available: 200,
+      purchased: 13,
+    },
+    {
+      amount: 20000,
+      available: 50,
+      purchased: 30,
+    },
+    {
+      amount: 25000,
+      available: 10,
+      purchased: 0,
+    },
+    {
+      amount: 30000,
+      available: 500,
+      purchased: 20,
+    },
+    {
+      amount: 200000,
+      available: 5,
+      purchased: 0,
+    },
+  ];
 
   constructor() {
     this.imagePath = {
@@ -65,8 +97,4 @@ export class BeneficiaryListComponent {
     this.width = "35px";
     this.height = "35px";
   }
-
-  // animationCreated(animationItem: AnimationItem): void {
-  //   this.animationItem = animationItem;
-  // }
 }
