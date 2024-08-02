@@ -4,7 +4,6 @@ import { StoreconcernsComponent } from "../../widgets/storeconcerns/storeconcern
 import { FavorisComponent } from "../../widgets/favoris/favoris.component";
 import { PaginationComponent } from "../../widgets/pagination/pagination.component";
 import { HeartComponent } from "../../widgets/heart/heart.component";
-import { FavoriteButtonComponent } from "../../widgets/favorite-button/favorite-button.component";
 import { CommonModule } from "@angular/common";
 import { voucherDetail } from "../../utils/types";
 import { Router } from "@angular/router";
@@ -25,13 +24,12 @@ import { StarRatingComponent } from "../star-rating/star-rating.component";
     PaginationComponent,
     HeartComponent,
     CommonModule,
-    FavoriteButtonComponent,
     NumberWithSpacesPipe,
     BtnAddBasketComponent,
     QuantityButtonComponent,
     TotalPriceCardComponent,
-    StarRatingComponent
-],
+    StarRatingComponent,
+  ],
   templateUrl: "./greatdeal.component.html",
   styleUrl: "./greatdeal.component.scss",
 })

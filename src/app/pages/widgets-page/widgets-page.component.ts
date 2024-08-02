@@ -23,7 +23,7 @@ import { DistributedComponent } from "../../widgets/distributed/distributed.comp
 import { DistributeinduvidualComponent } from "../../widgets/distributeinduvidual/distributeinduvidual.component";
 import { DistributionChannelComponent } from "../../widgets/distribution-channel/distribution-channel.component";
 import { EntrepriseComponent } from "../../widgets/entreprise/entreprise.component";
-import { FavoriteButtonComponent } from "../../widgets/favorite-button/favorite-button.component";
+// import { FavoriteButtonComponent } from "../../widgets/favorite-button/favorite-button.component";
 import { FooterComponent } from "../../widgets/footer/footer.component";
 // import { RegisterComponent } from "../../widgets/form-register/register.component";
 import { FormsComponent } from "../../widgets/forms/forms.component";
@@ -107,7 +107,7 @@ import { PurchaseMessageComponent } from "../../widgets/purchase-message/purchas
     DistributeinduvidualComponent,
     DistributionChannelComponent,
     EntrepriseComponent,
-    FavoriteButtonComponent,
+    // FavoriteButtonComponent,
     FooterComponent,
     FormsComponent,
     GreatdealComponent,

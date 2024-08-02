@@ -1,5 +1,4 @@
 import { Component } from "@angular/core";
-import { FavoriteButtonComponent } from "../../widgets/favorite-button/favorite-button.component";
 import { CommonModule } from "@angular/common";
 import { BackButtonComponent } from "../../widgets/back-button/back-button.component";
 import { NumberWithSpacesPipe } from "../../pipes/number-with-spaces.pipe";
@@ -10,7 +9,6 @@ import { RouterLink } from "@angular/router";
   selector: "app-detailbasket",
   standalone: true,
   imports: [
-    FavoriteButtonComponent,
     DetailbasketComponent,
     BackButtonComponent,
     CommonModule,
