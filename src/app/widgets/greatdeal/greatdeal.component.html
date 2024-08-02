@@ -1,0 +1,287 @@
+<div class="container-fluid overflow-hidden">
+    <div class="mt-3 d-grid px-lg-5 px-2 mb-5">
+        <ng-content select="[back]"></ng-content>
+
+        <div class="mt-3 d-lg-flex d-grid justify-content-between">
+            <div class="d-md-block col-lg-5">
+                @for(product of favoriteProducts; track product){
+                <div class="card flex-md-row flex-column justify-content-center mb-3 mw-100"
+                    [ngClass]="{'active-button': firstProduct === product}" (click)="updateInfo(product)">
+                    <img [src]=" product.image_uri" class="object-fit-contain" alt="..." style="height: 231px;">
+                    <div class="card-body pb-0">
+                        <div class="card-title d-flex justify-content-between fs-18">
+                            <p class="mb-0">Bon d’achat de {{product.price | formatNumber }} FCFA</p>
+                            <app-heart [isFavorite]="true"/>
+                        </div>
+                        <div>
+                            <p class="fs-13 mb-0">
+                                <small class="text-muted">
+                                    Date d'achat : {{product.date}}
+                                </small>
+                            </p>
+                            <p class="fs-13 mb-2">
+                                <small class="text-muted">
+                                    Nombre de bon disponible : {{product.qty}}
+                                </small>
+                            </p>
+
+                            <p class="fs-18 d-flex align-items-center mb-2" style="color: #FFC436;">
+                                <img src="/assets/images/money.svg" class="bg-light" alt="...">
+                                <span class="mx-2 fs-18">{{ product.price | formatNumber }} FCFA</span>
+                            </p>
+
+                            <p class="fs-18 d-flex align-items-center mb-2" style="color: #FFC436;">
+                                <app-star-rating [starNumber]="product.star" />
+                            </p>
+
+                            <p class="fs-18 d-flex align-items-center mb-0" style="color: #FFC436;">
+                                <img src="/assets/images/trash.svg" alt="...">
+                            </p>
+                        </div>
+                    </div>
+                    <div class="d-flex align-items-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="25.806" height="40" viewBox="0 0 25.806 40">
+                            <path id="Polygone_1" data-name="Polygone 1" d="M20,0,40,25.806H0Z"
+                                transform="translate(25.806) rotate(90)"
+                                [attr.fill]="firstProduct === product ? '#00B3D7':'#FFFFFF'" />
+                        </svg>
+                    </div>
+                </div>
+                }
+            </div>
+
+            <div class="col-12 col-lg-6 col-md-12">
+                <div class="card-body">
+                    <div class="col-auto">
+                        <h5><span class="fs-13 badge text-bg-success square-badge" style="border-radius: 0%;">{{
+                                firstProduct.state }}</span></h5>
+                    </div>
+
+                    <span class="card-title message fs-30">
+                        bons d'achat d'un montant de <br />{{ firstProduct.price | formatNumber
+                        }} F
+                        disponibles
+                    </span>
+
+                    <p class="fs-18 d-flex align-items-center mt-3" style="color: #FFC436;">
+                        <app-star-rating [starNumber]="firstProduct.star" />
+                        <a class="link ms-5" href="#">{{ firstProduct.rating }} avis</a>
+                    </p>
+
+                    <span class="d-flex align-items-center message fs-30 mt-1 mb-2" style="color: #FFC436;">
+                        <img src="/assets/images/money.svg" alt="..." width="30px" height="27px">
+
+                        <span class="mx-2">{{ firstProduct.price | formatNumber }} </span> FCFA
+                    </span>
+
+                    <p class="card-text">
+                        Nombre de bon disponible : {{firstProduct.qty}}
+                    </p>
+
+                    <div class="fs-16 mt-5">
+
+                        <div class="fs-14 upper d-flex align-content-center">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16.133" height="14.095"
+                                viewBox="0 0 16.133 14.095">
+                                <g id="store-2" transform="translate(0.2 -4.12)">
+                                    <path id="Tracé_97688" data-name="Tracé 97688"
+                                        d="M17.012,33.444h-.276V26.552a1.442,1.442,0,0,1-.63-.526,1.421,1.421,0,0,1-2.373,0,1.421,1.421,0,0,1-2.373,0,1.421,1.421,0,0,1-2.373,0,1.418,1.418,0,0,1-2.375-.007,1.422,1.422,0,0,1-2.368-.009,1.42,1.42,0,0,1-.632.526v6.908H3.337a.516.516,0,0,0-.517.517v.981H17.528v-.981a.516.516,0,0,0-.517-.517Zm-7.913,0H5.219V28.659a.582.582,0,0,1,.583-.583H8.516a.584.584,0,0,1,.583.583Zm5.762-2.25a.374.374,0,0,1-.375.375H11.323a.376.376,0,0,1-.377-.375V28.333a.376.376,0,0,1,.377-.375h3.163a.374.374,0,0,1,.375.375Z"
+                                        transform="translate(-2.308 -16.727)" fill="#1f1f1f" />
+                                    <path id="Tracé_97689" data-name="Tracé 97689"
+                                        d="M57.9,14.144h1.833L59,12.611a.471.471,0,0,0-.427-.271H57.29Z"
+                                        transform="translate(-43.93 -6.281)" fill="#1f1f1f" />
+                                    <path id="Tracé_97690" data-name="Tracé 97690"
+                                        d="M2.819,12.27H1.531a.474.474,0,0,0-.427.271L.38,14.074H2.21Z"
+                                        transform="translate(-0.443 -6.228)" fill="#1f1f1f" />
+                                    <path id="Tracé_97691" data-name="Tracé 97691"
+                                        d="M60.15,21.99v.182a.949.949,0,1,0,1.9,0V21.99Z"
+                                        transform="translate(-46.116 -13.655)" fill="#1f1f1f" />
+                                    <path id="Tracé_97692" data-name="Tracé 97692"
+                                        d="M51.041,23.122a.952.952,0,0,0,.951-.951V21.99h-1.9v.182A.952.952,0,0,0,51.041,23.122Z"
+                                        transform="translate(-38.429 -13.655)" fill="#1f1f1f" />
+                                    <path id="Tracé_97693" data-name="Tracé 97693"
+                                        d="M41.162,12.793l-.092-.453H39.45l.123,1.8h1.863Z"
+                                        transform="translate(-30.298 -6.281)" fill="#1f1f1f" />
+                                    <path id="Tracé_97694" data-name="Tracé 97694"
+                                        d="M9.86,22.155a.951.951,0,0,0,1.9,0V21.99H9.86Z"
+                                        transform="translate(-7.687 -13.655)" fill="#1f1f1f" />
+                                    <path id="Tracé_97695" data-name="Tracé 97695"
+                                        d="M49.969,12.34H48.36l.274,1.351.092.453h1.849Z"
+                                        transform="translate(-37.107 -6.281)" fill="#1f1f1f" />
+                                    <path id="Tracé_97696" data-name="Tracé 97696"
+                                        d="M19.92,22.172a.949.949,0,1,0,1.9,0V21.99h-1.9Z"
+                                        transform="translate(-15.375 -13.655)" fill="#1f1f1f" />
+                                    <path id="Tracé_97697" data-name="Tracé 97697"
+                                        d="M1.7,22.1V21.92H-.2V22.1a.951.951,0,1,0,1.9,0Z"
+                                        transform="translate(0 -13.602)" fill="#1f1f1f" />
+                                    <path id="Tracé_97698" data-name="Tracé 97698"
+                                        d="M12.488,12.34H10.881l-.6,1.788h1.847Z" transform="translate(-8.008 -6.281)"
+                                        fill="#1f1f1f" />
+                                    <path id="Tracé_97699" data-name="Tracé 97699"
+                                        d="M30.163,12.34l-.123,1.8h1.868l-.12-1.8Z"
+                                        transform="translate(-23.108 -6.281)" fill="#1f1f1f" />
+                                    <path id="Tracé_97700" data-name="Tracé 97700"
+                                        d="M40.981,23.122a.952.952,0,0,0,.951-.951V21.99h-1.9v.182a.952.952,0,0,0,.951.951Z"
+                                        transform="translate(-30.741 -13.655)" fill="#1f1f1f" />
+                                    <path id="Tracé_97701" data-name="Tracé 97701"
+                                        d="M22.124,12.34H20.506l-.366,1.8H22Z" transform="translate(-15.543 -6.281)"
+                                        fill="#1f1f1f" />
+                                    <path id="Tracé_97702" data-name="Tracé 97702"
+                                        d="M29.97,22.172a.951.951,0,0,0,1.9,0V21.99h-1.9Z"
+                                        transform="translate(-23.054 -13.655)" fill="#1f1f1f" />
+                                    <path id="Tracé_97703" data-name="Tracé 97703"
+                                        d="M7.9,5.587H19.3V5.108a.987.987,0,0,0-.986-.988H7.168a.989.989,0,0,0-.988.988v.462H7.909Z"
+                                        transform="translate(-4.875 0)" fill="#1f1f1f" />
+                                </g>
+                            </svg>
+                            <span class="ms-2">MAGASINS CONCERNÉS POUR LES BONS</span>
+                        </div>
+                        <div class="mt-2">
+                            Magasin Cocody deux plateaux, Magasin Cocody RTI, Magasin Cocody angré, Magasin
+                            plateau, Magasin macory zone 4, Magasin Yopougon siporex, Magasin Yopougon Selmer.
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="mt-5">
+                    <div class="fs-14 upper d-flex align-items-center fw-bold details">
+                        <svg id="information-button-2" xmlns="http://www.w3.org/2000/svg" width="18" height="18"
+                            viewBox="0 0 31.144 31.144">
+                            <path id="Tracé_101564" data-name="Tracé 101564"
+                                d="M15.571,0A15.572,15.572,0,1,0,31.144,15.571,15.572,15.572,0,0,0,15.571,0Zm3.242,24.133q-1.2.475-1.918.722a5.06,5.06,0,0,1-1.664.249,3.316,3.316,0,0,1-2.263-.711,2.293,2.293,0,0,1-.805-1.8,6.546,6.546,0,0,1,.059-.869c.041-.3.105-.627.194-1l1-3.543c.088-.34.165-.663.225-.964a4.273,4.273,0,0,0,.09-.834,1.285,1.285,0,0,0-.279-.945,1.588,1.588,0,0,0-1.072-.265,2.813,2.813,0,0,0-.8.119c-.27.083-.5.158-.7.232l.265-1.092q.985-.4,1.885-.687a5.569,5.569,0,0,1,1.7-.287,3.254,3.254,0,0,1,2.23.7,2.321,2.321,0,0,1,.783,1.814q0,.231-.054.813a5.442,5.442,0,0,1-.2,1.069l-1,3.533c-.082.283-.154.608-.22.97a5.13,5.13,0,0,0-.1.825,1.185,1.185,0,0,0,.315.96,1.764,1.764,0,0,0,1.09.256,3.162,3.162,0,0,0,.825-.128,4.692,4.692,0,0,0,.667-.224Zm-.177-14.34a2.382,2.382,0,0,1-1.681.649,2.407,2.407,0,0,1-1.687-.649,2.07,2.07,0,0,1-.7-1.573,2.091,2.091,0,0,1,.7-1.577,2.389,2.389,0,0,1,1.687-.655,2.362,2.362,0,0,1,1.681.655,2.124,2.124,0,0,1,0,3.149Z"
+                                fill="#1f1f1f" />
+                        </svg>
+                        <span class="ms-2">détails</span>
+                    </div>
+                    <div class="mt-2">
+                        Lorem ipsum dolor sit amet, consetetur sadipscing elitr,
+                        sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat,
+                        sed diam voluptua.
+                        At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd
+                        gubergren,
+                        no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit
+                        amet,
+                        consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et
+                        dolore magna aliquyam erat,
+                        sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.
+                        Stet clita kasd gubergren, no sea takimata sanctus
+                    </div>
+                </div>
+
+                <!-- <div class="mt-4 flex-row col-12 justify-content-between"> -->
+
+                <!-- <div id="increment" class="text-end col">
+                        <div class="d-flex align-items-center">
+                            <button class="btn border-0 px-0">
+                                <svg xmlns="http://www.w3.org/2000/svg" id="minus" data-name="Composant 131 – 3"
+                                    width="40" height="40" viewBox="0 0 40 40">
+                                    <g id="Rectangle_649" data-name="Rectangle 649" fill="#fff" stroke="#00b3d7"
+                                        stroke-width="1">
+                                        <rect width="40" height="40" stroke="none" />
+                                        <rect x="0.5" y="0.5" width="39" height="39" fill="none" />
+                                    </g>
+                                    <path id="Tracé_101103" data-name="Tracé 101103"
+                                        d="M10.206,2.25V.72H-.054V2.25Z" transform="translate(15 19)"
+                                        fill="#00b3d7" />
+                                </svg>
+                            </button>
+                            <div class="col-5">
+                                <input type="text" name="" id="" class="text-center w-100" style="height: 40px;"
+                                    [value]="0">
+                            </div>
+
+                            <button class="px-0 btn border-0">
+                                <svg xmlns="http://www.w3.org/2000/svg" id="malus" data-name="Composant 130 – 3"
+                                    width="40" height="40" viewBox="0 0 40 40">
+                                    <g id="Rectangle_651" data-name="Rectangle 651" fill="#fff" stroke="#00b3d7"
+                                        stroke-width="1">
+                                        <rect width="40" height="40" stroke="none" />
+                                        <rect x="0.5" y="0.5" width="39" height="39" fill="none" />
+                                    </g>
+                                    <text id="_" data-name="+" transform="translate(16 26)" fill="#00b3d7"
+                                        font-size="18" font-family="ProximaNova-Bold, Proxima Nova"
+                                        font-weight="700">
+                                        <tspan x="0" y="0">+</tspan>
+                                    </text>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="ms-5 col">
+                        <input type="text" name="" id="" class="text-center w-100"
+                            style="height: 40px; color:#FFC436" [value]="0">
+                    </div>
+
+                    <div class="col">
+                        <app-btn-add-basket />
+                    </div> -->
+
+                <!-- 
+                    <div class="d-flex align-content-end">
+                        <div id="increment" class="text-end">
+                            <div class="d-flex align-items-center">
+                                <button class="btn border-0 px-0">
+                                    <svg xmlns="http://www.w3.org/2000/svg" id="minus" data-name="Composant 131 – 3"
+                                        width="40" height="40" viewBox="0 0 40 40">
+                                        <g id="Rectangle_649" data-name="Rectangle 649" fill="#fff" stroke="#00b3d7"
+                                            stroke-width="1">
+                                            <rect width="40" height="40" stroke="none" />
+                                            <rect x="0.5" y="0.5" width="39" height="39" fill="none" />
+                                        </g>
+                                        <path id="Tracé_101103" data-name="Tracé 101103"
+                                            d="M10.206,2.25V.72H-.054V2.25Z" transform="translate(15 19)"
+                                            fill="#00b3d7" />
+                                    </svg>
+                                </button>
+                                <div class="col-5">
+                                    <input type="text" name="" id="" class="text-center w-100" style="height: 40px;"
+                                        [value]="0">
+                                </div>
+
+                                <button class="px-0 btn border-0">
+                                    <svg xmlns="http://www.w3.org/2000/svg" id="malus" data-name="Composant 130 – 3"
+                                        width="40" height="40" viewBox="0 0 40 40">
+                                        <g id="Rectangle_651" data-name="Rectangle 651" fill="#fff" stroke="#00b3d7"
+                                            stroke-width="1">
+                                            <rect width="40" height="40" stroke="none" />
+                                            <rect x="0.5" y="0.5" width="39" height="39" fill="none" />
+                                        </g>
+                                        <text id="_" data-name="+" transform="translate(16 26)" fill="#00b3d7"
+                                            font-size="18" font-family="ProximaNova-Bold, Proxima Nova"
+                                            font-weight="700">
+                                            <tspan x="0" y="0">+</tspan>
+                                        </text>
+                                    </svg>
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="ms-5">
+                            <input type="text" name="" id="" class="text-center w-100"
+                                style="height: 40px; color:#FFC436" [value]="0">
+                        </div>
+
+                        <app-btn-add-basket />
+                    </div> -->
+
+
+                <!-- <div class="d-flex col-6 align-items-center justify-content-center justify-content-between">
+                        <div class="col-8">
+                            <app-btn-add-basket />
+                        </div>
+                    </div> -->
+                <!-- </div> -->
+                <div class="row mt-5">
+
+                    <!-- <app-btn-add-basket right/> -->
+                    <app-total-price-card [price]="firstProduct.price">
+                        <app-btn-add-basket [componentClass]="''" right />
+                    </app-total-price-card>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

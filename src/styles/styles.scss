@@ -1,0 +1,364 @@
+@import "../../node_modules/bootstrap-icons/font/bootstrap-icons.css";
+@import "../../node_modules/bootstrap/dist/css/bootstrap.min.css";
+
+@font-face {
+  font-family: "Proxima Nova";
+  src: url("../../public/assets/fonts/ProximaNova-Regular.ttf")
+    format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+.wrapper {
+  flex: 1;
+}
+
+.footer {
+  position: absolute;
+  width: 100%;
+  height: 50px;
+  bottom: 0;
+}
+
+.body {
+  background: #cfebf7 0% 0% no-repeat padding-box;
+  opacity: 1;
+}
+
+body {
+  * {
+    font-family: "Proxima Nova";
+  }
+}
+
+.form-input {
+  width: 397px;
+  height: 44px;
+  display: block;
+  width: 100%;
+  background: #ffffff 0% 0% no-repeat padding-box;
+  border: 1px solid #d5d3d3bc;
+  border-radius: 4px;
+  padding: 0px 20px;
+  text-align: left;
+  font: normal normal normal 13px/16px Proxima Nova;
+  letter-spacing: 0px;
+  /*color: #bababa;*/
+  opacity: 1;
+}
+
+.message {
+  text-align: left;
+  font: normal normal 600 23px/30px Proxima Nova;
+  letter-spacing: 0px;
+  color: #1f1f1f;
+  text-transform: uppercase;
+  opacity: 1;
+  // margin: 30px 0px 30px 0px;
+}
+
+.form-label {
+  height: 17px;
+  text-align: left;
+  margin-bottom: 10px;
+  font: normal normal normal 14px/25px Proxima Nova;
+  letter-spacing: 0px;
+  opacity: 1;
+}
+
+
+
+.btn-custom {
+  width: 123px;
+  height: 44px;
+  text-align: center;
+  font: normal normal normal 14px/25px Proxima Nova;
+  letter-spacing: 0px;
+  text-transform: uppercase;
+  opacity: 1;
+}
+
+.btn-close {
+  width: 11px;
+  height: 11px;
+  font-size: 10px;
+  color: #0e566c;
+  opacity: 1;
+}
+
+// button:hover {
+//   text-align: center;
+//   font: normal normal normal 16px/25px Proxima Nova;
+//   letter-spacing: 0px;
+//   text-transform: uppercase;
+//   opacity: 1;
+// }
+
+.sec-msg-back {
+  background: #fcfff5 0% 0% no-repeat padding-box;
+  border: 1px solid #a8c599;
+  margin: 0px 37px;
+}
+
+.sec-msg-head {
+  font: normal normal normal 14px/25px Proxima Nova;
+  letter-spacing: 0px;
+  text-align: left;
+  color: #1e561f;
+  text-transform: uppercase;
+  opacity: 1;
+}
+
+.sec-msg-body {
+  font: normal normal normal 13px/18px Proxima Nova;
+  letter-spacing: 0px;
+  text-align: justify;
+  color: #1e561f;
+  opacity: 1;
+  margin: 0px 40px 0px 40px;
+}
+
+.btn-close {
+  width: 11px;
+  height: 11px;
+  font-size: 10px;
+  color: #0e566c;
+  opacity: 1;
+}
+
+.cancel {
+  color: #fd5446;
+  background: #ffffff 0% 0% no-repeat padding-box;
+  border: 1px solid #fd5446;
+  opacity: 1;
+}
+
+.cancel:hover {
+  background: #fcebea 0% 0% no-repeat padding-box;
+  font: normal normal normal 16px/25px Proxima Nova;
+}
+
+.next {
+  border: 1px solid #00b3d7;
+  background: #ffffff 0% 0% no-repeat padding-box;
+  color: #00b3d7;
+}
+
+.next:hover {
+  background: #00b3d7 0% 0% no-repeat padding-box;
+  font: normal normal normal 16px/25px Proxima Nova;
+  color: #ffffff;
+}
+
+.nav-item:hover {
+  background: #effaff 0% 0% no-repeat padding-box;
+  font: normal normal normal 16px/25px Proxima Nova;
+  color: #ffffff;
+  opacity: 1;
+}
+
+.fs-30 {
+  font: normal normal 600 30px/40px Proxima Nova;
+}
+
+.fs-27 {
+  font: normal normal 600 27px/37px Proxima Nova;
+}
+
+.upper {
+  text-transform: uppercase;
+}
+
+.fs-16 {
+  font: normal normal 300 16px/26px Proxima Nova;
+}
+
+.fs-18 {
+  font: normal normal 600 18px/23px Proxima Nova;
+}
+
+.fs-20 {
+  font: normal normal 600 20px/60px Proxima Nova;
+}
+
+.fs20 {
+  font: normal normal 600 20px/40px Proxima Nova;
+}
+
+.fs-13 {
+  font: normal normal 300 13px/23px Proxima Nova;
+}
+
+.fs13 {
+  font: normal normal 300 13px/16px Proxima Nova;
+}
+
+.fs-14 {
+  font: normal normal 300 14px/23px Proxima Nova;
+}
+
+.fs-10 {
+  font: normal normal normal 10px/30px Poppins;
+  letter-spacing: 0.5px;
+  color: #474747;
+  opacity: 1;
+}
+
+.red {
+  color: red;
+}
+
+.success {
+  background: #fafbfc 0% 0% no-repeat padding-box;
+  opacity: 1;
+}
+
+.success-condensed {
+  background: #f5f4f4 0% 0% no-repeat padding-box;
+  opacity: 1;
+}
+
+.fluid {
+  width: 950px;
+  height: 800px;
+  margin-right: 90px;
+  margin-top: 40px;
+}
+
+.link {
+  text-align: left;
+  text-decoration: underline;
+  font: normal normal 300 16px/26px Proxima Nova;
+  letter-spacing: 0px;
+  color: #00b3d7;
+  opacity: 1;
+}
+
+.small-btn {
+  border: none;
+  background-color: white;
+}
+
+.position {
+  width: 850px;
+  height: 710px;
+  margin-right: 100px;
+  padding-top: 20px;
+}
+
+.toggle-button {
+  border: 1px solid rgb(0 0 0 / 18%);
+}
+
+.triangle-right {
+  width: 0;
+  height: 0;
+  border-top: 25px solid transparent;
+  border-left: 25px solid #eeeeee;
+  border-bottom: 25px solid transparent;
+}
+
+// .triangle-md-bottom {
+//   width: 0;
+//   height: 0;
+//   border-right: 25px solid transparent;
+//   border-left: 25px solid transparent;
+//   border-top: 25px solid #eeeeee;
+//   border-bottom: 25px solid eeeeee;
+// }
+
+.active-button {
+  border-color: #00b3d7 !important;
+}
+
+.active-button .triangle-right {
+  border-left-color: #00b3d7 !important;
+}
+
+// @media (min-width: 576px) {
+//   .triangle-md-bottom {
+//     width: 0;
+//     height: 0;
+//     border-right: 25px solid transparent;
+//     border-left: 25px solid transparent;
+//     border-top: 25px solid #eeeeee;
+//     border-bottom: 25px solid eeeeee;
+//   }
+
+//   .active-button .triangle-md-bottom {
+//     border-left-color: #00b3d7 !important;
+//   }
+// }
+
+.active-button .toggle-button {
+  border: 1.5px solid #00b3d7 !important;
+}
+
+.banner-color-1 {
+  background-color: #effaff;
+}
+
+.banner-color-2 {
+  background-color: #fdebea;
+}
+
+.banner-color-3 {
+  background-color: #fff8e6;
+}
+
+.border-dashed {
+  background: #ffffff 0% 0% no-repeat padding-box;
+  border: 3px dashed #d5d3d3bc;
+  border-radius: 4px;
+  opacity: 1;
+}
+
+.banner-1 {
+  overflow: hidden;
+  background: #cfebf7;
+}
+
+.blue-background {
+  background-color: #cfebf7;
+  padding: 20px;
+}
+
+.style {
+  position: absolute;
+  top: 573px;
+  left: 900px;
+  width: 120px;
+  height: 80px;
+}
+
+.orange_money {
+  position: absolute;
+  width: 120px;
+  height: 80px;
+  top: 589px;
+  left: 225px;
+}
+
+.mtn_money {
+  position: absolute;
+  width: 120px;
+  height: 80px;
+  // top: 150px;
+  left: 575px;
+}
+
+.wave_money {
+  position: absolute;
+  width: 120px;
+  height: 80px;
+  top: 207px;
+  left: 990px;
+}
+
+.visa_money {
+  position: absolute;
+  width: 120px;
+  height: 80px;
+  top: 50px;
+  left: 225px;
+}

@@ -1,0 +1,92 @@
+<div class="container-fluid overflow-hidden">
+    <div class="mt-3 d-grid px-lg-5 px-2 mb-5">
+        <app-back-button />
+
+        <div class="mt-3 d-lg-flex d-grid justify-content-between">
+            <div class="success-condensed col-lg-5 col-md-12 col-10 mb-5">
+                <div class="d-flex justify-content-center align-items-center w-100">
+                    <app-lotties [imagePath]="imagePath" [width]="width" [height]="height" />
+                </div>
+            </div>
+
+            <div class="col-10 col-lg-6 col-md-12 col-10">
+                <div class="card-body">
+                    <span class="card-title message fs-30">achetez des bons d'achat</span>
+
+                    <div class="mt-3">
+                        <div class="fs-14 mb-2">
+                            <span class="card-title d-flex gap-2 upper align-content-center">
+                                <img src="/assets/images/information-button-2.svg" style="height: 17px" alt="">
+                                détails
+                            </span>
+                        </div>
+                        <div class="">
+                            <span class="">
+                                Lorem ipsum dolor sit amet, consetetur sadipscing elitr,
+                                sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat,
+                                sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.
+                                Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum.
+                            </span>
+                        </div>
+
+                        <div class="d-md-inline-flex d-grid w-100 mt-4">
+                            <div class="col-lg-6 col-md-6 col-12 mb-3">
+                                <span class="label">Montant des bons d’achat <span class="red">*</span></span>
+                                <div class="mt-2 pe-md-3">
+                                    <input type="text" class="form-input" placeholder="Montant des bons d’achat">
+                                </div>
+                            </div>
+                            <div class="col-lg-6 col-md-6 col-12 mb-3">
+                                <span class="label">Nombre des bons d’achat <span class="red">*</span></span>
+                                <div class="mt-2 ps-md-3">
+                                    <input type="text" class="form-input"
+                                        placeholder="Saisissez le nombre des bons d’achat">
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div class="" style="">
+                            <span class="">Ajouter votre logo</span>
+                            <div class="card text-center mt-2"
+                                style="width: 100%; height: auto; max-height: 300px; border: 3px dashed #D5D3D3BC; border-radius: 4px">
+                                <div
+                                    class="card-body d-flex flex-column justify-content-center align-items-center my-5">
+                                    <label for="upload-image" class="mb-3">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="69.72" height="69.72"
+                                            viewBox="0 0 69.72 69.72">
+                                            <path fill="#eae7e7"
+                                                d="M42.41,29.96H34.94V22.49a2.49,2.49,0,0,0-4.98,0v7.47H22.49a2.49,2.49,0,0,0,0,4.98h7.47v7.47a2.49,2.49,0,1,0,4.98,0V34.94h7.47a2.49,2.49,0,1,0,0-4.98Z"
+                                                transform="translate(24.82 24.82)" />
+                                            <path fill="#eae7e7"
+                                                d="M39.35,56.78H9.47a2.49,2.49,0,0,1-2.49-2.49V9.47A2.49,2.49,0,0,1,9.47,6.98H54.29a2.49,2.49,0,0,1,2.49,2.49V39.35a2.49,2.49,0,0,0,4.98,0V9.47A7.47,7.47,0,0,0,54.29,2H9.47A7.47,7.47,0,0,0,2,9.47V54.29a7.47,7.47,0,0,0,7.47,7.47H39.35a2.49,2.49,0,0,0,0-4.98Z"
+                                                transform="translate(-2 -2)" />
+                                            <circle fill="#eae7e7" cx="6.225" cy="6.225" r="6.225"
+                                                transform="translate(16.185 9.96)" />
+                                            <path fill="#eae7e7"
+                                                d="M9.212,19.2,6,22.438V38.4H45.84V22.438L35.158,11.731a2.49,2.49,0,0,0-3.536,0L18.45,24.928l-5.7-5.727a2.49,2.49,0,0,0-3.536,0Z"
+                                                transform="translate(3.96 11.401)" />
+                                        </svg>
+                                        <h6 class="mt-3">Ajouter une image (Jpeg, Png, etc..)</h6>
+                                    </label>
+                                    <input type="file" class="img-upload" id="upload-image" style="display: none;"
+                                        accept="image/*">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="d-flex my-5">
+                        <div class="col-lg-2 col-md col-4">
+                            <button type="button" class="btn-custom cancel">ANNULER</button>
+                        </div>
+                        <div class="col-lg-4 col-md col">
+                            <app-btn-add-basket [componentClass]="'ms-2 h-100'" />
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,81 @@
+.input-form {
+  width: 397px;
+  height: 44px;
+  background: #FFFFFF 0% 0% no-repeat padding-box;
+  border: 1px solid #535353;
+  border-radius: 4px;
+  opacity: 1;
+  font: normal normal normal 16px/26px Proxima Nova;
+  letter-spacing: 0px;
+  color: #1F1F1F;
+  padding-left: 20px;
+}
+
+.input-error {
+  @extend .input-form;
+  border: 1px solid red;
+}
+
+.forgot-link:hover {
+  text-align: left;
+  text-decoration: underline;
+  font: normal normal normal 16px/26px Proxima Nova;
+  letter-spacing: 0px;
+  color: #009dc1;
+  opacity: 1;
+}
+
+.inscription {
+  border: 1px solid #ffc436;
+  background: #ffffff 0% 0% no-repeat padding-box;
+  color: #ffc436;
+}
+
+.inscription:hover {
+  color: #ffc436;
+  background: #fff8e6 0% 0% no-repeat padding-box;
+  border: 1px solid #ffc436;
+}
+
+.connexion {
+  border: 1px solid #00b3d7;
+  background: #00b3d7 0% 0% no-repeat padding-box;
+  color: #ffffff;
+}
+
+.connexion:hover {
+  background: #009dc1 0% 0% no-repeat padding-box;
+}
+
+.spinner-border {
+  width: 1rem;
+  height: 1rem;
+  border-width: 0.2em;
+}
+
+
+
+.input-group {
+  display: flex;
+  align-items: center;
+}
+
+.input-group-prepend {
+  position: relative;
+  display: flex;
+  width: 100%;
+}
+
+.input-group-addon {
+  position: absolute;
+  right: 70px;
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+
+.input-group-addon i {
+  cursor: pointer;
+  font-size: large;
+  color: #6c757d;
+}

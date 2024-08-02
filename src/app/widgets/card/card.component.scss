@@ -1,0 +1,174 @@
+.card-section {
+  background-color: #fff;
+  padding: 30px 0;
+}
+.text-nb-card {
+  font-family: "Proxima Nova Extra Condensed";
+  font-size: 13px;
+  margin-top: 0 !important;
+  color: #bababa;
+}
+.text-price-card {
+  font-size: 18px;
+  color: #00b3d7;
+}
+.card {
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.card-image img {
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  width: 100%; /* Make the image responsive */
+}
+
+.card-body {
+  padding: 20px;
+}
+
+.card-title {
+  font-family: "Proxima Nova Extra Condensed", sans-serif;
+  font-size: 18px;
+  color: #1f1f1f;
+  margin-bottom: 0px !important;
+  opacity: 1;
+}
+
+.btn-primary {
+  background-color: #007bff;
+  border: none;
+  padding: 10px 20px;
+  font-size: 1rem;
+  transition: background-color 0.3s ease;
+}
+
+.btn-primary:hover {
+  background-color: #0056b3;
+}
+.card-title {
+  font-family: "Proxima Nova Extra Condensed", sans-serif;
+  letter-spacing: 2px;
+}
+.second-img-section {
+  background-color: white;
+}
+.card-img-top {
+  transition: 0.5s ease;
+  backface-visibility: hidden;
+}
+.svg-icon {
+  transition: 0.5s ease;
+  opacity: 0;
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  text-align: center;
+}
+.container-card:hover .card-img-top {
+  transform: scale(1.1);
+  opacity: 1;
+}
+
+.container-card:hover .svg-icon {
+  opacity: 1;
+}
+
+.fixed-svg {
+  z-index: 10;
+  pointer-events: none;
+}
+@media (max-width: 768px) {
+  .card-title {
+    font-family: "Proxima Nova Extra Condensed", sans-serif;
+    font-size: 1rem;
+  }
+
+  .btn-primary {
+    font-size: 0.9rem;
+    padding: 8px 16px;
+  }
+}
+@media (max-width: 991px) {
+  .purchase-coupon,
+  .gift-box {
+    flex: 1 1 100%;
+    max-width: 100%;
+    margin-left: 0;
+    margin-bottom: 20px; /* Add margin-bottom for spacing */
+  }
+}
+
+@media (max-width: 768px) {
+  .title-purchase {
+    font-size: 1.8rem;
+    line-height: 2.2rem;
+  }
+
+  p {
+    font-size: 1rem;
+  }
+
+  .btn-warning {
+    font-size: 1rem;
+    padding: 8px 16px;
+  }
+
+  .gift-box {
+    margin-top: 20px; /* Add margin-top for spacing */
+  }
+}
+
+@media (max-width: 576px) {
+  .title-purchase {
+    font-size: 1.5rem;
+    line-height: 2rem;
+  }
+
+  p {
+    font-size: 0.9rem;
+  }
+
+  .btn-warning {
+    font-size: 0.9rem;
+    padding: 6px 12px;
+  }
+
+  .gift-box {
+    margin-top: 20px; /* Add margin-top for spacing */
+  }
+}
+
+.container-card {
+  position: relative;
+  overflow: hidden;
+}
+
+.container-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  color: hsla(123, 95%, 47%, 0.945);
+  opacity: 0;
+  transition: opacity 1s ease;
+  pointer-events: none;
+}
+
+.container-card:hover::before {
+  opacity: 1;
+}
+
+.container-card .card-img-top {
+  width: 100%;
+  height: auto;
+  transition:
+    transform 2s ease,
+    filter 1s ease;
+}

@@ -1,0 +1,53 @@
+<!-- <div class="card-body mt-3 carde-securite">
+    <div class="row">
+        <div class="col-12" style="width:150%;">
+            <div class="p-3 border-0 bg-light">
+                <div class="row">
+                    <div class="col-12 col-md-8">
+                        <div class="card-title d-flex gap-2">
+                            <img src="/assets/images/credit-card.svg" alt=""> 
+                            <span class="fs-20 upper">paiement à 100% sécurisé</span>
+                        </div>
+                        <p class="fs-16">Votre sécurité est notre priorité. <br>Nous ne vous demanderons jamais votre
+                            mot de passe,
+                            votre code PIN, votre CVV ou les détails complets de votre carte par téléphone ou par
+                            e-mail.</p>
+                    </div>
+                    <div class="col-2 col-md-2 ms-md-5 align-content-center">
+                        <img src="./assets/images/pci-dss-compliant-logo.png" style="width: 179px;height:65px;"
+                            alt="Certificat de sécurité">
+
+                    </div>
+
+                    <div class="col-2 col-md-1 align-content-center">
+                        <app-lotties [imagePath]="imagePath" [width]="width" [height]="height " />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div> -->
+
+
+<div class="card-body mt-3 carde-securite">
+    <div class="p-3 p-md-3 p-lg-4 d-lg-flex d-md-flex d-grid">
+        <div class="col-12 col-lg-8 col-md-7 px-3">
+            <div class="col-10 d-lg-flex d-md-flex d-grid gap-2 align-items-center fs-20 upper text-start">
+                <img src="/assets/images/credit-card.svg" alt="" height="24px">
+                paiement à 100% sécurisé
+            </div>
+            <div class="col-10 col-lg-12">
+                <p class="fs-16">Votre sécurité est notre priorité. <br>Nous ne vous demanderons jamais votre
+                    mot de passe,
+                    votre code PIN, votre CVV ou les détails complets de votre carte par téléphone ou par
+                    e-mail.
+                </p>
+            </div>
+        </div>
+
+        <div class="d-lg-flex d-md-flex d-grid align-items-center gap-lg-5 justify-content-center col-12 col-lg-4 col-md-5">
+            <img src="/assets/images/pci-dss-compliant-logo.png" height="75px" alt="Certificat de sécurité">
+            <app-lotties [imagePath]="imagePath" [width]="width" [height]="height"/>
+        </div>
+    </div>
+</div>

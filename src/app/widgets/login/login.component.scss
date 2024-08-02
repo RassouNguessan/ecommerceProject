@@ -1,0 +1,187 @@
+.column {
+  display: flex;
+  flex-direction: column;
+}
+
+.gap-1 {
+  gap: 1rem;
+}
+
+.login-container {
+  height: 724px;
+}
+
+.login-form {
+  height: auto;
+  background: #ffffff 0 0 no-repeat padding-box;
+  opacity: 1;
+  padding-bottom: 54px;
+}
+
+.msg-security {
+  position: relative;
+  //   margin-top: 43px;
+  //   margin-left: 37px;
+  width: 419px;
+  height: 128px;
+
+  background: #fcfff5 0% 0% no-repeat padding-box;
+  border: 1px solid #a8c599;
+  opacity: 1;
+  align-items: center;
+  margin: 40px;
+}
+
+.p-head {
+  position: relative;
+  margin-top: 19px;
+  margin-left: 42px;
+  //   width: 80px;
+  height: 17px;
+
+  font: normal normal normal 14px/25px Proxima Nova;
+  letter-spacing: 0px;
+  text-align: left;
+  color: #1e561f;
+  text-transform: uppercase;
+  opacity: 1;
+}
+
+.p-body {
+  position: relative;
+  margin-top: 15px;
+  margin-left: 17px;
+  width: 392px;
+  height: 63px;
+
+  font: normal normal normal 13px/18px Proxima Nova;
+  letter-spacing: 0px;
+  text-align: left;
+  color: #1e561f;
+  opacity: 1;
+}
+
+.btn-close {
+  position: relative;
+  margin-left: 90px;
+  width: 11px;
+  height: 11px;
+  font-size: 10px;
+
+  color: #0e566c;
+  opacity: 1;
+}
+
+.input-form {
+  position: absolute;
+  top: 309px;
+  left: 50px;
+  width: 397px;
+  height: 66px;
+  opacity: 1;
+  font-family: Proxima Nova;
+}
+
+.label {
+  height: 17px;
+  text-align: left;
+  margin-bottom: 10px;
+  font: normal normal normal 14px/25px Proxima Nova;
+  letter-spacing: 0px;
+  opacity: 1;
+}
+
+.input {
+  width: 397px;
+  height: 44px;
+  background: #ffffff 0% 0% no-repeat padding-box;
+  border: 1px solid #d5d3d3bc;
+  border-radius: 4px;
+  opacity: 1;
+  padding: 20px;
+  text-align: left;
+  font: normal normal normal 13px/16px Proxima Nova;
+  letter-spacing: 0px;
+  color: #bababa;
+  opacity: 1;
+}
+
+.forgot-link {
+  text-align: left;
+  text-decoration: underline;
+  font: normal normal 300 16px/26px Proxima Nova;
+  letter-spacing: 0px;
+  color: #00b3d7;
+  opacity: 1;
+}
+
+.forgot-link:hover {
+  text-align: left;
+  text-decoration: underline;
+  font: normal normal normal 16px/26px Proxima Nova;
+  letter-spacing: 0px;
+  color: #009dc1;
+  opacity: 1;
+}
+
+.red {
+  color: red;
+}
+
+.btn-custom {
+  position: relative;
+  width: 123px;
+  height: 44px;
+  text-align: center;
+  font: normal normal normal 14px/25px Proxima Nova;
+  letter-spacing: 0px;
+  text-transform: uppercase;
+  opacity: 1;
+}
+
+.inscription {
+  border: 1px solid var(--c2);
+  background: #ffffff 0% 0% no-repeat padding-box;
+  font: normal normal normal 14px/25px Proxima Nova;
+  color: #ffc436;
+}
+
+.inscription:hover {
+  text-align: center;
+  font: normal normal normal 16px/25px Proxima Nova;
+  letter-spacing: 0px;
+  color: #ffc436;
+  text-transform: uppercase;
+  background: #fff8e6 0% 0% no-repeat padding-box;
+  border: 1px solid #ffc436;
+  opacity: 1;
+}
+
+.connexion {
+  margin-left: 20px;
+  border: 1px solid #00b3d7;
+  background: #00b3d7 0% 0% no-repeat padding-box;
+  color: #ffffff;
+}
+
+.connexion:hover {
+  text-align: center;
+  font: normal normal normal 16px/25px Proxima Nova;
+  letter-spacing: 0px;
+  text-transform: uppercase;
+  background: #009dc1 0% 0% no-repeat padding-box;
+  opacity: 1;
+}
+
+.fa-eye {
+  color: #000;
+}
+
+.gift-box {
+  position: absolute;
+  top: 84px;
+  left: 947.5px;
+  width: 903px;
+  height: 752px;
+  opacity: 1;
+}

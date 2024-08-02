@@ -1,0 +1,30 @@
+<div class="main p-md-5">
+    <div class="container-fluid py-3">
+      <div class="d-grid col-8 mx-auto justify-content-center align-items-center">
+        <div class="row mx-auto p-5 mb-3 success">
+          <div class="d-flex justify-content-center">
+            <app-lotties
+              [imagePath]="imagePath"
+              [width]="width"
+              [height]="height"
+            />
+          </div>
+        </div>
+        <div class="flex-wrap bg-white text-center">
+            <h5 class="card-title text-success fw-bold mb-3 fs-20 upper">succès</h5>
+            <p class="card-text fs-16 mb-0">Merci pour votre achat !</p>
+            <p class="card-text fs-16 mb-0">Votre commande a été passée avec succès.</p>
+            <p class="card-text fs-16 mb-0">Nous vous remercions chaleureusement pour votre récente commande sur notre
+                site</p>
+            <p class="card-text fs-16 mb-0">Nous sommes ravis de vous compter parmi nos clients et nous espérons que
+                vous serez pleinement</p>
+            <p class="text-dark mt-1"> <strong>Cliquez sur voir les détails pour voir les détails de votre commande</strong></p>
+        </div>
+        <div class="mt-4 d-flex justify-content-center">
+          <button type="button" class="btn-custom next w-25" [routerLink]="'/purchase/detail'">
+            voir les détails
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>

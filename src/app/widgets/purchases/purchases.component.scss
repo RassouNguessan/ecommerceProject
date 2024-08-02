@@ -1,0 +1,288 @@
+.gift-section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-bottom: 30px;
+  padding-top: 30px !important;
+  padding: calc(6rem + 74px) 15px 6rem;
+  position: relative;
+  z-index: 1;
+}
+
+@media (min-width: 992px) {
+  .gift-section {
+    padding-top: calc(6rem + 104px);
+  }
+}
+
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 1200px;
+  position: relative;
+  z-index: 2; /* Ensure text is above the image */
+}
+
+.purchase-coupon {
+  color: #1f1f1f;
+  font-family: "Proxima Nova Extra Condensed", sans-serif;
+  letter-spacing: 0px;
+  font-size: 26px;
+  width: 674px;
+  height: 103px;
+}
+
+.title-purchase {
+  font-weight: bold;
+  color: #00b3d7;
+  text-transform: uppercase;
+  font-size: 50px;
+  line-height: 1em;
+  font-family: "Proxima Nova Extra Condensed", sans-serif;
+  letter-spacing: 2px;
+}
+.btn-purchase-coupon {
+  margin-top: 40px;
+}
+
+.highlight {
+  letter-spacing: 2px;
+  size: 14px;
+  font-family: "Proxima Nova Extra Condensed", sans-serif;
+  color: #ffc436;
+}
+
+p {
+  font-size: 1.2rem;
+  margin-top: 20px;
+  margin-bottom: 40px;
+}
+
+.btn-warning {
+  background-color: #f9a825;
+  border: none;
+  color: #fff;
+  padding: 10px 20px;
+  font-size: 1.2rem;
+  text-decoration: none;
+}
+
+.btn-warning:hover {
+  background-color: #c17900;
+}
+
+.gift-box {
+  flex: 1 1 50%;
+  // max-width: 100%;
+  width: auto;
+  height: 752px;
+  z-index: 1; /* Ensure image is behind the text */
+  object-fit: contain; /* Ensure image scales properly */
+  margin-left: 20px; /* Add margin-left for spacing */
+}
+.promo-section {
+  background-color: #fdebea;
+}
+.promo-section-title {
+  padding-top: 30px;
+  font-family: "Proxima Nova Extra Condensed";
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 30px;
+}
+.promo-section-body {
+  font-family: "Proxima Nova Extra Condensed";
+}
+
+.promo-section-second {
+  background-color: #effaff;
+}
+.promo-section-third {
+  background-color: #fff8e6;
+}
+// ===============================================================================================
+// ======
+// ======  STYLE POUR LES CARDS
+// ======
+// ===============================================================================================
+.btn-floating {
+  cursor: pointer;
+}
+
+.btn-floating svg {
+  transition: fill 0.3s ease;
+}
+.text-nb-card {
+  font-family: "Proxima Nova Extra Condensed";
+  font-size: 13px;
+  margin-top: 0px !important;
+  color: #bababa;
+}
+.text-price-card {
+  font-size: 18px;
+  color: #00b3d7;
+}
+
+@media (max-width: 991px) {
+  .purchase-coupon,
+  .gift-box {
+    flex: 1 1 100%;
+    max-width: 100%;
+    margin-left: 0;
+    margin-bottom: 20px; /* Add margin-bottom for spacing */
+  }
+}
+
+@media (max-width: 768px) {
+  .title-purchase {
+    font-size: 1.8rem;
+    line-height: 2.2rem;
+  }
+
+  p {
+    font-size: 1rem;
+  }
+
+  .btn-warning {
+    font-size: 1rem;
+    padding: 8px 16px;
+  }
+
+  .gift-box {
+    margin-top: 20px; /* Add margin-top for spacing */
+  }
+}
+
+@media (max-width: 576px) {
+  .title-purchase {
+    font-size: 1.5rem;
+    line-height: 2rem;
+  }
+
+  p {
+    font-size: 0.9rem;
+  }
+
+  .btn-warning {
+    font-size: 0.9rem;
+    padding: 6px 12px;
+  }
+
+  .gift-box {
+    margin-top: 20px; /* Add margin-top for spacing */
+  }
+}
+.card-section {
+  background-color: #fff;
+  padding: 30px 0;
+}
+
+.card {
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.card-image img {
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  width: 100%; /* Make the image responsive */
+}
+
+.card-body {
+  padding: 20px;
+}
+
+.card-title {
+  font-family: "Proxima Nova Extra Condensed", sans-serif;
+  font-size: 18px;
+  color: #1f1f1f;
+  margin-bottom: 0px !important;
+  opacity: 1;
+}
+
+.btn-primary {
+  background-color: #007bff;
+  border: none;
+  padding: 10px 20px;
+  font-size: 1rem;
+  transition: background-color 0.3s ease;
+}
+
+.btn-primary:hover {
+  background-color: #0056b3;
+}
+
+@media (max-width: 768px) {
+  .card-title {
+    font-family: "Proxima Nova Extra Condensed", sans-serif;
+    font-size: 1rem;
+  }
+
+  .btn-primary {
+    font-size: 0.9rem;
+    padding: 8px 16px;
+  }
+}
+.card-title {
+  font-family: "Proxima Nova Extra Condensed", sans-serif;
+  letter-spacing: 2px;
+}
+.second-img-section {
+  background-color: white;
+}
+.card-button-text {
+  font-size: 80%;
+  color: #00b3d7;
+  transition: fill 0.3s ease;
+}
+
+.card-shopping {
+  transition: fill 0.3s ease;
+}
+
+button {
+  border: none;
+  outline: 0;
+  display: inline-block;
+  padding: 8px;
+  color: white;
+  background-color: white;
+  text-align: center;
+  cursor: pointer;
+  border: 1px solid #00b3d7;
+  width: 100%;
+}
+
+.card-shopping {
+  fill: #00b3d7;
+}
+
+button:hover {
+  background-color: #00b3d7;
+}
+
+button:hover .card-shopping {
+  fill: white;
+  font-size: 90%;
+}
+
+button:hover .card-button-text {
+  color: white;
+  font-size: 90%;
+}
+// ===============================================================================================
+// ======
+// ======  END STYLE POUR LES CARDS
+// ======
+// ===============================================================================================
+
+.card-recent-promotion {
+  background-color: white;
+}
+.banner-promo-section {
+  background-color: #effaff;
+}

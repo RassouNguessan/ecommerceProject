@@ -1,0 +1,75 @@
+<section class="card-section">
+  <div class="mt-3 d-grid px-lg-5 px-2 mb-5">
+    <div class="row gap-2 justify-content-evenly">
+      @for (card of cardList; track $index) {
+      <div class="col-12 col-sm-6 col-md-4 col-lg-2" (click)="navigateToDetail(card.id)">
+        <div class="card mt-0">
+          <div class="container-card">
+            <div class="d-flex justify-content-end">
+              <div class="position-absolute overflow fixed-svg m-2">
+                <svg id="Composant_126_2" data-name="Composant 126 – 2" xmlns="http://www.w3.org/2000/svg" width="44"
+                  height="44" viewBox="0 0 44 44">
+                  @if (promo) {
+                  <rect id="Rectangle_161056" data-name="Rectangle 161056" width="44" height="44" fill="#fd5446" />
+                  <text id="promoRate" data-name="promoRate" transform="translate(5 27)" fill="#fff" font-size="14"
+                    font-family="ProximaNova-Regular, Proxima Nova">
+                    <tspan x="0" y="0">- {{promoRate}}%</tspan>
+                  </text>
+                  }
+                </svg>
+              </div>
+              <img [src]="card.picture" class="card-img-top" [routerLink]="'/detail'" alt="" />
+            </div>
+            <svg xmlns="http://www.w3.org/2000/svg" class="svg-icon" style="
+                  width: 4em;
+                  height: 4em;
+                  vertical-align: middle;
+                  fill: currentColor;
+                  overflow: hidden;
+                " viewBox="0 0 1024 1024" version="1.1">
+              <path
+                d="M512 0C230.4 0 0 230.4 0 512s230.4 512 512 512 512-230.4 512-512S793.6 0 512 0z m0 964.266667C264.533333 964.266667 59.733333 759.466667 59.733333 512S264.533333 59.733333 512 59.733333 964.266667 264.533333 964.266667 512 759.466667 964.266667 512 964.266667z"
+                fill="#ffffff" />
+              <path
+                d="M499.2 268.8c-17.066667-17.066667-42.666667-17.066667-59.733333 0s-17.066667 42.666667 0 59.733333l183.466666 183.466667-183.466666 183.466667c-17.066667 17.066667-17.066667 42.666667 0 59.733333 8.533333 8.533333 21.333333 12.8 29.866666 12.8s21.333333-4.266667 29.866667-12.8l213.333333-213.333333c17.066667-17.066667 17.066667-42.666667 0-59.733334l-213.333333-213.333333z"
+                fill="#ffffff" />
+            </svg>
+          </div>
+          <div class="mt-2">
+            <div class="d-flex gap-3 align-content-center mx-3">
+              <div class="col fs-16">
+                <span>Bon d'achat de {{ card.price | formatNumber }} F</span>
+              </div>
+              <div (click)="toggleColor(card.id)" class="col-2 align-content-center ps-4">
+                <svg xmlns="http://www.w3.org/2000/svg" width="17" height="14.923" viewBox="0 0 17 14.923">
+                  <g id="silhouette-de-forme-simple-de-coeur" transform="translate(0.5 0.5)">
+                    <path id="Tracé_98641" data-name="Tracé 98641"
+                      d="M11.576,29.761A4.424,4.424,0,0,1,16,34.185c0,4.038-8,9.4-8,9.4s-8-5.17-8-9.4a4.086,4.086,0,0,1,4.424-4.424A4.415,4.415,0,0,1,8,31.588,4.416,4.416,0,0,1,11.576,29.761Z"
+                      transform="translate(0 -29.761)" [attr.fill]="card.favorite ? 'red' : 'white'"
+                      [attr.stroke]="card.favorite ? 'white' : 'red'" stroke-width="1" />
+                  </g>
+                </svg>
+              </div>
+            </div>
+            <p class="card-text text-nb-card ms-3 mb-0">
+              Nombre disponible: {{ card.nbAvailable }}
+            </p>
+            <div class="d-flex justify-content-between align-content-center mx-3 mt-3">
+              <span class="card-text text-price-card mt-0">
+                {{ card.price | formatNumber }} FCFA
+              </span>
+              <div class="star-rating align-content-center">
+                <!-- Boucle sur 5 étoiles -->
+                @if (card.star) {
+                <app-star-rating [starNumber]="card.star" />
+                }
+              </div>
+            </div>
+          </div>
+          <app-btn-add-basket [routerLink]="'/detail'" [componentClass]="'mt-3'" />
+        </div>
+      </div>
+      }
+    </div>
+  </div>
+</section>

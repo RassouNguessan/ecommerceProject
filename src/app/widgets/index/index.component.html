@@ -1,0 +1,87 @@
+<div class="body column gap-1 d-flex justify-content-between">
+  <div class="login-container">
+    <div class="login-form">
+      <div class="msg-security mb-4">
+        <div id="security" class="p-head d-flex">
+          <div class="col-8"><span>sécurité !</span></div>
+          <div class=""></div>
+        </div>
+        <div class="p-body">
+          <span>
+            Nous accordons une grande importance à la sécurité de vos données
+            personnelles. Toutes les informations que vous nous fournissez sont
+            strictement confidentielles.
+          </span>
+        </div>
+      </div>
+      @if (login) {
+        <form class="" [formGroup]="loginForm" (ngSubmit)="loginButton()">
+          <div class="message">
+            <span>connectez vous à votre espace boncoin.</span>
+          </div>
+          <div class="row mb-2">
+            <label for="login" class="form-label">
+              Login
+              <span class="red">*</span>
+            </label>
+            <div class="col-sm-12">
+              <input
+                type="text"
+                class="form-input"
+                id="login"
+                placeholder="Saisissez votre login"
+                formControlName="login"
+              />
+            </div>
+          </div>
+          <div class="row mb-2">
+            <label for="password" class="form-label">
+              Mot de passe
+              <span class="red">*</span>
+            </label>
+            <div class="col-sm-12 input-group-append d-flex">
+              <input
+                type="{{ fieldTextType ? 'password' : 'text' }}"
+                class="form-input"
+                id="password"
+                placeholder="Saisissez votre mot de passe"
+                formControlName="password"
+              />
+              <!-- <i class="bi" [ngClass]="{'bi-eye': fieldTextType, 'bi-eye-splash': !fieldTextType}"
+                                (click)="toggleFieldTextType()"></i> -->
+            </div>
+          </div>
+          <p>
+            <a class="forgot-link" href="#" (click)="forgotPassword()">
+              Mot de passe oublié
+            </a>
+          </p>
+          <div class="mt-5">
+            <button
+              type="button"
+              class="btn-custom inscription"
+              (click)="registerButton()"
+            >
+              inscription
+            </button>
+            <button
+              type="submit"
+              class="btn-custom connexion"
+              [disabled]="!loginForm.valid"
+            >
+              connexion
+            </button>
+          </div>
+        </form>
+      }
+    </div>
+  </div>
+  <div class="col-md-6 text-center purchase-card-gift position-relative">
+    <img
+      src="/assets/images/Groupe 16336@2x.png"
+      alt=""
+      srcset=""
+      style="width: 100%; height: auto"
+    />
+  </div>
+</div>

@@ -1,0 +1,15 @@
+<div class="container-fluid overflow-hidden">
+  <ng-content select="[back]"></ng-content>
+  <ng-content select="[security]"></ng-content>
+  <div class="row gx-5 mt-3">
+
+    <div class="col-md-6 ">
+      <ng-content select="[payment]"></ng-content>
+    </div>
+
+    <div class="col-md-6">
+      <ng-content select="[allpayment]"></ng-content>
+      <ng-content select="[code]"></ng-content>
+    </div>
+  </div>
+</div>

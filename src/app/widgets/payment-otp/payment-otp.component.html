@@ -1,0 +1,24 @@
+<div class="card border-0 w-100">
+    <div class="card-body">
+        <span class="card-title fs-30 upper">
+            <img src="/assets/images/lock-2.svg" alt="">
+            code de sécurité temporaire
+        </span>
+        <p class="fs-16">
+            Pour des raisons de sécurité, nous vous demandons d’utiliser un code de sécurité temporaire du
+            compte 0700000001. Veuillez saisir ce code ci-dessous pour poursuivre votre opération.
+        </p>
+        <form [formGroup]="paymentOtpForm" (ngSubmit)="otpCodeSubmit()">
+            {{paymentOtpForm.status}}
+            <div class="mb-5 col-12 col-md-6 col-lg-6">
+                <label for="securityCode" class="form-label fs-14">Code <span style="color:#FD5446;">*</span> </label>
+                <input type="text" class="form-input rounded-0 code-input" id="securityCode"
+                    placeholder="Saisissez le code de sécurité temporaire">
+            </div>
+            <div class="d-flex gap-2">
+                <button type="button" class="btn-custom cancel ps-0" [routerLink]="'/payment'">retour</button>
+                <button type="submit" class="btn-custom next ms-2" [disabled]="!paymentOtpForm.valid">confirmer</button>
+            </div>
+        </form>
+    </div>
+</div>

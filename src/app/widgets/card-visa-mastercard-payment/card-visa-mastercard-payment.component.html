@@ -1,0 +1,39 @@
+<div class="card border-0 ">
+  <div class="card-body mb-5">
+    <span class="card-title d-flex gap-2 fs-30 upper">
+      <img src="/assets/images/validate.svg" alt="">
+      sélectionnez votre moyen de paiement
+    </span>
+    <div class="row pt-2">
+      <p class="fs-16"> Pour effectuer votre paiement en toute sécurité de manière simple et rapide sélectionnez
+        votre moyen de paiement.</p>
+    </div>
+    <div class="pt-2">
+      @for(grid of grids; track $index){
+      <div class="grid-item" (click)="toggleGrid($index)">
+        <div class="content-header">
+          <div class="checkbox" [ngClass]="{'active': selectedGrid === $index}"
+            (click)="toggleCheckbox($index, $event)">
+          </div>
+          <img class="img-fluid" [src]="grid.imageUrl" alt=""
+            [ngClass]="{'moov-money-image': grid.title.trim() === 'Moov money'}">
+          <span class="px-2">{{ grid.title }}</span>
+          <i class=""
+            [ngClass]="{'bi-chevron-right': selectedGrid !== $index, 'bi-chevron-down': selectedGrid === $index}"></i>
+        </div>
+        <div class="grid-content" [ngClass]="{'open': selectedGrid === $index, 'closed': selectedGrid !== $index}">
+          <div class="input-container">
+            <label for="phone-{{$index}}"> Numéro de téléphone <span class="text-danger"> * </span></label>
+            <input id="phone-{{$index}}" type="tel" [(ngModel)]="grid.number" placeholder="Entrez le numéro"
+              (click)="$event.stopPropagation()">
+          </div>
+        </div>
+      </div>
+      }
+    </div>
+    <form class="pt-3 d-flex gap-2">
+      <button type="button" class="btn-custom cancel" [routerLink]="'/cart'">retour</button>
+      <button type="submit" class="btn-custom next ms-2" [routerLink]="'/payment-otp'">suivant</button>
+    </form>
+  </div>
+</div>
