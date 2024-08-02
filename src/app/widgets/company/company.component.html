@@ -16,11 +16,11 @@
           <input type="text" class="form-input" id="first_name" placeholder="Saisissez votre nom"
             formControlName="first_name" />
         </div>
-        <div
-          *ngIf="stepOneForm.controls['first_name'].invalid && (stepOneForm.controls['first_name'].dirty || stepOneForm.controls['first_name'].touched)"
-          class="text-danger">
-          Le nom du gérant est requis.
-        </div>
+        @if(stepOneForm.controls['first_name'].invalid && (stepOneForm.controls['first_name'].dirty || stepOneForm.controls['first_name'].touched)){
+          <div class="text-danger">
+            Le nom du gérant est requis.
+          </div>
+        }
       </div>
       <div class="row mb-2">
         <label for="surname" class="form-label">
@@ -31,11 +31,11 @@
           <input type="text" class="form-input" id="last_name" placeholder="Saisissez votre prénoms"
             formControlName="last_name" />
         </div>
-        <div
-          *ngIf="stepOneForm.controls['last_name'].invalid && (stepOneForm.controls['last_name'].dirty || stepOneForm.controls['last_name'].touched)"
-          class="text-danger">
-          Le prénom du gérant est requis.
-        </div>
+        @if(stepOneForm.controls['last_name'].invalid && (stepOneForm.controls['last_name'].dirty || stepOneForm.controls['last_name'].touched)){
+          <div class="text-danger">
+            Le prénom du gérant est requis.
+          </div>
+        }
       </div>
       <div class="row mb-2">
         <label for="social" class="form-label">
@@ -46,11 +46,11 @@
           <input type="text" class="form-input" id="company" placeholder="Saisissez votre dénommination sociale"
             formControlName="company" />
         </div>
-        <div
-          *ngIf="stepOneForm.controls['company'].invalid && (stepOneForm.controls['company'].dirty || stepOneForm.controls['company'].touched)"
-          class="text-danger">
-          La dénommination sociale est requis.
-        </div>
+        @if (stepOneForm.controls['company'].invalid && (stepOneForm.controls['company'].dirty || stepOneForm.controls['company'].touched)) {
+          <div class="text-danger">
+            La dénommination sociale est requis.
+          </div>
+        }
       </div>
       <div class="row mb-2">
         <label for="fixed" class="form-label">
@@ -61,11 +61,11 @@
           <input type="text" class="form-input" id="number_fix" placeholder="+225 00 00 00 00 00"
             formControlName="number_fix" />
         </div>
-        <div
-          *ngIf="stepOneForm.controls['number_fix'].invalid && (stepOneForm.controls['number_fix'].dirty || stepOneForm.controls['number_fix'].touched)"
-          class="text-danger">
-          La Numéro fixe est requis.
-        </div>
+        @if (stepOneForm.controls['number_fix'].invalid && (stepOneForm.controls['number_fix'].dirty || stepOneForm.controls['number_fix'].touched)) {
+          <div class="text-danger">
+            La Numéro fixe est requis.
+          </div>
+        }
       </div>
       <div class="row mb-2">
         <label for="number" class="form-label">
@@ -75,11 +75,11 @@
         <div class="col-sm-12 d-flex align-items-center">
           <input type="text" class="form-input" id="phone" placeholder="+225 00 00 00 00 00" formControlName="phone" />
         </div>
-        <div
-          *ngIf="stepOneForm.controls['phone'].invalid && (stepOneForm.controls['phone'].dirty || stepOneForm.controls['phone'].touched)"
-          class="text-danger">
-          La Numéro telephone est requis.
-        </div>
+        @if (stepOneForm.controls['phone'].invalid && (stepOneForm.controls['phone'].dirty || stepOneForm.controls['phone'].touched)) {
+          <div class="text-danger">
+            La Numéro telephone est requis.
+          </div>
+        }
       </div>
       <div class="row mb-2">
         <label for="enterprisemail" class="form-label">
@@ -90,11 +90,11 @@
           <input type="text" class="form-input" id="email" placeholder="Saisissez votre adresse mail de l'entreprise"
             formControlName="email" />
         </div>
-        <div
-          *ngIf="stepOneForm.controls['email'].invalid && (stepOneForm.controls['email'].dirty || stepOneForm.controls['email'].touched)"
-          class="text-danger">
-          L'adresse Email de l'entreprise est requis.
-        </div>
+        @if (stepOneForm.controls['email'].invalid && (stepOneForm.controls['email'].dirty || stepOneForm.controls['email'].touched)) {
+          <div class="text-danger">
+            L'adresse Email de l'entreprise est requis.
+          </div>
+        }
       </div>
       <div class="row mb-2">
         <label for="country" class="form-label">
@@ -153,14 +153,16 @@
         <div class="col-sm-12">
           <input type="text" class="form-input" id="otpCode" placeholder="Saisissez le code reçu par sms"
             formControlName="otpCode" />
-          <div
-            *ngIf="stepTwoForm.controls['otpCode'].invalid && (stepTwoForm.controls['otpCode'].dirty || stepTwoForm.controls['otpCode'].touched)"
-            class="text-danger">
-            Le code OTP est requis.
-          </div>
-          <div *ngIf="otpErrorMessage" class="text-danger">
-            {{ otpErrorMessage }}
-          </div>
+            @if (stepTwoForm.controls['otpCode'].invalid && (stepTwoForm.controls['otpCode'].dirty || stepTwoForm.controls['otpCode'].touched)) {
+              <div class="text-danger">
+                Le code OTP est requis.
+              </div>
+            }
+          @if (otpErrorMessage) {
+            <div class="text-danger">
+              {{ otpErrorMessage }}
+            </div>
+          }
         </div>
       </div>
       <div class="d-flex mt-5">
@@ -192,9 +194,6 @@
             }
           </select>
         </div>
-        <!-- <div *ngIf="stepThreeForm.controls['company_type'].invalid && (stepThreeForm.controls['company_type'].dirty || stepThreeForm.controls['company_type'].touched)" class="text-danger">
-          Le Type de l'entreprise est requis.
-        </div> -->
       </div>
       <div class="row mb-2">
         <label for="categpro" class="form-label">
@@ -211,9 +210,6 @@
             }
           </select>
         </div>
-        <!-- <div *ngIf="stepThreeForm.controls['professional_category'].invalid && (stepThreeForm.controls['professional_category'].dirty || stepThreeForm.controls['professional_category'].touched)" class="text-danger">
-          La Catégorie professionnelle de l'entreprise est requis.
-        </div> -->
       </div>
       <div class="row mb-2">
         <label for="subcategory" class="form-label">
@@ -230,9 +226,6 @@
             }
           </select>
         </div>
-        <!-- <div *ngIf="stepThreeForm.controls['sub_category'].invalid && (stepThreeForm.controls['sub_category'].dirty || stepThreeForm.controls['sub_category'].touched)" class="text-danger">
-          La sous catégorie de l'entreprise est requis.
-        </div> -->
       </div>
 
       <div class="row mb-2">
@@ -290,9 +283,11 @@
                   'bi-eye-slash': !showPassword,
                 }"></i>
           </span> -->
-          <div *ngIf="stepFourForm.errors?.['mismatch']" class="text-danger">
-            Les mots de passe ne correspondent pas.
-          </div>
+          @if(stepFourForm.errors?.['mismatch']){
+            <div class="text-danger">
+              Les mots de passe ne correspondent pas.
+            </div>
+          }
         </div>
       </div>
 
