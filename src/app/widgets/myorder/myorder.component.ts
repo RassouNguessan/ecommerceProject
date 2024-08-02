@@ -6,6 +6,7 @@ import { Banner4Component } from "../../widgets/banner-4/banner-4.component";
 import { PurchaseRecentViewComponent } from "../../widgets/purchase-recent-view/purchase-recent-view.component";
 import { CardComponent } from "../../widgets/card/card.component";
 import { FooterComponent } from "../../widgets/footer/footer.component";
+import { RouterLink } from "@angular/router";
 
 @Component({
   selector: "app-my-orders",
@@ -20,6 +21,7 @@ import { FooterComponent } from "../../widgets/footer/footer.component";
     PurchaseRecentViewComponent,
     CardComponent,
     FooterComponent,
+    RouterLink
   ],
 })
 export class  MyorderComponent {

@@ -22,13 +22,9 @@ export class CardService {
     const currentCardId = CARDS.find((card) => card.id === cardId);
 
     if (!currentCardId) {
-        console.log(`No card found with ID: ${cardId}`);
-        return undefined; // ou vous pouvez gérer ce cas comme vous le souhaitez
+      return undefined; // ou vous pouvez gérer ce cas comme vous le souhaitez
     }
 
-    console.log(currentCardId, "l'id de la card en current");
-
     return currentCardId;
-}
-
+  }
 }

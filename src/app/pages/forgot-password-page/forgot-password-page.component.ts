@@ -2,15 +2,19 @@ import { Component } from '@angular/core';
 import { AuthService } from '../../services/auth.service';
 import { FormGroup, FormControl, Validators, ReactiveFormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
+import { BackgroundComponent } from "../../widgets/background/background.component";
+import { SecMsgComponent } from "../../widgets/sec-msg/sec-msg.component";
+import { ImgBlockComponent } from "../../widgets/img-block/img-block.component";
 
 @Component({
   selector: 'app-forgot-password-page',
   standalone: true,
-  imports: [ReactiveFormsModule],
+  imports: [ReactiveFormsModule, BackgroundComponent, SecMsgComponent, ImgBlockComponent],
   templateUrl: './forgot-password-page.component.html',
   styleUrl: './forgot-password-page.component.scss'
 })
 export class ForgotPasswordPageComponent {
+
   errorMessage: string | null = null;
   isLoading = false;
 
@@ -28,14 +32,18 @@ export class ForgotPasswordPageComponent {
       this.authService.sendOTP(this.forgotPasswordForm.getRawValue()).subscribe({
         next: () => {
           this.isLoading = false;
-          this.router.navigate(['/reset-password'], { state: { email } });
+          this.router.navigate(['/verify-otp'], { state: { email } });
         },
         error: (error) => {
           this.isLoading = false;
-          this.errorMessage = error.error.message;
+          this.errorMessage = error.error.detail;
         }
       });
     }
+  }
+
+  back() {
+    this.router.navigate(['/login']);
   }
 
 }

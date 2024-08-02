@@ -23,13 +23,28 @@
                   </div>
                   <div class="col-md-9">
                     <p class="card-title text-muted mb-0">{{items.title}}</p>
-                    <p class="upper mb-0" *ngIf="items.people_number">{{items.people_number}}
-                      prs</p>
-                    <p class="upper mb-0" *ngIf="items.number">{{items.number}} bons</p>
-                    <p class="upper mb-0" *ngIf="items.amount">{{items.amount | formatNumber}}
+
+                    @if(items.people_number){
+                    <p class="upper mb-0">{{items.people_number}} prs</p>
+                    }
+
+                    @if(items.number){
+                    <p class="upper mb-0">{{items.number}} bons</p>
+                    }
+
+                    @if(items.amount){
+                    <p class="upper mb-0">{{items.amount | formatNumber}}
                       fcfa</p>
-                    <p class="upper mb-0" *ngIf="items.category">{{items.category}} catégories</p>
-                    <p class="upper mb-0" *ngIf="items.canal">{{items.canal}} canaux</p>
+                    }
+
+                    @if(items.category){
+                    <p class="upper mb-0">{{items.category}} catégories</p>
+                    }
+
+                    @if(items.canal){
+                    <p class="upper mb-0">{{items.canal}} canaux</p>
+                    }
+
                   </div>
                 </div>
               </div>

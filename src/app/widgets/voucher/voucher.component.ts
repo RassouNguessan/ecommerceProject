@@ -11,13 +11,13 @@ import { BackButtonComponent } from "../back-button/back-button.component";
   styleUrl: "./voucher.component.scss",
 })
 export class VoucherComponent {
-  private animationItem: AnimationItem | undefined;
-
   options: AnimationOptions = {
     path: "/assets/lotties/ANIME -AAABBBB-2 (1).json",
     loop: true,
     autoplay: true,
   };
+
+  private animationItem: AnimationItem | undefined;
 
   animationCreated(animationItem: AnimationItem): void {
     this.animationItem = animationItem;

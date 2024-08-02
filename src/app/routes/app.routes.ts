@@ -48,10 +48,14 @@ export const routes: Routes = [
     loadChildren: () =>
       import("./favorites.routes").then((m) => m.favoritesRoutes),
   },
+  {
+    path: "",
+    loadChildren: () =>
+      import("./success.routes").then((m) => m.successRoutes),
+  },
 
   {
     path: "loading",
-
     loadComponent: () =>
       import("../widgets/loading-charge/loading-charge.component").then(
         (m) => m.LoadingChargeComponent

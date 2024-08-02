@@ -6,18 +6,22 @@ import { Router } from '@angular/router';
 import { AuthService } from '../../services/auth.service';
 import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { ReserCredentials } from '../../utils/types';
+import { SecMsgComponent } from "../../widgets/sec-msg/sec-msg.component";
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-reset-password-page',
   standalone: true,
-  imports: [NavbarComponent, BackgroundComponent, ImgBlockComponent, ReactiveFormsModule],
+  imports: [NavbarComponent, BackgroundComponent, ImgBlockComponent, ReactiveFormsModule, SecMsgComponent, CommonModule],
   templateUrl: './reset-password-page.component.html',
   styleUrl: './reset-password-page.component.scss'
 })
 export class ResetPasswordPageComponent implements OnInit {
+
   email: string | null = null;
   errorMessage: string | null = null;
   isLoading = false;
+  showPassword = false;
 
   resetPasswordForm = new FormGroup({
     password: new FormControl('', { validators: [Validators.required, Validators.minLength(4)], nonNullable: true }),
@@ -56,5 +60,13 @@ export class ResetPasswordPageComponent implements OnInit {
       );
 
     }
+  }
+
+  togglePasswordVisibility(): void {
+    this.showPassword = !this.showPassword;
+  }
+
+  back() {
+    this.router.navigate(['/login']);
   }
 }

@@ -11,7 +11,8 @@ import {
   provideLottieOptions,
 } from "ngx-lottie";
 import player from "lottie-web";
-import { provideHttpClient, withFetch } from "@angular/common/http";
+import { provideHttpClient, withFetch, withInterceptors } from "@angular/common/http";
+import { authInterceptor } from "../interceptors/auth.interceptor";
 
 export const appConfig: ApplicationConfig = {
   providers: [
@@ -19,10 +20,13 @@ export const appConfig: ApplicationConfig = {
     provideRouter(routes),
     provideClientHydration(),
     provideHttpClient(
-      
-      withFetch()
+      withFetch(),
+      withInterceptors([authInterceptor])
     ),
     provideCacheableAnimationLoader(),
+    provideHttpClient(
+      withFetch()
+   ),
     provideLottieOptions({ player: () => player }),
   ],
 };

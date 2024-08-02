@@ -1,268 +1,61 @@
-<!-- <div class="container-fluid mt-5 overflow-hidden" style="width: 80%;"> -->
-<!-- <div class="container-fluid overflow-hidden">
-        <div class="mt-3 d-grid px-lg-5 px-2"> -->
-<!-- Bouton de retour -->
-<!-- <app-back-button/> -->
-<!-- <div class="mt-3 d-flex justify-content-between"> -->
-<!-- Colonne pour l'image -->
-<!-- <div class="d-none d-md-block col-lg-5 p-5 success">
-                    <div class="d-flex align-items-center p-2 justify-content-center">
-                        <app-lotties [imagePath]="imagePath" [width]="width" [height]="height" />
-                    </div>
-                </div> -->
-
-<!-- Colonne pour le texte -->
-<!-- <div class="col-12 col-lg-6 col-md-6 p-3">
-                    <div class="card border-0">
-                        <div class="mb-4 mt-2">
-                            <span class="message">DISTRIBUTION INDIVIDUELLE</span>
-                        </div>
-    
-                        <app-sec-msg></app-sec-msg>
-                        <app-distribution-channel></app-distribution-channel> -->
-
-<!-- <div class="row mt-4 mb-2">
-                            <div class="col">
-                                <div class="">
-                                    <label class="form-label">Montant des bons d’achat <span class="red">*</span></label>
-                                    <div class="mt-2">
-                                        <input type="text" class="form-control form-input"
-                                            placeholder="Montant des bons d’achat">
-    
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col">
-                                <div class="">
-                                    <label class="form-label">Nombre des bons d’achat <span class="red">*</span></label>
-                                    <div class="mt-2">
-                                        <input type="text" class="form-input"
-                                            placeholder="Saisissez le nombre des bons d’achat">
-                                    </div>
-                                </div>
-                            </div>
-                        </div> -->
-<!-- <div class="pt-3"> 
-                            <div class="row">
-                                <div class="col-12 col-ms-8 col-md-6 px-5">
-                                    <label class="px-2" for="champ1 ">Montant des bons d'achat <span class="text-danger">*</span> </label>
-                                    <input id="purchase_amount" class="rounde-input" type="text" placeholder=" Montant d'achat de bon">
-                                </div>
-                                <div class="col-12 col-ms-8 col-md-6 px-5">
-                                    <label class="px-2" for="champ1">Nombre de bons d'achat <span class="text-danger">*</span> </label>
-                                    <input id="champ1" class="rounde-input" type="text" placeholder=" Nombre de bons d'achat">
-                                </div>
-                            
-                            </div>
-                            <ng-container *ngFor="let input of inputFields; let i = index">
-                            <ng-container *ngIf="i !== 0">
-                            <div class="incremented-fields">
-                            
-                                    <div class="field-group">
-                            <div class="row">
-                                <div class="col-12 col-ms-8 col-md-6 px-5">
-                                    <div class="">
-                                        <span class="px-2">Montant des bons d'achat <span class="text-danger">*</span> </span>
-                                        <input class="rounde-input rounded-0 " type="text" placeholder="Montant des bons d'achat">
-                                      </div>
-                                </div>
-                                <div class="col-12 col-ms-8 col-md-6 px-5">
-                                    <div>
-                                        <span class="px-2">Nombre de bons d'achat   <span class="text-danger">*</span> </span>
-                                        <input class="rounde-input rounded-0" type="text" placeholder="Nombre de bons d'achat">
-                                      </div>
-                                </div>
-                            </div>
-                            </div>
-                            </div>
-                            </ng-container>
-                            </ng-container>
-                            <div class="button-container mt-2 px-5">
-                                <button *ngIf="inputFields.length > 1" class="round moins border-0" (click)="removeFields()">-</button>
-                                <button class="round plus border-0" (click)="addFields()">+</button>
-                              </div>
-                            </div> -->
-
-<!-- <div class="col d-flex align-self-end">
-                            @if(showRemoveButton){
-                            <button type="button" class="small-btn" (click)="removeRow()">
-                                <i class="bi bi-dash-circle-fill" style="color: #00B3D7;"></i>
-                            </button>
-                            }
-                            <button type="button" class="small-btn" (click)="addRow()">
-                                <i class="bi bi-plus-circle-fill" style="color: #00B3D7;"></i>
-                            </button>
-                        </div> -->
-
-
-<!-- <div class="row flex-row-reverse align-items-center p-md-1 justify-content-between mt-3">
-                            <div class="mt-4 mb-3 col text-end">
-                                <a href="#" download="Cornell-feuille-notes-vierge_leo-cegeptr.pdf" class="link">Distribution
-                                    groupée</a>
-                            </div>
-                            <div class="col">
-                                <div class="d-flex px-5">
-                                    <button type="button" class="btn-custom cancel">ANNULER</button>
-                                    <button type="submit"  (click)="togglePopup()" class="ms-2 btn-custom next">SUIVANT</button>
-                                    
-                                    <app-distribution-channel></app-distribution-channel>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-    
-                </div> 
-    
-              
-            </div>
-    
-        </div>
-    </div> -->
-
-
-
-<!-- <div class="popup" [class.show]="showPopup">
-        <header>
-          <span class="pt-2 fw-bold px-5 ">Choisissez le canal de distribution</span>
-          <div class="close " (click)="togglePopup()"><i class="uil uil-times"></i> <span class="text-danger">x</span></div>
-        </header> -->
-<!-- <div class="content pt-3">
-        <div class="rounded-social-buttons">
-          <a 
-          class="social-button whatsapp me-4" 
-          href="" target="_blank">
-          <i class="fab fa-whatsapp"></i>
-        </a>
-          <a class="social-button facebook me-4" href="" target="_blank"><i class="fab fa-facebook-f"></i></a>
-          <a class="social-button telegram me-4" href="" target="_blank"><i class="fab fa-telegram"></i></a>
-          <a class="social-button linkedin me-4" href="" target="_blank"><i class="fab fa-linkedin"></i></a>
-       
-      </div>
-      
-      <div class="rounded-social-buttons mt-4">
-          <a class="social-button instagram_logo me-4" href="https://www.instagram_logo.com/" target="_blank"><i class="fab fa-instagram_logo"></i></a>
-          <a class="social-button twitter me-4" href="" target="_blank"><i class="fab fa-twitter"></i></a>
-          <a class="social-button skype me-4" href="" target="_blank"><i class="fab fa-skype" ></i></a>
-          <a class="social-button tiktok me-4" href="" target="_blank"><i class="fab fa-tiktok"></i></a>
-        
-      </div>
-        </div> -->
-
-<!-- <div class="content ">
-            <div class="rounded-social-buttons">
-              <a 
-              class="social-button whatsapp me-4" href="" target="_blank">
-              <img src="../../../../../assets/images/whatsapp_logo.png" class="img-fluid" >
-              </a>
-              <a
-               class="social-button facebook me-4" href="" target="_blank" >
-               <img src="../../../../../assets/images/facebook.png" class="img-fluid" >
-              </a>
-              <a 
-              class="social-button telegram me-4" href="" target="_blank">
-              <img src="../../../../../assets/images/telegram_logo.png" class="img-fluid">
-              </a>
-              <a
-               class="social-button linkedin me-4" href="" target="_blank">
-               <img src="../../../../../assets/images/linkeding_logo.png" class="img-fluid " >
-              </a>
-           
-          </div>
-          
-          <div class="rounded-social-buttons pt-3">
-              <a 
-              class="social-button instagram_logo me-4" href="https://www.instagram_logo.com/" target="_blank">
-              <img src="../../../../../assets/images/instagram_logo.png" class="img-fluid" >
-          </a>
-              <a
-               class="social-button twitter me-4" href="" target="_blank">
-               <img src="../../../../../assets/images/twitter_logo.png" class="img-fluid" >
-              </a>
-              <a 
-              class="social-button skype me-4" href="" target="_blank">
-              <img src="../../../../../assets/images/skype_logo.png" class="img-fluid" >
-          </a>
-              <a
-               class="social-button tiktok me-4" href="" target="_blank">
-               <img src="../../../../../assets/images/tiktoks_logo.png" class="img-fluid">
-              </a>
-            
-          </div>
-            </div>
-      </div>  -->
-
-<!-- <div class="container-fluid mt-5 overflow-hidden" style="width: 80%;"> -->
 <div class="container-fluid overflow-hidden">
     <div class="mt-3 d-grid px-lg-5 px-2">
         <!-- Bouton de retour -->
         <app-back-button />
-        <div class="mt-3 d-flex justify-content-between">
+        <div class="mt-3 d-lg-flex d-grid justify-content-between">
             <!-- Colonne pour l'image -->
-            <div class="d-none d-md-block col-lg-5 p-5 success">
-                <div class="d-flex align-items-center p-2 justify-content-center">
+            <div class="success-condensed col-lg-5 col-md-12 col-10 mb-5">
+                <div class="d-flex justify-content-center align-items-center" style="height: 665px;">
                     <app-lotties [imagePath]="imagePath" [width]="width" [height]="height" />
                 </div>
             </div>
 
             <!-- Colonne pour le texte -->
-            <div class="col-12 col-lg-6 col-md-12 p-3">
-                <div class="card border-0">
-                    <div class="mb-4 mt-2">
-                        <span class="message">DISTRIBUTION INDIVIDUELLE</span>
+            <div class="col-10 col-lg-6 col-md-12">
+                <div class="card-body">
+                    <span class="card-title message fs-30">Distribution individuelle</span>
+
+                    <div class="mt-3">
+                        <app-sec-msg></app-sec-msg>
                     </div>
+                    
 
-                    <app-sec-msg></app-sec-msg>
-
-                    <div class="row mt-4 mb-2">
-                        <div class="col">
-                            <div class="">
-                                <label class="form-label">Montant des bons d’achat <span class="red">*</span></label>
-                                <div class="mt-2">
-                                    <input type="text" class="form-control form-input"
-                                        placeholder="Montant des bons d’achat">
-
-                                </div>
+                    <div class="d-md-inline-flex d-grid w-100 mt-4">
+                        <div class="col-lg-6 col-md-6 col-12 mb-3">
+                            <span class="label">Montant des bons d’achat <span class="red">*</span></span>
+                            <div class="mt-2 pe-md-3">
+                                <input type="text" class="form-input" placeholder="Montant des bons d’achat">
                             </div>
                         </div>
-                        <div class="col">
-                            <div class="">
-                                <label class="form-label">Nombre des bons d’achat <span class="red">*</span></label>
-                                <div class="mt-2">
-                                    <input type="text" class="form-input"
-                                        placeholder="Saisissez le nombre des bons d’achat">
-                                </div>
+                        <div class="col-lg-6 col-md-6 col-12 mb-3">
+                            <span class="label">Nombre des bons d’achat <span class="red">*</span></span>
+                            <div class="mt-2 ps-md-3">
+                                <input type="text" class="form-input"
+                                    placeholder="Saisissez le nombre des bons d’achat">
                             </div>
                         </div>
                     </div>
 
                     <!-- Ajout de lignes supplémentaires by Romuald -->
-                    <ng-container *ngFor="let input of rows; let i = index">
-                        <ng-container *ngIf="i !== 0">
-                            <div class="row mb-2">
-                                <div class="col">
-                                    <div class="">
-                                        <label class="form-label">Montant des bons d’achat <span
-                                                class="red">*</span></label>
-                                        <div class="mt-2">
-                                            <input type="text" class="form-control form-input"
-                                                placeholder="Montant des bons d’achat">
-
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col">
-                                    <div class="">
-                                        <label class="form-label">Nombre des bons d’achat <span
-                                                class="red">*</span></label>
-                                        <div class="mt-2">
-                                            <input type="text" class="form-input"
-                                                placeholder="Saisissez le nombre des bons d’achat">
-                                        </div>
-                                    </div>
-                                </div>
+                    @for(input of rows; track $index){
+                    @if($index !== 0){
+                    <div class="d-md-inline-flex d-grid w-100 mt-4">
+                        <div class="col-lg-6 col-md-6 col-12 mb-3">
+                            <span class="label">Montant des bons d’achat <span class="red">*</span></span>
+                            <div class="mt-2 pe-md-3">
+                                <input type="text" class="form-input" placeholder="Montant des bons d’achat">
                             </div>
-                        </ng-container>
-                    </ng-container>
+                        </div>
+                        <div class="col-lg-6 col-md-6 col-12 mb-3">
+                            <span class="label">Nombre des bons d’achat <span class="red">*</span></span>
+                            <div class="mt-2 ps-md-3">
+                                <input type="text" class="form-input"
+                                    placeholder="Saisissez le nombre des bons d’achat">
+                            </div>
+                        </div>
+                    </div>
+                    }
+                    }
 
                     <!-- Bouton +/- -->
                     <div class="col d-flex align-self-end">
@@ -278,9 +71,8 @@
 
                     <!-- Bouton Cancen& Next -->
                     <div class="row flex-row-reverse align-items-center p-md-1 justify-content-between mt-3">
-                        <div class="mt-4 mb-3 col text-end">
-                            <a href="#" [routerLink]="'/grouped-distribution'"
-                                class="link">Distribution
+                        <div class="mt-4 mb-3 col text-md-end">
+                            <a href="#" [routerLink]="'/grouped-distribution'" class="link">Distribution
                                 groupée</a>
                         </div>
                         <div class="col">

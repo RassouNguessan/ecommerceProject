@@ -1,4 +1,4 @@
-import { Router } from "@angular/router";
+import { Router, RouterLink } from "@angular/router";
 import { Component } from "@angular/core";
 import { CardComponent } from "../card/card.component";
 import { PurchaseRecentViewComponent } from "../../widgets/purchase-recent-view/purchase-recent-view.component";
@@ -22,7 +22,8 @@ import { CommonModule } from "@angular/common";
     FooterComponent,
     Banner3Component,
     NumberWithSpacesPipe,
-    CommonModule
+    CommonModule,
+    RouterLink
 ],
 })
 export class PurchaseAvailableComponent {
@@ -34,7 +35,7 @@ export class PurchaseAvailableComponent {
   }
 
   groupDistribued() {
-    this.router.navigate(["/distributed"]);
+    this.router.navigate(["/grouped-distribution"]);
   }
 
   updateInfo(product: voucherDetail) {

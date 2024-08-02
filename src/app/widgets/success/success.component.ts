@@ -16,12 +16,14 @@ export class SuccessComponent {
   width: string;
   height: string;
   dataToRetrieve: Record<string, unknown> = {};
+  mail: string;
 
   constructor(private location: Location) {
     this.imagePath = {
-      path: "/assets/animations/lotties/success.json",
+      path: "/assets/animations/success.json",
     };
     this.width = "235px";
     this.height = "235px";
+    this.mail = "";
   }
 }

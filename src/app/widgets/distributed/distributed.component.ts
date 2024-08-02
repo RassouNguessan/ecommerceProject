@@ -22,8 +22,8 @@ export class DistributedComponent {
     this.imagePath = {
       path: "/assets/animations/ANIME-AAABBBB-2.json",
     };
-    this.width = "500px";
-    this.height = "500px";
+    this.width = "464px";
+    this.height = "463px";
   }
 
   TonextBenefic() {

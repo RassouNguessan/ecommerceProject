@@ -7,6 +7,7 @@ import { ImgBlockComponent } from '../../widgets/img-block/img-block.component';
 import { BackgroundComponent } from '../../widgets/background/background.component';
 import { NavbarComponent } from '../../widgets/navbar/navbar.component';
 import { Location } from '@angular/common';
+import { VerifyOTPPayload } from '../../utils/types';
 
 @Component({
   selector: 'app-verify-otp-page',
@@ -31,18 +32,29 @@ export class VerifyOtpPageComponent implements OnInit {
     private router: Router) { }
 
   ngOnInit(): void {
-    this.route.queryParams.subscribe(params => {
-      this.email = params['email'];
-    });
+    const currentState = this.router.lastSuccessfulNavigation;
+    if (currentState && currentState.extras.state) {
+      this.email = currentState.extras.state['email'];
+      console.log(this.email);
+    }
+
   }
+
   verifyOTP() {
     this.verifyOtpForm.markAllAsTouched();
     if (this.verifyOtpForm.valid && this.email) {
+      
       this.isLoading = true;
-      this.authService.verifyOTP(this.email, this.verifyOtpForm.getRawValue().otpCode).subscribe({
+
+       const payload: VerifyOTPPayload = {
+        email: this.email,
+        otp_code: this.verifyOtpForm.getRawValue().otpCode
+      };
+
+      this.authService.verifyOTP(payload).subscribe({
         next: () => {
           this.isLoading = false;
-          this.router.navigate(['/reset-password', this.email]);
+          this.router.navigate(['/reset-password'], { state: { email: this.email } });
         },
         error: (error) => {
           this.errorMessage = error.error.message;
@@ -53,6 +65,7 @@ export class VerifyOtpPageComponent implements OnInit {
     }
   }
 
+  
 
   back() {
     this.location.back();

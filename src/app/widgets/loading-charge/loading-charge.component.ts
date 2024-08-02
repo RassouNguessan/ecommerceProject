@@ -11,7 +11,7 @@ import { AnimationItem } from "lottie-web";
 })
 export class LoadingChargeComponent {
   options: AnimationOptions = {
-    path: "/assets/animations/lotties/927.json",
+    path: "/assets/animations/927.json",
     loop: true,
     autoplay: true,
   };

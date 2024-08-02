@@ -1,12 +1,12 @@
 <div class="container-fluid mt-5 overflow-hidden" style="width: 80%;">
     <!-- Bouton de retour -->
-    <app-back-button/>
+    <app-back-button />
     <div class="row gy-5 mt-3">
         <div class="col-6 bg-light" style="width:109rem;height:10rem;">
-            
-          </div>
+
+        </div>
         <div class="row gy-5">
-            
+
             <div class="col-6">
                 <div class="">
                     <div class="card border-0 border-radius-0" style="width:117%;">
@@ -58,80 +58,82 @@
                     </div>
                 </div>
             </div>
-                              <!-- Colonne pour le texte -->
-<div class="col-12 col-md-5">
-    <div class="card border-0 mt-3 bg-light border-radius-0">
-        <div class="card-body ">
-            <h3 class="card-title fw-bold">DÉTAILS DU PANIER </h3>
+            <!-- Colonne pour le texte -->
+            <div class="col-12 col-md-5">
+                <div class="card border-0 mt-3 bg-light border-radius-0">
+                    <div class="card-body ">
+                        <h3 class="card-title fw-bold">DÉTAILS DU PANIER </h3>
 
-            <div class="table-responsive mt-4">
-                <table border="0" cellspacing="5" cellpadding="5">
-                    <tbody>
-                        <tr *ngFor="let categorie of categories">
-                            <td>
-                                LES CANAUX DE DISTRIBUTION : ……………………………………………
-                            </td>
-                            <td>
-                               {{categorie.cannaux}}
-                            </td>
-                        </tr>
+                        <div class="table-responsive mt-4">
+                            <table cellspacing="5" cellpadding="5">
+                                <tbody>
+                                    @for(categorie of categories; track categorie){
+                                    <tr>
+                                        <td>
+                                            LES CANAUX DE DISTRIBUTION : ……………………………………………
+                                        </td>
+                                        <td>
+                                            {{categorie.cannaux}}
+                                        </td>
+                                    </tr>
+                                    }
 
-                        <tr>
-                            <td>
-                                …………………………………………………………………………………………
-                            </td>
-                            <td>
-                                ADRESSE MAIL
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                LES CATÉGORIES DES BONS : ………………………………………………
-                            </td>
-                            <td>
-                                5 000 FCFA
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                …………………………………………………………………………………………
-                            </td>
-                            <td>
-                                10 000 FCFA
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                …………………………………………………………………………………………
-                            </td>
-                            <td>
-                                15 000 FCFA
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                …………………………………………………………………………………………
-                            </td>
-                            <td>
-                                20 000 FCFA
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                LISTES DES BÉNÉFICIAIRES :…………………………………………………
-                            </td>
-                            <td>
-                                  <button class="border-0 bg-light"><a href="#">VOIR LA LISTE</a></button>
-                            </td>
-                        </tr>
+                                    <tr>
+                                        <td>
+                                            …………………………………………………………………………………………
+                                        </td>
+                                        <td>
+                                            ADRESSE MAIL
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            LES CATÉGORIES DES BONS : ………………………………………………
+                                        </td>
+                                        <td>
+                                            5 000 FCFA
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            …………………………………………………………………………………………
+                                        </td>
+                                        <td>
+                                            10 000 FCFA
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            …………………………………………………………………………………………
+                                        </td>
+                                        <td>
+                                            15 000 FCFA
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            …………………………………………………………………………………………
+                                        </td>
+                                        <td>
+                                            20 000 FCFA
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            LISTES DES BÉNÉFICIAIRES :…………………………………………………
+                                        </td>
+                                        <td>
+                                            <button class="border-0 bg-light"><a href="#">VOIR LA LISTE</a></button>
+                                        </td>
+                                    </tr>
 
-                    </tbody>
-                </table>
+                                </tbody>
+                            </table>
 
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
 </div>
-</div>
-</div>
- </div>

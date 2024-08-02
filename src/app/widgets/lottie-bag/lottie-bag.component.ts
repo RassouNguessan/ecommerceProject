@@ -11,7 +11,7 @@ import { AnimationItem } from "lottie-web";
 })
 export class LottieBagComponent {
   options: AnimationOptions = {
-    path: "/assets/animations/lotties/ANIME-AAABBBB-2.json",
+    path: "/assets/animations/ANIME-AAABBBB-2.json",
     loop: true,
     autoplay: true,
   };

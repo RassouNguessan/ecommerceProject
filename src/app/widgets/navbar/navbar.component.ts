@@ -1,5 +1,5 @@
 import { CommonModule } from "@angular/common";
-import { Component, HostListener, signal } from "@angular/core";
+import { Component, HostListener, Input, signal } from "@angular/core";
 import {
   RouterOutlet,
   RouterLink,
@@ -7,6 +7,7 @@ import {
   Router,
 } from "@angular/router";
 import { ChangeDetectorRef } from "@angular/core";
+import { User } from "../../utils/types";
 
 @Component({
   selector: "app-navbar",
@@ -17,13 +18,13 @@ import { ChangeDetectorRef } from "@angular/core";
 })
 export class NavbarComponent {
   flashMessage = signal(true);
+  @Input() user: User | null = null;
 
-  user = {
-    name: "User Name",
-    photoUrl: "/assets/images/profil_icon.png",
-  };
-
-  selectedOption: string | null = null;
+  //  user = {
+  //   name: "User Name",
+  //   photoUrl: "/assets/images/profil_icon.png",
+  // };
+  selectedOption: string | null | undefined = null;
   dropdownOpen = false;
 
   options = [
@@ -57,7 +58,7 @@ export class NavbarComponent {
   }
 
   selectOption(option: { label: string; value: string; icon: string }): void {
-    this.selectedOption = this.user.name; // Garder le nom de l'utilisateur affiché
+    this.selectedOption = this.user?.first_name; // Garder le nom de l'utilisateur affiché
     this.router.navigate([option.value]).then(() => {
       this.dropdownOpen = false; // Replier le dropdown après la navigation
     });
